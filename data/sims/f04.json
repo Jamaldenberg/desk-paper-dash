@@ -1,0 +1,912 @@
+{
+  "id": "f04",
+  "title": "F04 session ORB BTC shadow",
+  "family": "F04",
+  "strategy_id": "session-orb-btc-shadow",
+  "mode": "shadow",
+  "live": false,
+  "updated_at": "2026-09-11T00:17:48.988Z",
+  "updated_at_pt": "2026-09-10 5:17 PM PT",
+  "scoreboard_headline": "**shadow reject-lean** — n=1009 E[R]@50=**-0.870** (fails @8 too)",
+  "preregister": "[[Desk/Research/Explore/preregister-2026-09-10-f04-session-orb-shadow|DPR-20260910-04]]",
+  "metrics": {
+    "generated_pt": "2026-09-10 12:16 PT",
+    "strategy_id": "session-orb-btc-shadow",
+    "n": 1009,
+    "fee_stress": {
+      "8": {
+        "n": 1009,
+        "n_win": 386,
+        "win_rate": 0.38255698711595637,
+        "expectancy_r": -0.09596690857310783,
+        "sum_r": -96.8306107502658,
+        "max_dd_pct": 40.808864838223194,
+        "final_equity": 62363.79253356069,
+        "return_pct": -37.63620746643931
+      },
+      "50": {
+        "n": 1009,
+        "n_win": 317,
+        "win_rate": 0.3141724479682854,
+        "expectancy_r": -0.870326062507783,
+        "sum_r": -878.158997070353,
+        "max_dd_pct": 98.73581478511063,
+        "final_equity": 1275.8428517965538,
+        "return_pct": -98.72415714820345
+      },
+      "100": {
+        "n": 1009,
+        "n_win": 211,
+        "win_rate": 0.2091179385530228,
+        "expectancy_r": -1.7921821981443011,
+        "sum_r": -1808.3118379275998,
+        "max_dd_pct": 99.98785828312131,
+        "final_equity": 12.192972684586167,
+        "return_pct": -99.98780702731541
+      }
+    },
+    "note": "1H ORB proxy (first overlap hour). Long breaks only. Shadow diagnostic vs F01 session.",
+    "primary_at_50bps": {
+      "primary_band_bps": 50,
+      "n": 1009,
+      "win_rate": 0.3141724479682854,
+      "expectancy_r": -0.870326062507783,
+      "sum_r": -878.158997070353,
+      "max_dd_pct": 98.73581478511063,
+      "return_pct": -98.72415714820345
+    }
+  },
+  "fee_stress": {
+    "8": {
+      "n": 1009,
+      "n_win": 386,
+      "win_rate": 0.38255698711595637,
+      "expectancy_r": -0.09596690857310783,
+      "sum_r": -96.8306107502658,
+      "max_dd_pct": 40.808864838223194,
+      "final_equity": 62363.79253356069,
+      "return_pct": -37.63620746643931
+    },
+    "50": {
+      "n": 1009,
+      "n_win": 317,
+      "win_rate": 0.3141724479682854,
+      "expectancy_r": -0.870326062507783,
+      "sum_r": -878.158997070353,
+      "max_dd_pct": 98.73581478511063,
+      "final_equity": 1275.8428517965538,
+      "return_pct": -98.72415714820345
+    },
+    "100": {
+      "n": 1009,
+      "n_win": 211,
+      "win_rate": 0.2091179385530228,
+      "expectancy_r": -1.7921821981443011,
+      "sum_r": -1808.3118379275998,
+      "max_dd_pct": 99.98785828312131,
+      "final_equity": 12.192972684586167,
+      "return_pct": -99.98780702731541
+    }
+  },
+  "trades": [
+    {
+      "day": "2026-04-20 00:00:00+00:00",
+      "entry_dt": "2026-04-20 14:00:00+00:00",
+      "entry": 75481.79,
+      "exit": 74895.26,
+      "stop_distance": 586.5299999999988,
+      "orb_high": 75481.79,
+      "orb_low": 74895.26,
+      "exit_reason": "stop"
+    },
+    {
+      "day": "2026-04-21 00:00:00+00:00",
+      "entry_dt": "2026-04-21 14:00:00+00:00",
+      "entry": 76213.37,
+      "exit": 75752.82,
+      "stop_distance": 460.54999999998836,
+      "orb_high": 76213.37,
+      "orb_low": 75752.82,
+      "exit_reason": "stop"
+    },
+    {
+      "day": "2026-04-22 00:00:00+00:00",
+      "entry_dt": "2026-04-22 14:00:00+00:00",
+      "entry": 78887.8,
+      "exit": 78183.05,
+      "stop_distance": 704.75,
+      "orb_high": 78887.8,
+      "orb_low": 78183.05,
+      "exit_reason": "stop"
+    },
+    {
+      "day": "2026-04-23 00:00:00+00:00",
+      "entry_dt": "2026-04-23 14:00:00+00:00",
+      "entry": 77946.39,
+      "exit": 77404.02,
+      "stop_distance": 542.3699999999953,
+      "orb_high": 77946.39,
+      "orb_low": 77404.02,
+      "exit_reason": "stop"
+    },
+    {
+      "day": "2026-04-25 00:00:00+00:00",
+      "entry_dt": "2026-04-25 14:00:00+00:00",
+      "entry": 77731.7,
+      "exit": 77577.02,
+      "stop_distance": 154.67999999999302,
+      "orb_high": 77731.7,
+      "orb_low": 77577.02,
+      "exit_reason": "stop"
+    },
+    {
+      "day": "2026-04-26 00:00:00+00:00",
+      "entry_dt": "2026-04-26 14:00:00+00:00",
+      "entry": 78011.19,
+      "exit": 78422.13,
+      "stop_distance": 205.47000000000116,
+      "orb_high": 78011.19,
+      "orb_low": 77805.72,
+      "exit_reason": "target"
+    },
+    {
+      "day": "2026-04-27 00:00:00+00:00",
+      "entry_dt": "2026-04-27 14:00:00+00:00",
+      "entry": 77976.01,
+      "exit": 77572.4,
+      "stop_distance": 403.6100000000006,
+      "orb_high": 77976.01,
+      "orb_low": 77572.4,
+      "exit_reason": "stop"
+    },
+    {
+      "day": "2026-05-02 00:00:00+00:00",
+      "entry_dt": "2026-05-02 14:00:00+00:00",
+      "entry": 78432.22,
+      "exit": 78870.34,
+      "stop_distance": 219.05999999999767,
+      "orb_high": 78432.22,
+      "orb_low": 78213.16,
+      "exit_reason": "target"
+    },
+    {
+      "day": "2026-05-03 00:00:00+00:00",
+      "entry_dt": "2026-05-03 14:00:00+00:00",
+      "entry": 78768.05,
+      "exit": 78575.0,
+      "stop_distance": 193.0500000000029,
+      "orb_high": 78768.05,
+      "orb_low": 78575.0,
+      "exit_reason": "stop"
+    },
+    {
+      "day": "2026-05-04 00:00:00+00:00",
+      "entry_dt": "2026-05-04 14:00:00+00:00",
+      "entry": 79121.84,
+      "exit": 80247.68,
+      "stop_distance": 562.9199999999983,
+      "orb_high": 79121.84,
+      "orb_low": 78558.92,
+      "exit_reason": "target"
+    },
+    {
+      "day": "2026-05-08 00:00:00+00:00",
+      "entry_dt": "2026-05-08 14:00:00+00:00",
+      "entry": 80093.09,
+      "exit": 80318.26,
+      "stop_distance": 572.6499999999942,
+      "orb_high": 80093.09,
+      "orb_low": 79520.44,
+      "exit_reason": "time"
+    },
+    {
+      "day": "2026-05-14 00:00:00+00:00",
+      "entry_dt": "2026-05-14 14:00:00+00:00",
+      "entry": 80035.01,
+      "exit": 80825.62999999999,
+      "stop_distance": 395.3099999999977,
+      "orb_high": 80035.01,
+      "orb_low": 79639.7,
+      "exit_reason": "target"
+    },
+    {
+      "day": "2026-05-16 00:00:00+00:00",
+      "entry_dt": "2026-05-16 14:00:00+00:00",
+      "entry": 77981.89,
+      "exit": 77798.0,
+      "stop_distance": 183.88999999999942,
+      "orb_high": 77981.89,
+      "orb_low": 77798.0,
+      "exit_reason": "stop"
+    },
+    {
+      "day": "2026-05-21 00:00:00+00:00",
+      "entry_dt": "2026-05-21 15:00:00+00:00",
+      "entry": 77278.0,
+      "exit": 77598.4,
+      "stop_distance": 658.9799999999959,
+      "orb_high": 77278.0,
+      "orb_low": 76619.02,
+      "exit_reason": "time"
+    },
+    {
+      "day": "2026-05-23 00:00:00+00:00",
+      "entry_dt": "2026-05-23 14:00:00+00:00",
+      "entry": 75169.57,
+      "exit": 76167.07,
+      "stop_distance": 498.75,
+      "orb_high": 75169.57,
+      "orb_low": 74670.82,
+      "exit_reason": "target"
+    },
+    {
+      "day": "2026-05-25 00:00:00+00:00",
+      "entry_dt": "2026-05-25 14:00:00+00:00",
+      "entry": 77377.5,
+      "exit": 77720.48000000001,
+      "stop_distance": 171.49000000000524,
+      "orb_high": 77377.5,
+      "orb_low": 77206.01,
+      "exit_reason": "target"
+    },
+    {
+      "day": "2026-05-26 00:00:00+00:00",
+      "entry_dt": "2026-05-26 14:00:00+00:00",
+      "entry": 77376.69,
+      "exit": 76578.34,
+      "stop_distance": 798.3500000000058,
+      "orb_high": 77376.69,
+      "orb_low": 76578.34,
+      "exit_reason": "stop"
+    },
+    {
+      "day": "2026-05-30 00:00:00+00:00",
+      "entry_dt": "2026-05-30 14:00:00+00:00",
+      "entry": 73735.16,
+      "exit": 74080.64000000001,
+      "stop_distance": 172.74000000000524,
+      "orb_high": 73735.16,
+      "orb_low": 73562.42,
+      "exit_reason": "target"
+    },
+    {
+      "day": "2026-06-04 00:00:00+00:00",
+      "entry_dt": "2026-06-04 14:00:00+00:00",
+      "entry": 64188.0,
+      "exit": 62983.15,
+      "stop_distance": 1204.8499999999985,
+      "orb_high": 64188.0,
+      "orb_low": 62983.15,
+      "exit_reason": "stop"
+    },
+    {
+      "day": "2026-06-07 00:00:00+00:00",
+      "entry_dt": "2026-06-07 14:00:00+00:00",
+      "entry": 61880.09,
+      "exit": 61626.57,
+      "stop_distance": 253.5199999999968,
+      "orb_high": 61880.09,
+      "orb_low": 61626.57,
+      "exit_reason": "stop"
+    },
+    {
+      "day": "2026-06-08 00:00:00+00:00",
+      "entry_dt": "2026-06-08 14:00:00+00:00",
+      "entry": 63901.78,
+      "exit": 63303.55,
+      "stop_distance": 598.2299999999959,
+      "orb_high": 63901.78,
+      "orb_low": 63303.55,
+      "exit_reason": "stop"
+    },
+    {
+      "day": "2026-06-10 00:00:00+00:00",
+      "entry_dt": "2026-06-10 15:00:00+00:00",
+      "entry": 62427.42,
+      "exit": 61380.65,
+      "stop_distance": 1046.7699999999968,
+      "orb_high": 62427.42,
+      "orb_low": 61380.65,
+      "exit_reason": "stop"
+    },
+    {
+      "day": "2026-06-12 00:00:00+00:00",
+      "entry_dt": "2026-06-12 14:00:00+00:00",
+      "entry": 63457.58,
+      "exit": 63796.97,
+      "stop_distance": 493.58000000000175,
+      "orb_high": 63457.58,
+      "orb_low": 62964.0,
+      "exit_reason": "time"
+    },
+    {
+      "day": "2026-06-13 00:00:00+00:00",
+      "entry_dt": "2026-06-13 15:00:00+00:00",
+      "entry": 64211.5,
+      "exit": 64011.52,
+      "stop_distance": 199.9800000000032,
+      "orb_high": 64211.5,
+      "orb_low": 64011.52,
+      "exit_reason": "stop"
+    },
+    {
+      "day": "2026-06-17 00:00:00+00:00",
+      "entry_dt": "2026-06-17 14:00:00+00:00",
+      "entry": 65318.63,
+      "exit": 64781.43,
+      "stop_distance": 537.1999999999971,
+      "orb_high": 65318.63,
+      "orb_low": 64781.43,
+      "exit_reason": "stop"
+    },
+    {
+      "day": "2026-06-19 00:00:00+00:00",
+      "entry_dt": "2026-06-19 14:00:00+00:00",
+      "entry": 63341.21,
+      "exit": 63524.86,
+      "stop_distance": 736.8799999999974,
+      "orb_high": 63341.21,
+      "orb_low": 62604.33,
+      "exit_reason": "time"
+    },
+    {
+      "day": "2026-06-20 00:00:00+00:00",
+      "entry_dt": "2026-06-20 14:00:00+00:00",
+      "entry": 63594.45,
+      "exit": 64150.01,
+      "stop_distance": 379.48999999999796,
+      "orb_high": 63594.45,
+      "orb_low": 63214.96,
+      "exit_reason": "time"
+    },
+    {
+      "day": "2026-06-22 00:00:00+00:00",
+      "entry_dt": "2026-06-22 14:00:00+00:00",
+      "entry": 65518.07,
+      "exit": 64869.97,
+      "stop_distance": 648.0999999999985,
+      "orb_high": 65518.07,
+      "orb_low": 64869.97,
+      "exit_reason": "stop"
+    },
+    {
+      "day": "2026-06-23 00:00:00+00:00",
+      "entry_dt": "2026-06-23 14:00:00+00:00",
+      "entry": 62462.41,
+      "exit": 62849.39,
+      "stop_distance": 590.8500000000058,
+      "orb_high": 62462.41,
+      "orb_low": 61871.56,
+      "exit_reason": "time"
+    },
+    {
+      "day": "2026-06-26 00:00:00+00:00",
+      "entry_dt": "2026-06-26 14:00:00+00:00",
+      "entry": 60122.0,
+      "exit": 59847.91,
+      "stop_distance": 1712.4199999999983,
+      "orb_high": 60122.0,
+      "orb_low": 58409.58,
+      "exit_reason": "time"
+    },
+    {
+      "day": "2026-06-27 00:00:00+00:00",
+      "entry_dt": "2026-06-27 14:00:00+00:00",
+      "entry": 60556.99,
+      "exit": 60287.26,
+      "stop_distance": 269.7299999999959,
+      "orb_high": 60556.99,
+      "orb_low": 60287.26,
+      "exit_reason": "stop"
+    },
+    {
+      "day": "2026-06-30 00:00:00+00:00",
+      "entry_dt": "2026-06-30 14:00:00+00:00",
+      "entry": 58703.5,
+      "exit": 58120.94,
+      "stop_distance": 582.5599999999977,
+      "orb_high": 58703.5,
+      "orb_low": 58120.94,
+      "exit_reason": "stop"
+    },
+    {
+      "day": "2026-07-01 00:00:00+00:00",
+      "entry_dt": "2026-07-01 14:00:00+00:00",
+      "entry": 59449.94,
+      "exit": 60112.25,
+      "stop_distance": 1005.5,
+      "orb_high": 59449.94,
+      "orb_low": 58444.44,
+      "exit_reason": "time"
+    },
+    {
+      "day": "2026-07-02 00:00:00+00:00",
+      "entry_dt": "2026-07-02 14:00:00+00:00",
+      "entry": 61998.0,
+      "exit": 61436.35,
+      "stop_distance": 561.6500000000015,
+      "orb_high": 61998.0,
+      "orb_low": 61436.35,
+      "exit_reason": "stop"
+    },
+    {
+      "day": "2026-07-04 00:00:00+00:00",
+      "entry_dt": "2026-07-04 15:00:00+00:00",
+      "entry": 62718.74,
+      "exit": 63198.719999999994,
+      "stop_distance": 239.98999999999796,
+      "orb_high": 62718.74,
+      "orb_low": 62478.75,
+      "exit_reason": "target"
+    },
+    {
+      "day": "2026-07-05 00:00:00+00:00",
+      "entry_dt": "2026-07-05 14:00:00+00:00",
+      "entry": 62765.87,
+      "exit": 62580.02,
+      "stop_distance": 185.85000000000582,
+      "orb_high": 62765.87,
+      "orb_low": 62580.02,
+      "exit_reason": "stop"
+    },
+    {
+      "day": "2026-07-06 00:00:00+00:00",
+      "entry_dt": "2026-07-06 14:00:00+00:00",
+      "entry": 61991.0,
+      "exit": 63473.0,
+      "stop_distance": 741.0,
+      "orb_high": 61991.0,
+      "orb_low": 61250.0,
+      "exit_reason": "target"
+    },
+    {
+      "day": "2026-07-07 00:00:00+00:00",
+      "entry_dt": "2026-07-07 14:00:00+00:00",
+      "entry": 63418.51,
+      "exit": 62914.14,
+      "stop_distance": 504.3700000000026,
+      "orb_high": 63418.51,
+      "orb_low": 62914.14,
+      "exit_reason": "stop"
+    },
+    {
+      "day": "2026-07-08 00:00:00+00:00",
+      "entry_dt": "2026-07-08 14:00:00+00:00",
+      "entry": 62035.58,
+      "exit": 61562.35,
+      "stop_distance": 473.2300000000032,
+      "orb_high": 62035.58,
+      "orb_low": 61562.35,
+      "exit_reason": "stop"
+    },
+    {
+      "day": "2026-07-09 00:00:00+00:00",
+      "entry_dt": "2026-07-09 15:00:00+00:00",
+      "entry": 63199.0,
+      "exit": 63911.25,
+      "stop_distance": 754.010000000002,
+      "orb_high": 63199.0,
+      "orb_low": 62444.99,
+      "exit_reason": "time"
+    },
+    {
+      "day": "2026-07-11 00:00:00+00:00",
+      "entry_dt": "2026-07-11 14:00:00+00:00",
+      "entry": 64219.99,
+      "exit": 64114.97,
+      "stop_distance": 105.0199999999968,
+      "orb_high": 64219.99,
+      "orb_low": 64114.97,
+      "exit_reason": "stop"
+    },
+    {
+      "day": "2026-07-12 00:00:00+00:00",
+      "entry_dt": "2026-07-12 14:00:00+00:00",
+      "entry": 64062.0,
+      "exit": 63950.0,
+      "stop_distance": 112.0,
+      "orb_high": 64062.0,
+      "orb_low": 63950.0,
+      "exit_reason": "stop"
+    },
+    {
+      "day": "2026-07-13 00:00:00+00:00",
+      "entry_dt": "2026-07-13 14:00:00+00:00",
+      "entry": 62700.0,
+      "exit": 62088.0,
+      "stop_distance": 612.0,
+      "orb_high": 62700.0,
+      "orb_low": 62088.0,
+      "exit_reason": "stop"
+    },
+    {
+      "day": "2026-07-14 00:00:00+00:00",
+      "entry_dt": "2026-07-14 14:00:00+00:00",
+      "entry": 64110.59,
+      "exit": 64625.94,
+      "stop_distance": 482.79999999999563,
+      "orb_high": 64110.59,
+      "orb_low": 63627.79,
+      "exit_reason": "time"
+    },
+    {
+      "day": "2026-07-15 00:00:00+00:00",
+      "entry_dt": "2026-07-15 15:00:00+00:00",
+      "entry": 65528.76,
+      "exit": 64819.17,
+      "stop_distance": 709.5900000000038,
+      "orb_high": 65528.76,
+      "orb_low": 64819.17,
+      "exit_reason": "stop"
+    },
+    {
+      "day": "2026-07-16 00:00:00+00:00",
+      "entry_dt": "2026-07-16 14:00:00+00:00",
+      "entry": 64429.99,
+      "exit": 63905.25,
+      "stop_distance": 524.739999999998,
+      "orb_high": 64429.99,
+      "orb_low": 63905.25,
+      "exit_reason": "stop"
+    },
+    {
+      "day": "2026-07-17 00:00:00+00:00",
+      "entry_dt": "2026-07-17 14:00:00+00:00",
+      "entry": 63120.06,
+      "exit": 63916.0,
+      "stop_distance": 667.5400000000009,
+      "orb_high": 63120.06,
+      "orb_low": 62452.52,
+      "exit_reason": "time"
+    },
+    {
+      "day": "2026-07-18 00:00:00+00:00",
+      "entry_dt": "2026-07-18 16:00:00+00:00",
+      "entry": 64167.99,
+      "exit": 64660.77,
+      "stop_distance": 246.38999999999942,
+      "orb_high": 64167.99,
+      "orb_low": 63921.6,
+      "exit_reason": "target"
+    },
+    {
+      "day": "2026-07-19 00:00:00+00:00",
+      "entry_dt": "2026-07-19 14:00:00+00:00",
+      "entry": 64470.5,
+      "exit": 64256.48,
+      "stop_distance": 214.0199999999968,
+      "orb_high": 64470.5,
+      "orb_low": 64256.48,
+      "exit_reason": "stop"
+    },
+    {
+      "day": "2026-07-21 00:00:00+00:00",
+      "entry_dt": "2026-07-21 14:00:00+00:00",
+      "entry": 66779.58,
+      "exit": 66275.3,
+      "stop_distance": 504.27999999999884,
+      "orb_high": 66779.58,
+      "orb_low": 66275.3,
+      "exit_reason": "stop"
+    },
+    {
+      "day": "2026-07-22 00:00:00+00:00",
+      "entry_dt": "2026-07-22 14:00:00+00:00",
+      "entry": 65940.48,
+      "exit": 65799.01,
+      "stop_distance": 431.4599999999991,
+      "orb_high": 65940.48,
+      "orb_low": 65509.02,
+      "exit_reason": "time"
+    },
+    {
+      "day": "2026-07-26 00:00:00+00:00",
+      "entry_dt": "2026-07-26 14:00:00+00:00",
+      "entry": 64513.7,
+      "exit": 64835.07999999999,
+      "stop_distance": 160.68999999999505,
+      "orb_high": 64513.7,
+      "orb_low": 64353.01,
+      "exit_reason": "target"
+    },
+    {
+      "day": "2026-07-28 00:00:00+00:00",
+      "entry_dt": "2026-07-28 15:00:00+00:00",
+      "entry": 63518.65,
+      "exit": 63891.66,
+      "stop_distance": 873.260000000002,
+      "orb_high": 63518.65,
+      "orb_low": 62645.39,
+      "exit_reason": "time"
+    },
+    {
+      "day": "2026-07-29 00:00:00+00:00",
+      "entry_dt": "2026-07-29 14:00:00+00:00",
+      "entry": 64597.29,
+      "exit": 64056.19,
+      "stop_distance": 541.0999999999985,
+      "orb_high": 64597.29,
+      "orb_low": 64056.19,
+      "exit_reason": "stop"
+    },
+    {
+      "day": "2026-08-01 00:00:00+00:00",
+      "entry_dt": "2026-08-01 14:00:00+00:00",
+      "entry": 63047.87,
+      "exit": 62977.13,
+      "stop_distance": 70.74000000000524,
+      "orb_high": 63047.87,
+      "orb_low": 62977.13,
+      "exit_reason": "stop"
+    },
+    {
+      "day": "2026-08-02 00:00:00+00:00",
+      "entry_dt": "2026-08-02 14:00:00+00:00",
+      "entry": 63082.44,
+      "exit": 63380.380000000005,
+      "stop_distance": 148.97000000000116,
+      "orb_high": 63082.44,
+      "orb_low": 62933.47,
+      "exit_reason": "target"
+    },
+    {
+      "day": "2026-08-03 00:00:00+00:00",
+      "entry_dt": "2026-08-03 14:00:00+00:00",
+      "entry": 63317.44,
+      "exit": 63782.29,
+      "stop_distance": 842.8000000000029,
+      "orb_high": 63317.44,
+      "orb_low": 62474.64,
+      "exit_reason": "time"
+    },
+    {
+      "day": "2026-08-04 00:00:00+00:00",
+      "entry_dt": "2026-08-04 14:00:00+00:00",
+      "entry": 64036.52,
+      "exit": 64289.38,
+      "stop_distance": 452.41999999999825,
+      "orb_high": 64036.52,
+      "orb_low": 63584.1,
+      "exit_reason": "time"
+    },
+    {
+      "day": "2026-08-05 00:00:00+00:00",
+      "entry_dt": "2026-08-05 14:00:00+00:00",
+      "entry": 64362.6,
+      "exit": 64520.62,
+      "stop_distance": 547.7999999999956,
+      "orb_high": 64362.6,
+      "orb_low": 63814.8,
+      "exit_reason": "time"
+    },
+    {
+      "day": "2026-08-06 00:00:00+00:00",
+      "entry_dt": "2026-08-06 14:00:00+00:00",
+      "entry": 64456.8,
+      "exit": 64364.26,
+      "stop_distance": 369.3899999999994,
+      "orb_high": 64456.8,
+      "orb_low": 64087.41,
+      "exit_reason": "time"
+    },
+    {
+      "day": "2026-08-08 00:00:00+00:00",
+      "entry_dt": "2026-08-08 14:00:00+00:00",
+      "entry": 64982.82,
+      "exit": 65043.82,
+      "stop_distance": 30.5,
+      "orb_high": 64982.82,
+      "orb_low": 64952.32,
+      "exit_reason": "target"
+    },
+    {
+      "day": "2026-08-09 00:00:00+00:00",
+      "entry_dt": "2026-08-09 14:00:00+00:00",
+      "entry": 65214.36,
+      "exit": 64906.58,
+      "stop_distance": 307.77999999999884,
+      "orb_high": 65214.36,
+      "orb_low": 64906.58,
+      "exit_reason": "stop"
+    },
+    {
+      "day": "2026-08-13 00:00:00+00:00",
+      "entry_dt": "2026-08-13 14:00:00+00:00",
+      "entry": 63784.17,
+      "exit": 63479.85,
+      "stop_distance": 304.3199999999997,
+      "orb_high": 63784.17,
+      "orb_low": 63479.85,
+      "exit_reason": "stop"
+    },
+    {
+      "day": "2026-08-16 00:00:00+00:00",
+      "entry_dt": "2026-08-16 14:00:00+00:00",
+      "entry": 63000.0,
+      "exit": 63105.740000000005,
+      "stop_distance": 52.87000000000262,
+      "orb_high": 63000.0,
+      "orb_low": 62947.13,
+      "exit_reason": "target"
+    },
+    {
+      "day": "2026-08-17 00:00:00+00:00",
+      "entry_dt": "2026-08-17 14:00:00+00:00",
+      "entry": 63734.03,
+      "exit": 64500.06999999999,
+      "stop_distance": 383.0199999999968,
+      "orb_high": 63734.03,
+      "orb_low": 63351.01,
+      "exit_reason": "target"
+    },
+    {
+      "day": "2026-08-18 00:00:00+00:00",
+      "entry_dt": "2026-08-18 14:00:00+00:00",
+      "entry": 64226.18,
+      "exit": 64716.54,
+      "stop_distance": 245.1800000000003,
+      "orb_high": 64226.18,
+      "orb_low": 63981.0,
+      "exit_reason": "target"
+    },
+    {
+      "day": "2026-08-19 00:00:00+00:00",
+      "entry_dt": "2026-08-19 14:00:00+00:00",
+      "entry": 65175.95,
+      "exit": 66058.04999999999,
+      "stop_distance": 441.04999999999563,
+      "orb_high": 65175.95,
+      "orb_low": 64734.9,
+      "exit_reason": "target"
+    },
+    {
+      "day": "2026-08-20 00:00:00+00:00",
+      "entry_dt": "2026-08-20 15:00:00+00:00",
+      "entry": 72054.53,
+      "exit": 74033.59,
+      "stop_distance": 989.5299999999988,
+      "orb_high": 72054.53,
+      "orb_low": 71065.0,
+      "exit_reason": "target"
+    },
+    {
+      "day": "2026-08-21 00:00:00+00:00",
+      "entry_dt": "2026-08-21 15:00:00+00:00",
+      "entry": 77698.8,
+      "exit": 78474.25,
+      "stop_distance": 1496.7400000000052,
+      "orb_high": 77698.8,
+      "orb_low": 76202.06,
+      "exit_reason": "time"
+    },
+    {
+      "day": "2026-08-24 00:00:00+00:00",
+      "entry_dt": "2026-08-24 14:00:00+00:00",
+      "entry": 79418.87,
+      "exit": 79821.9,
+      "stop_distance": 1590.5199999999895,
+      "orb_high": 79418.87,
+      "orb_low": 77828.35,
+      "exit_reason": "time"
+    },
+    {
+      "day": "2026-08-25 00:00:00+00:00",
+      "entry_dt": "2026-08-25 14:00:00+00:00",
+      "entry": 79219.71,
+      "exit": 78100.0,
+      "stop_distance": 1119.7100000000064,
+      "orb_high": 79219.71,
+      "orb_low": 78100.0,
+      "exit_reason": "stop"
+    },
+    {
+      "day": "2026-08-26 00:00:00+00:00",
+      "entry_dt": "2026-08-26 14:00:00+00:00",
+      "entry": 78554.61,
+      "exit": 77902.47,
+      "stop_distance": 652.1399999999994,
+      "orb_high": 78554.61,
+      "orb_low": 77902.47,
+      "exit_reason": "stop"
+    },
+    {
+      "day": "2026-08-27 00:00:00+00:00",
+      "entry_dt": "2026-08-27 14:00:00+00:00",
+      "entry": 79579.64,
+      "exit": 80916.93999999999,
+      "stop_distance": 668.6499999999942,
+      "orb_high": 79579.64,
+      "orb_low": 78910.99,
+      "exit_reason": "target"
+    },
+    {
+      "day": "2026-08-28 00:00:00+00:00",
+      "entry_dt": "2026-08-28 14:00:00+00:00",
+      "entry": 79565.48,
+      "exit": 79029.17,
+      "stop_distance": 536.3099999999977,
+      "orb_high": 79565.48,
+      "orb_low": 79029.17,
+      "exit_reason": "stop"
+    },
+    {
+      "day": "2026-08-29 00:00:00+00:00",
+      "entry_dt": "2026-08-29 14:00:00+00:00",
+      "entry": 77720.03,
+      "exit": 78045.43,
+      "stop_distance": 162.6999999999971,
+      "orb_high": 77720.03,
+      "orb_low": 77557.33,
+      "exit_reason": "target"
+    },
+    {
+      "day": "2026-08-30 00:00:00+00:00",
+      "entry_dt": "2026-08-30 16:00:00+00:00",
+      "entry": 78964.0,
+      "exit": 78582.45,
+      "stop_distance": 381.5500000000029,
+      "orb_high": 78964.0,
+      "orb_low": 78582.45,
+      "exit_reason": "stop"
+    },
+    {
+      "day": "2026-08-31 00:00:00+00:00",
+      "entry_dt": "2026-08-31 14:00:00+00:00",
+      "entry": 78262.8,
+      "exit": 78377.17,
+      "stop_distance": 572.7400000000052,
+      "orb_high": 78262.8,
+      "orb_low": 77690.06,
+      "exit_reason": "time"
+    },
+    {
+      "day": "2026-09-01 00:00:00+00:00",
+      "entry_dt": "2026-09-01 14:00:00+00:00",
+      "entry": 78181.43,
+      "exit": 77468.0,
+      "stop_distance": 713.429999999993,
+      "orb_high": 78181.43,
+      "orb_low": 77468.0,
+      "exit_reason": "stop"
+    },
+    {
+      "day": "2026-09-02 00:00:00+00:00",
+      "entry_dt": "2026-09-02 14:00:00+00:00",
+      "entry": 77404.76,
+      "exit": 77321.27,
+      "stop_distance": 844.7599999999948,
+      "orb_high": 77404.76,
+      "orb_low": 76560.0,
+      "exit_reason": "time"
+    },
+    {
+      "day": "2026-09-03 00:00:00+00:00",
+      "entry_dt": "2026-09-03 14:00:00+00:00",
+      "entry": 78982.03,
+      "exit": 80105.26999999999,
+      "stop_distance": 561.6199999999953,
+      "orb_high": 78982.03,
+      "orb_low": 78420.41,
+      "exit_reason": "target"
+    }
+  ],
+  "trades_total": 1009,
+  "ranks": null,
+  "md_excerpt": "# F04 ORB shadow — `session-orb-btc-shadow`\n\nGenerated: 2026-09-10 12:16 PT\nORB proxy on 1H data: range = 13:00 UTC bar; long break in 14–16 UTC.\nShort breaks counted as skip (CA spot long-only).\nn long shadow fills: **1009**\n\n## Fee stress (shadow)\n\n| Band (RT bps) | n | win% | E[R] | sum R | maxDD% | return% |\n| --- | --- | --- | --- | --- | --- | --- |\n| 8 | 1009 | 38.3 | -0.096 | -96.83 | 40.81 | -37.64 |\n| 50 | 1009 | 31.4 | -0.870 | -878.16 | 98.74 | -98.72 |\n| 100 | 1009 | 20.9 | -1.792 | -1808.31 | 99.99 | -99.99 |\n\n**Honesty:** Numbers are diagnostic. Do not declare edge. Promotion bar = net E[R]>0 @ **50 bps** with honest n + breakers + Meik RED.\n\n## vs F01\n\nSeparate `strategy_id`. May overlap session with F01 — do not merge fills.\nFee-fragile family: promote only if clears 50 bps with sparse false breaks.\n\n## Next owner action\n\n- **Tape:** compare chase/false-break tags vs F01 NO_TRADE days.\n- **Cost Critic:** harsh fee read mandatory before any paper-day clock.\n\n*Shadow only. No edge declaration.*\n",
+  "extras_keys": [],
+  "learnings": [
+    "Scoreboard: **shadow reject-lean** — n=1009 E[R]@50=**-0.870** (fails @8 too)",
+    "Scoreboard next: **Tape+Cost:** do not promote; compare false-breaks vs F01. DFG-13",
+    "**Tape:** compare chase/false-break tags vs F01 NO_TRADE days.",
+    "**Cost Critic:** harsh fee read mandatory before any paper-day clock."
+  ],
+  "artifacts": [
+    "/workspace/paper-desk/explore/out/f04_orb_shadow.json",
+    "/workspace/paper-desk/explore/out/f04_orb_shadow.md",
+    "/workspace/paper-desk/explore/out/f04_orb_trades.csv"
+  ],
+  "parse_gaps": [
+    "truncated:1009_to_80_most_recent"
+  ],
+  "disclaimer": "PAPER ONLY — simulated fills vs live Kraken prices / historical probes. Not real money. Not financial advice. Do not declare edge from first-run tables."
+}

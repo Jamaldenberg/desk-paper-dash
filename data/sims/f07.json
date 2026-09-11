@@ -1,0 +1,132 @@
+{
+  "id": "f07",
+  "title": "F07 maker overlay sketch (F01/F02)",
+  "family": "F07",
+  "strategy_id": "maker-overlay-f01f02-sketch",
+  "mode": "overlay sketch",
+  "live": false,
+  "updated_at": "2026-09-11T00:17:48.988Z",
+  "updated_at_pt": "2026-09-10 5:17 PM PT",
+  "scoreboard_headline": "**sketch done** — improve@80 E[R]=-0.139 < taker@50; adverse worse",
+  "preregister": "[[Desk/Research/Explore/preregister-2026-09-10-f07-maker-overlay|DPR-20260910-07]]",
+  "metrics": {
+    "generated_pt": "2026-09-10 12:17 PT",
+    "strategy_id": "maker-overlay-f01f02-sketch",
+    "n": 163,
+    "by_parent": {
+      "F02": 120,
+      "F01": 43
+    },
+    "taker_8_50_100": {
+      "8": {
+        "n": 163,
+        "n_win": 80,
+        "win_rate": 0.49079754601226994,
+        "expectancy_r": 0.1533231209049144,
+        "sum_r": 24.99166870750105,
+        "max_dd_pct": 7.673837138080993,
+        "final_equity": 122789.81442107222,
+        "return_pct": 22.78981442107222
+      },
+      "50": {
+        "n": 163,
+        "n_win": 80,
+        "win_rate": 0.49079754601226994,
+        "expectancy_r": -0.030012728669645414,
+        "sum_r": -4.892074773152203,
+        "max_dd_pct": 16.29689423154459,
+        "final_equity": 96411.29215042062,
+        "return_pct": -3.5887078495793867
+      },
+      "100": {
+        "n": 163,
+        "n_win": 77,
+        "win_rate": 0.4723926380368098,
+        "expectancy_r": -0.24826969244888325,
+        "sum_r": -40.46795986916797,
+        "max_dd_pct": 33.06035112525036,
+        "final_equity": 72224.40302667796,
+        "return_pct": -27.77559697332204
+      }
+    },
+    "maker_improve_80": {
+      "80": {
+        "n": 163,
+        "n_win": 79,
+        "win_rate": 0.48466257668711654,
+        "expectancy_r": -0.1389666049882435,
+        "sum_r": -22.65155661308369,
+        "max_dd_pct": 25.131794510845175,
+        "final_equity": 83468.67577851561,
+        "return_pct": -16.53132422148439
+      }
+    },
+    "maker_adverse_80": {
+      "80": {
+        "n": 163,
+        "n_win": 79,
+        "win_rate": 0.48466257668711654,
+        "expectancy_r": -0.2269678127840317,
+        "sum_r": -36.995753483797166,
+        "max_dd_pct": 31.558913522926034,
+        "final_equity": 74318.04423356743,
+        "return_pct": -25.681955766432573
+      }
+    },
+    "assumptions": {
+      "maker_rt_bps": 80.0,
+      "adverse_bps": 15.0,
+      "improve_bps": 5.0,
+      "disclaimer": "Sketch only — not live maker fill realism; no depth replay."
+    }
+  },
+  "fee_stress": {
+    "8": {
+      "n": 163,
+      "n_win": 80,
+      "win_rate": 0.49079754601226994,
+      "expectancy_r": 0.1533231209049144,
+      "sum_r": 24.99166870750105,
+      "max_dd_pct": 7.673837138080993,
+      "final_equity": 122789.81442107222,
+      "return_pct": 22.78981442107222
+    },
+    "50": {
+      "n": 163,
+      "n_win": 80,
+      "win_rate": 0.49079754601226994,
+      "expectancy_r": -0.030012728669645414,
+      "sum_r": -4.892074773152203,
+      "max_dd_pct": 16.29689423154459,
+      "final_equity": 96411.29215042062,
+      "return_pct": -3.5887078495793867
+    },
+    "100": {
+      "n": 163,
+      "n_win": 77,
+      "win_rate": 0.4723926380368098,
+      "expectancy_r": -0.24826969244888325,
+      "sum_r": -40.46795986916797,
+      "max_dd_pct": 33.06035112525036,
+      "final_equity": 72224.40302667796,
+      "return_pct": -27.77559697332204
+    }
+  },
+  "trades": [],
+  "trades_total": 0,
+  "ranks": null,
+  "md_excerpt": "# F07 maker overlay sketch — `maker-overlay-f01f02-sketch`\n\nGenerated: 2026-09-10 12:17 PT\nParent signals loaded: **163** ({'F02': 120, 'F01': 43})\n\nOverlay on F01/F02 directional bias. Not standalone alpha.\n\n## Parent taker path (baseline)\n\n| Band (RT bps) | n | win% | E[R] | sum R | maxDD% | return% |\n| --- | --- | --- | --- | --- | --- | --- |\n| 8 | 163 | 49.1 | 0.153 | 24.99 | 7.67 | 22.79 |\n| 50 | 163 | 49.1 | -0.030 | -4.89 | 16.30 | -3.59 |\n| 100 | 163 | 47.2 | -0.248 | -40.47 | 33.06 | -27.78 |\n\n**Honesty:** Numbers are diagnostic. Do not declare edge. Promotion bar = net E[R]>0 @ **50 bps** with honest n + breakers + Meik RED.\n\n## Maker improve sketch @ 80 bps RT\n\n| Band (RT bps) | n | win% | E[R] | sum R | maxDD% | return% |\n| --- | --- | --- | --- | --- | --- | --- |\n| 80 | 163 | 48.5 | -0.139 | -22.65 | 25.13 | -16.53 |\n\n**Honesty:** Numbers are diagnostic. Do not declare edge. Promotion bar = net E[R]>0 @ **50 bps** with honest n + breakers + Meik RED.\n\n## Maker + adverse-selection sketch @ 80 bps RT\n\n| Band (RT bps) | n | win% | E[R] | sum R | maxDD% | return% |\n| --- | --- | --- | --- | --- | --- | --- |\n| 80 | 163 | 48.5 | -0.227 | -37.00 | 31.56 | -25.68 |\n\n**Honesty:** Numbers are diagnostic. Do not declare edge. Promotion bar = net E[R]>0 @ **50 bps** with honest n + breakers + Meik RED.\n\nIf adverse model ≤ improve model savings, fee path is fragile. Do not claim maker fees without depth/fill realism.\n\n## Next owner action\n\n- **Tape:** when F01 intents fire, log hypothetical limit vs market.\n- **Scale/Cost Critic:** compare adverse vs improve before any fee-language upgrade.\n\n*Overlay sketch. No edge declaration.*\n",
+  "extras_keys": [],
+  "learnings": [
+    "Scoreboard: **sketch done** — improve@80 E[R]=-0.139 < taker@50; adverse worse",
+    "Scoreboard next: **Tape+Scale:** log limit vs market on intents; no maker fee claims. DFG-14",
+    "**Tape:** when F01 intents fire, log hypothetical limit vs market.",
+    "**Scale/Cost Critic:** compare adverse vs improve before any fee-language upgrade."
+  ],
+  "artifacts": [
+    "/workspace/paper-desk/explore/out/f07_maker_overlay.json",
+    "/workspace/paper-desk/explore/out/f07_maker_overlay.md"
+  ],
+  "parse_gaps": [],
+  "disclaimer": "PAPER ONLY — simulated fills vs live Kraken prices / historical probes. Not real money. Not financial advice. Do not declare edge from first-run tables."
+}

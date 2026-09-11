@@ -1,0 +1,166 @@
+{
+  "updated_at": "2026-09-11T00:17:48.988Z",
+  "updated_at_pt": "2026-09-10 5:17 PM PT",
+  "disclaimer": "PAPER ONLY — simulated fills vs live Kraken prices / historical probes. Not real money. Not financial advice. Do not declare edge from first-run tables.",
+  "scoreboard_path": "/workspace/ops-brain/Desk/Research/Explore/SCOREBOARD.md",
+  "explore_out": "/workspace/paper-desk/explore/out",
+  "workspace": "desk-explore-f01",
+  "simulations": [
+    {
+      "id": "cli-paper-see-what-happens-v0",
+      "title": "CLI paper — see what happens v0",
+      "family": "CLI",
+      "strategy_id": "cli-paper-see-what-happens-v0",
+      "mode": "paper",
+      "live": true,
+      "status_headline": "Active Kraken CLI paper workspace desk-explore-f01",
+      "summary": {
+        "equity": 993.96201004717,
+        "unrealized_pnl": -6.03798995283,
+        "unrealized_pnl_pct": -0.603798995283,
+        "total_trades": 10,
+        "open_orders": 1
+      },
+      "updated_at": "2026-09-11T00:17:48.988Z",
+      "updated_at_pt": "2026-09-10 5:17 PM PT",
+      "detail_path": "data/sims/cli-paper-see-what-happens-v0.json"
+    },
+    {
+      "id": "f01",
+      "title": "F01 fee stress — v3 BTC trend pullback",
+      "family": "F01",
+      "strategy_id": "v3-btc-trend-pullback-overlap",
+      "mode": "paper / fee stress",
+      "live": false,
+      "status_headline": "**probe done** — 5y n=88 E[R]@50=**-0.270** (8bps +0.162); short n=43 @50=-0.186",
+      "summary": {
+        "n": 88,
+        "expectancy_r_50": -0.26988798633448463,
+        "return_pct_50": -19.145916917109552
+      },
+      "updated_at": "2026-09-11T00:17:48.988Z",
+      "updated_at_pt": "2026-09-10 12:18 PT",
+      "detail_path": "data/sims/f01.json",
+      "parse_gaps": [
+        "no_trade_csv_in_explore_out:metrics_from_json_only"
+      ]
+    },
+    {
+      "id": "f02",
+      "title": "F02 MAX/TSMOM daily continuation BTC",
+      "family": "F02",
+      "strategy_id": "max-n-daily-continuation-btc",
+      "mode": "backtest IS/OOS",
+      "live": false,
+      "status_headline": "**breakers done** — N20 all@50=+0.101 OOS n=13 TOO SMALL; N10 @50 FAIL; regime one-slice fragile",
+      "summary": {
+        "n_n20_all": 50,
+        "expectancy_r_50_n20": 0.10122228607571372,
+        "oos_n": 13
+      },
+      "updated_at": "2026-09-11T00:17:48.988Z",
+      "updated_at_pt": "2026-09-10 12:16 PT",
+      "detail_path": "data/sims/f02.json",
+      "parse_gaps": [
+        "truncated:120_to_80_most_recent"
+      ]
+    },
+    {
+      "id": "f03",
+      "title": "F03 liquid TSMOM universe shadow",
+      "family": "F03",
+      "strategy_id": "liquid-tsmom-filter-v1-shadow",
+      "mode": "shadow / scan",
+      "live": false,
+      "status_headline": "**shadow live** — liquid n=91; fills blocked non-BTC/ETH",
+      "summary": {
+        "n_liquid": 89,
+        "ranks_cached": 2,
+        "fills": "blocked_non_btc_eth"
+      },
+      "updated_at": "2026-09-11T00:17:48.988Z",
+      "updated_at_pt": "2026-09-10 12:20 PT",
+      "detail_path": "data/sims/f03.json",
+      "parse_gaps": []
+    },
+    {
+      "id": "f04",
+      "title": "F04 session ORB BTC shadow",
+      "family": "F04",
+      "strategy_id": "session-orb-btc-shadow",
+      "mode": "shadow",
+      "live": false,
+      "status_headline": "**shadow reject-lean** — n=1009 E[R]@50=**-0.870** (fails @8 too)",
+      "summary": {
+        "n": 1009,
+        "expectancy_r_50": -0.870326062507783,
+        "return_pct_50": -98.72415714820345
+      },
+      "updated_at": "2026-09-11T00:17:48.988Z",
+      "updated_at_pt": "2026-09-10 12:16 PT",
+      "detail_path": "data/sims/f04.json",
+      "parse_gaps": [
+        "truncated:1009_to_80_most_recent"
+      ]
+    },
+    {
+      "id": "f05",
+      "title": "F05 gated ATR/Donchian diagnostic",
+      "family": "F05",
+      "strategy_id": "gated-atr-donchian-btc-diag",
+      "mode": "diagnostic",
+      "live": false,
+      "status_headline": "**gated-only confirm** — gated@50≈+0.14 diagnostic; ungated REJECT (DFG-11) holds",
+      "summary": {
+        "n_gated": 46,
+        "expectancy_r_50_gated": 0.14172367229075292,
+        "ungated": "REJECT control (DFG-11)"
+      },
+      "updated_at": "2026-09-11T00:17:48.988Z",
+      "updated_at_pt": "2026-09-10 12:16 PT",
+      "detail_path": "data/sims/f05.json",
+      "parse_gaps": []
+    },
+    {
+      "id": "f06",
+      "title": "F06 long-only RS top-K shadow",
+      "family": "F06",
+      "strategy_id": "long-only-rs-topk-shadow",
+      "mode": "shadow",
+      "live": false,
+      "status_headline": "**shadow blocked-thin** — BTC/ETH cache only; coincides F03 on 2-name panel",
+      "summary": {
+        "ranks_cached": 2,
+        "top_k": 1,
+        "fills": "blocked_thin_cache"
+      },
+      "updated_at": "2026-09-11T00:17:48.988Z",
+      "updated_at_pt": "2026-09-10 12:20 PT",
+      "detail_path": "data/sims/f06.json",
+      "parse_gaps": []
+    },
+    {
+      "id": "f07",
+      "title": "F07 maker overlay sketch (F01/F02)",
+      "family": "F07",
+      "strategy_id": "maker-overlay-f01f02-sketch",
+      "mode": "overlay sketch",
+      "live": false,
+      "status_headline": "**sketch done** — improve@80 E[R]=-0.139 < taker@50; adverse worse",
+      "summary": {
+        "n": 163,
+        "taker_er_50": -0.030012728669645414,
+        "maker_improve_er_80": -0.1389666049882435
+      },
+      "updated_at": "2026-09-11T00:17:48.988Z",
+      "updated_at_pt": "2026-09-10 12:17 PT",
+      "detail_path": "data/sims/f07.json",
+      "parse_gaps": []
+    }
+  ],
+  "parse_gaps": [
+    "F01:no_trade_csv_in_explore_out:metrics_from_json_only",
+    "F02:truncated:120_to_80_most_recent",
+    "F04:truncated:1009_to_80_most_recent"
+  ]
+}

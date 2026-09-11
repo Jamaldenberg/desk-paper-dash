@@ -1,0 +1,170 @@
+{
+  "updated_at": "2026-09-11T00:17:48.988Z",
+  "updated_at_pt": "2026-09-10 5:17 PM PT",
+  "mode": "paper",
+  "workspace": "desk-explore-f01",
+  "strategy_note": "cli-paper-see-what-happens-v0 · Meik: trade/learn/improve/journal",
+  "equity": 993.96201004717,
+  "starting_balance": 1000.0,
+  "currency": "USD",
+  "unrealized_pnl": -6.03798995283,
+  "unrealized_pnl_pct": -0.603798995283,
+  "total_trades": 10,
+  "open_orders": 1,
+  "fee_rate": 0.005,
+  "balances": {
+    "BTC": 0.00639602,
+    "ETH": 0.13,
+    "USD": 184.26573354917
+  },
+  "marks": {
+    "BTCUSD": 76805.5,
+    "ETHUSD": 2449.67
+  },
+  "trades": [
+    {
+      "cost": 61.20025,
+      "fee": 0.30600125,
+      "id": "PAPER-00022",
+      "order_id": "PAPER-00021",
+      "pair": "ETHUSD",
+      "price": 2448.01,
+      "side": "buy",
+      "status": "filled",
+      "time": "2026-09-11T00:16:50.327279373Z",
+      "volume": 0.025
+    },
+    {
+      "cost": 79.471332966,
+      "fee": 0.39735666483,
+      "id": "PAPER-00020",
+      "order_id": "PAPER-00019",
+      "pair": "BTCUSD",
+      "price": 76708.3,
+      "side": "buy",
+      "status": "filled",
+      "time": "2026-09-11T00:07:42.450786436Z",
+      "volume": 0.00103602
+    },
+    {
+      "cost": 102.532244,
+      "fee": 0.51266122,
+      "id": "PAPER-00018",
+      "order_id": "PAPER-00017",
+      "pair": "BTCUSD",
+      "price": 76516.6,
+      "side": "sell",
+      "status": "filled",
+      "time": "2026-09-10T23:59:41.297594015Z",
+      "volume": 0.00134
+    },
+    {
+      "cost": 76.6801,
+      "fee": 0.3834005,
+      "id": "PAPER-00016",
+      "order_id": "PAPER-00015",
+      "pair": "BTCUSD",
+      "price": 76680.1,
+      "side": "buy",
+      "status": "filled",
+      "time": "2026-09-10T23:53:32.114658834Z",
+      "volume": 0.001
+    },
+    {
+      "cost": 115.0524,
+      "fee": 0.575262,
+      "id": "PAPER-00012",
+      "order_id": "PAPER-00011",
+      "pair": "BTCUSD",
+      "price": 76701.6,
+      "side": "buy",
+      "status": "filled",
+      "time": "2026-09-10T23:51:06.182575057Z",
+      "volume": 0.0015
+    },
+    {
+      "cost": 73.1706,
+      "fee": 0.365853,
+      "id": "PAPER-00010",
+      "order_id": "PAPER-00009",
+      "pair": "ETHUSD",
+      "price": 2439.02,
+      "side": "buy",
+      "status": "filled",
+      "time": "2026-09-10T23:51:04.985518070Z",
+      "volume": 0.03
+    },
+    {
+      "cost": 92.04192,
+      "fee": 0.4602096,
+      "id": "PAPER-00008",
+      "order_id": "PAPER-00007",
+      "pair": "BTCUSD",
+      "price": 76701.6,
+      "side": "buy",
+      "status": "filled",
+      "time": "2026-09-10T23:51:04.890630625Z",
+      "volume": 0.0012
+    },
+    {
+      "cost": 182.92575,
+      "fee": 0.91462875,
+      "id": "PAPER-00006",
+      "order_id": "PAPER-00005",
+      "pair": "ETHUSD",
+      "price": 2439.01,
+      "side": "sell",
+      "status": "filled",
+      "time": "2026-09-10T23:51:04.614083373Z",
+      "volume": 0.075
+    },
+    {
+      "cost": 366.366,
+      "fee": 1.83183,
+      "id": "PAPER-00004",
+      "order_id": "PAPER-00003",
+      "pair": "ETHUSD",
+      "price": 2442.44,
+      "side": "buy",
+      "status": "filled",
+      "time": "2026-09-10T23:43:25.338346161Z",
+      "volume": 0.15
+    },
+    {
+      "cost": 230.3109,
+      "fee": 1.1515545,
+      "id": "PAPER-00002",
+      "order_id": "PAPER-00001",
+      "pair": "BTCUSD",
+      "price": 76770.3,
+      "side": "buy",
+      "status": "filled",
+      "time": "2026-09-10T23:43:25.242982445Z",
+      "volume": 0.003
+    }
+  ],
+  "open_orders_detail": {
+    "count": 1,
+    "mode": "paper",
+    "open_orders": [
+      {
+        "created_at": "2026-09-11T00:16:50.349696696Z",
+        "id": "PAPER-00023",
+        "pair": "BTCUSD",
+        "price": 77470.0,
+        "reserved_amount": 0.001,
+        "reserved_asset": "BTC",
+        "side": "sell",
+        "type": "limit",
+        "volume": 0.001
+      }
+    ]
+  },
+  "learnings": [
+    "Paper phase: money N/A — actively trade, log fails, improve.",
+    "Workspace fee 50 bps RT equiv rate field=0.005. No live keys.",
+    "Frozen v3 sealed; this lane uses explore strategy_ids.",
+    "Historical F01–F07 remain separate probes — do not declare edge from CLI smoke fills."
+  ],
+  "disclaimer": "PAPER ONLY — simulated fills vs live Kraken prices / historical probes. Not real money. Not financial advice. Do not declare edge from first-run tables."
+}

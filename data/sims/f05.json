@@ -1,0 +1,518 @@
+{
+  "id": "f05",
+  "title": "F05 gated ATR/Donchian diagnostic",
+  "family": "F05",
+  "strategy_id": "gated-atr-donchian-btc-diag",
+  "mode": "diagnostic",
+  "live": false,
+  "updated_at": "2026-09-11T00:17:48.988Z",
+  "updated_at_pt": "2026-09-10 5:17 PM PT",
+  "scoreboard_headline": "**gated-only confirm** — gated@50≈+0.14 diagnostic; ungated REJECT (DFG-11) holds",
+  "preregister": "[[Desk/Research/Explore/preregister-2026-09-10-f05-gated-atr-donchian|DPR-20260910-05]]",
+  "metrics": {
+    "generated_pt": "2026-09-10 12:16 PT",
+    "strategy_id": "gated-atr-donchian-btc-diag",
+    "n_gated": 46,
+    "n_ungated": 48,
+    "stress_gated": {
+      "8": {
+        "n": 46,
+        "n_win": 25,
+        "win_rate": 0.5434782608695652,
+        "expectancy_r": 0.20705681680849364,
+        "sum_r": 9.524613573190708,
+        "max_dd_pct": 3.1656108357608175,
+        "final_equity": 109678.71097926087,
+        "return_pct": 9.678710979260874
+      },
+      "50": {
+        "n": 46,
+        "n_win": 25,
+        "win_rate": 0.5434782608695652,
+        "expectancy_r": 0.14172367229075292,
+        "sum_r": 6.519288925374634,
+        "max_dd_pct": 3.3871485366638665,
+        "final_equity": 106440.0260295295,
+        "return_pct": 6.440026029529511
+      },
+      "100": {
+        "n": 46,
+        "n_win": 25,
+        "win_rate": 0.5434782608695652,
+        "expectancy_r": 0.0639461192934425,
+        "sum_r": 2.941521487498355,
+        "max_dd_pct": 3.6503569507140927,
+        "final_equity": 102706.12380113272,
+        "return_pct": 2.7061238011327315
+      }
+    },
+    "stress_ungated": {
+      "8": {
+        "n": 48,
+        "n_win": 25,
+        "win_rate": 0.5208333333333334,
+        "expectancy_r": 0.17301252939559877,
+        "sum_r": 8.304601410988742,
+        "max_dd_pct": 3.7752589453595573,
+        "final_equity": 108342.90686310573,
+        "return_pct": 8.342906863105725
+      },
+      "50": {
+        "n": 48,
+        "n_win": 25,
+        "win_rate": 0.5208333333333334,
+        "expectancy_r": 0.10798273274967046,
+        "sum_r": 5.183171171984182,
+        "max_dd_pct": 4.131127569000179,
+        "final_equity": 105020.72937484692,
+        "return_pct": 5.020729374846922
+      },
+      "100": {
+        "n": 48,
+        "n_win": 25,
+        "win_rate": 0.5208333333333334,
+        "expectancy_r": 0.030566308171184386,
+        "sum_r": 1.4671827922168506,
+        "max_dd_pct": 4.553322774804721,
+        "final_equity": 101195.47909194292,
+        "return_pct": 1.1954790919429303
+      }
+    },
+    "ungated_reject_flag": false,
+    "dfg_link": "DFG-20260910-11",
+    "primary_at_50bps": {
+      "primary_band_bps": 50,
+      "n": 46,
+      "win_rate": 0.5434782608695652,
+      "expectancy_r": 0.14172367229075292,
+      "sum_r": 6.519288925374634,
+      "max_dd_pct": 3.3871485366638665,
+      "return_pct": 6.440026029529511
+    },
+    "setup_reject_flag_file": "UNGATED_NOT_CONFIRMED_THIS_RUN"
+  },
+  "fee_stress": {
+    "8": {
+      "n": 46,
+      "n_win": 25,
+      "win_rate": 0.5434782608695652,
+      "expectancy_r": 0.20705681680849364,
+      "sum_r": 9.524613573190708,
+      "max_dd_pct": 3.1656108357608175,
+      "final_equity": 109678.71097926087,
+      "return_pct": 9.678710979260874
+    },
+    "50": {
+      "n": 46,
+      "n_win": 25,
+      "win_rate": 0.5434782608695652,
+      "expectancy_r": 0.14172367229075292,
+      "sum_r": 6.519288925374634,
+      "max_dd_pct": 3.3871485366638665,
+      "final_equity": 106440.0260295295,
+      "return_pct": 6.440026029529511
+    },
+    "100": {
+      "n": 46,
+      "n_win": 25,
+      "win_rate": 0.5434782608695652,
+      "expectancy_r": 0.0639461192934425,
+      "sum_r": 2.941521487498355,
+      "max_dd_pct": 3.6503569507140927,
+      "final_equity": 102706.12380113272,
+      "return_pct": 2.7061238011327315
+    }
+  },
+  "trades": [
+    {
+      "gated": "True",
+      "entry_dt": "2021-11-09 00:00:00+00:00",
+      "entry": 67554.13,
+      "exit": 61763.01208714806,
+      "stop_distance": 5791.117912851943,
+      "exit_reason": "stop"
+    },
+    {
+      "gated": "True",
+      "entry_dt": "2022-02-08 00:00:00+00:00",
+      "entry": 43868.08,
+      "exit": 40536.73,
+      "stop_distance": 4363.620867245903,
+      "exit_reason": "time"
+    },
+    {
+      "gated": "True",
+      "entry_dt": "2022-03-25 00:00:00+00:00",
+      "entry": 44012.36,
+      "exit": 46422.16,
+      "stop_distance": 3949.6096198756713,
+      "exit_reason": "time"
+    },
+    {
+      "gated": "True",
+      "entry_dt": "2022-07-20 00:00:00+00:00",
+      "entry": 23398.46,
+      "exit": 20732.351016255303,
+      "stop_distance": 2666.108983744696,
+      "exit_reason": "stop"
+    },
+    {
+      "gated": "True",
+      "entry_dt": "2022-09-13 00:00:00+00:00",
+      "entry": 22402.58,
+      "exit": 20615.446117805714,
+      "stop_distance": 1787.1338821942882,
+      "exit_reason": "stop"
+    },
+    {
+      "gated": "True",
+      "entry_dt": "2022-10-27 00:00:00+00:00",
+      "entry": 20773.59,
+      "exit": 21300.45,
+      "stop_distance": 1313.1971742026362,
+      "exit_reason": "time"
+    },
+    {
+      "gated": "True",
+      "entry_dt": "2023-01-09 00:00:00+00:00",
+      "entry": 17125.17,
+      "exit": 18300.292773808826,
+      "stop_distance": 587.5613869044137,
+      "exit_reason": "target"
+    },
+    {
+      "gated": "True",
+      "entry_dt": "2023-01-14 00:00:00+00:00",
+      "entry": 19934.07,
+      "exit": 21744.258630287608,
+      "stop_distance": 905.0943151438041,
+      "exit_reason": "target"
+    },
+    {
+      "gated": "True",
+      "entry_dt": "2023-01-22 00:00:00+00:00",
+      "entry": 22789.34,
+      "exit": 23128.86,
+      "stop_distance": 1429.5659868914481,
+      "exit_reason": "time"
+    },
+    {
+      "gated": "True",
+      "entry_dt": "2023-02-16 00:00:00+00:00",
+      "entry": 24326.95,
+      "exit": 22710.074261311453,
+      "stop_distance": 1616.8757386885482,
+      "exit_reason": "stop"
+    },
+    {
+      "gated": "True",
+      "entry_dt": "2023-03-15 00:00:00+00:00",
+      "entry": 24761.61,
+      "exit": 27489.24,
+      "stop_distance": 2356.410303349141,
+      "exit_reason": "time"
+    },
+    {
+      "gated": "True",
+      "entry_dt": "2023-04-11 00:00:00+00:00",
+      "entry": 29657.7,
+      "exit": 28248.18,
+      "stop_distance": 2067.2943009491137,
+      "exit_reason": "time"
+    },
+    {
+      "gated": "True",
+      "entry_dt": "2023-06-21 00:00:00+00:00",
+      "entry": 28320.41,
+      "exit": 30466.72,
+      "stop_distance": 1866.414455788563,
+      "exit_reason": "time"
+    },
+    {
+      "gated": "True",
+      "entry_dt": "2023-10-02 00:00:00+00:00",
+      "entry": 27995.46,
+      "exit": 26717.560910443543,
+      "stop_distance": 1277.8990895564566,
+      "exit_reason": "stop"
+    },
+    {
+      "gated": "True",
+      "entry_dt": "2023-10-24 00:00:00+00:00",
+      "entry": 33079.72,
+      "exit": 34950.0,
+      "stop_distance": 2231.877926629306,
+      "exit_reason": "time"
+    },
+    {
+      "gated": "True",
+      "entry_dt": "2023-11-10 00:00:00+00:00",
+      "entry": 36704.01,
+      "exit": 37391.19,
+      "stop_distance": 2329.0999167387854,
+      "exit_reason": "time"
+    },
+    {
+      "gated": "True",
+      "entry_dt": "2023-12-02 00:00:00+00:00",
+      "entry": 38706.55,
+      "exit": 43349.716264247705,
+      "stop_distance": 2321.583132123851,
+      "exit_reason": "target"
+    },
+    {
+      "gated": "True",
+      "entry_dt": "2024-01-03 00:00:00+00:00",
+      "entry": 44972.81,
+      "exit": 41970.603255951304,
+      "stop_distance": 3002.2067440486935,
+      "exit_reason": "stop"
+    },
+    {
+      "gated": "True",
+      "entry_dt": "2024-01-09 00:00:00+00:00",
+      "entry": 46995.09,
+      "exit": 43323.28175999757,
+      "stop_distance": 3671.8082400024286,
+      "exit_reason": "stop"
+    },
+    {
+      "gated": "True",
+      "entry_dt": "2024-02-08 00:00:00+00:00",
+      "entry": 44345.94,
+      "exit": 49995.785068644924,
+      "stop_distance": 2824.9225343224607,
+      "exit_reason": "target"
+    },
+    {
+      "gated": "True",
+      "entry_dt": "2024-02-15 00:00:00+00:00",
+      "entry": 51858.51,
+      "exit": 51570.65,
+      "stop_distance": 3360.8225667957668,
+      "exit_reason": "time"
+    },
+    {
+      "gated": "True",
+      "entry_dt": "2024-02-27 00:00:00+00:00",
+      "entry": 54530.32,
+      "exit": 61046.946002124496,
+      "stop_distance": 3258.313001062248,
+      "exit_reason": "target"
+    },
+    {
+      "gated": "True",
+      "entry_dt": "2024-03-05 00:00:00+00:00",
+      "entry": 68356.7,
+      "exit": 63507.77408876935,
+      "stop_distance": 4848.925911230646,
+      "exit_reason": "stop"
+    },
+    {
+      "gated": "True",
+      "entry_dt": "2024-03-12 00:00:00+00:00",
+      "entry": 72110.98,
+      "exit": 65946.97933988157,
+      "stop_distance": 6164.000660118429,
+      "exit_reason": "stop"
+    },
+    {
+      "gated": "True",
+      "entry_dt": "2024-05-16 00:00:00+00:00",
+      "entry": 66244.68,
+      "exit": 69289.67,
+      "stop_distance": 5711.671972806449,
+      "exit_reason": "time"
+    },
+    {
+      "gated": "True",
+      "entry_dt": "2024-07-16 00:00:00+00:00",
+      "entry": 64757.16,
+      "exit": 65795.42,
+      "stop_distance": 4978.509711713894,
+      "exit_reason": "time"
+    },
+    {
+      "gated": "True",
+      "entry_dt": "2024-08-24 00:00:00+00:00",
+      "entry": 64091.63,
+      "exit": 58144.94493695416,
+      "stop_distance": 5946.685063045836,
+      "exit_reason": "stop"
+    },
+    {
+      "gated": "True",
+      "entry_dt": "2024-09-19 00:00:00+00:00",
+      "entry": 61770.38,
+      "exit": 65858.99,
+      "stop_distance": 4833.5869206728385,
+      "exit_reason": "time"
+    },
+    {
+      "gated": "True",
+      "entry_dt": "2024-10-16 00:00:00+00:00",
+      "entry": 67056.62,
+      "exit": 66564.51,
+      "stop_distance": 4413.119118009643,
+      "exit_reason": "time"
+    },
+    {
+      "gated": "True",
+      "entry_dt": "2024-10-29 00:00:00+00:00",
+      "entry": 69924.49,
+      "exit": 75920.0,
+      "stop_distance": 4033.807711104615,
+      "exit_reason": "time"
+    },
+    {
+      "gated": "True",
+      "entry_dt": "2024-11-11 00:00:00+00:00",
+      "entry": 80427.69,
+      "exit": 90854.83073186374,
+      "stop_distance": 5213.570365931868,
+      "exit_reason": "target"
+    },
+    {
+      "gated": "True",
+      "entry_dt": "2024-11-21 00:00:00+00:00",
+      "entry": 94384.15,
+      "exit": 96465.42,
+      "stop_distance": 7022.950292960551,
+      "exit_reason": "time"
+    },
+    {
+      "gated": "True",
+      "entry_dt": "2024-12-16 00:00:00+00:00",
+      "entry": 104445.15,
+      "exit": 96543.90737957873,
+      "stop_distance": 7901.242620421268,
+      "exit_reason": "stop"
+    },
+    {
+      "gated": "True",
+      "entry_dt": "2025-01-18 00:00:00+00:00",
+      "entry": 104107.0,
+      "exit": 102062.42,
+      "stop_distance": 7767.131843415438,
+      "exit_reason": "time"
+    },
+    {
+      "gated": "True",
+      "entry_dt": "2025-04-23 00:00:00+00:00",
+      "entry": 93486.57,
+      "exit": 96929.81,
+      "stop_distance": 6913.2501576011855,
+      "exit_reason": "time"
+    },
+    {
+      "gated": "True",
+      "entry_dt": "2025-05-09 00:00:00+00:00",
+      "entry": 103252.2,
+      "exit": 106473.46,
+      "stop_distance": 5940.94919411029,
+      "exit_reason": "time"
+    },
+    {
+      "gated": "True",
+      "entry_dt": "2025-05-22 00:00:00+00:00",
+      "entry": 109697.19,
+      "exit": 103623.46661356966,
+      "stop_distance": 6073.723386430342,
+      "exit_reason": "stop"
+    },
+    {
+      "gated": "True",
+      "entry_dt": "2025-07-10 00:00:00+00:00",
+      "entry": 111282.84,
+      "exit": 121420.06789377387,
+      "stop_distance": 5068.613946886937,
+      "exit_reason": "target"
+    },
+    {
+      "gated": "True",
+      "entry_dt": "2025-08-14 00:00:00+00:00",
+      "entry": 123365.63,
+      "exit": 117671.95079503022,
+      "stop_distance": 5693.679204969783,
+      "exit_reason": "stop"
+    },
+    {
+      "gated": "True",
+      "entry_dt": "2025-10-02 00:00:00+00:00",
+      "entry": 118662.72,
+      "exit": 113537.87995247747,
+      "stop_distance": 5124.840047522535,
+      "exit_reason": "stop"
+    },
+    {
+      "gated": "True",
+      "entry_dt": "2026-01-05 00:00:00+00:00",
+      "entry": 91489.03,
+      "exit": 96955.16,
+      "stop_distance": 4933.554307301951,
+      "exit_reason": "time"
+    },
+    {
+      "gated": "True",
+      "entry_dt": "2026-03-17 00:00:00+00:00",
+      "entry": 74886.46,
+      "exit": 68843.05108766461,
+      "stop_distance": 6043.4089123353915,
+      "exit_reason": "stop"
+    },
+    {
+      "gated": "True",
+      "entry_dt": "2026-04-14 00:00:00+00:00",
+      "entry": 74448.0,
+      "exit": 78281.32,
+      "stop_distance": 5224.5938575544715,
+      "exit_reason": "time"
+    },
+    {
+      "gated": "True",
+      "entry_dt": "2026-05-05 00:00:00+00:00",
+      "entry": 79852.37,
+      "exit": 81079.39,
+      "stop_distance": 4379.668338592033,
+      "exit_reason": "time"
+    },
+    {
+      "gated": "True",
+      "entry_dt": "2026-07-15 00:00:00+00:00",
+      "entry": 64988.65,
+      "exit": 64083.32,
+      "stop_distance": 4134.676886437388,
+      "exit_reason": "time"
+    },
+    {
+      "gated": "True",
+      "entry_dt": "2026-08-20 00:00:00+00:00",
+      "entry": 69300.01,
+      "exit": 75681.3132690256,
+      "stop_distance": 3190.651634512804,
+      "exit_reason": "target"
+    }
+  ],
+  "trades_total": 46,
+  "ranks": null,
+  "md_excerpt": "# F05 gated ATR/Donchian — `gated-atr-donchian-btc-diag`\n\nGenerated: 2026-09-10 12:16 PT\nGated: Donchian20 break + daily close > SMA50. Ungated: Donchian only (REJECT control).\n\n### Gated n=46\n\n## Gated fee stress\n\n| Band (RT bps) | n | win% | E[R] | sum R | maxDD% | return% |\n| --- | --- | --- | --- | --- | --- | --- |\n| 8 | 46 | 54.3 | 0.207 | 9.52 | 3.17 | 9.68 |\n| 50 | 46 | 54.3 | 0.142 | 6.52 | 3.39 | 6.44 |\n| 100 | 46 | 54.3 | 0.064 | 2.94 | 3.65 | 2.71 |\n\n**Honesty:** Numbers are diagnostic. Do not declare edge. Promotion bar = net E[R]>0 @ **50 bps** with honest n + breakers + Meik RED.\n\n### Ungated control n=48\n\n## Ungated fee stress (REJECT control)\n\n| Band (RT bps) | n | win% | E[R] | sum R | maxDD% | return% |\n| --- | --- | --- | --- | --- | --- | --- |\n| 8 | 48 | 52.1 | 0.173 | 8.30 | 3.78 | 8.34 |\n| 50 | 48 | 52.1 | 0.108 | 5.18 | 4.13 | 5.02 |\n| 100 | 48 | 52.1 | 0.031 | 1.47 | 4.55 | 1.20 |\n\n**Honesty:** Numbers are diagnostic. Do not declare edge. Promotion bar = net E[R]>0 @ **50 bps** with honest n + breakers + Meik RED.\n\n**Ungated reject flag:** `False` (see DFG-20260910-11). Do not import ungated into v3.\n\n## Next owner action\n\n- **Quant:** keep gated as diagnostic only; Archive confirms ungated stay rejected.\n- **Commander:** no paper-day clock until Cost Critic clears fee story @ 50 bps.\n\n*Diagnostic. No edge declaration.*\n",
+  "extras_keys": [
+    "f05_quant_note.md"
+  ],
+  "learnings": [
+    "Scoreboard: **gated-only confirm** — gated@50≈+0.14 diagnostic; ungated REJECT (DFG-11) holds",
+    "Scoreboard next: **Quant:** gated diagnostic only. **Archive:** ungated REJECT. **Commander:** no v3 hitchhike",
+    "**Quant:** keep gated as diagnostic only; Archive confirms ungated stay rejected.",
+    "**Commander:** no paper-day clock until Cost Critic clears fee story @ 50 bps."
+  ],
+  "artifacts": [
+    "/workspace/paper-desk/explore/out/f05_gated_atr.json",
+    "/workspace/paper-desk/explore/out/f05_gated_atr.md",
+    "/workspace/paper-desk/explore/out/f05_quant_note.md",
+    "/workspace/paper-desk/explore/out/f05_gated_trades.csv",
+    "/workspace/paper-desk/explore/out/f05_setup_reject_flag.txt"
+  ],
+  "parse_gaps": [],
+  "disclaimer": "PAPER ONLY — simulated fills vs live Kraken prices / historical probes. Not real money. Not financial advice. Do not declare edge from first-run tables.",
+  "quant_note_excerpt": "# F05 Quant note — gated-only confirm\n\n**Date:** 2026-09-10 12:21 PT  \n**Artifact:** `explore/out/f05_gated_atr.md`  \n**strategy_id:** `gated-atr-donchian-btc-diag`\n\n## Confirm\n\n- **Gated** Donchian20 + daily close > SMA50: n=46 · E[R]@50 ≈ **+0.14** (+0.142) — **diagnostic only**\n- **Ungated** Donchian-only control: remains **REJECT** under **DFG-20260910-11** — still holds (do not import ungated into paper path)\n- **No v3 hitchhike:** do not merge gated fills or rules into frozen `v3-btc-trend-pullback-overlap`\n\n## Status language\n\ngated-only · diagnostic · ungated REJECT · do not promote · paper only\n\n*No edge declaration.*\n"
+}

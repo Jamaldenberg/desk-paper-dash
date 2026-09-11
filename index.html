@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b1220" />
+  <title>Desk Paper Dashboard</title>
+  <style>
+    :root {
+      --bg: #0b1220;
+      --bg2: #121a2b;
+      --card: #162033;
+      --card-hover: #1c2940;
+      --border: #2a3a55;
+      --text: #e8eef8;
+      --muted: #9aa8c0;
+      --accent: #5b9fd4;
+      --paper: #e8a317;
+      --pos: #3ecf8e;
+      --neg: #f07178;
+      --warn: #e8a317;
+      --radius: 14px;
+      --shadow: 0 8px 24px rgba(0,0,0,.35);
+      --safe-b: env(safe-area-inset-bottom, 0px);
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0; padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.45;
+      min-height: 100%;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    .banner {
+      position: sticky; top: 0; z-index: 50;
+      background: linear-gradient(90deg, #5a3a00, #8a5a00);
+      color: #fff8e6;
+      text-align: center;
+      font-weight: 700;
+      letter-spacing: .04em;
+      font-size: .85rem;
+      padding: .55rem .75rem;
+      border-bottom: 1px solid #c4891a;
+    }
+    header.app {
+      padding: 1rem 1rem .5rem;
+      max-width: 920px;
+      margin: 0 auto;
+    }
+    header.app h1 {
+      margin: 0;
+      font-size: 1.35rem;
+      font-weight: 750;
+    }
+    header.app .sub {
+      color: var(--muted);
+      font-size: .85rem;
+      margin-top: .25rem;
+    }
+    .meta-bar {
+      display: flex; flex-wrap: wrap; gap: .5rem .75rem;
+      align-items: center;
+      margin-top: .75rem;
+      font-size: .8rem;
+      color: var(--muted);
+    }
+    .pill {
+      display: inline-flex; align-items: center; gap: .35rem;
+      border: 1px solid var(--border);
+      background: var(--bg2);
+      border-radius: 999px;
+      padding: .2rem .65rem;
+      font-size: .75rem;
+    }
+    .pill.live { border-color: #2f6b4f; color: var(--pos); }
+    .pill.mode { text-transform: lowercase; }
+    main {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 0 1rem calc(2rem + var(--safe-b));
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: .85rem;
+      margin-top: 1rem;
+    }
+    @media (min-width: 640px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+      .grid .span2 { grid-column: 1 / -1; }
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      transition: background .15s, transform .12s, border-color .15s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .card:hover, .card:focus-visible {
+      background: var(--card-hover);
+      border-color: var(--accent);
+      outline: none;
+    }
+    .card:active { transform: scale(.99); }
+    .card h2 {
+      margin: 0 0 .35rem;
+      font-size: 1.05rem;
+    }
+    .card .headline {
+      color: var(--muted);
+      font-size: .82rem;
+      margin: .35rem 0 .6rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .stats {
+      display: flex; flex-wrap: wrap; gap: .5rem;
+      margin-top: .4rem;
+    }
+    .stat {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: .4rem .55rem;
+      min-width: 5.2rem;
+    }
+    .stat .k { display:block; color: var(--muted); font-size: .68rem; text-transform: uppercase; letter-spacing: .03em; }
+    .stat .v { display:block; font-weight: 650; font-variant-numeric: tabular-nums; font-size: .92rem; }
+    .pos { color: var(--pos); }
+    .neg { color: var(--neg); }
+    .back {
+      display: inline-flex; align-items: center; gap: .4rem;
+      border: 1px solid var(--border);
+      background: var(--bg2);
+      color: var(--text);
+      border-radius: 999px;
+      padding: .45rem .9rem;
+      font-size: .9rem;
+      font-weight: 600;
+      cursor: pointer;
+      margin: .5rem 0 1rem;
+    }
+    .back:hover { border-color: var(--accent); }
+    .detail-section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+      margin-bottom: .85rem;
+      box-shadow: var(--shadow);
+    }
+    .detail-section h3 {
+      margin: 0 0 .65rem;
+      font-size: .95rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .8rem;
+      font-variant-numeric: tabular-nums;
+    }
+    th, td {
+      text-align: left;
+      padding: .45rem .35rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    th { color: var(--muted); font-weight: 600; font-size: .72rem; text-transform: uppercase; }
+    .scroll-x { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    ul.learn { margin: 0; padding-left: 1.1rem; color: var(--text); }
+    ul.learn li { margin-bottom: .35rem; font-size: .88rem; }
+    .err {
+      background: #3a1a1f;
+      border: 1px solid #7a3038;
+      color: #ffc9cd;
+      padding: .85rem 1rem;
+      border-radius: var(--radius);
+      margin-top: 1rem;
+    }
+    .empty { color: var(--muted); font-size: .9rem; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .78rem; }
+    pre.raw {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: .75rem;
+      overflow: auto;
+      max-height: 280px;
+      font-size: .72rem;
+      color: var(--muted);
+    }
+    footer {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 0 1rem 2rem;
+      color: var(--muted);
+      font-size: .75rem;
+    }
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+  <div class="banner">PAPER ONLY — simulated / probe results · not real money · not financial advice</div>
+  <header class="app">
+    <h1 id="page-title">Desk Paper Sims</h1>
+    <div class="sub" id="page-sub">Review each paper/shadow simulation and its results</div>
+    <div class="meta-bar">
+      <span class="pill" id="updated-pill">Updated —</span>
+      <span class="pill" id="refresh-pill">Auto-refresh 15s</span>
+      <span class="pill" id="count-pill">0 sims</span>
+    </div>
+  </header>
+  <main>
+    <div id="home-view"></div>
+    <div id="detail-view" class="hidden"></div>
+    <div id="error-view" class="hidden"></div>
+  </main>
+  <footer>
+    Data from <span class="mono">/data/simulations.json</span> + per-sim JSON. Relative paths for Vercel static deploy.
+  </footer>
+<script>
+(function () {
+  const REFRESH_MS = 15000;
+  const homeEl = document.getElementById('home-view');
+  const detailEl = document.getElementById('detail-view');
+  const errorEl = document.getElementById('error-view');
+  const updatedPill = document.getElementById('updated-pill');
+  const countPill = document.getElementById('count-pill');
+  const titleEl = document.getElementById('page-title');
+  const subEl = document.getElementById('page-sub');
+
+  let indexCache = null;
+  let detailCache = {};
+  let timer = null;
+
+  function $(sel, root) { return (root || document).querySelector(sel); }
+
+  function fmtNum(n, digs) {
+    if (n === null || n === undefined || Number.isNaN(Number(n))) return '—';
+    const x = Number(n);
+    if (Math.abs(x) >= 1000) return x.toLocaleString(undefined, { maximumFractionDigits: digs ?? 2 });
+    return x.toLocaleString(undefined, { maximumFractionDigits: digs ?? 3 });
+  }
+  function fmtPct(n) {
+    if (n === null || n === undefined || Number.isNaN(Number(n))) return '—';
+    return fmtNum(n, 2) + '%';
+  }
+  function pnlClass(n) {
+    if (n === null || n === undefined || Number.isNaN(Number(n))) return '';
+    return Number(n) >= 0 ? 'pos' : 'neg';
+  }
+  function esc(s) {
+    return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
+
+  function routeSimId() {
+    const q = new URLSearchParams(location.search).get('sim');
+    if (q) return q;
+    const h = (location.hash || '').replace(/^#\/?/, '');
+    if (h.startsWith('sim/')) return h.slice(4);
+    if (h && !h.includes('/')) return h;
+    return null;
+  }
+
+  function goHome() {
+    history.pushState({}, '', location.pathname);
+    render();
+  }
+  function goSim(id) {
+    history.pushState({}, '', '?sim=' + encodeURIComponent(id));
+    render();
+  }
+
+  async function fetchJson(path) {
+    const url = path + (path.includes('?') ? '&' : '?') + '_=' + Date.now();
+    const res = await fetch(url, { cache: 'no-store' });
+    if (!res.ok) throw new Error(path + ' → HTTP ' + res.status);
+    return res.json();
+  }
+
+  async function loadIndex(force) {
+    if (!force && indexCache) return indexCache;
+    indexCache = await fetchJson('data/simulations.json');
+    return indexCache;
+  }
+
+  async function loadDetail(id, force) {
+    if (!force && detailCache[id]) return detailCache[id];
+    const data = await fetchJson('data/sims/' + encodeURIComponent(id) + '.json');
+    detailCache[id] = data;
+    return data;
+  }
+
+  function summaryStatsHtml(sim) {
+    const s = sim.summary || {};
+    const bits = [];
+    if (sim.live) {
+      bits.push(stat('Equity', fmtNum(s.equity, 2), pnlClass(s.unrealized_pnl)));
+      bits.push(stat('uPnL', fmtNum(s.unrealized_pnl, 2), pnlClass(s.unrealized_pnl)));
+      bits.push(stat('Trades', fmtNum(s.total_trades, 0)));
+      bits.push(stat('Open', fmtNum(s.open_orders, 0)));
+    } else {
+      if (s.n != null || s.n_btc_fills != null || s.n_gated != null || s.n_n20_all != null || s.n_liquid != null)
+        bits.push(stat('n', fmtNum(s.n ?? s.n_btc_fills ?? s.n_gated ?? s.n_n20_all ?? s.n_liquid, 0)));
+      const er = s.expectancy_r_50 ?? s.expectancy_r_50_n20 ?? s.expectancy_r_50_gated ?? s.taker_er_50;
+      if (er != null) bits.push(stat('E[R]@50', fmtNum(er, 3), pnlClass(er)));
+      if (s.return_pct_50 != null) bits.push(stat('Ret%@50', fmtPct(s.return_pct_50), pnlClass(s.return_pct_50)));
+      if (s.maker_improve_er_80 != null) bits.push(stat('Maker@80', fmtNum(s.maker_improve_er_80, 3), pnlClass(s.maker_improve_er_80)));
+      if (s.ranks_cached != null) bits.push(stat('Ranks', fmtNum(s.ranks_cached, 0)));
+      if (s.fills) bits.push(stat('Fills', String(s.fills)));
+      if (s.oos_n != null) bits.push(stat('OOS n', fmtNum(s.oos_n, 0)));
+    }
+    return '<div class="stats">' + bits.join('') + '</div>';
+  }
+  function stat(k, v, cls) {
+    return '<div class="stat"><span class="k">' + esc(k) + '</span><span class="v ' + (cls||'') + '">' + esc(v) + '</span></div>';
+  }
+
+  function renderHome(idx) {
+    titleEl.textContent = 'Desk Paper Sims';
+    subEl.textContent = 'Tap a card for that simulation only · paper/shadow probes';
+    updatedPill.textContent = 'Updated ' + (idx.updated_at_pt || idx.updated_at || '—');
+    const sims = idx.simulations || [];
+    countPill.textContent = sims.length + ' sims';
+    if (!sims.length) {
+      homeEl.innerHTML = '<p class="empty">No simulations in index.</p>';
+      return;
+    }
+    homeEl.innerHTML = '<div class="grid">' + sims.map(sim => {
+      const live = sim.live ? '<span class="pill live">LIVE PAPER</span> ' : '';
+      const cls = sim.live ? 'card span2' : 'card';
+      return (
+        '<article class="' + cls + '" role="button" tabindex="0" data-sim="' + esc(sim.id) + '">' +
+          '<div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.35rem">' +
+            live +
+            '<span class="pill mode">' + esc(sim.mode || '') + '</span>' +
+            '<span class="pill">' + esc(sim.family || '') + '</span>' +
+          '</div>' +
+          '<h2>' + esc(sim.title || sim.id) + '</h2>' +
+          '<div class="mono">' + esc(sim.strategy_id || '') + '</div>' +
+          '<p class="headline">' + esc(sim.status_headline || '') + '</p>' +
+          summaryStatsHtml(sim) +
+        '</article>'
+      );
+    }).join('') + '</div>';
+
+    homeEl.querySelectorAll('[data-sim]').forEach(el => {
+      const open = () => goSim(el.getAttribute('data-sim'));
+      el.addEventListener('click', open);
+      el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+    });
+  }
+
+  function feeStressTable(stress) {
+    if (!stress || typeof stress !== 'object') return '<p class="empty">No fee-stress table.</p>';
+    const bands = Object.keys(stress).sort((a,b) => Number(a)-Number(b));
+    if (!bands.length) return '<p class="empty">No fee-stress table.</p>';
+    let html = '<div class="scroll-x"><table><thead><tr><th>Band bps</th><th>n</th><th>win%</th><th>E[R]</th><th>sum R</th><th>maxDD%</th><th>return%</th></tr></thead><tbody>';
+    for (const b of bands) {
+      const row = stress[b] || {};
+      const wr = row.win_rate != null ? fmtNum(row.win_rate * 100, 1) : '—';
+      html += '<tr>' +
+        '<td>' + esc(b) + '</td>' +
+        '<td>' + esc(fmtNum(row.n, 0)) + '</td>' +
+        '<td>' + esc(wr) + '</td>' +
+        '<td class="' + pnlClass(row.expectancy_r) + '">' + esc(fmtNum(row.expectancy_r, 3)) + '</td>' +
+        '<td class="' + pnlClass(row.sum_r) + '">' + esc(fmtNum(row.sum_r, 2)) + '</td>' +
+        '<td>' + esc(fmtNum(row.max_dd_pct, 2)) + '</td>' +
+        '<td class="' + pnlClass(row.return_pct) + '">' + esc(fmtNum(row.return_pct, 2)) + '</td>' +
+      '</tr>';
+    }
+    html += '</tbody></table></div>';
+    return html;
+  }
+
+  function tradesTable(trades, live) {
+    if (!trades || !trades.length) return '<p class="empty">No trades in export.</p>';
+    if (live) {
+      let html = '<div class="scroll-x"><table><thead><tr><th>Time</th><th>Side</th><th>Pair</th><th>Price</th><th>Vol</th><th>Fee</th><th>Id</th></tr></thead><tbody>';
+      for (const t of trades) {
+        html += '<tr>' +
+          '<td class="mono">' + esc((t.time || '').replace('T',' ').slice(0,19)) + '</td>' +
+          '<td class="' + (t.side==='sell'?'neg':'pos') + '">' + esc(t.side) + '</td>' +
+          '<td>' + esc(t.pair) + '</td>' +
+          '<td>' + esc(fmtNum(t.price, 2)) + '</td>' +
+          '<td>' + esc(fmtNum(t.volume, 6)) + '</td>' +
+          '<td>' + esc(fmtNum(t.fee, 4)) + '</td>' +
+          '<td class="mono">' + esc(t.id) + '</td>' +
+        '</tr>';
+      }
+      html += '</tbody></table></div>';
+      return html;
+    }
+    const keys = Object.keys(trades[0] || {}).slice(0, 8);
+    let html = '<div class="scroll-x"><table><thead><tr>' + keys.map(k => '<th>' + esc(k) + '</th>').join('') + '</tr></thead><tbody>';
+    for (const t of trades) {
+      html += '<tr>' + keys.map(k => '<td>' + esc(t[k]) + '</td>').join('') + '</tr>';
+    }
+    html += '</tbody></table></div>';
+    return html;
+  }
+
+  function ranksTable(ranks) {
+    if (!ranks || !ranks.length) return '';
+    let html = '<div class="detail-section"><h3>Ranks</h3><div class="scroll-x"><table><thead><tr><th>Symbol</th><th>Score</th><th>Fill?</th><th>Mode</th></tr></thead><tbody>';
+    for (const r of ranks) {
+      const score = r.tsmom_ret ?? r.rs_ret ?? '—';
+      html += '<tr><td>' + esc(r.symbol) + '</td><td>' + esc(fmtNum(score, 4)) + '</td><td>' +
+        esc(String(r.fill_allowed)) + '</td><td>' + esc(r.mode || '') + '</td></tr>';
+    }
+    html += '</tbody></table></div></div>';
+    return html;
+  }
+
+  function renderDetail(d) {
+    titleEl.textContent = d.title || d.id;
+    subEl.textContent = (d.strategy_id || '') + (d.live ? ' · live workspace' : ' · explore probe');
+    updatedPill.textContent = 'Updated ' + (d.updated_at_pt || d.updated_at || '—');
+    countPill.textContent = d.family || d.id;
+
+    const m = d.metrics || {};
+    let metricsBlock = '';
+    if (d.live) {
+      metricsBlock =
+        '<div class="stats">' +
+          stat('Equity', fmtNum(m.equity, 2), pnlClass(m.unrealized_pnl)) +
+          stat('uPnL', fmtNum(m.unrealized_pnl, 2) + ' (' + fmtPct(m.unrealized_pnl_pct) + ')', pnlClass(m.unrealized_pnl)) +
+          stat('Start', fmtNum(m.starting_balance, 2)) +
+          stat('Trades', fmtNum(m.total_trades, 0)) +
+          stat('Open orders', fmtNum(m.open_orders, 0)) +
+          stat('Fee rate', fmtNum((m.fee_rate || 0) * 100, 2) + '%') +
+        '</div>';
+      if (d.balances) {
+        metricsBlock += '<div class="stats" style="margin-top:.6rem">' +
+          Object.entries(d.balances).map(([k,v]) => stat(k, fmtNum(v, 6))).join('') +
+        '</div>';
+      }
+      if (d.marks && Object.keys(d.marks).length) {
+        metricsBlock += '<div class="stats" style="margin-top:.6rem">' +
+          Object.entries(d.marks).map(([k,v]) => stat('Mark ' + k, fmtNum(v, 2))).join('') +
+        '</div>';
+      }
+    } else {
+      const primary = m.primary_at_50bps || {};
+      metricsBlock =
+        '<div class="stats">' +
+          (primary.n != null ? stat('n @50', fmtNum(primary.n, 0)) : '') +
+          (primary.expectancy_r != null ? stat('E[R]@50', fmtNum(primary.expectancy_r, 3), pnlClass(primary.expectancy_r)) : '') +
+          (primary.return_pct != null ? stat('Ret%@50', fmtPct(primary.return_pct), pnlClass(primary.return_pct)) : '') +
+          (primary.max_dd_pct != null ? stat('maxDD%', fmtNum(primary.max_dd_pct, 2)) : '') +
+          (m.n_liquid != null ? stat('Liquid', fmtNum(m.n_liquid, 0)) : '') +
+          (m.n != null && !primary.n ? stat('n', fmtNum(m.n, 0)) : '') +
+        '</div>';
+      if (d.scoreboard_headline) {
+        metricsBlock += '<p class="headline" style="margin-top:.75rem">' + esc(d.scoreboard_headline) + '</p>';
+      }
+    }
+
+    let feeBlock = '';
+    const stress = d.fee_stress || m.fee_stress || m.stress_gated || m.taker_8_50_100;
+    if (stress) {
+      feeBlock = '<div class="detail-section"><h3>Fee stress</h3>' + feeStressTable(stress) + '</div>';
+      if (m.short_window_stress) {
+        feeBlock += '<div class="detail-section"><h3>Short-window fee stress</h3>' + feeStressTable(m.short_window_stress) + '</div>';
+      }
+      if (m.stress_ungated) {
+        feeBlock += '<div class="detail-section"><h3>Ungated control (REJECT)</h3>' + feeStressTable(m.stress_ungated) + '</div>';
+      }
+      if (m.maker_improve_80) {
+        feeBlock += '<div class="detail-section"><h3>Maker improve @80</h3>' + feeStressTable(m.maker_improve_80) + '</div>';
+      }
+      if (m.maker_adverse_80) {
+        feeBlock += '<div class="detail-section"><h3>Maker + adverse @80</h3>' + feeStressTable(m.maker_adverse_80) + '</div>';
+      }
+    }
+
+    // F02 nested N10/N20
+    let f02Block = '';
+    if (m.results && m.results.N10) {
+      f02Block += '<div class="detail-section"><h3>F02 N=10 all</h3>' + feeStressTable(m.results.N10.stress_all) + '</div>';
+      f02Block += '<div class="detail-section"><h3>F02 N=20 all</h3>' + feeStressTable(m.results.N20.stress_all) + '</div>';
+      f02Block += '<div class="detail-section"><h3>F02 N=20 OOS</h3>' + feeStressTable(m.results.N20.stress_oos) + '</div>';
+    }
+
+    const learn = (d.learnings || []).map(x => '<li>' + esc(x) + '</li>').join('');
+    const learnBlock = '<div class="detail-section"><h3>Learnings / next</h3>' +
+      (learn ? '<ul class="learn">' + learn + '</ul>' : '<p class="empty">None</p>') + '</div>';
+
+    const tradeNote = d.trades_total && d.trades && d.trades_total > d.trades.length
+      ? '<p class="empty">Showing ' + d.trades.length + ' of ' + d.trades_total + ' rows (most recent).</p>'
+      : '';
+    const tradesBlock = '<div class="detail-section"><h3>' + (d.live ? 'Paper trades' : 'Trades / ranks sample') + '</h3>' +
+      tradeNote + tradesTable(d.trades, !!d.live) + '</div>';
+
+    let ordersBlock = '';
+    if (d.live && d.open_orders && d.open_orders.length) {
+      ordersBlock = '<div class="detail-section"><h3>Open orders</h3>' + tradesTable(d.open_orders.map(o => ({
+        id: o.id, side: o.side, pair: o.pair, type: o.type, price: o.price, volume: o.volume, created_at: o.created_at
+      })), false) + '</div>';
+    }
+
+    const ranksBlock = ranksTable(d.ranks || m.ranks);
+
+    let gapsBlock = '';
+    if (d.parse_gaps && d.parse_gaps.length) {
+      gapsBlock = '<div class="detail-section"><h3>Parse gaps</h3><ul class="learn">' +
+        d.parse_gaps.map(g => '<li class="mono">' + esc(g) + '</li>').join('') + '</ul></div>';
+    }
+
+    let mdBlock = '';
+    if (d.md_excerpt) {
+      mdBlock = '<div class="detail-section"><h3>Artifact excerpt</h3><pre class="raw">' + esc(d.md_excerpt) + '</pre></div>';
+    }
+    if (d.breakers_excerpt) {
+      mdBlock += '<div class="detail-section"><h3>Breakers excerpt</h3><pre class="raw">' + esc(d.breakers_excerpt) + '</pre></div>';
+    }
+    if (d.quant_note_excerpt) {
+      mdBlock += '<div class="detail-section"><h3>Quant note</h3><pre class="raw">' + esc(d.quant_note_excerpt) + '</pre></div>';
+    }
+
+    detailEl.innerHTML =
+      '<button type="button" class="back" id="back-btn">← All simulations</button>' +
+      '<div class="detail-section"><h3>Results</h3>' +
+        '<div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.6rem">' +
+          (d.live ? '<span class="pill live">LIVE PAPER</span>' : '') +
+          '<span class="pill mode">' + esc(d.mode || '') + '</span>' +
+          '<span class="pill">' + esc(d.family || '') + '</span>' +
+          (d.workspace ? '<span class="pill mono">' + esc(d.workspace) + '</span>' : '') +
+        '</div>' +
+        metricsBlock +
+        '<p class="empty" style="margin-top:.75rem">' + esc(d.disclaimer || '') + '</p>' +
+      '</div>' +
+      feeBlock + f02Block + ordersBlock + ranksBlock + tradesBlock + learnBlock + gapsBlock + mdBlock;
+
+    $('#back-btn', detailEl).addEventListener('click', goHome);
+  }
+
+  async function render(opts) {
+    const force = !!(opts && opts.force);
+    const simId = routeSimId();
+    errorEl.classList.add('hidden');
+    try {
+      const idx = await loadIndex(force);
+      if (simId) {
+        homeEl.classList.add('hidden');
+        detailEl.classList.remove('hidden');
+        const d = await loadDetail(simId, force);
+        renderDetail(d);
+      } else {
+        detailEl.classList.add('hidden');
+        homeEl.classList.remove('hidden');
+        detailCache = {}; // allow refresh of details next open
+        renderHome(idx);
+      }
+    } catch (e) {
+      homeEl.classList.add('hidden');
+      detailEl.classList.add('hidden');
+      errorEl.classList.remove('hidden');
+      errorEl.innerHTML = '<div class="err"><strong>Load failed</strong><br/>' + esc(e.message || e) +
+        '<br/><button type="button" class="back" id="retry-btn" style="margin-top:.75rem">Retry</button></div>';
+      const rb = document.getElementById('retry-btn');
+      if (rb) rb.addEventListener('click', () => render({ force: true }));
+    }
+  }
+
+  window.addEventListener('popstate', () => render());
+  window.addEventListener('hashchange', () => render());
+
+  function schedule() {
+    if (timer) clearInterval(timer);
+    timer = setInterval(() => render({ force: true }), REFRESH_MS);
+  }
+
+  render({ force: true });
+  schedule();
+})();
+</script>
+</body>
+</html>

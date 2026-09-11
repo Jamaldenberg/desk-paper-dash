@@ -1,0 +1,85 @@
+{
+  "id": "f06",
+  "title": "F06 long-only RS top-K shadow",
+  "family": "F06",
+  "strategy_id": "long-only-rs-topk-shadow",
+  "mode": "shadow",
+  "live": false,
+  "updated_at": "2026-09-11T00:17:48.988Z",
+  "updated_at_pt": "2026-09-10 5:17 PM PT",
+  "scoreboard_headline": "**shadow blocked-thin** — BTC/ETH cache only; coincides F03 on 2-name panel",
+  "preregister": "[[Desk/Research/Explore/preregister-2026-09-10-f06-long-only-rs-shadow|DPR-20260910-06]]",
+  "metrics": {
+    "generated_pt": "2026-09-10 12:20 PT",
+    "strategy_id": "long-only-rs-topk-shadow",
+    "lookback": 20,
+    "top_k": 1,
+    "ranks": [
+      {
+        "symbol": "ETH/USD",
+        "rs_ret": 0.33197547343398504,
+        "asof": "2026-09-03 00:00:00+00:00",
+        "fill_allowed": false,
+        "mode": "shadow_rank"
+      },
+      {
+        "symbol": "BTC/USD",
+        "rs_ret": 0.29407311037886497,
+        "asof": "2026-09-03 00:00:00+00:00",
+        "fill_allowed": true,
+        "mode": "shadow_rank"
+      }
+    ],
+    "compare_note": "With only BTC/ETH free cache, RS top-K and F03 TSMOM ranks coincide on lookback. Divergence requires liquid multi-asset OHLC panel after Meik RED — still shadow until then.",
+    "blocked_non_btc_eth_fills": true
+  },
+  "fee_stress": null,
+  "trades": [
+    {
+      "symbol": "ETH/USD",
+      "rs_ret": 0.33197547343398504,
+      "asof": "2026-09-03 00:00:00+00:00",
+      "fill_allowed": "False",
+      "mode": "shadow_rank"
+    },
+    {
+      "symbol": "BTC/USD",
+      "rs_ret": 0.29407311037886497,
+      "asof": "2026-09-03 00:00:00+00:00",
+      "fill_allowed": "True",
+      "mode": "shadow_rank"
+    }
+  ],
+  "trades_total": 2,
+  "ranks": [
+    {
+      "symbol": "ETH/USD",
+      "rs_ret": 0.33197547343398504,
+      "asof": "2026-09-03 00:00:00+00:00",
+      "fill_allowed": false,
+      "mode": "shadow_rank"
+    },
+    {
+      "symbol": "BTC/USD",
+      "rs_ret": 0.29407311037886497,
+      "asof": "2026-09-03 00:00:00+00:00",
+      "fill_allowed": true,
+      "mode": "shadow_rank"
+    }
+  ],
+  "md_excerpt": "# F06 long-only RS shadow — `long-only-rs-topk-shadow`\n\nGenerated: 2026-09-10 12:20 PT\nLookback=20d · top-K=1 (demo limited by cache)\n\n## RS ranks (cached)\n\n| symbol | rs_ret | fill_allowed |\n| --- | --- | --- |\n| ETH/USD | 0.3320 | False |\n| BTC/USD | 0.2941 | True |\n\n## vs F03\n\nWith only BTC/ETH free cache, RS top-K and F03 TSMOM ranks coincide on lookback. Divergence requires liquid multi-asset OHLC panel after Meik RED — still shadow until then.\n\n## Fee note\n\nWeekly rebalance intended. Fee stress @ 50/100 after multi-asset panel + RED.\n\n## Next owner action\n\n- **Universe Scout + Quant:** extend panel with free public OHLC for top liquid names; keep shadow.\n- **Commander:** horse-race F03 vs F06 at Day 11–20; do not run both as live paper fills.\n\n*Shadow only. No short leg. No edge declaration.*\n",
+  "extras_keys": [],
+  "learnings": [
+    "Scoreboard: **shadow blocked-thin** — BTC/ETH cache only; coincides F03 on 2-name panel",
+    "Scoreboard next: **Scout+Quant:** extend free OHLC for top liquid; horse-race vs F03; still no alt fills",
+    "**Universe Scout + Quant:** extend panel with free public OHLC for top liquid names; keep shadow.",
+    "**Commander:** horse-race F03 vs F06 at Day 11–20; do not run both as live paper fills."
+  ],
+  "artifacts": [
+    "/workspace/paper-desk/explore/out/f06_rs_shadow.json",
+    "/workspace/paper-desk/explore/out/f06_rs_shadow.md",
+    "/workspace/paper-desk/explore/out/f06_rs_ranks.csv"
+  ],
+  "parse_gaps": [],
+  "disclaimer": "PAPER ONLY — simulated fills vs live Kraken prices / historical probes. Not real money. Not financial advice. Do not declare edge from first-run tables."
+}

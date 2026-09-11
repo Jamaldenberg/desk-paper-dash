@@ -1,0 +1,142 @@
+{
+  "id": "f01",
+  "title": "F01 fee stress — v3 BTC trend pullback",
+  "family": "F01",
+  "strategy_id": "v3-btc-trend-pullback-overlap",
+  "mode": "paper / fee stress",
+  "live": false,
+  "updated_at": "2026-09-11T00:17:48.988Z",
+  "updated_at_pt": "2026-09-10 5:17 PM PT",
+  "scoreboard_headline": "**probe done** — 5y n=88 E[R]@50=**-0.270** (8bps +0.162); short n=43 @50=-0.186",
+  "preregister": "[[Desk/Research/Explore/preregister-2026-09-10-f01-v3-fee-stress|DPR-20260910-01]]",
+  "metrics": {
+    "generated_pt": "2026-09-10 12:18 PT",
+    "strategy_id": "v3-btc-trend-pullback-overlap",
+    "n_btc_fills": 88,
+    "fee_stress": {
+      "8": {
+        "n": 88,
+        "n_win": 37,
+        "win_rate": 0.42045454545454547,
+        "expectancy_r": 0.16213893222039,
+        "sum_r": 14.26822603539432,
+        "max_dd_pct": 12.42240211206843,
+        "final_equity": 109919.61480984607,
+        "return_pct": 9.919614809846067
+      },
+      "50": {
+        "n": 88,
+        "n_win": 37,
+        "win_rate": 0.42045454545454547,
+        "expectancy_r": -0.26988798633448463,
+        "sum_r": -23.75014279743465,
+        "max_dd_pct": 21.248175565083013,
+        "final_equity": 80854.08308289044,
+        "return_pct": -19.145916917109552
+      },
+      "100": {
+        "n": 88,
+        "n_win": 34,
+        "win_rate": 0.38636363636363635,
+        "expectancy_r": -0.7842057465188593,
+        "sum_r": -69.01010569365963,
+        "max_dd_pct": 44.720533568420635,
+        "final_equity": 56011.76132112791,
+        "return_pct": -43.988238678872094
+      }
+    },
+    "short_window_stress": {
+      "8": {
+        "n": 43,
+        "n_win": 21,
+        "win_rate": 0.4883720930232558,
+        "expectancy_r": 0.3324353183670411,
+        "sum_r": 14.294718689782767,
+        "max_dd_pct": 5.0167213750203965,
+        "final_equity": 111118.69049714722,
+        "return_pct": 11.11869049714722
+      },
+      "50": {
+        "n": 43,
+        "n_win": 21,
+        "win_rate": 0.4883720930232558,
+        "expectancy_r": -0.18586538725292087,
+        "sum_r": -7.992211651875597,
+        "max_dd_pct": 12.626937368626317,
+        "final_equity": 94124.91738611304,
+        "return_pct": -5.875082613886962
+      },
+      "100": {
+        "n": 43,
+        "n_win": 18,
+        "win_rate": 0.4186046511627907,
+        "expectancy_r": -0.8028900368004945,
+        "sum_r": -34.524271582421264,
+        "max_dd_pct": 25.170577458328946,
+        "final_equity": 77182.40444692885,
+        "return_pct": -22.817595553071147
+      }
+    },
+    "primary_at_50bps": {
+      "primary_band_bps": 50,
+      "n": 88,
+      "win_rate": 0.42045454545454547,
+      "expectancy_r": -0.26988798633448463,
+      "sum_r": -23.75014279743465,
+      "max_dd_pct": 21.248175565083013,
+      "return_pct": -19.145916917109552
+    }
+  },
+  "fee_stress": {
+    "8": {
+      "n": 88,
+      "n_win": 37,
+      "win_rate": 0.42045454545454547,
+      "expectancy_r": 0.16213893222039,
+      "sum_r": 14.26822603539432,
+      "max_dd_pct": 12.42240211206843,
+      "final_equity": 109919.61480984607,
+      "return_pct": 9.919614809846067
+    },
+    "50": {
+      "n": 88,
+      "n_win": 37,
+      "win_rate": 0.42045454545454547,
+      "expectancy_r": -0.26988798633448463,
+      "sum_r": -23.75014279743465,
+      "max_dd_pct": 21.248175565083013,
+      "final_equity": 80854.08308289044,
+      "return_pct": -19.145916917109552
+    },
+    "100": {
+      "n": 88,
+      "n_win": 34,
+      "win_rate": 0.38636363636363635,
+      "expectancy_r": -0.7842057465188593,
+      "sum_r": -69.01010569365963,
+      "max_dd_pct": 44.720533568420635,
+      "final_equity": 56011.76132112791,
+      "return_pct": -43.988238678872094
+    }
+  },
+  "trades": [],
+  "trades_total": 0,
+  "ranks": null,
+  "md_excerpt": "# F01 fee stress — `v3-btc-trend-pullback-overlap`\n\nGenerated: 2026-09-10 12:18 PT\nSource trades: `/workspace/paper-desk/backtests/2026-09-03-v3-5y-trades.csv` (BTC rows only)\nn fills: **88**\n\nFrozen v3 rules unchanged. Replay only at Desk bands 8 / 50 / 100 bps RT.\n\n## Fee stress (primary sample)\n\n| Band (RT bps) | n | win% | E[R] | sum R | maxDD% | return% |\n| --- | --- | --- | --- | --- | --- | --- |\n| 8 | 88 | 42.0 | 0.162 | 14.27 | 12.42 | 9.92 |\n| 50 | 88 | 42.0 | -0.270 | -23.75 | 21.25 | -19.15 |\n| 100 | 88 | 38.6 | -0.784 | -69.01 | 44.72 | -43.99 |\n\n**Honesty:** Numbers are diagnostic. Do not declare edge. Promotion bar = net E[R]>0 @ **50 bps** with honest n + breakers + Meik RED.\n\n## Fee stress (short-window v3 CSV continuity)\n\n| Band (RT bps) | n | win% | E[R] | sum R | maxDD% | return% |\n| --- | --- | --- | --- | --- | --- | --- |\n| 8 | 43 | 48.8 | 0.332 | 14.29 | 5.02 | 11.12 |\n| 50 | 43 | 48.8 | -0.186 | -7.99 | 12.63 | -5.88 |\n| 100 | 43 | 41.9 | -0.803 | -34.52 | 25.17 | -22.82 |\n\n**Honesty:** Numbers are diagnostic. Do not declare edge. Promotion bar = net E[R]>0 @ **50 bps** with honest n + breakers + Meik RED.\n\n## Next owner action\n\n- **Tape:** continue overlap journal / NO_TRADE honesty; no silent retune.\n- **Quant:** attach to Critic mid-window; do not claim edge from this table alone.\n- **Commander:** keep F01 paper path warm; merge packets only when finished.\n\n*Paper only. No live keys.*\n",
+  "extras_keys": [],
+  "learnings": [
+    "Scoreboard: **probe done** — 5y n=88 E[R]@50=**-0.270** (8bps +0.162); short n=43 @50=-0.186",
+    "Scoreboard next: **Tape:** keep overlap journal / NO_TRADE. **Quant:** Critic+breakers; no retune. **Commander:** warm paper path; DFG-12 noted",
+    "**Tape:** continue overlap journal / NO_TRADE honesty; no silent retune.",
+    "**Quant:** attach to Critic mid-window; do not claim edge from this table alone.",
+    "**Commander:** keep F01 paper path warm; merge packets only when finished."
+  ],
+  "artifacts": [
+    "/workspace/paper-desk/explore/out/f01_fee_stress.json",
+    "/workspace/paper-desk/explore/out/f01_fee_stress.md"
+  ],
+  "parse_gaps": [
+    "no_trade_csv_in_explore_out:metrics_from_json_only"
+  ],
+  "disclaimer": "PAPER ONLY — simulated fills vs live Kraken prices / historical probes. Not real money. Not financial advice. Do not declare edge from first-run tables."
+}
