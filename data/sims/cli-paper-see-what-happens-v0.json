@@ -6,30 +6,42 @@
   "mode": "paper",
   "live": true,
   "workspace": "desk-explore-f01",
-  "updated_at": "2026-09-11T00:17:48.988Z",
-  "updated_at_pt": "2026-09-10 5:17 PM PT",
+  "updated_at": "2026-09-11T01:23:28.925Z",
+  "updated_at_pt": "2026-09-10 6:23 PM PT",
   "metrics": {
-    "equity": 993.96201004717,
+    "equity": 993.4908825027701,
     "starting_balance": 1000.0,
     "currency": "USD",
-    "unrealized_pnl": -6.03798995283,
-    "unrealized_pnl_pct": -0.603798995283,
-    "total_trades": 10,
+    "unrealized_pnl": -6.50911749723,
+    "unrealized_pnl_pct": -0.650911749723,
+    "total_trades": 11,
     "open_orders": 1,
     "fee_rate": 0.005,
     "slippage_rate": 0.0,
     "valuation_complete": true
   },
   "balances": {
-    "BTC": 0.00639602,
+    "BTC": 0.00511682,
     "ETH": 0.13,
-    "USD": 184.26573354917
+    "USD": 281.87439942077
   },
   "marks": {
-    "BTCUSD": 76805.5,
-    "ETHUSD": 2449.67
+    "BTCUSD": 76771.2,
+    "ETHUSD": 2452.56
   },
   "trades": [
+    {
+      "cost": 98.09916168,
+      "fee": 0.4904958084,
+      "id": "PAPER-00025",
+      "order_id": "PAPER-00024",
+      "pair": "BTCUSD",
+      "price": 76687.9,
+      "side": "sell",
+      "status": "filled",
+      "time": "2026-09-11T00:31:46.360514640Z",
+      "volume": 0.0012792
+    },
     {
       "cost": 61.20025,
       "fee": 0.30600125,
@@ -167,25 +179,25 @@
   "fee_stress": null,
   "raw": {
     "status": {
-      "current_value": 993.96201004717,
+      "current_value": 993.4908825027701,
       "fee_rate": 0.005,
       "mode": "paper",
       "open_orders": 1,
       "slippage_rate": 0.0,
       "starting_balance": 1000.0,
       "starting_currency": "USD",
-      "total_trades": 10,
-      "unrealized_pnl": -6.03798995283,
-      "unrealized_pnl_pct": -0.603798995283,
+      "total_trades": 11,
+      "unrealized_pnl": -6.50911749723,
+      "unrealized_pnl_pct": -0.650911749723,
       "valuation_complete": true,
       "workspace": "desk-explore-f01"
     },
     "balance": {
       "balances": {
         "BTC": {
-          "available": "0.00539602",
+          "available": "0.00411682",
           "reserved": "0.001",
-          "total": "0.00639602"
+          "total": "0.00511682"
         },
         "ETH": {
           "available": "0.130",
@@ -193,16 +205,16 @@
           "total": "0.130"
         },
         "USD": {
-          "available": "184.2657335491700000",
+          "available": "281.8743994207700000",
           "reserved": "0.000000",
-          "total": "184.2657335491700000"
+          "total": "281.8743994207700000"
         }
       },
       "mode": "paper",
       "workspace": "desk-explore-f01"
     },
     "history_meta": {
-      "filled_count": 10,
+      "filled_count": 11,
       "cancelled_count": 2
     }
   },
