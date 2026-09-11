@@ -206,6 +206,59 @@
       color: var(--muted);
       font-size: .75rem;
     }
+
+    .hero {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+      margin-top: 1rem;
+      box-shadow: var(--shadow);
+    }
+    .hero .equity-big {
+      font-size: 1.75rem;
+      font-weight: 750;
+      font-variant-numeric: tabular-nums;
+      margin: .15rem 0;
+    }
+    .hero .equity-sub { color: var(--muted); font-size: .85rem; }
+    .chart-wrap {
+      margin-top: .75rem;
+      width: 100%;
+      touch-action: pan-y;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+    .chart-wrap svg { display: block; width: 100%; height: auto; }
+    .chart-meta {
+      display: flex; flex-wrap: wrap; gap: .5rem .75rem;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-top: .35rem;
+      font-size: .75rem;
+      color: var(--muted);
+    }
+    .chart-empty {
+      color: var(--muted);
+      font-size: .88rem;
+      padding: .75rem 0 .25rem;
+      border-top: 1px dashed var(--border);
+      margin-top: .75rem;
+    }
+    .chart-tip {
+      position: absolute;
+      pointer-events: none;
+      background: #0e1626;
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: .72rem;
+      padding: .3rem .45rem;
+      border-radius: 8px;
+      white-space: nowrap;
+      z-index: 5;
+      transform: translate(-50%, -120%);
+      box-shadow: var(--shadow);
+    }
     .hidden { display: none !important; }
   </style>
 </head>
@@ -262,6 +315,174 @@
   function esc(s) {
     return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   }
+
+
+  function parseTs(t) {
+    if (!t) return null;
+    const d = Date.parse(String(t).replace(' ', 'T'));
+    return Number.isFinite(d) ? d : null;
+  }
+
+  function seriesY(points, prefer) {
+    // prefer: 'equity' | 'pnl' | 'value'
+    return points.map(p => {
+      if (prefer === 'value' && p.value != null) return Number(p.value);
+      if (prefer === 'pnl' && p.pnl != null) return Number(p.pnl);
+      if (p.equity != null) return Number(p.equity);
+      if (p.value != null) return Number(p.value);
+      if (p.pnl != null) return Number(p.pnl);
+      return null;
+    });
+  }
+
+  function renderSvgChart(container, points, opts) {
+    opts = opts || {};
+    const prefer = opts.prefer || 'equity';
+    const yLabel = opts.yLabel || (prefer === 'value' ? 'cum R' : prefer === 'pnl' ? 'PnL' : 'Equity');
+    if (!points || points.length < 2) {
+      container.innerHTML = '<div class="chart-empty">' + esc(opts.empty || 'No series yet') + '</div>';
+      return;
+    }
+    const ys = seriesY(points, prefer);
+    const xs = points.map(p => parseTs(p.t));
+    const valid = [];
+    for (let i = 0; i < points.length; i++) {
+      if (ys[i] == null || Number.isNaN(ys[i])) continue;
+      valid.push({ i, x: xs[i] != null ? xs[i] : i, y: ys[i], t: points[i].t, raw: points[i] });
+    }
+    if (valid.length < 2) {
+      container.innerHTML = '<div class="chart-empty">' + esc(opts.empty || 'No series yet') + '</div>';
+      return;
+    }
+    // If times missing, use index
+    const useIdx = valid.every(v => v.x == null) || valid.filter(v => v.x != null).length < 2;
+    if (useIdx) valid.forEach((v, idx) => { v.x = idx; });
+
+    const W = 640, H = 200;
+    const pad = { l: 48, r: 12, t: 14, b: 28 };
+    const innerW = W - pad.l - pad.r;
+    const innerH = H - pad.t - pad.b;
+    let minX = Math.min(...valid.map(v => v.x));
+    let maxX = Math.max(...valid.map(v => v.x));
+    let minY = Math.min(...valid.map(v => v.y));
+    let maxY = Math.max(...valid.map(v => v.y));
+    if (minY === maxY) { minY -= 1; maxY += 1; }
+    // pad y 6%
+    const yPad = (maxY - minY) * 0.06;
+    minY -= yPad; maxY += yPad;
+    const xSpan = maxX - minX || 1;
+    const ySpan = maxY - minY || 1;
+    const sx = x => pad.l + ((x - minX) / xSpan) * innerW;
+    const sy = y => pad.t + (1 - (y - minY) / ySpan) * innerH;
+
+    const firstY = valid[0].y;
+    const lastY = valid[valid.length - 1].y;
+    const up = lastY >= firstY;
+    const stroke = up ? '#3ecf8e' : '#f07178';
+    const fill = up ? 'rgba(62,207,142,.18)' : 'rgba(240,113,120,.18)';
+
+    let dLine = '';
+    let dArea = '';
+    valid.forEach((v, i) => {
+      const X = sx(v.x), Y = sy(v.y);
+      dLine += (i ? 'L' : 'M') + X.toFixed(2) + ' ' + Y.toFixed(2) + ' ';
+      if (i === 0) dArea = 'M' + X.toFixed(2) + ' ' + sy(minY).toFixed(2) + ' L' + X.toFixed(2) + ' ' + Y.toFixed(2) + ' ';
+      else dArea += 'L' + X.toFixed(2) + ' ' + Y.toFixed(2) + ' ';
+    });
+    const last = valid[valid.length - 1];
+    dArea += 'L' + sx(last.x).toFixed(2) + ' ' + sy(minY).toFixed(2) + ' Z';
+
+    // y ticks
+    const ticks = 4;
+    let yTicks = '';
+    for (let i = 0; i <= ticks; i++) {
+      const yv = minY + (ySpan * i) / ticks;
+      const Y = sy(yv);
+      const label = prefer === 'value' ? fmtNum(yv, 2) : fmtNum(yv, yv >= 1000 ? 0 : 2);
+      yTicks += '<line x1="' + pad.l + '" x2="' + (W - pad.r) + '" y1="' + Y + '" y2="' + Y + '" stroke="#2a3a55" stroke-width="1" opacity=".55"/>';
+      yTicks += '<text x="' + (pad.l - 6) + '" y="' + (Y + 3) + '" text-anchor="end" fill="#9aa8c0" font-size="10">' + label + '</text>';
+    }
+    // x end labels
+    function fmtT(t) {
+      if (!t) return '';
+      const s = String(t).replace('T', ' ');
+      return s.slice(5, 16) || s.slice(0, 16);
+    }
+    const xLabels =
+      '<text x="' + pad.l + '" y="' + (H - 8) + '" fill="#9aa8c0" font-size="10">' + esc(fmtT(valid[0].t)) + '</text>' +
+      '<text x="' + (W - pad.r) + '" y="' + (H - 8) + '" text-anchor="end" fill="#9aa8c0" font-size="10">' + esc(fmtT(last.t)) + '</text>';
+
+    const delta = lastY - firstY;
+    const deltaCls = delta >= 0 ? 'pos' : 'neg';
+    const deltaTxt = (delta >= 0 ? '+' : '') + fmtNum(delta, prefer === 'value' ? 3 : 2);
+
+    container.innerHTML =
+      '<div class="chart-wrap" style="position:relative">' +
+        '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="' + esc(yLabel) + ' chart" preserveAspectRatio="xMidYMid meet">' +
+          yTicks +
+          '<path d="' + dArea + '" fill="' + fill + '"/>' +
+          '<path d="' + dLine + '" fill="none" stroke="' + stroke + '" stroke-width="2.25" stroke-linejoin="round" stroke-linecap="round"/>' +
+          '<circle class="chart-dot" cx="' + sx(last.x) + '" cy="' + sy(last.y) + '" r="3.5" fill="' + stroke + '"/>' +
+          xLabels +
+          '<rect class="chart-hit" x="' + pad.l + '" y="' + pad.t + '" width="' + innerW + '" height="' + innerH + '" fill="transparent"/>' +
+        '</svg>' +
+        '<div class="chart-tip hidden"></div>' +
+        '<div class="chart-meta">' +
+          '<span>' + esc(yLabel) + ' · ' + valid.length + ' pts' + (opts.note ? ' · ' + esc(opts.note) : '') + '</span>' +
+          '<span class="' + deltaCls + '">' + deltaTxt + ' vs start</span>' +
+        '</div>' +
+      '</div>';
+
+    const wrap = container.querySelector('.chart-wrap');
+    const tip = container.querySelector('.chart-tip');
+    const svg = container.querySelector('svg');
+    const hit = container.querySelector('.chart-hit');
+    function nearest(clientX) {
+      const rect = svg.getBoundingClientRect();
+      const px = ((clientX - rect.left) / rect.width) * W;
+      let best = valid[0], bestD = Infinity;
+      for (const v of valid) {
+        const d = Math.abs(sx(v.x) - px);
+        if (d < bestD) { bestD = d; best = v; }
+      }
+      return best;
+    }
+    function show(ev) {
+      const clientX = ev.touches ? ev.touches[0].clientX : ev.clientX;
+      const v = nearest(clientX);
+      const val = prefer === 'value' ? fmtNum(v.y, 3) : fmtNum(v.y, 2);
+      tip.textContent = (v.t ? fmtT(v.t) + ' · ' : '') + yLabel + ' ' + val;
+      tip.classList.remove('hidden');
+      const rect = wrap.getBoundingClientRect();
+      const svgRect = svg.getBoundingClientRect();
+      const left = ((sx(v.x) / W) * svgRect.width);
+      tip.style.left = left + 'px';
+      tip.style.top = ((sy(v.y) / H) * svgRect.height) + 'px';
+      // move dot
+      let dot = svg.querySelector('.chart-scan');
+      if (!dot) {
+        dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        dot.setAttribute('class', 'chart-scan');
+        dot.setAttribute('r', '4');
+        dot.setAttribute('fill', '#e8eef8');
+        dot.setAttribute('stroke', stroke);
+        dot.setAttribute('stroke-width', '2');
+        svg.appendChild(dot);
+      }
+      dot.setAttribute('cx', sx(v.x));
+      dot.setAttribute('cy', sy(v.y));
+    }
+    function hide() { tip.classList.add('hidden'); const d = svg.querySelector('.chart-scan'); if (d) d.remove(); }
+    hit.addEventListener('mousemove', show);
+    hit.addEventListener('touchmove', e => { e.preventDefault(); show(e); }, { passive: false });
+    hit.addEventListener('mouseleave', hide);
+    hit.addEventListener('touchend', hide);
+  }
+
+  function chartBlockHtml(id, title) {
+    return '<div class="detail-section" id="' + id + '-section"><h3>' + esc(title || 'Performance') + '</h3><div id="' + id + '"></div></div>';
+  }
+
 
   function routeSimId() {
     const q = new URLSearchParams(location.search).get('sim');
@@ -326,7 +547,7 @@
     return '<div class="stat"><span class="k">' + esc(k) + '</span><span class="v ' + (cls||'') + '">' + esc(v) + '</span></div>';
   }
 
-  function renderHome(idx) {
+  async function renderHome(idx) {
     titleEl.textContent = 'Desk Paper Sims';
     subEl.textContent = 'Tap a card for that simulation only · paper/shadow probes';
     updatedPill.textContent = 'Updated ' + (idx.updated_at_pt || idx.updated_at || '—');
@@ -336,15 +557,42 @@
       homeEl.innerHTML = '<p class="empty">No simulations in index.</p>';
       return;
     }
-    homeEl.innerHTML = '<div class="grid">' + sims.map(sim => {
-      const live = sim.live ? '<span class="pill live">LIVE PAPER</span> ' : '';
+
+    let status = null;
+    try { status = await fetchJson('data/status.json'); } catch (e) { status = null; }
+
+    const live = sims.find(s => s.live) || null;
+    let hero = '';
+    if (status || live) {
+      const eq = status ? status.equity : (live.summary || {}).equity;
+      const upnl = status ? status.unrealized_pnl : (live.summary || {}).unrealized_pnl;
+      const upnlPct = status ? status.unrealized_pnl_pct : (live.summary || {}).unrealized_pnl_pct;
+      const ws = (status && status.workspace) || 'desk-explore-f01';
+      hero =
+        '<section class="hero" id="home-hero">' +
+          '<div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.35rem">' +
+            '<span class="pill live">LIVE PAPER</span>' +
+            '<span class="pill mono">' + esc(ws) + '</span>' +
+          '</div>' +
+          '<div class="equity-sub">CLI paper equity</div>' +
+          '<div class="equity-big ' + pnlClass(upnl) + '">$' + esc(fmtNum(eq, 2)) + '</div>' +
+          '<div class="equity-sub ' + pnlClass(upnl) + '">' +
+            esc(fmtNum(upnl, 2)) + ' (' + esc(fmtPct(upnlPct)) + ') vs $' + esc(fmtNum(status && status.starting_balance, 0) || '1000') + ' start' +
+          '</div>' +
+          '<div id="home-equity-chart"></div>' +
+        '</section>';
+    }
+
+    homeEl.innerHTML = hero + '<div class="grid" style="margin-top:1rem">' + sims.map(sim => {
+      const livePill = sim.live ? '<span class="pill live">LIVE PAPER</span> ' : '';
       const cls = sim.live ? 'card span2' : 'card';
       return (
         '<article class="' + cls + '" role="button" tabindex="0" data-sim="' + esc(sim.id) + '">' +
           '<div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.35rem">' +
-            live +
+            livePill +
             '<span class="pill mode">' + esc(sim.mode || '') + '</span>' +
             '<span class="pill">' + esc(sim.family || '') + '</span>' +
+            (sim.has_equity_series ? '<span class="pill">chart</span>' : '') +
           '</div>' +
           '<h2>' + esc(sim.title || sim.id) + '</h2>' +
           '<div class="mono">' + esc(sim.strategy_id || '') + '</div>' +
@@ -353,6 +601,17 @@
         '</article>'
       );
     }).join('') + '</div>';
+
+    const chartEl = document.getElementById('home-equity-chart');
+    if (chartEl) {
+      const series = (status && status.equity_series) || [];
+      renderSvgChart(chartEl, series, {
+        prefer: 'equity',
+        yLabel: 'Equity $',
+        note: 'fills + marks',
+        empty: 'no series yet — waiting for CLI paper fills',
+      });
+    }
 
     homeEl.querySelectorAll('[data-sim]').forEach(el => {
       const open = () => goSim(el.getAttribute('data-sim'));
@@ -528,6 +787,9 @@
       mdBlock += '<div class="detail-section"><h3>Quant note</h3><pre class="raw">' + esc(d.quant_note_excerpt) + '</pre></div>';
     }
 
+    const chartSection =
+      '<div class="detail-section"><h3>Performance</h3><div id="detail-perf-chart"></div></div>';
+
     detailEl.innerHTML =
       '<button type="button" class="back" id="back-btn">← All simulations</button>' +
       '<div class="detail-section"><h3>Results</h3>' +
@@ -540,9 +802,33 @@
         metricsBlock +
         '<p class="empty" style="margin-top:.75rem">' + esc(d.disclaimer || '') + '</p>' +
       '</div>' +
+      chartSection +
       feeBlock + f02Block + ordersBlock + ranksBlock + tradesBlock + learnBlock + gapsBlock + mdBlock;
 
     $('#back-btn', detailEl).addEventListener('click', goHome);
+
+    const perfEl = document.getElementById('detail-perf-chart');
+    if (perfEl) {
+      if (d.equity_series && d.equity_series.length >= 2) {
+        renderSvgChart(perfEl, d.equity_series, {
+          prefer: 'equity',
+          yLabel: d.live ? 'Equity $' : 'Equity @50bps',
+          note: d.series_note || (d.live ? 'fills + marks' : 'fee stress replay'),
+          empty: d.series_note || 'no series yet',
+        });
+      } else if (d.metric_series && d.metric_series.length >= 2) {
+        renderSvgChart(perfEl, d.metric_series, {
+          prefer: 'value',
+          yLabel: 'Cum R @50bps',
+          note: d.series_note || 'cumulative R',
+          empty: d.series_note || 'no series yet',
+        });
+      } else {
+        renderSvgChart(perfEl, [], {
+          empty: d.series_note || 'no series yet',
+        });
+      }
+    }
   }
 
   async function render(opts) {
@@ -560,7 +846,7 @@
         detailEl.classList.add('hidden');
         homeEl.classList.remove('hidden');
         detailCache = {}; // allow refresh of details next open
-        renderHome(idx);
+        await renderHome(idx);
       }
     } catch (e) {
       homeEl.classList.add('hidden');

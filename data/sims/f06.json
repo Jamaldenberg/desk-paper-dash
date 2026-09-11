@@ -5,8 +5,8 @@
   "strategy_id": "long-only-rs-topk-shadow",
   "mode": "shadow",
   "live": false,
-  "updated_at": "2026-09-11T03:22:38.180Z",
-  "updated_at_pt": "2026-09-10 8:22 PM PT",
+  "updated_at": "2026-09-11T03:51:46.067Z",
+  "updated_at_pt": "2026-09-10 8:51 PM PT",
   "scoreboard_headline": "**shadow blocked-thin** — BTC/ETH cache only; coincides F03 on 2-name panel",
   "preregister": "[[Desk/Research/Explore/preregister-2026-09-10-f06-long-only-rs-shadow|DPR-20260910-06]]",
   "metrics": {
@@ -51,6 +51,9 @@
     }
   ],
   "trades_total": 2,
+  "equity_series": null,
+  "metric_series": null,
+  "series_note": "no series yet — ranks-only probe (fills blocked)",
   "ranks": [
     {
       "symbol": "ETH/USD",
@@ -80,6 +83,8 @@
     "/workspace/paper-desk/explore/out/f06_rs_shadow.md",
     "/workspace/paper-desk/explore/out/f06_rs_ranks.csv"
   ],
-  "parse_gaps": [],
+  "parse_gaps": [
+    "no_equity_series:ranks_only"
+  ],
   "disclaimer": "PAPER ONLY — simulated fills vs live Kraken prices / historical probes. Not real money. Not financial advice. Do not declare edge from first-run tables."
 }

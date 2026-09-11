@@ -5,8 +5,8 @@
   "strategy_id": "maker-overlay-f01f02-sketch",
   "mode": "overlay sketch",
   "live": false,
-  "updated_at": "2026-09-11T03:22:38.180Z",
-  "updated_at_pt": "2026-09-10 8:22 PM PT",
+  "updated_at": "2026-09-11T03:51:46.067Z",
+  "updated_at_pt": "2026-09-10 8:51 PM PT",
   "scoreboard_headline": "**sketch done** — improve@80 E[R]=-0.139 < taker@50; adverse worse",
   "preregister": "[[Desk/Research/Explore/preregister-2026-09-10-f07-maker-overlay|DPR-20260910-07]]",
   "metrics": {
@@ -114,6 +114,9 @@
   },
   "trades": [],
   "trades_total": 0,
+  "equity_series": null,
+  "metric_series": null,
+  "series_note": "no series yet — maker overlay has no per-trade time series in explore out",
   "ranks": null,
   "md_excerpt": "# F07 maker overlay sketch — `maker-overlay-f01f02-sketch`\n\nGenerated: 2026-09-10 12:17 PT\nParent signals loaded: **163** ({'F02': 120, 'F01': 43})\n\nOverlay on F01/F02 directional bias. Not standalone alpha.\n\n## Parent taker path (baseline)\n\n| Band (RT bps) | n | win% | E[R] | sum R | maxDD% | return% |\n| --- | --- | --- | --- | --- | --- | --- |\n| 8 | 163 | 49.1 | 0.153 | 24.99 | 7.67 | 22.79 |\n| 50 | 163 | 49.1 | -0.030 | -4.89 | 16.30 | -3.59 |\n| 100 | 163 | 47.2 | -0.248 | -40.47 | 33.06 | -27.78 |\n\n**Honesty:** Numbers are diagnostic. Do not declare edge. Promotion bar = net E[R]>0 @ **50 bps** with honest n + breakers + Meik RED.\n\n## Maker improve sketch @ 80 bps RT\n\n| Band (RT bps) | n | win% | E[R] | sum R | maxDD% | return% |\n| --- | --- | --- | --- | --- | --- | --- |\n| 80 | 163 | 48.5 | -0.139 | -22.65 | 25.13 | -16.53 |\n\n**Honesty:** Numbers are diagnostic. Do not declare edge. Promotion bar = net E[R]>0 @ **50 bps** with honest n + breakers + Meik RED.\n\n## Maker + adverse-selection sketch @ 80 bps RT\n\n| Band (RT bps) | n | win% | E[R] | sum R | maxDD% | return% |\n| --- | --- | --- | --- | --- | --- | --- |\n| 80 | 163 | 48.5 | -0.227 | -37.00 | 31.56 | -25.68 |\n\n**Honesty:** Numbers are diagnostic. Do not declare edge. Promotion bar = net E[R]>0 @ **50 bps** with honest n + breakers + Meik RED.\n\nIf adverse model ≤ improve model savings, fee path is fragile. Do not claim maker fees without depth/fill realism.\n\n## Next owner action\n\n- **Tape:** when F01 intents fire, log hypothetical limit vs market.\n- **Scale/Cost Critic:** compare adverse vs improve before any fee-language upgrade.\n\n*Overlay sketch. No edge declaration.*\n",
   "extras_keys": [],
@@ -127,6 +130,8 @@
     "/workspace/paper-desk/explore/out/f07_maker_overlay.json",
     "/workspace/paper-desk/explore/out/f07_maker_overlay.md"
   ],
-  "parse_gaps": [],
+  "parse_gaps": [
+    "no_equity_series:f07_overlay_only"
+  ],
   "disclaimer": "PAPER ONLY — simulated fills vs live Kraken prices / historical probes. Not real money. Not financial advice. Do not declare edge from first-run tables."
 }

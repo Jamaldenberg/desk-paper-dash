@@ -5,8 +5,8 @@
   "strategy_id": "liquid-tsmom-filter-v1-shadow",
   "mode": "shadow / scan",
   "live": false,
-  "updated_at": "2026-09-11T03:22:38.180Z",
-  "updated_at_pt": "2026-09-10 8:22 PM PT",
+  "updated_at": "2026-09-11T03:51:46.067Z",
+  "updated_at_pt": "2026-09-10 8:51 PM PT",
   "scoreboard_headline": "**shadow live** — liquid n=91; fills blocked non-BTC/ETH",
   "preregister": "[[Desk/Research/Explore/preregister-2026-09-10-f03-liquid-tsmom-shadow|DPR-20260910-03]]",
   "metrics": {
@@ -137,6 +137,9 @@
     }
   ],
   "trades_total": 2,
+  "equity_series": null,
+  "metric_series": null,
+  "series_note": "no series yet — ranks-only probe (fills blocked)",
   "ranks": [
     {
       "symbol": "ETH/USD",
@@ -169,6 +172,8 @@
     "/workspace/paper-desk/explore/out/f03_universe_shadow.md",
     "/workspace/paper-desk/explore/out/f03_shadow_ranks.csv"
   ],
-  "parse_gaps": [],
+  "parse_gaps": [
+    "no_equity_series:ranks_only"
+  ],
   "disclaimer": "PAPER ONLY — simulated fills vs live Kraken prices / historical probes. Not real money. Not financial advice. Do not declare edge from first-run tables."
 }

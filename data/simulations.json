@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-09-11T03:22:38.180Z",
-  "updated_at_pt": "2026-09-10 8:22 PM PT",
+  "updated_at": "2026-09-11T03:51:46.067Z",
+  "updated_at_pt": "2026-09-10 8:51 PM PT",
   "disclaimer": "PAPER ONLY — simulated fills vs live Kraken prices / historical probes. Not real money. Not financial advice. Do not declare edge from first-run tables.",
   "scoreboard_path": "/workspace/ops-brain/Desk/Research/Explore/SCOREBOARD.md",
   "explore_out": "/workspace/paper-desk/explore/out",
@@ -15,15 +15,17 @@
       "live": true,
       "status_headline": "Active Kraken CLI paper workspace desk-explore-f01",
       "summary": {
-        "equity": 992.49216238477,
-        "unrealized_pnl": -7.50783761523,
-        "unrealized_pnl_pct": -0.750783761523,
+        "equity": 992.38080538077,
+        "unrealized_pnl": -7.61919461923,
+        "unrealized_pnl_pct": -0.761919461923,
         "total_trades": 11,
         "open_orders": 1
       },
-      "updated_at": "2026-09-11T03:22:38.180Z",
-      "updated_at_pt": "2026-09-10 8:22 PM PT",
-      "detail_path": "data/sims/cli-paper-see-what-happens-v0.json"
+      "updated_at": "2026-09-11T03:51:46.067Z",
+      "updated_at_pt": "2026-09-10 8:51 PM PT",
+      "detail_path": "data/sims/cli-paper-see-what-happens-v0.json",
+      "has_equity_series": true,
+      "series_len": 14
     },
     {
       "id": "f01",
@@ -38,12 +40,15 @@
         "expectancy_r_50": -0.26988798633448463,
         "return_pct_50": -19.145916917109552
       },
-      "updated_at": "2026-09-11T03:22:38.180Z",
+      "updated_at": "2026-09-11T03:51:46.067Z",
       "updated_at_pt": "2026-09-10 12:18 PT",
       "detail_path": "data/sims/f01.json",
       "parse_gaps": [
         "no_trade_csv_in_explore_out:metrics_from_json_only"
-      ]
+      ],
+      "has_equity_series": true,
+      "has_metric_series": true,
+      "series_len": 89
     },
     {
       "id": "f02",
@@ -58,12 +63,15 @@
         "expectancy_r_50_n20": 0.10122228607571372,
         "oos_n": 13
       },
-      "updated_at": "2026-09-11T03:22:38.180Z",
+      "updated_at": "2026-09-11T03:51:46.067Z",
       "updated_at_pt": "2026-09-10 12:16 PT",
       "detail_path": "data/sims/f02.json",
       "parse_gaps": [
         "truncated:120_to_80_most_recent"
-      ]
+      ],
+      "has_equity_series": true,
+      "has_metric_series": true,
+      "series_len": 51
     },
     {
       "id": "f03",
@@ -78,10 +86,15 @@
         "ranks_cached": 2,
         "fills": "blocked_non_btc_eth"
       },
-      "updated_at": "2026-09-11T03:22:38.180Z",
+      "updated_at": "2026-09-11T03:51:46.067Z",
       "updated_at_pt": "2026-09-10 12:20 PT",
       "detail_path": "data/sims/f03.json",
-      "parse_gaps": []
+      "parse_gaps": [
+        "no_equity_series:ranks_only"
+      ],
+      "has_equity_series": false,
+      "has_metric_series": false,
+      "series_len": 0
     },
     {
       "id": "f04",
@@ -96,12 +109,15 @@
         "expectancy_r_50": -0.870326062507783,
         "return_pct_50": -98.72415714820345
       },
-      "updated_at": "2026-09-11T03:22:38.180Z",
+      "updated_at": "2026-09-11T03:51:46.067Z",
       "updated_at_pt": "2026-09-10 12:16 PT",
       "detail_path": "data/sims/f04.json",
       "parse_gaps": [
         "truncated:1009_to_80_most_recent"
-      ]
+      ],
+      "has_equity_series": true,
+      "has_metric_series": true,
+      "series_len": 1010
     },
     {
       "id": "f05",
@@ -116,10 +132,13 @@
         "expectancy_r_50_gated": 0.14172367229075292,
         "ungated": "REJECT control (DFG-11)"
       },
-      "updated_at": "2026-09-11T03:22:38.180Z",
+      "updated_at": "2026-09-11T03:51:46.067Z",
       "updated_at_pt": "2026-09-10 12:16 PT",
       "detail_path": "data/sims/f05.json",
-      "parse_gaps": []
+      "parse_gaps": [],
+      "has_equity_series": true,
+      "has_metric_series": true,
+      "series_len": 47
     },
     {
       "id": "f06",
@@ -134,10 +153,15 @@
         "top_k": 1,
         "fills": "blocked_thin_cache"
       },
-      "updated_at": "2026-09-11T03:22:38.180Z",
+      "updated_at": "2026-09-11T03:51:46.067Z",
       "updated_at_pt": "2026-09-10 12:20 PT",
       "detail_path": "data/sims/f06.json",
-      "parse_gaps": []
+      "parse_gaps": [
+        "no_equity_series:ranks_only"
+      ],
+      "has_equity_series": false,
+      "has_metric_series": false,
+      "series_len": 0
     },
     {
       "id": "f07",
@@ -152,15 +176,23 @@
         "taker_er_50": -0.030012728669645414,
         "maker_improve_er_80": -0.1389666049882435
       },
-      "updated_at": "2026-09-11T03:22:38.180Z",
+      "updated_at": "2026-09-11T03:51:46.067Z",
       "updated_at_pt": "2026-09-10 12:17 PT",
       "detail_path": "data/sims/f07.json",
-      "parse_gaps": []
+      "parse_gaps": [
+        "no_equity_series:f07_overlay_only"
+      ],
+      "has_equity_series": false,
+      "has_metric_series": false,
+      "series_len": 0
     }
   ],
   "parse_gaps": [
     "F01:no_trade_csv_in_explore_out:metrics_from_json_only",
     "F02:truncated:120_to_80_most_recent",
-    "F04:truncated:1009_to_80_most_recent"
+    "F03:no_equity_series:ranks_only",
+    "F04:truncated:1009_to_80_most_recent",
+    "F06:no_equity_series:ranks_only",
+    "F07:no_equity_series:f07_overlay_only"
   ]
 }
