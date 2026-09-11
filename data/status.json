@@ -1,27 +1,75 @@
 {
-  "updated_at": "2026-09-11T16:25:56.180Z",
-  "updated_at_pt": "2026-09-11 9:25 AM PT",
+  "updated_at": "2026-09-11T17:41:06.633Z",
+  "updated_at_pt": "2026-09-11 10:41 AM PT",
   "mode": "paper",
   "workspace": "desk-explore-f01",
   "strategy_note": "cli-paper-see-what-happens-v0 · Meik: trade/learn/improve/journal",
-  "equity": 1004.6117265822974,
+  "equity": 1003.5369376706726,
   "starting_balance": 1000.0,
   "currency": "USD",
-  "unrealized_pnl": 4.6117265822975,
-  "unrealized_pnl_pct": 0.46117265822975,
-  "total_trades": 22,
-  "open_orders": 4,
+  "unrealized_pnl": 3.5369376706724998,
+  "unrealized_pnl_pct": 0.35369376706725,
+  "total_trades": 26,
+  "open_orders": 6,
   "fee_rate": 0.005,
   "balances": {
-    "BTC": 0.00652526,
-    "ETH": 0.11782945,
-    "USD": 196.4203622637975
+    "BTC": 0.00907354,
+    "ETH": 0.05282945,
+    "USD": 163.8071501786725
   },
   "marks": {
-    "BTCUSD": 77635.1,
-    "ETHUSD": 2560.37
+    "BTCUSD": 77593.1,
+    "ETHUSD": 2568.45
   },
   "trades": [
+    {
+      "cost": 95.000016591,
+      "fee": 0.475000082955,
+      "id": "PAPER-00067",
+      "order_id": "PAPER-00066",
+      "pair": "BTCUSD",
+      "price": 77620.1,
+      "side": "buy",
+      "status": "filled",
+      "time": "2026-09-11T17:38:57.327029394Z",
+      "volume": 0.00122391
+    },
+    {
+      "cost": 64.216,
+      "fee": 0.32108,
+      "id": "PAPER-00065",
+      "order_id": "PAPER-00064",
+      "pair": "ETHUSD",
+      "price": 2568.64,
+      "side": "sell",
+      "status": "filled",
+      "time": "2026-09-11T17:38:50.664677865Z",
+      "volume": 0.025
+    },
+    {
+      "cost": 103.152795434,
+      "fee": 0.51576397717,
+      "id": "PAPER-00057",
+      "order_id": "PAPER-00056",
+      "pair": "BTCUSD",
+      "price": 77888.2,
+      "side": "buy",
+      "status": "filled",
+      "time": "2026-09-11T16:53:52.821286517Z",
+      "volume": 0.00132437
+    },
+    {
+      "cost": 103.1512,
+      "fee": 0.515756,
+      "id": "PAPER-00055",
+      "order_id": "PAPER-00054",
+      "pair": "ETHUSD",
+      "price": 2578.78,
+      "side": "sell",
+      "status": "filled",
+      "time": "2026-09-11T16:53:52.592679908Z",
+      "volume": 0.04
+    },
     {
       "cost": 120.000055068,
       "fee": 0.60000027534,
@@ -288,52 +336,74 @@
     }
   ],
   "open_orders_detail": {
-    "count": 4,
+    "count": 6,
     "mode": "paper",
     "open_orders": [
       {
-        "created_at": "2026-09-11T14:01:59.608924258Z",
-        "id": "PAPER-00047",
+        "created_at": "2026-09-11T17:38:01.014822591Z",
+        "id": "PAPER-00060",
         "pair": "BTCUSD",
-        "price": 80493.0,
-        "reserved_amount": 0.0009448,
+        "price": 78300.0,
+        "reserved_amount": 0.001,
         "reserved_asset": "BTC",
         "side": "sell",
         "type": "limit",
-        "volume": 0.0009448
+        "volume": 0.001
       },
       {
-        "created_at": "2026-09-11T14:01:59.736344802Z",
-        "id": "PAPER-00048",
-        "pair": "ETHUSD",
-        "price": 2676.0,
-        "reserved_amount": 0.04,
-        "reserved_asset": "ETH",
+        "created_at": "2026-09-11T17:38:01.112809005Z",
+        "id": "PAPER-00061",
+        "pair": "BTCUSD",
+        "price": 78650.0,
+        "reserved_amount": 0.0008,
+        "reserved_asset": "BTC",
         "side": "sell",
         "type": "limit",
-        "volume": 0.04
+        "volume": 0.0008
       },
       {
-        "created_at": "2026-09-11T14:31:29.909658743Z",
-        "id": "PAPER-00050",
+        "created_at": "2026-09-11T17:38:01.384883445Z",
+        "id": "PAPER-00062",
         "pair": "BTCUSD",
-        "price": 77269.6,
-        "reserved_amount": 180.90030742548,
+        "price": 77350.0,
+        "reserved_amount": 155.4735,
         "reserved_asset": "USD",
         "side": "buy",
         "type": "limit",
-        "volume": 0.00232951
+        "volume": 0.002
       },
       {
-        "created_at": "2026-09-11T14:31:30.663876486Z",
-        "id": "PAPER-00053",
+        "created_at": "2026-09-11T17:38:21.150217812Z",
+        "id": "PAPER-00063",
+        "pair": "ETHUSD",
+        "price": 2595.0,
+        "reserved_amount": 0.03,
+        "reserved_asset": "ETH",
+        "side": "sell",
+        "type": "limit",
+        "volume": 0.03
+      },
+      {
+        "created_at": "2026-09-11T17:38:58.866237214Z",
+        "id": "PAPER-00068",
         "pair": "BTCUSD",
-        "price": 79955.9,
-        "reserved_amount": 0.00075942,
+        "price": 78784.4,
+        "reserved_amount": 0.00061195,
         "reserved_asset": "BTC",
         "side": "sell",
         "type": "limit",
-        "volume": 0.00075942
+        "volume": 0.00061195
+      },
+      {
+        "created_at": "2026-09-11T17:39:14.707813784Z",
+        "id": "PAPER-00069",
+        "pair": "BTCUSD",
+        "price": 78736.6,
+        "reserved_amount": 0.00299772,
+        "reserved_asset": "BTC",
+        "side": "sell",
+        "type": "limit",
+        "volume": 0.00299772
       }
     ]
   },
@@ -476,6 +546,32 @@
       "t": "2026-09-11T16:25:56.180Z",
       "equity": 1004.611727,
       "pnl": 4.611727,
+      "label": "mark"
+    },
+    {
+      "t": "2026-09-11T16:53:52.592679908Z",
+      "equity": 1015.30662,
+      "pnl": 15.30662
+    },
+    {
+      "t": "2026-09-11T16:53:52.821286517Z",
+      "equity": 1007.485827,
+      "pnl": 7.485827
+    },
+    {
+      "t": "2026-09-11T17:38:50.664677865Z",
+      "equity": 1006.375557,
+      "pnl": 6.375557
+    },
+    {
+      "t": "2026-09-11T17:38:57.327029394Z",
+      "equity": 1003.796071,
+      "pnl": 3.796071
+    },
+    {
+      "t": "2026-09-11T17:41:06.633Z",
+      "equity": 1003.536938,
+      "pnl": 3.536938,
       "label": "mark"
     }
   ],
