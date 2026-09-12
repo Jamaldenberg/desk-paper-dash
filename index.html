@@ -259,6 +259,28 @@
       transform: translate(-50%, -120%);
       box-shadow: var(--shadow);
     }
+
+    .strat-block {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: .85rem;
+      margin-top: .75rem;
+    }
+    .strat-block h4 {
+      margin: 0 0 .5rem;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+    .strat-pills {
+      display: flex; flex-wrap: wrap; gap: .35rem;
+      margin-bottom: .55rem;
+    }
+    .strat-note {
+      color: var(--muted);
+      font-size: .72rem;
+      margin: .35rem 0 .15rem;
+    }
     .hidden { display: none !important; }
   </style>
 </head>
@@ -335,6 +357,36 @@
     });
   }
 
+
+  function fmtTimePT(t) {
+    if (!t) return '';
+    const ms = Date.parse(t);
+    if (Number.isNaN(ms)) {
+      const s = String(t).replace('T', ' ');
+      return s.slice(5, 16) || s.slice(0, 16);
+    }
+    try {
+      const fmt = new Intl.DateTimeFormat('en-CA', {
+        timeZone: 'America/Vancouver',
+        month: '2-digit',
+        day: '2-digit',
+        hour: 'numeric',
+        minute: '2-digit',
+        hour12: true,
+      });
+      const parts = fmt.formatToParts(new Date(ms));
+      const get = (type) => (parts.find(p => p.type === type) || {}).value || '';
+      const mon = get('month');
+      const day = get('day');
+      const hour = get('hour');
+      const minute = get('minute');
+      const dayPeriod = get('dayPeriod');
+      return mon + '-' + day + ' ' + hour + ':' + minute + (dayPeriod ? ' ' + dayPeriod : '') + ' PT';
+    } catch (e) {
+      return String(t);
+    }
+  }
+
   function renderSvgChart(container, points, opts) {
     opts = opts || {};
     const prefer = opts.prefer || 'equity';
@@ -404,9 +456,7 @@
     }
     // x end labels
     function fmtT(t) {
-      if (!t) return '';
-      const s = String(t).replace('T', ' ');
-      return s.slice(5, 16) || s.slice(0, 16);
+      return fmtTimePT(t);
     }
     const xLabels =
       '<text x="' + pad.l + '" y="' + (H - 8) + '" fill="#9aa8c0" font-size="10">' + esc(fmtT(valid[0].t)) + '</text>' +
@@ -608,9 +658,19 @@
       renderSvgChart(chartEl, series, {
         prefer: 'equity',
         yLabel: 'Equity $',
-        note: 'fills + marks',
+        note: 'fills + marks · PT',
         empty: 'no series yet — waiting for CLI paper fills',
       });
+    }
+
+    // Strategies section below equity chart (not click-navigate)
+    const stratHost = document.createElement('div');
+    stratHost.id = 'home-strategies';
+    stratHost.innerHTML = strategyTablesHtml(status && status.strategy_tables);
+    if (stratHost.innerHTML) {
+      const hero = homeEl.querySelector('.hero');
+      if (hero) hero.appendChild(stratHost);
+      else homeEl.insertBefore(stratHost, homeEl.querySelector('.grid'));
     }
 
     homeEl.querySelectorAll('[data-sim]').forEach(el => {
@@ -642,18 +702,69 @@
     return html;
   }
 
-  function tradesTable(trades, live) {
-    if (!trades || !trades.length) return '<p class="empty">No trades in export.</p>';
-    if (live) {
-      let html = '<div class="scroll-x"><table><thead><tr><th>Time</th><th>Side</th><th>Pair</th><th>Price</th><th>Vol</th><th>Fee</th><th>Id</th></tr></thead><tbody>';
-      for (const t of trades) {
+  function strategyTablesHtml(tables) {
+    if (!tables || !tables.length) return '';
+    let html = '<div class="detail-section strat-section"><h3>Strategies</h3>';
+    html += '<p class="strat-note">Per-strategy paper fills. FIFO PnL (if shown) is vs the shared book — not an isolated strategy account. No fabricated win%.</p>';
+    for (const st of tables) {
+      const m = st.metrics || {};
+      const fifo = m.fifo_realized_pnl;
+      const fifoPill = fifo == null ? '' :
+        '<span class="pill ' + (fifo >= 0 ? 'pos' : 'neg') + '">FIFO ' + (fifo >= 0 ? '+' : '') + fmtNum(fifo, 2) + '</span>';
+      html += '<div class="strat-block">' +
+        '<h4>' + esc(st.strategy || 'unattributed') + '</h4>' +
+        '<div class="strat-pills">' +
+          '<span class="pill mono">' + esc(st.strategy_id || '') + '</span>' +
+          '<span class="pill">' + esc(fmtNum(m.fills, 0)) + ' fills</span>' +
+          '<span class="pill">' + esc(fmtNum(m.buys, 0)) + ' buy / ' + esc(fmtNum(m.sells, 0)) + ' sell</span>' +
+          '<span class="pill">fees ' + esc(fmtNum(m.fees, 2)) + '</span>' +
+          '<span class="pill">notional ' + esc(fmtNum(m.notional, 0)) + '</span>' +
+          fifoPill +
+        '</div>';
+      const rows = st.trades || [];
+      if (!rows.length) {
+        html += '<p class="empty">No trades.</p></div>';
+        continue;
+      }
+      html += '<div class="scroll-x"><table><thead><tr>' +
+        '<th>Time (PT)</th><th>Side</th><th>Pair</th><th>Price</th><th>Vol</th><th>Fee</th><th>Id</th>' +
+        '</tr></thead><tbody>';
+      for (const t of rows) {
+        const tlabel = t.time_pt || fmtTimePT(t.time) || '';
         html += '<tr>' +
-          '<td class="mono">' + esc((t.time || '').replace('T',' ').slice(0,19)) + '</td>' +
+          '<td class="mono">' + esc(tlabel) + '</td>' +
           '<td class="' + (t.side==='sell'?'neg':'pos') + '">' + esc(t.side) + '</td>' +
           '<td>' + esc(t.pair) + '</td>' +
           '<td>' + esc(fmtNum(t.price, 2)) + '</td>' +
           '<td>' + esc(fmtNum(t.volume, 6)) + '</td>' +
           '<td>' + esc(fmtNum(t.fee, 4)) + '</td>' +
+          '<td class="mono">' + esc(t.id) + '</td>' +
+        '</tr>';
+      }
+      html += '</tbody></table></div>';
+      if (m.fifo_note) html += '<p class="strat-note">' + esc(m.fifo_note) + '</p>';
+      html += '</div>';
+    }
+    html += '</div>';
+    return html;
+  }
+
+  function tradesTable(trades, live) {
+    if (!trades || !trades.length) return '<p class="empty">No trades in export.</p>';
+    if (live) {
+      const hasStrat = trades.some(t => t.strategy);
+      let html = '<div class="scroll-x"><table><thead><tr><th>Time (PT)</th><th>Side</th><th>Pair</th><th>Price</th><th>Vol</th><th>Fee</th>' +
+        (hasStrat ? '<th>Strategy</th>' : '') + '<th>Id</th></tr></thead><tbody>';
+      for (const t of trades) {
+        const tlabel = t.time_pt || fmtTimePT(t.time) || (t.time || '').replace('T',' ').slice(0,19);
+        html += '<tr>' +
+          '<td class="mono">' + esc(tlabel) + '</td>' +
+          '<td class="' + (t.side==='sell'?'neg':'pos') + '">' + esc(t.side) + '</td>' +
+          '<td>' + esc(t.pair) + '</td>' +
+          '<td>' + esc(fmtNum(t.price, 2)) + '</td>' +
+          '<td>' + esc(fmtNum(t.volume, 6)) + '</td>' +
+          '<td>' + esc(fmtNum(t.fee, 4)) + '</td>' +
+          (hasStrat ? '<td class="mono">' + esc(t.strategy || '—') + '</td>' : '') +
           '<td class="mono">' + esc(t.id) + '</td>' +
         '</tr>';
       }
@@ -758,7 +869,9 @@
     const tradeNote = d.trades_total && d.trades && d.trades_total > d.trades.length
       ? '<p class="empty">Showing ' + d.trades.length + ' of ' + d.trades_total + ' rows (most recent).</p>'
       : '';
-    const tradesBlock = '<div class="detail-section"><h3>' + (d.live ? 'Paper trades' : 'Trades / ranks sample') + '</h3>' +
+    const stratBlock = d.live ? strategyTablesHtml(d.strategy_tables) : '';
+    const tradesBlock = stratBlock +
+      '<div class="detail-section"><h3>' + (d.live ? 'Paper trades (all)' : 'Trades / ranks sample') + '</h3>' +
       tradeNote + tradesTable(d.trades, !!d.live) + '</div>';
 
     let ordersBlock = '';
@@ -813,7 +926,7 @@
         renderSvgChart(perfEl, d.equity_series, {
           prefer: 'equity',
           yLabel: d.live ? 'Equity $' : 'Equity @50bps',
-          note: d.series_note || (d.live ? 'fills + marks' : 'fee stress replay'),
+          note: d.series_note || (d.live ? 'fills + marks · PT' : 'fee stress replay · PT'),
           empty: d.series_note || 'no series yet',
         });
       } else if (d.metric_series && d.metric_series.length >= 2) {
