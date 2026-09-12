@@ -346,7 +346,9 @@
       width: .9rem;
     }
     details.strat-block[open] > summary::before { content: '▾'; }
-    details.strat-block > summary h4 { margin: 0; flex: 1 1 auto; }
+    details.strat-block > summary h4 { margin: 0; }
+    details.strat-block > summary .strat-head { flex: 1 1 12rem; min-width: 0; }
+    .strat-def { margin: .2rem 0 0; font-size: .78rem; color: var(--muted); font-weight: 400; line-height: 1.35; }
     details.strat-block .strat-body { padding: 0 .85rem .85rem; }
     .muted { color: var(--muted); font-size: .72rem; }
     .signed-pos { color: var(--pos, #3dd68c); }
@@ -806,6 +808,44 @@
     return html;
   }
 
+  const STRATEGY_DEFS = {
+    powder_rotate: "Old cash-maker: market-sold coins just to free USD for the next buy. Banned after fees ate every close. Leftover rows are history.",
+    partial_tp: "Sells a slice (~30%) of the biggest holding to bank some profit. Markets only if the move clears ~2× fees; otherwise rests a limit.",
+    eth_twin: "When ETH prints a 15-minute higher high, buy a small ETH clip beside BTC and park a half take-profit. If no new high, trim existing ETH.",
+    tape_eth_chop: "Early tape probe: instantly sell a bit of ETH then buy it back. Tests churn, not a real edge.",
+    "15m_hh_add": "Early add: buy a larger clip when ETH or BTC makes a fresh 15-minute higher high.",
+    ta_atr_manage: "Exit manager. Parks a limit at the TA target. If price hits the ATR stop, it sells even if red. Cancels take-profits that are too far.",
+    mom_add: "Momentum add. If the last 15m candle is a higher high, market-buy a ~10% clip (BTC preferred, else ETH) and rest a half take-profit.",
+    unattributed: "A fill we could not match to a strategy log. Not a strategy.",
+    pair_rotate_sol: "Moves a small USD clip into SOL (or back to USD) to test a third pair vs BTC/ETH only.",
+    range_fade: "Mean-reversion on the 15m range: buy near the recent low, sell near the recent high, aim for the middle.",
+    "15m_hh_follow": "After a take-profit, buy another clip if BTC is still printing 15-minute higher highs. Follow-through, not the first entry.",
+    breakout_chase: "Chase a fresh 15m (or 5m) higher high with a market buy and a tight half take-profit.",
+    relative_btc_eth: "Compares the last hour of BTC vs ETH and buys whichever lagged.",
+    tape_btc_chop: "Early tape probe: sell a small BTC pulse then buy it back. Same churn test as ETH chop.",
+    tape_recycle: "Early tape: market-sell BTC just to free USD. Same fee-tax idea as powder_rotate. Historical.",
+    pullback_add: "Rests a buy limit below spot (a dip bid) and replaces it as the pullback depth changes.",
+    scaleout_adjust: "Cancels take-profits that drifted too far from spot and re-arms them closer.",
+    cancel_replace_stale: "Cancels stale bids/asks and re-arms the dip bid plus a take-profit.",
+    time_stop_flatten: "If a position sat too long (~45 min), flatten one clip. Markets only if the move clears fees.",
+    ta_trend_pullback: "Only in a TREND. Buys a pullback toward the EMA in the higher-timeframe direction.",
+    ta_range_meanrev: "In a RANGE, fade toward the average instead of chasing.",
+    ta_breakout_vol: "Buys a breakout only when volume confirms it.",
+    ta_vwap_reclaim: "Buys when price reclaims VWAP with volume. Trims if price loses VWAP.",
+    ta_atr_trail: "Trails a stop under the high using ATR. Sells if price comes back through that stop.",
+    tape_trim_ladder: "Rests a BTC sell about 1.2% above spot. Early tape probe.",
+    scaleout: "Rests a take-profit a bit above the last buy (overlap scale-out).",
+    scaleout_ab: "Lab knob: tries a wider vs tighter take-profit distance. Not a standalone edge.",
+    random_ab_knob: "Lab knob: randomly tweaks one setting (like pullback depth) to compare variants."
+  };
+
+  function strategyDef(st) {
+    const fromData = (st && st.definition) ? String(st.definition).trim() : "";
+    if (fromData) return fromData;
+    const key = (st && st.strategy) ? String(st.strategy) : "unattributed";
+    return STRATEGY_DEFS[key] || "";
+  }
+
   function strategyTablesHtml(tables) {
     if (!tables || !tables.length) return '';
     let html = '<div class="detail-section strat-section"><h3>Strategies</h3>';
@@ -819,9 +859,13 @@
       const wl = (m.wins != null || m.losses != null)
         ? ('<span class="pill">' + esc(fmtNum(m.wins, 0)) + 'W / ' + esc(fmtNum(m.losses, 0)) + 'L</span>')
         : '';
+      const def = strategyDef(st);
       html += '<details class="strat-block">' +
         '<summary>' +
-          '<h4>' + esc(st.strategy || 'unattributed') + '</h4>' +
+          '<div class="strat-head">' +
+            '<h4>' + esc(st.strategy || 'unattributed') + '</h4>' +
+            (def ? '<p class="strat-def">' + esc(def) + '</p>' : '') +
+          '</div>' +
           '<div class="strat-pills">' +
             '<span class="pill">' + esc(fmtNum(nDone, 0)) + ' completed</span>' +
             wl +
