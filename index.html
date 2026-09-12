@@ -281,6 +281,9 @@
       font-size: .72rem;
       margin: .35rem 0 .15rem;
     }
+    .muted { color: var(--muted); font-size: .72rem; }
+    .signed-pos { color: var(--pos, #3dd68c); }
+    .signed-neg { color: var(--neg, #f07178); }
     .hidden { display: none !important; }
   </style>
 </head>
@@ -705,45 +708,60 @@
   function strategyTablesHtml(tables) {
     if (!tables || !tables.length) return '';
     let html = '<div class="detail-section strat-section"><h3>Strategies</h3>';
-    html += '<p class="strat-note">Per-strategy paper fills. FIFO PnL (if shown) is vs the shared book — not an isolated strategy account. No fabricated win%.</p>';
+    html += '<p class="strat-note">FIFO vs shared book. A completed row is a closed lot (sell vs oldest buy), attributed to the exit strategy. Not an isolated strategy account. No fabricated win% from open inventory.</p>';
     for (const st of tables) {
       const m = st.metrics || {};
-      const fifo = m.fifo_realized_pnl;
-      const fifoPill = fifo == null ? '' :
-        '<span class="pill ' + (fifo >= 0 ? 'pos' : 'neg') + '">FIFO ' + (fifo >= 0 ? '+' : '') + fmtNum(fifo, 2) + '</span>';
+      const nDone = m.completed || 0;
+      const sumPnl = m.sum_pnl;
+      const sumPnlTxt = sumPnl == null ? '—' :
+        ((sumPnl >= 0 ? '+' : '') + fmtNum(sumPnl, 2));
+      const wl = (m.wins != null || m.losses != null)
+        ? ('<span class="pill">' + esc(fmtNum(m.wins, 0)) + 'W / ' + esc(fmtNum(m.losses, 0)) + 'L</span>')
+        : '';
       html += '<div class="strat-block">' +
         '<h4>' + esc(st.strategy || 'unattributed') + '</h4>' +
         '<div class="strat-pills">' +
           '<span class="pill mono">' + esc(st.strategy_id || '') + '</span>' +
+          '<span class="pill">' + esc(fmtNum(nDone, 0)) + ' completed</span>' +
+          wl +
+          '<span class="pill ' + pnlClass(sumPnl) + '">P&amp;L ' + esc(sumPnlTxt) + '</span>' +
+          '<span class="pill">fees ' + esc(fmtNum(m.fees, 2)) + '</span>' +
           '<span class="pill">' + esc(fmtNum(m.fills, 0)) + ' fills</span>' +
           '<span class="pill">' + esc(fmtNum(m.buys, 0)) + ' buy / ' + esc(fmtNum(m.sells, 0)) + ' sell</span>' +
-          '<span class="pill">fees ' + esc(fmtNum(m.fees, 2)) + '</span>' +
-          '<span class="pill">notional ' + esc(fmtNum(m.notional, 0)) + '</span>' +
-          fifoPill +
         '</div>';
-      const rows = st.trades || [];
+      const rows = st.completed || [];
       if (!rows.length) {
-        html += '<p class="empty">No trades.</p></div>';
+        if ((m.fills || 0) > 0) {
+          html += '<p class="empty">No completed trades yet (open inventory / no matching sell).</p></div>';
+        } else {
+          html += '<p class="empty">No trades.</p></div>';
+        }
         continue;
       }
       html += '<div class="scroll-x"><table><thead><tr>' +
-        '<th>Time (PT)</th><th>Side</th><th>Pair</th><th>Price</th><th>Vol</th><th>Fee</th><th>Id</th>' +
+        '<th>Exit (PT)</th><th>Pair</th><th>Amount</th><th>Entry</th><th>Exit $</th><th>P&amp;L</th><th>P&amp;L %</th><th>Fees</th>' +
         '</tr></thead><tbody>';
       for (const t of rows) {
-        const tlabel = t.time_pt || fmtTimePT(t.time) || '';
+        const exitLabel = t.exit_pt || fmtTimePT(t.exit_time) || '';
+        const pnl = t.pnl;
+        const pnlTxt = pnl == null ? '—' : ((pnl >= 0 ? '+' : '') + fmtNum(pnl, 2));
+        const pctTxt = t.pnl_pct == null ? '—' : ((t.pnl_pct >= 0 ? '+' : '') + fmtNum(t.pnl_pct, 2) + '%');
+        let pairCell = esc(t.pair || '');
+        if (t.entry_strategy && t.exit_strategy && t.entry_strategy !== t.exit_strategy) {
+          pairCell += '<div class="muted">entry: ' + esc(t.entry_strategy) + '</div>';
+        }
         html += '<tr>' +
-          '<td class="mono">' + esc(tlabel) + '</td>' +
-          '<td class="' + (t.side==='sell'?'neg':'pos') + '">' + esc(t.side) + '</td>' +
-          '<td>' + esc(t.pair) + '</td>' +
-          '<td>' + esc(fmtNum(t.price, 2)) + '</td>' +
-          '<td>' + esc(fmtNum(t.volume, 6)) + '</td>' +
-          '<td>' + esc(fmtNum(t.fee, 4)) + '</td>' +
-          '<td class="mono">' + esc(t.id) + '</td>' +
+          '<td class="mono">' + esc(exitLabel) + '</td>' +
+          '<td>' + pairCell + '</td>' +
+          '<td>' + esc(fmtNum(t.amount, 6)) + '</td>' +
+          '<td>' + esc(fmtNum(t.entry, 2)) + '</td>' +
+          '<td>' + esc(fmtNum(t.exit, 2)) + '</td>' +
+          '<td class="' + pnlClass(pnl) + '">' + esc(pnlTxt) + '</td>' +
+          '<td class="' + pnlClass(t.pnl_pct) + '">' + esc(pctTxt) + '</td>' +
+          '<td>' + esc(fmtNum(t.fees, 4)) + '</td>' +
         '</tr>';
       }
-      html += '</tbody></table></div>';
-      if (m.fifo_note) html += '<p class="strat-note">' + esc(m.fifo_note) + '</p>';
-      html += '</div>';
+      html += '</tbody></table></div></div>';
     }
     html += '</div>';
     return html;
@@ -871,7 +889,7 @@
       : '';
     const stratBlock = d.live ? strategyTablesHtml(d.strategy_tables) : '';
     const tradesBlock = stratBlock +
-      '<div class="detail-section"><h3>' + (d.live ? 'Paper trades (all)' : 'Trades / ranks sample') + '</h3>' +
+      '<div class="detail-section"><h3>' + (d.live ? 'Paper trades (raw fills)' : 'Trades / ranks sample') + '</h3>' +
       tradeNote + tradesTable(d.trades, !!d.live) + '</div>';
 
     let ordersBlock = '';
