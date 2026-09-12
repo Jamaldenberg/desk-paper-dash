@@ -281,6 +281,73 @@
       font-size: .72rem;
       margin: .35rem 0 .15rem;
     }
+    .topnav {
+      display: flex; flex-wrap: wrap; gap: .45rem;
+      margin-top: .75rem;
+    }
+    .topnav a {
+      display: inline-flex; align-items: center;
+      border: 1px solid var(--border);
+      background: var(--bg2);
+      color: var(--text);
+      border-radius: 999px;
+      padding: .4rem .85rem;
+      font-size: .85rem;
+      font-weight: 650;
+    }
+    .topnav a.active {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: #1a2a42;
+    }
+    .tables-cta {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+      gap: .5rem;
+      margin-top: .85rem;
+      padding: .75rem .85rem;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      color: var(--text);
+      font-weight: 650;
+    }
+    .tables-cta:hover { border-color: var(--accent); color: var(--accent); }
+    .tables-toolbar {
+      display: flex; flex-wrap: wrap; gap: .45rem;
+      margin: .35rem 0 .15rem;
+    }
+    .tables-toolbar button {
+      border: 1px solid var(--border);
+      background: var(--bg2);
+      color: var(--text);
+      border-radius: 999px;
+      padding: .35rem .75rem;
+      font-size: .8rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .tables-toolbar button:hover { border-color: var(--accent); }
+    details.strat-block { padding: 0; }
+    details.strat-block > summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: .4rem .55rem;
+      padding: .85rem;
+      -webkit-tap-highlight-color: transparent;
+    }
+    details.strat-block > summary::-webkit-details-marker { display: none; }
+    details.strat-block > summary::before {
+      content: '▸';
+      color: var(--muted);
+      font-size: .85rem;
+      width: .9rem;
+    }
+    details.strat-block[open] > summary::before { content: '▾'; }
+    details.strat-block > summary h4 { margin: 0; flex: 1 1 auto; }
+    details.strat-block .strat-body { padding: 0 .85rem .85rem; }
     .muted { color: var(--muted); font-size: .72rem; }
     .signed-pos { color: var(--pos, #3dd68c); }
     .signed-neg { color: var(--neg, #f07178); }
@@ -297,9 +364,14 @@
       <span class="pill" id="refresh-pill">Auto-refresh 15s</span>
       <span class="pill" id="count-pill">0 sims</span>
     </div>
+    <nav class="topnav" aria-label="Dashboard">
+      <a href="./" id="nav-home">Overview</a>
+      <a href="./tables.html" id="nav-tables">Tables</a>
+    </nav>
   </header>
   <main>
     <div id="home-view"></div>
+    <div id="tables-view" class="hidden"></div>
     <div id="detail-view" class="hidden"></div>
     <div id="error-view" class="hidden"></div>
   </main>
@@ -310,8 +382,11 @@
 (function () {
   const REFRESH_MS = 15000;
   const homeEl = document.getElementById('home-view');
+  const tablesEl = document.getElementById('tables-view');
   const detailEl = document.getElementById('detail-view');
   const errorEl = document.getElementById('error-view');
+  const navHome = document.getElementById('nav-home');
+  const navTables = document.getElementById('nav-tables');
   const updatedPill = document.getElementById('updated-pill');
   const countPill = document.getElementById('count-pill');
   const titleEl = document.getElementById('page-title');
@@ -542,12 +617,29 @@
     if (q) return q;
     const h = (location.hash || '').replace(/^#\/?/, '');
     if (h.startsWith('sim/')) return h.slice(4);
-    if (h && !h.includes('/')) return h;
+    if (h && !h.includes('/') && h !== 'tables' && h !== 'trades') return h;
     return null;
   }
-
+  function routePage() {
+    const q = new URLSearchParams(location.search);
+    if (q.get('sim')) return 'sim';
+    const page = (q.get('page') || '').toLowerCase();
+    if (page === 'tables' || page === 'trades') return 'tables';
+    const h = (location.hash || '').replace(/^#\/?/, '').toLowerCase();
+    if (h === 'tables' || h === 'trades') return 'tables';
+    if (routeSimId()) return 'sim';
+    return 'home';
+  }
+  function setNav(page) {
+    navHome.classList.toggle('active', page === 'home');
+    navTables.classList.toggle('active', page === 'tables');
+  }
   function goHome() {
-    history.pushState({}, '', location.pathname);
+    history.pushState({}, '', './');
+    render();
+  }
+  function goTables() {
+    history.pushState({}, '', '?page=tables');
     render();
   }
   function goSim(id) {
@@ -603,6 +695,7 @@
   async function renderHome(idx) {
     titleEl.textContent = 'Desk Paper Sims';
     subEl.textContent = 'Tap a card for that simulation only · paper/shadow probes';
+    setNav('home');
     updatedPill.textContent = 'Updated ' + (idx.updated_at_pt || idx.updated_at || '—');
     const sims = idx.simulations || [];
     countPill.textContent = sims.length + ' sims';
@@ -666,15 +759,23 @@
       });
     }
 
-    // Strategies section below equity chart (not click-navigate)
-    const stratHost = document.createElement('div');
-    stratHost.id = 'home-strategies';
-    stratHost.innerHTML = strategyTablesHtml(status && status.strategy_tables);
-    if (stratHost.innerHTML) {
-      const hero = homeEl.querySelector('.hero');
-      if (hero) hero.appendChild(stratHost);
-      else homeEl.insertBefore(stratHost, homeEl.querySelector('.grid'));
-    }
+    const tables = (status && status.strategy_tables) || [];
+    const nDone = tables.reduce((a, st) => a + ((st.metrics || {}).completed || 0), 0);
+    const sumPnl = tables.reduce((a, st) => {
+      const v = (st.metrics || {}).sum_pnl;
+      return a + (v == null ? 0 : Number(v));
+    }, 0);
+    const cta =
+      '<a class="tables-cta" href="./tables.html" id="home-tables-cta">' +
+        '<span>Strategy tables</span>' +
+        '<span class="muted">' + esc(fmtNum(nDone, 0)) + ' completed · P&amp;L ' +
+          esc((sumPnl >= 0 ? '+' : '') + fmtNum(sumPnl, 2)) + ' →</span>' +
+      '</a>';
+    const heroEl = homeEl.querySelector('.hero');
+    if (heroEl) heroEl.insertAdjacentHTML('beforeend', cta);
+    else homeEl.insertAdjacentHTML('afterbegin', cta);
+    const ctaEl = document.getElementById('home-tables-cta');
+    if (ctaEl) ctaEl.addEventListener('click', e => { e.preventDefault(); goTables(); });
 
     homeEl.querySelectorAll('[data-sim]').forEach(el => {
       const open = () => goSim(el.getAttribute('data-sim'));
@@ -718,13 +819,18 @@
       const wl = (m.wins != null || m.losses != null)
         ? ('<span class="pill">' + esc(fmtNum(m.wins, 0)) + 'W / ' + esc(fmtNum(m.losses, 0)) + 'L</span>')
         : '';
-      html += '<div class="strat-block">' +
-        '<h4>' + esc(st.strategy || 'unattributed') + '</h4>' +
+      html += '<details class="strat-block">' +
+        '<summary>' +
+          '<h4>' + esc(st.strategy || 'unattributed') + '</h4>' +
+          '<div class="strat-pills">' +
+            '<span class="pill">' + esc(fmtNum(nDone, 0)) + ' completed</span>' +
+            wl +
+            '<span class="pill ' + pnlClass(sumPnl) + '">P&amp;L ' + esc(sumPnlTxt) + '</span>' +
+          '</div>' +
+        '</summary>' +
+        '<div class="strat-body">' +
         '<div class="strat-pills">' +
           '<span class="pill mono">' + esc(st.strategy_id || '') + '</span>' +
-          '<span class="pill">' + esc(fmtNum(nDone, 0)) + ' completed</span>' +
-          wl +
-          '<span class="pill ' + pnlClass(sumPnl) + '">P&amp;L ' + esc(sumPnlTxt) + '</span>' +
           '<span class="pill">fees ' + esc(fmtNum(m.fees, 2)) + '</span>' +
           '<span class="pill">' + esc(fmtNum(m.fills, 0)) + ' fills</span>' +
           '<span class="pill">' + esc(fmtNum(m.buys, 0)) + ' buy / ' + esc(fmtNum(m.sells, 0)) + ' sell</span>' +
@@ -732,9 +838,9 @@
       const rows = st.completed || [];
       if (!rows.length) {
         if ((m.fills || 0) > 0) {
-          html += '<p class="empty">No completed trades yet (open inventory / no matching sell).</p></div>';
+          html += '<p class="empty">No completed trades yet (open inventory / no matching sell).</p></div></details>';
         } else {
-          html += '<p class="empty">No trades.</p></div>';
+          html += '<p class="empty">No trades.</p></div></details>';
         }
         continue;
       }
@@ -761,10 +867,38 @@
           '<td>' + esc(fmtNum(t.fees, 4)) + '</td>' +
         '</tr>';
       }
-      html += '</tbody></table></div></div>';
+      html += '</tbody></table></div></div></details>';
     }
     html += '</div>';
     return html;
+  }
+
+  function wireTableToggles(root) {
+    const exp = root.querySelector('#tables-expand');
+    const col = root.querySelector('#tables-collapse');
+    const all = () => root.querySelectorAll('details.strat-block');
+    if (exp) exp.addEventListener('click', () => all().forEach(d => { d.open = true; }));
+    if (col) col.addEventListener('click', () => all().forEach(d => { d.open = false; }));
+  }
+
+  async function renderTables() {
+    titleEl.textContent = 'Strategy tables';
+    subEl.textContent = 'Completed FIFO lots · tap a strategy to expand';
+    setNav('tables');
+    let status = null;
+    try { status = await fetchJson('data/status.json'); } catch (e) { status = null; }
+    const idx = indexCache || {};
+    updatedPill.textContent = 'Updated ' + ((status && (status.updated_at_pt || status.updated_at)) || idx.updated_at_pt || idx.updated_at || '—');
+    const tables = (status && status.strategy_tables) || [];
+    const nDone = tables.reduce((a, st) => a + ((st.metrics || {}).completed || 0), 0);
+    countPill.textContent = fmtNum(nDone, 0) + ' completed';
+    const body = strategyTablesHtml(tables) || '<p class="empty">No strategy tables yet.</p>';
+    tablesEl.innerHTML =
+      '<div class="tables-toolbar">' +
+        '<button type="button" id="tables-expand">Expand all</button>' +
+        '<button type="button" id="tables-collapse">Collapse all</button>' +
+      '</div>' + body;
+    wireTableToggles(tablesEl);
   }
 
   function tradesTable(trades, live) {
@@ -813,6 +947,7 @@
   function renderDetail(d) {
     titleEl.textContent = d.title || d.id;
     subEl.textContent = (d.strategy_id || '') + (d.live ? ' · live workspace' : ' · explore probe');
+    setNav('sim');
     updatedPill.textContent = 'Updated ' + (d.updated_at_pt || d.updated_at || '—');
     countPill.textContent = d.family || d.id;
 
@@ -887,7 +1022,9 @@
     const tradeNote = d.trades_total && d.trades && d.trades_total > d.trades.length
       ? '<p class="empty">Showing ' + d.trades.length + ' of ' + d.trades_total + ' rows (most recent).</p>'
       : '';
-    const stratBlock = d.live ? strategyTablesHtml(d.strategy_tables) : '';
+    const stratBlock = d.live
+      ? '<p class="strat-note"><a href="./tables.html" id="detail-tables-link">Strategy tables →</a> completed lots live on their own page.</p>'
+      : '';
     const tradesBlock = stratBlock +
       '<div class="detail-section"><h3>' + (d.live ? 'Paper trades (raw fills)' : 'Trades / ranks sample') + '</h3>' +
       tradeNote + tradesTable(d.trades, !!d.live) + '</div>';
@@ -937,6 +1074,8 @@
       feeBlock + f02Block + ordersBlock + ranksBlock + tradesBlock + learnBlock + gapsBlock + mdBlock;
 
     $('#back-btn', detailEl).addEventListener('click', goHome);
+    const dt = document.getElementById('detail-tables-link');
+    if (dt) dt.addEventListener('click', e => { e.preventDefault(); goTables(); });
 
     const perfEl = document.getElementById('detail-perf-chart');
     if (perfEl) {
@@ -964,23 +1103,32 @@
 
   async function render(opts) {
     const force = !!(opts && opts.force);
+    const page = routePage();
     const simId = routeSimId();
     errorEl.classList.add('hidden');
     try {
       const idx = await loadIndex(force);
-      if (simId) {
+      if (page === 'sim' && simId) {
         homeEl.classList.add('hidden');
+        tablesEl.classList.add('hidden');
         detailEl.classList.remove('hidden');
         const d = await loadDetail(simId, force);
         renderDetail(d);
+      } else if (page === 'tables') {
+        detailEl.classList.add('hidden');
+        homeEl.classList.add('hidden');
+        tablesEl.classList.remove('hidden');
+        await renderTables();
       } else {
         detailEl.classList.add('hidden');
+        tablesEl.classList.add('hidden');
         homeEl.classList.remove('hidden');
         detailCache = {}; // allow refresh of details next open
         await renderHome(idx);
       }
     } catch (e) {
       homeEl.classList.add('hidden');
+      tablesEl.classList.add('hidden');
       detailEl.classList.add('hidden');
       errorEl.classList.remove('hidden');
       errorEl.innerHTML = '<div class="err"><strong>Load failed</strong><br/>' + esc(e.message || e) +
@@ -997,6 +1145,9 @@
     if (timer) clearInterval(timer);
     timer = setInterval(() => render({ force: true }), REFRESH_MS);
   }
+
+  navHome.addEventListener('click', e => { e.preventDefault(); goHome(); });
+  navTables.addEventListener('click', e => { e.preventDefault(); goTables(); });
 
   render({ force: true });
   schedule();
