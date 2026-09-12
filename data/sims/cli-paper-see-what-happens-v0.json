@@ -6,14 +6,14 @@
   "mode": "paper",
   "live": true,
   "workspace": "desk-explore-f01",
-  "updated_at": "2026-09-12T17:51:59.023Z",
-  "updated_at_pt": "2026-09-12 10:51 AM PT",
+  "updated_at": "2026-09-12T17:52:56.783Z",
+  "updated_at_pt": "2026-09-12 10:52 AM PT",
   "metrics": {
-    "equity": 941.087038642855,
+    "equity": 940.854751717855,
     "starting_balance": 1000.0,
     "currency": "USD",
-    "unrealized_pnl": -58.912961357145,
-    "unrealized_pnl_pct": -5.8912961357145,
+    "unrealized_pnl": -59.145248282145,
+    "unrealized_pnl_pct": -5.9145248282145,
     "total_trades": 143,
     "open_orders": 1,
     "fee_rate": 0.005,
@@ -29,8 +29,8 @@
     "USD": 86.032111552855
   },
   "marks": {
-    "BTCUSD": 77178.4,
-    "ETHUSD": 2525.24
+    "BTCUSD": 77160.1,
+    "ETHUSD": 2524.64
   },
   "trades": [
     {
@@ -2174,8 +2174,8 @@
       "status": "filled",
       "time": "2026-09-11T23:19:09.851898683Z",
       "volume": 0.02,
-      "strategy": "breakout_chase",
-      "strategy_id": "cli-paper-breakout-chase-v1",
+      "strategy": "unattributed",
+      "strategy_id": "unattributed",
       "time_pt": "2026-09-11 4:19 PM PT"
     }
   ],
@@ -3727,6 +3727,102 @@
       ]
     },
     {
+      "strategy": "unattributed",
+      "strategy_id": "unattributed",
+      "metrics": {
+        "fills": 6,
+        "buys": 6,
+        "sells": 0,
+        "fees": 1.949934,
+        "notional": 389.986799,
+        "pairs": [
+          "BTCUSD",
+          "ETHUSD",
+          "LINKUSD",
+          "SOLUSD",
+          "UNIUSD"
+        ],
+        "first_pt": "2026-09-11 4:19 PM PT",
+        "last_pt": "2026-09-11 4:20 PM PT",
+        "fifo_realized_pnl": null,
+        "fifo_note": "FIFO vs shared book — not an isolated strategy account"
+      },
+      "trades": [
+        {
+          "time": "2026-09-11T23:20:53.593282373Z",
+          "time_pt": "2026-09-11 4:20 PM PT",
+          "side": "buy",
+          "pair": "UNIUSD",
+          "price": 5.9839,
+          "volume": 5.01,
+          "fee": 0.149896695,
+          "id": "PAPER-00028",
+          "strategy": "unattributed",
+          "strategy_id": "unattributed"
+        },
+        {
+          "time": "2026-09-11T23:20:24.966813597Z",
+          "time_pt": "2026-09-11 4:20 PM PT",
+          "side": "buy",
+          "pair": "ETHUSD",
+          "price": 2514.38,
+          "volume": 0.02,
+          "fee": 0.251438,
+          "id": "PAPER-00026",
+          "strategy": "unattributed",
+          "strategy_id": "unattributed"
+        },
+        {
+          "time": "2026-09-11T23:20:24.840100596Z",
+          "time_pt": "2026-09-11 4:20 PM PT",
+          "side": "buy",
+          "pair": "LINKUSD",
+          "price": 11.5251,
+          "volume": 5.0,
+          "fee": 0.2881275,
+          "id": "PAPER-00024",
+          "strategy": "unattributed",
+          "strategy_id": "unattributed"
+        },
+        {
+          "time": "2026-09-11T23:20:24.512122398Z",
+          "time_pt": "2026-09-11 4:20 PM PT",
+          "side": "buy",
+          "pair": "SOLUSD",
+          "price": 102.29,
+          "volume": 0.8,
+          "fee": 0.40916,
+          "id": "PAPER-00022",
+          "strategy": "unattributed",
+          "strategy_id": "unattributed"
+        },
+        {
+          "time": "2026-09-11T23:19:32.671411695Z",
+          "time_pt": "2026-09-11 4:19 PM PT",
+          "side": "buy",
+          "pair": "BTCUSD",
+          "price": 77124.1,
+          "volume": 0.00155584,
+          "fee": 0.59996379872,
+          "id": "PAPER-00004",
+          "strategy": "unattributed",
+          "strategy_id": "unattributed"
+        },
+        {
+          "time": "2026-09-11T23:19:09.851898683Z",
+          "time_pt": "2026-09-11 4:19 PM PT",
+          "side": "buy",
+          "pair": "ETHUSD",
+          "price": 2513.48,
+          "volume": 0.02,
+          "fee": 0.251348,
+          "id": "PAPER-00002",
+          "strategy": "unattributed",
+          "strategy_id": "unattributed"
+        }
+      ]
+    },
+    {
       "strategy": "tape_eth_chop",
       "strategy_id": "cli-paper-tape-eth_chop-v0",
       "metrics": {
@@ -3803,135 +3899,6 @@
           "id": "PAPER-00040",
           "strategy": "tape_eth_chop",
           "strategy_id": "cli-paper-tape-eth_chop-v0"
-        }
-      ]
-    },
-    {
-      "strategy": "unattributed",
-      "strategy_id": "unattributed",
-      "metrics": {
-        "fills": 5,
-        "buys": 5,
-        "sells": 0,
-        "fees": 1.698586,
-        "notional": 339.717199,
-        "pairs": [
-          "BTCUSD",
-          "ETHUSD",
-          "LINKUSD",
-          "SOLUSD",
-          "UNIUSD"
-        ],
-        "first_pt": "2026-09-11 4:19 PM PT",
-        "last_pt": "2026-09-11 4:20 PM PT",
-        "fifo_realized_pnl": null,
-        "fifo_note": "FIFO vs shared book — not an isolated strategy account"
-      },
-      "trades": [
-        {
-          "time": "2026-09-11T23:20:53.593282373Z",
-          "time_pt": "2026-09-11 4:20 PM PT",
-          "side": "buy",
-          "pair": "UNIUSD",
-          "price": 5.9839,
-          "volume": 5.01,
-          "fee": 0.149896695,
-          "id": "PAPER-00028",
-          "strategy": "unattributed",
-          "strategy_id": "unattributed"
-        },
-        {
-          "time": "2026-09-11T23:20:24.966813597Z",
-          "time_pt": "2026-09-11 4:20 PM PT",
-          "side": "buy",
-          "pair": "ETHUSD",
-          "price": 2514.38,
-          "volume": 0.02,
-          "fee": 0.251438,
-          "id": "PAPER-00026",
-          "strategy": "unattributed",
-          "strategy_id": "unattributed"
-        },
-        {
-          "time": "2026-09-11T23:20:24.840100596Z",
-          "time_pt": "2026-09-11 4:20 PM PT",
-          "side": "buy",
-          "pair": "LINKUSD",
-          "price": 11.5251,
-          "volume": 5.0,
-          "fee": 0.2881275,
-          "id": "PAPER-00024",
-          "strategy": "unattributed",
-          "strategy_id": "unattributed"
-        },
-        {
-          "time": "2026-09-11T23:20:24.512122398Z",
-          "time_pt": "2026-09-11 4:20 PM PT",
-          "side": "buy",
-          "pair": "SOLUSD",
-          "price": 102.29,
-          "volume": 0.8,
-          "fee": 0.40916,
-          "id": "PAPER-00022",
-          "strategy": "unattributed",
-          "strategy_id": "unattributed"
-        },
-        {
-          "time": "2026-09-11T23:19:32.671411695Z",
-          "time_pt": "2026-09-11 4:19 PM PT",
-          "side": "buy",
-          "pair": "BTCUSD",
-          "price": 77124.1,
-          "volume": 0.00155584,
-          "fee": 0.59996379872,
-          "id": "PAPER-00004",
-          "strategy": "unattributed",
-          "strategy_id": "unattributed"
-        }
-      ]
-    },
-    {
-      "strategy": "breakout_chase",
-      "strategy_id": "cli-paper-breakout-chase-v1",
-      "metrics": {
-        "fills": 2,
-        "buys": 2,
-        "sells": 0,
-        "fees": 0.626349,
-        "notional": 125.269756,
-        "pairs": [
-          "BTCUSD",
-          "ETHUSD"
-        ],
-        "first_pt": "2026-09-11 4:19 PM PT",
-        "last_pt": "2026-09-11 4:20 PM PT",
-        "fifo_realized_pnl": null,
-        "fifo_note": "FIFO vs shared book — not an isolated strategy account"
-      },
-      "trades": [
-        {
-          "time": "2026-09-11T23:20:09.669572451Z",
-          "time_pt": "2026-09-11 4:20 PM PT",
-          "side": "buy",
-          "pair": "BTCUSD",
-          "price": 77130.5,
-          "volume": 0.00097238,
-          "fee": 0.37500077795,
-          "id": "PAPER-00015",
-          "strategy": "breakout_chase",
-          "strategy_id": "cli-paper-breakout-chase-v1"
-        },
-        {
-          "time": "2026-09-11T23:19:09.851898683Z",
-          "time_pt": "2026-09-11 4:19 PM PT",
-          "side": "buy",
-          "pair": "ETHUSD",
-          "price": 2513.48,
-          "volume": 0.02,
-          "fee": 0.251348,
-          "id": "PAPER-00002",
-          "strategy": "breakout_chase",
-          "strategy_id": "cli-paper-breakout-chase-v1"
         }
       ]
     },
@@ -4088,6 +4055,38 @@
       ]
     },
     {
+      "strategy": "breakout_chase",
+      "strategy_id": "cli-paper-breakout-chase-v1",
+      "metrics": {
+        "fills": 1,
+        "buys": 1,
+        "sells": 0,
+        "fees": 0.375001,
+        "notional": 75.000156,
+        "pairs": [
+          "BTCUSD"
+        ],
+        "first_pt": "2026-09-11 4:20 PM PT",
+        "last_pt": "2026-09-11 4:20 PM PT",
+        "fifo_realized_pnl": null,
+        "fifo_note": "FIFO vs shared book — not an isolated strategy account"
+      },
+      "trades": [
+        {
+          "time": "2026-09-11T23:20:09.669572451Z",
+          "time_pt": "2026-09-11 4:20 PM PT",
+          "side": "buy",
+          "pair": "BTCUSD",
+          "price": 77130.5,
+          "volume": 0.00097238,
+          "fee": 0.37500077795,
+          "id": "PAPER-00015",
+          "strategy": "breakout_chase",
+          "strategy_id": "cli-paper-breakout-chase-v1"
+        }
+      ]
+    },
+    {
       "strategy": "relative_btc_eth",
       "strategy_id": "cli-paper-relative-btc-eth-v1",
       "metrics": {
@@ -4186,9 +4185,9 @@
   ],
   "attribution": {
     "log": 124,
-    "journal": 7,
+    "journal": 6,
     "tape": 7,
-    "unattributed": 5
+    "unattributed": 6
   },
   "open_orders": [
     {
@@ -5026,12 +5025,18 @@
       "equity": 941.087039,
       "pnl": -58.912961,
       "label": "mark"
+    },
+    {
+      "t": "2026-09-12T17:52:56.783Z",
+      "equity": 940.854752,
+      "pnl": -59.145248,
+      "label": "mark"
     }
   ],
   "fee_stress": null,
   "raw": {
     "status": {
-      "current_value": 941.087038642855,
+      "current_value": 940.854751717855,
       "fee_rate": 0.005,
       "mode": "paper",
       "open_orders": 1,
@@ -5039,8 +5044,8 @@
       "starting_balance": 1000.0,
       "starting_currency": "USD",
       "total_trades": 143,
-      "unrealized_pnl": -58.912961357145,
-      "unrealized_pnl_pct": -5.8912961357145,
+      "unrealized_pnl": -59.145248282145,
+      "unrealized_pnl_pct": -5.9145248282145,
       "valuation_complete": true,
       "workspace": "desk-explore-f01"
     },
@@ -5083,7 +5088,7 @@
     "history_meta": {
       "filled_count": 143,
       "cancelled_count": 161,
-      "equity_history_points": 17
+      "equity_history_points": 18
     }
   },
   "learnings": [
@@ -5091,7 +5096,7 @@
     "Workspace fee 50 bps RT equiv rate field=0.005. No live keys.",
     "Frozen v3 sealed; this lane uses explore strategy_ids.",
     "Historical F01–F07 remain separate probes — do not declare edge from CLI smoke fills.",
-    "Attributed fills: log=124 journal=7 tape=7 unattributed=5 of 143. FIFO PnL (when shown) is vs shared book — not an isolated strategy account."
+    "Attributed fills: log=124 journal=6 tape=7 unattributed=6 of 143. FIFO PnL (when shown) is vs shared book — not an isolated strategy account."
   ],
   "scoreboard_headline": "Active Kraken CLI paper workspace desk-explore-f01",
   "artifacts": [],
