@@ -6,308 +6,36 @@
   "mode": "paper",
   "live": true,
   "workspace": "desk-explore-f01",
-  "updated_at": "2026-09-13T18:52:12.788Z",
-  "updated_at_pt": "2026-09-13 11:52 AM PT",
+  "updated_at": "2026-09-13T18:57:11.226Z",
+  "updated_at_pt": "2026-09-13 11:57 AM PT",
   "metrics": {
-    "equity": 996.118317258848,
+    "equity": null,
     "starting_balance": 1000.0,
     "currency": "USD",
-    "unrealized_pnl": -3.881682741152,
-    "unrealized_pnl_pct": -0.3881682741152,
-    "total_trades": 8,
-    "open_orders": 8,
-    "fee_rate": 0.005,
-    "slippage_rate": 0.0,
-    "valuation_complete": true
+    "unrealized_pnl": null,
+    "unrealized_pnl_pct": null,
+    "total_trades": null,
+    "open_orders": null,
+    "fee_rate": null,
+    "slippage_rate": null,
+    "valuation_complete": null
   },
-  "balances": {
-    "ETH": 0.31841248,
-    "USD": 197.364690554848
-  },
+  "balances": {},
   "marks": {
-    "BTCUSD": 77346.9,
-    "ETHUSD": 2508.55
+    "BTCUSD": 77326.0,
+    "ETHUSD": 2508.63
   },
-  "trades": [
-    {
-      "cost": 99.65979514,
-      "fee": 0.4982989757,
-      "id": "PAPER-00023",
-      "order_id": "PAPER-00022",
-      "pair": "ETHUSD",
-      "price": 2508.5,
-      "side": "buy",
-      "status": "filled",
-      "time": "2026-09-13T18:51:43.056514594Z",
-      "volume": 0.03972884,
-      "strategy": "ta_trend_pullback",
-      "strategy_id": "cli-paper-ta-trend-pullback-v1",
-      "time_pt": "2026-09-13 11:51 AM PT"
-    },
-    {
-      "cost": 99.71247364,
-      "fee": 0.4985623682,
-      "id": "PAPER-00020",
-      "order_id": "PAPER-00019",
-      "pair": "ETHUSD",
-      "price": 2508.5,
-      "side": "buy",
-      "status": "filled",
-      "time": "2026-09-13T18:51:08.292422575Z",
-      "volume": 0.03974984,
-      "strategy": "mom_5m",
-      "strategy_id": "cli-paper-mom-5m-v0",
-      "time_pt": "2026-09-13 11:51 AM PT"
-    },
-    {
-      "cost": 99.7550622873,
-      "fee": 0.4987753114365,
-      "id": "PAPER-00017",
-      "order_id": "PAPER-00016",
-      "pair": "ETHUSD",
-      "price": 2508.31,
-      "side": "buy",
-      "status": "filled",
-      "time": "2026-09-13T18:50:12.842190528Z",
-      "volume": 0.03976983,
-      "strategy": "ta_trend_pullback",
-      "strategy_id": "cli-paper-ta-trend-pullback-v1",
-      "time_pt": "2026-09-13 11:50 AM PT"
-    },
-    {
-      "cost": 99.8018217315,
-      "fee": 0.4990091086575,
-      "id": "PAPER-00014",
-      "order_id": "PAPER-00013",
-      "pair": "ETHUSD",
-      "price": 2508.15,
-      "side": "buy",
-      "status": "filled",
-      "time": "2026-09-13T18:48:36.538222102Z",
-      "volume": 0.03979101,
-      "strategy": "ta_trend_pullback",
-      "strategy_id": "cli-paper-ta-trend-pullback-v1",
-      "time_pt": "2026-09-13 11:48 AM PT"
-    },
-    {
-      "cost": 99.8553817365,
-      "fee": 0.4992769086825,
-      "id": "PAPER-00011",
-      "order_id": "PAPER-00010",
-      "pair": "ETHUSD",
-      "price": 2508.35,
-      "side": "buy",
-      "status": "filled",
-      "time": "2026-09-13T18:46:38.751102344Z",
-      "volume": 0.03980919,
-      "strategy": "ta_trend_pullback",
-      "strategy_id": "cli-paper-ta-trend-pullback-v1",
-      "time_pt": "2026-09-13 11:46 AM PT"
-    },
-    {
-      "cost": 99.9060841695,
-      "fee": 0.4995304208475,
-      "id": "PAPER-00008",
-      "order_id": "PAPER-00007",
-      "pair": "ETHUSD",
-      "price": 2508.07,
-      "side": "buy",
-      "status": "filled",
-      "time": "2026-09-13T18:45:01.900361980Z",
-      "volume": 0.03983385,
-      "strategy": "ta_trend_pullback",
-      "strategy_id": "cli-paper-ta-trend-pullback-v1",
-      "time_pt": "2026-09-13 11:45 AM PT"
-    },
-    {
-      "cost": 99.94510269,
-      "fee": 0.49972551345,
-      "id": "PAPER-00005",
-      "order_id": "PAPER-00004",
-      "pair": "ETHUSD",
-      "price": 2507.25,
-      "side": "buy",
-      "status": "filled",
-      "time": "2026-09-13T18:43:01.335513332Z",
-      "volume": 0.03986244,
-      "strategy": "ta_trend_pullback",
-      "strategy_id": "cli-paper-ta-trend-pullback-v1",
-      "time_pt": "2026-09-13 11:43 AM PT"
-    },
-    {
-      "cost": 100.0063775556,
-      "fee": 0.500031887778,
-      "id": "PAPER-00002",
-      "order_id": "PAPER-00001",
-      "pair": "ETHUSD",
-      "price": 2508.47,
-      "side": "buy",
-      "status": "filled",
-      "time": "2026-09-13T18:41:05.520624935Z",
-      "volume": 0.03986748,
-      "strategy": "ta_trend_pullback",
-      "strategy_id": "cli-paper-ta-trend-pullback-v1",
-      "time_pt": "2026-09-13 11:41 AM PT"
-    }
-  ],
-  "strategy_tables": [
-    {
-      "strategy": "ta_trend_pullback",
-      "strategy_id": "cli-paper-ta-trend-pullback-v1",
-      "definition": "Only in a TREND. Buys a pullback toward the EMA in the higher-timeframe direction.",
-      "metrics": {
-        "completed": 0,
-        "wins": 0,
-        "losses": 0,
-        "scratches": 0,
-        "sum_pnl": 0,
-        "fees": 0,
-        "fills_fees": 3.494648,
-        "fills": 7,
-        "buys": 7,
-        "sells": 0,
-        "notional": 698.929625,
-        "pairs": [
-          "ETHUSD"
-        ],
-        "first_pt": "2026-09-13 11:41 AM PT",
-        "last_pt": "2026-09-13 11:51 AM PT",
-        "open_lots_remaining": {
-          "count": 7,
-          "vol": 0.27866264
-        },
-        "fifo_note": "FIFO vs shared book. A completed row is a closed lot (sell vs oldest buy). Not an isolated strategy account."
-      },
-      "completed": []
-    },
-    {
-      "strategy": "mom_5m",
-      "strategy_id": "cli-paper-mom-5m-v0",
-      "definition": "",
-      "metrics": {
-        "completed": 0,
-        "wins": 0,
-        "losses": 0,
-        "scratches": 0,
-        "sum_pnl": 0,
-        "fees": 0,
-        "fills_fees": 0.498562,
-        "fills": 1,
-        "buys": 1,
-        "sells": 0,
-        "notional": 99.712474,
-        "pairs": [
-          "ETHUSD"
-        ],
-        "first_pt": "2026-09-13 11:51 AM PT",
-        "last_pt": "2026-09-13 11:51 AM PT",
-        "open_lots_remaining": {
-          "count": 1,
-          "vol": 0.03974984
-        },
-        "fifo_note": "FIFO vs shared book. A completed row is a closed lot (sell vs oldest buy). Not an isolated strategy account."
-      },
-      "completed": []
-    }
-  ],
+  "trades": [],
+  "strategy_tables": [],
   "completed_trades": [],
   "fifo_dirty_skips": 0,
   "attribution": {
-    "log": 8,
+    "log": 0,
     "journal": 0,
     "tape": 0,
     "unattributed": 0
   },
-  "open_orders": [
-    {
-      "created_at": "2026-09-13T18:41:05.565927781Z",
-      "id": "PAPER-00003",
-      "pair": "ETHUSD",
-      "price": 2553.46,
-      "reserved_amount": 0.01993374,
-      "reserved_asset": "ETH",
-      "side": "sell",
-      "type": "limit",
-      "volume": 0.01993374
-    },
-    {
-      "created_at": "2026-09-13T18:43:01.457793568Z",
-      "id": "PAPER-00006",
-      "pair": "ETHUSD",
-      "price": 2562.41,
-      "reserved_amount": 0.01993122,
-      "reserved_asset": "ETH",
-      "side": "sell",
-      "type": "limit",
-      "volume": 0.01993122
-    },
-    {
-      "created_at": "2026-09-13T18:45:02.029822768Z",
-      "id": "PAPER-00009",
-      "pair": "ETHUSD",
-      "price": 2563.1,
-      "reserved_amount": 0.01991692,
-      "reserved_asset": "ETH",
-      "side": "sell",
-      "type": "limit",
-      "volume": 0.01991692
-    },
-    {
-      "created_at": "2026-09-13T18:46:38.936917270Z",
-      "id": "PAPER-00012",
-      "pair": "ETHUSD",
-      "price": 2545.97,
-      "reserved_amount": 0.0199046,
-      "reserved_asset": "ETH",
-      "side": "sell",
-      "type": "limit",
-      "volume": 0.0199046
-    },
-    {
-      "created_at": "2026-09-13T18:48:36.652666125Z",
-      "id": "PAPER-00015",
-      "pair": "ETHUSD",
-      "price": 2545.77,
-      "reserved_amount": 0.01989551,
-      "reserved_asset": "ETH",
-      "side": "sell",
-      "type": "limit",
-      "volume": 0.01989551
-    },
-    {
-      "created_at": "2026-09-13T18:50:12.952202595Z",
-      "id": "PAPER-00018",
-      "pair": "ETHUSD",
-      "price": 2545.93,
-      "reserved_amount": 0.01988491,
-      "reserved_asset": "ETH",
-      "side": "sell",
-      "type": "limit",
-      "volume": 0.01988491
-    },
-    {
-      "created_at": "2026-09-13T18:51:08.408628508Z",
-      "id": "PAPER-00021",
-      "pair": "ETHUSD",
-      "price": 2546.06,
-      "reserved_amount": 0.01987492,
-      "reserved_asset": "ETH",
-      "side": "sell",
-      "type": "limit",
-      "volume": 0.01987492
-    },
-    {
-      "created_at": "2026-09-13T18:51:43.180158423Z",
-      "id": "PAPER-00024",
-      "pair": "ETHUSD",
-      "price": 2546.13,
-      "reserved_amount": 0.01986442,
-      "reserved_asset": "ETH",
-      "side": "sell",
-      "type": "limit",
-      "volume": 0.01986442
-    }
-  ],
+  "open_orders": [],
   "equity_series": [
     {
       "t": "2026-09-11T03:51:31.740Z",
@@ -562,108 +290,40 @@
       "label": "mark"
     },
     {
-      "t": "2026-09-13T18:41:04.520Z",
-      "equity": 1000.0,
-      "pnl": 0.0,
-      "label": "start"
-    },
-    {
-      "t": "2026-09-13T18:41:05.520624935Z",
-      "equity": 999.499968,
-      "pnl": -0.500032
-    },
-    {
-      "t": "2026-09-13T18:43:01.335513332Z",
-      "equity": 998.951604,
-      "pnl": -1.048396
-    },
-    {
-      "t": "2026-09-13T18:45:01.900361980Z",
-      "equity": 998.517452,
-      "pnl": -1.482548
-    },
-    {
-      "t": "2026-09-13T18:46:38.751102344Z",
-      "equity": 998.051653,
-      "pnl": -1.948347
-    },
-    {
       "t": "2026-09-13T18:47:08.642Z",
       "equity": 998.067591,
       "pnl": -1.932409,
       "label": "mark"
     },
     {
-      "t": "2026-09-13T18:48:36.538222102Z",
-      "equity": 997.52077,
-      "pnl": -2.47923
-    },
-    {
-      "t": "2026-09-13T18:50:12.842190528Z",
-      "equity": 997.053861,
-      "pnl": -2.946139
-    },
-    {
-      "t": "2026-09-13T18:51:08.292422575Z",
-      "equity": 996.600696,
-      "pnl": -3.399304
-    },
-    {
-      "t": "2026-09-13T18:51:43.056514594Z",
-      "equity": 996.102397,
-      "pnl": -3.897603
-    },
-    {
       "t": "2026-09-13T18:52:12.788Z",
       "equity": 996.118317,
       "pnl": -3.881683,
+      "label": "mark"
+    },
+    {
+      "t": "2026-09-13T18:57:11.226Z",
+      "equity": null,
+      "pnl": null,
       "label": "mark"
     }
   ],
   "fee_stress": null,
   "raw": {
-    "status": {
-      "current_value": 996.118317258848,
-      "fee_rate": 0.005,
-      "mode": "paper",
-      "open_orders": 8,
-      "slippage_rate": 0.0,
-      "starting_balance": 1000.0,
-      "starting_currency": "USD",
-      "total_trades": 8,
-      "unrealized_pnl": -3.881682741152,
-      "unrealized_pnl_pct": -0.3881682741152,
-      "valuation_complete": true,
-      "workspace": "desk-explore-f01"
-    },
-    "balance": {
-      "balances": {
-        "ETH": {
-          "available": "0.15920624",
-          "reserved": "0.15920624",
-          "total": "0.31841248"
-        },
-        "USD": {
-          "available": "197.3646905548480000",
-          "reserved": "0",
-          "total": "197.3646905548480000"
-        }
-      },
-      "mode": "paper",
-      "workspace": "desk-explore-f01"
-    },
+    "status": {},
+    "balance": {},
     "history_meta": {
-      "filled_count": 8,
-      "cancelled_count": 0,
-      "equity_history_points": 44
+      "filled_count": null,
+      "cancelled_count": null,
+      "equity_history_points": 45
     }
   },
   "learnings": [
     "Paper phase: money N/A — actively trade, log fails, improve.",
-    "Workspace fee 50 bps RT equiv rate field=0.005. No live keys.",
+    "Workspace fee 50 bps RT equiv rate field=None. No live keys.",
     "Frozen v3 sealed; this lane uses explore strategy_ids.",
     "Historical F01–F07 remain separate probes — do not declare edge from CLI smoke fills.",
-    "Attributed fills: log=8 journal=0 tape=0 unattributed=0 of 8. FIFO completed=0 dirty_skips=0 (shared-book closed lots; no invented entries). Completed rows = sell vs oldest buy; attributed to exit strategy."
+    "Attributed fills: log=0 journal=0 tape=0 unattributed=0 of 0. FIFO completed=0 dirty_skips=0 (shared-book closed lots; no invented entries). Completed rows = sell vs oldest buy; attributed to exit strategy."
   ],
   "scoreboard_headline": "Active Kraken CLI paper workspace desk-explore-f01",
   "artifacts": [],
