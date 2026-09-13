@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-09-13T21:34:15.063Z",
-  "updated_at_pt": "2026-09-13 2:34 PM PT",
+  "updated_at": "2026-09-13T21:38:57.582Z",
+  "updated_at_pt": "2026-09-13 2:38 PM PT",
   "disclaimer": "PAPER ONLY — simulated fills vs live Kraken prices / historical probes. Not real money. Not financial advice. Do not declare edge from first-run tables.",
   "scoreboard_path": "/workspace/ops-brain/Desk/Research/Explore/SCOREBOARD.md",
   "explore_out": "/workspace/paper-desk/explore/out",
@@ -15,17 +15,17 @@
       "live": true,
       "status_headline": "Active Kraken CLI paper workspace desk-explore-f01",
       "summary": {
-        "equity": 996.6943894883893,
-        "unrealized_pnl": -3.3056105116107,
-        "unrealized_pnl_pct": -0.33056105116107,
-        "total_trades": 9,
-        "open_orders": 8
+        "equity": 995.7361556946743,
+        "unrealized_pnl": -4.2638443053257,
+        "unrealized_pnl_pct": -0.42638443053257,
+        "total_trades": 11,
+        "open_orders": 7
       },
-      "updated_at": "2026-09-13T21:34:15.063Z",
-      "updated_at_pt": "2026-09-13 2:34 PM PT",
+      "updated_at": "2026-09-13T21:38:57.582Z",
+      "updated_at_pt": "2026-09-13 2:38 PM PT",
       "detail_path": "data/sims/cli-paper-see-what-happens-v0.json",
       "has_equity_series": true,
-      "series_len": 79
+      "series_len": 82
     },
     {
       "id": "f01",
@@ -40,7 +40,7 @@
         "expectancy_r_50": -0.26988798633448463,
         "return_pct_50": -19.145916917109552
       },
-      "updated_at": "2026-09-13T21:34:15.063Z",
+      "updated_at": "2026-09-13T21:38:57.582Z",
       "updated_at_pt": "2026-09-10 12:18 PT",
       "detail_path": "data/sims/f01.json",
       "parse_gaps": [
@@ -63,7 +63,7 @@
         "expectancy_r_50_n20": 0.10122228607571372,
         "oos_n": 13
       },
-      "updated_at": "2026-09-13T21:34:15.063Z",
+      "updated_at": "2026-09-13T21:38:57.582Z",
       "updated_at_pt": "2026-09-10 12:16 PT",
       "detail_path": "data/sims/f02.json",
       "parse_gaps": [
@@ -86,7 +86,7 @@
         "ranks_cached": 2,
         "fills": "blocked_non_btc_eth"
       },
-      "updated_at": "2026-09-13T21:34:15.063Z",
+      "updated_at": "2026-09-13T21:38:57.582Z",
       "updated_at_pt": "2026-09-10 12:20 PT",
       "detail_path": "data/sims/f03.json",
       "parse_gaps": [
@@ -109,7 +109,7 @@
         "expectancy_r_50": -0.870326062507783,
         "return_pct_50": -98.72415714820345
       },
-      "updated_at": "2026-09-13T21:34:15.063Z",
+      "updated_at": "2026-09-13T21:38:57.582Z",
       "updated_at_pt": "2026-09-10 12:16 PT",
       "detail_path": "data/sims/f04.json",
       "parse_gaps": [
@@ -132,7 +132,7 @@
         "expectancy_r_50_gated": 0.14172367229075292,
         "ungated": "REJECT control (DFG-11)"
       },
-      "updated_at": "2026-09-13T21:34:15.063Z",
+      "updated_at": "2026-09-13T21:38:57.582Z",
       "updated_at_pt": "2026-09-10 12:16 PT",
       "detail_path": "data/sims/f05.json",
       "parse_gaps": [],
@@ -144,16 +144,16 @@
       "id": "f06",
       "title": "F06 long-only RS top-K shadow",
       "family": "F06",
-      "strategy_id": "long-only-rs-topk-shadow",
-      "mode": "shadow",
+      "strategy_id": "lab-f06-long-only-topk-rs-v0",
+      "mode": "PROBE",
       "live": false,
-      "status_headline": "**shadow blocked-thin** — BTC/ETH cache only; coincides F03 on 2-name panel",
+      "status_headline": "card]]",
       "summary": {
         "ranks_cached": 2,
         "top_k": 1,
         "fills": "blocked_thin_cache"
       },
-      "updated_at": "2026-09-13T21:34:15.063Z",
+      "updated_at": "2026-09-13T21:38:57.582Z",
       "updated_at_pt": "2026-09-10 12:20 PT",
       "detail_path": "data/sims/f06.json",
       "parse_gaps": [
@@ -176,7 +176,7 @@
         "taker_er_50": -0.030012728669645414,
         "maker_improve_er_80": -0.1389666049882435
       },
-      "updated_at": "2026-09-13T21:34:15.063Z",
+      "updated_at": "2026-09-13T21:38:57.582Z",
       "updated_at_pt": "2026-09-10 12:17 PT",
       "detail_path": "data/sims/f07.json",
       "parse_gaps": [
