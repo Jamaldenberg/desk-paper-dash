@@ -6,14 +6,14 @@
   "mode": "paper",
   "live": true,
   "workspace": "desk-explore-f01",
-  "updated_at": "2026-09-13T21:49:00.338Z",
-  "updated_at_pt": "2026-09-13 2:49 PM PT",
+  "updated_at": "2026-09-13T21:55:28.432Z",
+  "updated_at_pt": "2026-09-13 2:55 PM PT",
   "metrics": {
-    "equity": 994.7399606764993,
+    "equity": 994.1527567661993,
     "starting_balance": 1000.0,
     "currency": "USD",
-    "unrealized_pnl": -5.2600393235007,
-    "unrealized_pnl_pct": -0.52600393235007,
+    "unrealized_pnl": -5.8472432338007,
+    "unrealized_pnl_pct": -0.58472432338007,
     "total_trades": 13,
     "open_orders": 7,
     "fee_rate": 0.005,
@@ -29,8 +29,8 @@
     "ZEC": 0.03169859
   },
   "marks": {
-    "BTCUSD": 77330.9,
-    "ETHUSD": 2510.04
+    "BTCUSD": 77300.4,
+    "ETHUSD": 2508.63
   },
   "trades": [
     {
@@ -404,37 +404,37 @@
       "volume": 0.01986331
     },
     {
-      "created_at": "2026-09-13T21:47:12.562046366Z",
-      "id": "PAPER-00047",
+      "created_at": "2026-09-13T21:52:41.620259659Z",
+      "id": "PAPER-00053",
       "pair": "BTCUSD",
-      "price": 79053.8,
-      "reserved_amount": 0.00319649,
+      "price": 78793.1,
+      "reserved_amount": 0.00360372,
       "reserved_asset": "BTC",
       "side": "sell",
       "type": "limit",
-      "volume": 0.00319649
+      "volume": 0.00360372
     },
     {
-      "created_at": "2026-09-13T21:47:13.136520833Z",
-      "id": "PAPER-00050",
+      "created_at": "2026-09-13T21:54:45.876768060Z",
+      "id": "PAPER-00054",
       "pair": "BTCUSD",
-      "price": 79053.8,
-      "reserved_amount": 0.00045247,
+      "price": 78765.2,
+      "reserved_amount": 0.00198205,
       "reserved_asset": "BTC",
       "side": "sell",
       "type": "limit",
-      "volume": 0.00045247
+      "volume": 0.00198205
     },
     {
-      "created_at": "2026-09-13T21:48:49.653806163Z",
-      "id": "PAPER-00051",
-      "pair": "BTCUSD",
-      "price": 78533.1,
-      "reserved_amount": 0.00128648,
-      "reserved_asset": "BTC",
+      "created_at": "2026-09-13T21:54:46.095948078Z",
+      "id": "PAPER-00055",
+      "pair": "ETHUSD",
+      "price": 2559.07,
+      "reserved_amount": 0.02679805,
+      "reserved_asset": "ETH",
       "side": "sell",
       "type": "limit",
-      "volume": 0.00128648
+      "volume": 0.02679805
     }
   ],
   "equity_series": [
@@ -937,12 +937,18 @@
       "equity": 994.739961,
       "pnl": -5.260039,
       "label": "mark"
+    },
+    {
+      "t": "2026-09-13T21:55:28.432Z",
+      "equity": 994.152757,
+      "pnl": -5.847243,
+      "label": "mark"
     }
   ],
   "fee_stress": null,
   "raw": {
     "status": {
-      "current_value": 994.7399606764993,
+      "current_value": 994.1527567661993,
       "fee_rate": 0.005,
       "mode": "paper",
       "open_orders": 7,
@@ -950,21 +956,21 @@
       "starting_balance": 1000.0,
       "starting_currency": "USD",
       "total_trades": 13,
-      "unrealized_pnl": -5.2600393235007,
-      "unrealized_pnl_pct": -0.52600393235007,
+      "unrealized_pnl": -5.8472432338007,
+      "unrealized_pnl_pct": -0.58472432338007,
       "valuation_complete": true,
       "workspace": "desk-explore-f01"
     },
     "balance": {
       "balances": {
         "BTC": {
-          "available": "0.00307283",
-          "reserved": "0.00493544",
+          "available": "0.00242250",
+          "reserved": "0.00558577",
           "total": "0.00800827"
         },
         "ETH": {
-          "available": "0.05955123",
-          "reserved": "0.01986331",
+          "available": "0.03275318",
+          "reserved": "0.04666136",
           "total": "0.07941454"
         },
         "FIL": {
@@ -993,8 +999,8 @@
     },
     "history_meta": {
       "filled_count": 13,
-      "cancelled_count": 18,
-      "equity_history_points": 74
+      "cancelled_count": 22,
+      "equity_history_points": 75
     }
   },
   "learnings": [
