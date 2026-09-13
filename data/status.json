@@ -1,20 +1,21 @@
 {
-  "updated_at": "2026-09-13T18:25:23.225Z",
-  "updated_at_pt": "2026-09-13 11:25 AM PT",
+  "updated_at": "2026-09-13T18:27:02.218Z",
+  "updated_at_pt": "2026-09-13 11:27 AM PT",
   "mode": "paper",
   "workspace": "desk-explore-f01",
   "strategy_note": "cli-paper-see-what-happens-v0 · Meik: trade/learn/improve/journal",
-  "equity": 998.6892387088169,
+  "equity": 998.2037483406855,
   "starting_balance": 1000.0,
   "currency": "USD",
-  "unrealized_pnl": -1.310761291183103,
-  "unrealized_pnl_pct": -0.1310761291183103,
-  "total_trades": 18,
-  "open_orders": 19,
+  "unrealized_pnl": -1.796251659314523,
+  "unrealized_pnl_pct": -0.17962516593145228,
+  "total_trades": 19,
+  "open_orders": 20,
   "fee_rate": 0.005,
   "balances": {
     "ADA": 54.41849826,
     "BTC": 0.0009051,
+    "ETH": 0.03983601,
     "FIL": 11.55020195,
     "HYPE": 0.14529947,
     "LAPTOP": 39.98927,
@@ -26,7 +27,7 @@
     "SUI": 15.76628,
     "TAO": 0.04814,
     "UNI": 1.79243586,
-    "USD": 735.1185764901593,
+    "USD": 634.7579617209187,
     "USELESS": 52.30059,
     "VVV": 0.51675,
     "XMR": 0.0212872,
@@ -34,10 +35,25 @@
     "ZEC": 0.01029634
   },
   "marks": {
-    "BTCUSD": 77341.9,
-    "ETHUSD": 2507.49
+    "BTCUSD": 77310.0,
+    "ETHUSD": 2506.32
   },
   "trades": [
+    {
+      "cost": 99.8613082281,
+      "fee": 0.4993065411405,
+      "id": "PAPER-00057",
+      "order_id": "PAPER-00056",
+      "pair": "ETHUSD",
+      "price": 2506.81,
+      "side": "buy",
+      "status": "filled",
+      "time": "2026-09-13T18:26:04.576366202Z",
+      "volume": 0.03983601,
+      "strategy": "ta_trend_pullback",
+      "strategy_id": "cli-paper-ta-trend-pullback-v1",
+      "time_pt": "2026-09-13 11:26 AM PT"
+    },
     {
       "cost": 11.3931605256,
       "fee": 0.056965802628,
@@ -467,18 +483,47 @@
         "fifo_note": "FIFO vs shared book. A completed row is a closed lot (sell vs oldest buy). Not an isolated strategy account."
       },
       "completed": []
+    },
+    {
+      "strategy": "ta_trend_pullback",
+      "strategy_id": "cli-paper-ta-trend-pullback-v1",
+      "definition": "Only in a TREND. Buys a pullback toward the EMA in the higher-timeframe direction.",
+      "metrics": {
+        "completed": 0,
+        "wins": 0,
+        "losses": 0,
+        "scratches": 0,
+        "sum_pnl": 0,
+        "fees": 0,
+        "fills_fees": 0.499307,
+        "fills": 1,
+        "buys": 1,
+        "sells": 0,
+        "notional": 99.861308,
+        "pairs": [
+          "ETHUSD"
+        ],
+        "first_pt": "2026-09-13 11:26 AM PT",
+        "last_pt": "2026-09-13 11:26 AM PT",
+        "open_lots_remaining": {
+          "count": 1,
+          "vol": 0.03983601
+        },
+        "fifo_note": "FIFO vs shared book. A completed row is a closed lot (sell vs oldest buy). Not an isolated strategy account."
+      },
+      "completed": []
     }
   ],
   "completed_trades": [],
   "fifo_dirty_skips": 0,
   "attribution": {
-    "log": 18,
+    "log": 19,
     "journal": 0,
     "tape": 0,
     "unattributed": 0
   },
   "open_orders_detail": {
-    "count": 19,
+    "count": 20,
     "mode": "paper",
     "open_orders": [
       {
@@ -689,6 +734,17 @@
         "side": "sell",
         "type": "limit",
         "volume": 52.30059
+      },
+      {
+        "created_at": "2026-09-13T18:26:04.779453050Z",
+        "id": "PAPER-00058",
+        "pair": "ETHUSD",
+        "price": 2551.93,
+        "reserved_amount": 0.019918,
+        "reserved_asset": "ETH",
+        "side": "sell",
+        "type": "limit",
+        "volume": 0.019918
       }
     ]
   },
@@ -952,6 +1008,17 @@
       "equity": 998.689239,
       "pnl": -1.310761,
       "label": "mark"
+    },
+    {
+      "t": "2026-09-13T18:26:04.576366202Z",
+      "equity": 998.979911,
+      "pnl": -1.020089
+    },
+    {
+      "t": "2026-09-13T18:27:02.218Z",
+      "equity": 998.203748,
+      "pnl": -1.796252,
+      "label": "mark"
     }
   ],
   "learnings": [
@@ -959,7 +1026,7 @@
     "Workspace fee 50 bps RT equiv rate field=0.005. No live keys.",
     "Frozen v3 sealed; this lane uses explore strategy_ids.",
     "Historical F01–F07 remain separate probes — do not declare edge from CLI smoke fills.",
-    "Attributed fills: log=18 journal=0 tape=0 unattributed=0 of 18. FIFO completed=0 dirty_skips=0 (shared-book closed lots; no invented entries). Completed rows = sell vs oldest buy; attributed to exit strategy."
+    "Attributed fills: log=19 journal=0 tape=0 unattributed=0 of 19. FIFO completed=0 dirty_skips=0 (shared-book closed lots; no invented entries). Completed rows = sell vs oldest buy; attributed to exit strategy."
   ],
   "disclaimer": "PAPER ONLY — simulated fills vs live Kraken prices / historical probes. Not real money. Not financial advice. Do not declare edge from first-run tables."
 }
