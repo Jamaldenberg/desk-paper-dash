@@ -1,26 +1,41 @@
 {
-  "updated_at": "2026-09-13T17:06:11.875Z",
+  "updated_at": "2026-09-13T17:06:42.409Z",
   "updated_at_pt": "2026-09-13 10:06 AM PT",
   "mode": "paper",
   "workspace": "desk-explore-f01",
   "strategy_note": "cli-paper-see-what-happens-v0 · Meik: trade/learn/improve/journal",
-  "equity": 999.0264267840041,
+  "equity": 998.712881784004,
   "starting_balance": 1000.0,
   "currency": "USD",
-  "unrealized_pnl": -0.973573215996,
-  "unrealized_pnl_pct": -0.0973573215996,
-  "total_trades": 3,
-  "open_orders": 3,
+  "unrealized_pnl": -1.287118215996,
+  "unrealized_pnl_pct": -0.1287118215996,
+  "total_trades": 4,
+  "open_orders": 4,
   "fee_rate": 0.005,
   "balances": {
-    "ETH": 0.08994121,
-    "USD": 773.602275100504
+    "ETH": 0.11494121,
+    "USD": 710.629980100504
   },
   "marks": {
-    "BTCUSD": 77307.1,
-    "ETHUSD": 2506.35
+    "BTCUSD": 77306.6,
+    "ETHUSD": 2506.36
   },
   "trades": [
+    {
+      "cost": 62.659,
+      "fee": 0.313295,
+      "id": "PAPER-00011",
+      "order_id": "PAPER-00010",
+      "pair": "ETHUSD",
+      "price": 2506.36,
+      "side": "buy",
+      "status": "filled",
+      "time": "2026-09-13T17:06:23.777670035Z",
+      "volume": 0.025,
+      "strategy": "ta_trend_pullback",
+      "strategy_id": "cli-paper-ta-trend-pullback-v1",
+      "time_pt": "2026-09-13 10:06 AM PT"
+    },
     {
       "cost": 62.6455,
       "fee": 0.3132275,
@@ -79,19 +94,19 @@
         "scratches": 0,
         "sum_pnl": 0,
         "fees": 0,
-        "fills_fees": 1.126357,
-        "fills": 3,
-        "buys": 3,
+        "fills_fees": 1.439652,
+        "fills": 4,
+        "buys": 4,
         "sells": 0,
-        "notional": 225.271368,
+        "notional": 287.930368,
         "pairs": [
           "ETHUSD"
         ],
         "first_pt": "2026-09-13 10:01 AM PT",
-        "last_pt": "2026-09-13 10:04 AM PT",
+        "last_pt": "2026-09-13 10:06 AM PT",
         "open_lots_remaining": {
-          "count": 3,
-          "vol": 0.08994121
+          "count": 4,
+          "vol": 0.11494121
         },
         "fifo_note": "FIFO vs shared book. A completed row is a closed lot (sell vs oldest buy). Not an isolated strategy account."
       },
@@ -101,13 +116,13 @@
   "completed_trades": [],
   "fifo_dirty_skips": 0,
   "attribution": {
-    "log": 3,
+    "log": 4,
     "journal": 0,
     "tape": 0,
     "unattributed": 0
   },
   "open_orders_detail": {
-    "count": 3,
+    "count": 4,
     "mode": "paper",
     "open_orders": [
       {
@@ -137,6 +152,17 @@
         "id": "PAPER-00009",
         "pair": "ETHUSD",
         "price": 2543.4,
+        "reserved_amount": 0.0125,
+        "reserved_asset": "ETH",
+        "side": "sell",
+        "type": "limit",
+        "volume": 0.0125
+      },
+      {
+        "created_at": "2026-09-13T17:06:23.885568708Z",
+        "id": "PAPER-00012",
+        "pair": "ETHUSD",
+        "price": 2543.96,
         "reserved_amount": 0.0125,
         "reserved_asset": "ETH",
         "side": "sell",
@@ -316,6 +342,17 @@
       "equity": 999.026427,
       "pnl": -0.973573,
       "label": "mark"
+    },
+    {
+      "t": "2026-09-13T17:06:23.777670035Z",
+      "equity": 998.714031,
+      "pnl": -1.285969
+    },
+    {
+      "t": "2026-09-13T17:06:42.409Z",
+      "equity": 998.712882,
+      "pnl": -1.287118,
+      "label": "mark"
     }
   ],
   "learnings": [
@@ -323,7 +360,7 @@
     "Workspace fee 50 bps RT equiv rate field=0.005. No live keys.",
     "Frozen v3 sealed; this lane uses explore strategy_ids.",
     "Historical F01–F07 remain separate probes — do not declare edge from CLI smoke fills.",
-    "Attributed fills: log=3 journal=0 tape=0 unattributed=0 of 3. FIFO completed=0 dirty_skips=0 (shared-book closed lots; no invented entries). Completed rows = sell vs oldest buy; attributed to exit strategy."
+    "Attributed fills: log=4 journal=0 tape=0 unattributed=0 of 4. FIFO completed=0 dirty_skips=0 (shared-book closed lots; no invented entries). Completed rows = sell vs oldest buy; attributed to exit strategy."
   ],
   "disclaimer": "PAPER ONLY — simulated fills vs live Kraken prices / historical probes. Not real money. Not financial advice. Do not declare edge from first-run tables."
 }
