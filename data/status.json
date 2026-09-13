@@ -1,28 +1,59 @@
 {
-  "updated_at": "2026-09-13T22:49:16.414Z",
-  "updated_at_pt": "2026-09-13 3:49 PM PT",
+  "updated_at": "2026-09-13T22:54:28.075Z",
+  "updated_at_pt": "2026-09-13 3:54 PM PT",
   "mode": "paper",
   "workspace": "desk-explore-f01",
   "strategy_note": "cli-paper-see-what-happens-v0 · Meik: trade/learn/improve/journal",
-  "equity": 999.4527915315836,
+  "equity": 998.8542407396756,
   "starting_balance": 1000.0,
   "currency": "USD",
-  "unrealized_pnl": -0.547208468416455,
-  "unrealized_pnl_pct": -0.0547208468416455,
-  "total_trades": 3,
-  "open_orders": 4,
+  "unrealized_pnl": -1.145759260324455,
+  "unrealized_pnl_pct": -0.1145759260324455,
+  "total_trades": 5,
+  "open_orders": 5,
   "fee_rate": 0.005,
   "balances": {
+    "BTC": 0.00182441,
     "SOL": 0.35038542,
     "UNI": 5.70069711,
-    "USD": 894.4304026545685,
+    "USD": 753.7487250517736,
     "XRP": 26.150823
   },
   "marks": {
-    "BTCUSD": 76713.6,
-    "ETHUSD": 2476.42
+    "BTCUSD": 76742.2,
+    "ETHUSD": 2478.51
   },
   "trades": [
+    {
+      "cost": 69.986577088,
+      "fee": 0.34993288544,
+      "id": "PAPER-00016",
+      "order_id": "PAPER-00015",
+      "pair": "BTCUSD",
+      "price": 76746.4,
+      "side": "buy",
+      "status": "filled",
+      "time": "2026-09-13T22:53:58.374008322Z",
+      "volume": 0.00091192,
+      "strategy": "mom_add",
+      "strategy_id": "cli-paper-mom-add-v3",
+      "time_pt": "2026-09-13 3:53 PM PT"
+    },
+    {
+      "cost": 69.995191671,
+      "fee": 0.349975958355,
+      "id": "PAPER-00012",
+      "order_id": "PAPER-00011",
+      "pair": "BTCUSD",
+      "price": 76707.9,
+      "side": "buy",
+      "status": "filled",
+      "time": "2026-09-13T22:50:19.316473656Z",
+      "volume": 0.00091249,
+      "strategy": "mom_add",
+      "strategy_id": "cli-paper-mom-add-v3",
+      "time_pt": "2026-09-13 3:50 PM PT"
+    },
     {
       "cost": 35.0175188748,
       "fee": 0.175087594374,
@@ -100,31 +131,49 @@
         "fifo_note": "FIFO vs shared book. A completed row is a closed lot (sell vs oldest buy). Not an isolated strategy account."
       },
       "completed": []
+    },
+    {
+      "strategy": "mom_add",
+      "strategy_id": "cli-paper-mom-add-v3",
+      "definition": "Momentum add. If the last 15m candle is a higher high, market-buy a ~10% clip (BTC preferred, else ETH) and rest a half take-profit.",
+      "metrics": {
+        "completed": 0,
+        "wins": 0,
+        "losses": 0,
+        "scratches": 0,
+        "sum_pnl": 0,
+        "fees": 0,
+        "fills_fees": 0.699909,
+        "fills": 2,
+        "buys": 2,
+        "sells": 0,
+        "notional": 139.981769,
+        "pairs": [
+          "BTCUSD"
+        ],
+        "first_pt": "2026-09-13 3:50 PM PT",
+        "last_pt": "2026-09-13 3:53 PM PT",
+        "open_lots_remaining": {
+          "count": 2,
+          "vol": 0.00182441
+        },
+        "fifo_note": "FIFO vs shared book. A completed row is a closed lot (sell vs oldest buy). Not an isolated strategy account."
+      },
+      "completed": []
     }
   ],
   "completed_trades": [],
   "fifo_dirty_skips": 0,
   "attribution": {
-    "log": 3,
+    "log": 5,
     "journal": 0,
     "tape": 0,
     "unattributed": 0
   },
   "open_orders_detail": {
-    "count": 4,
+    "count": 5,
     "mode": "paper",
     "open_orders": [
-      {
-        "created_at": "2026-09-13T22:46:08.767032125Z",
-        "id": "PAPER-00001",
-        "pair": "BTCUSD",
-        "price": 76367.0,
-        "reserved_amount": 110.54978942235,
-        "reserved_asset": "USD",
-        "side": "buy",
-        "type": "limit",
-        "volume": 0.00144041
-      },
       {
         "created_at": "2026-09-13T22:48:27.305718361Z",
         "id": "PAPER-00004",
@@ -157,6 +206,28 @@
         "side": "sell",
         "type": "limit",
         "volume": 0.17519271
+      },
+      {
+        "created_at": "2026-09-13T22:51:55.026521064Z",
+        "id": "PAPER-00014",
+        "pair": "BTCUSD",
+        "price": 76300.6,
+        "reserved_amount": 110.44599977193,
+        "reserved_asset": "USD",
+        "side": "buy",
+        "type": "limit",
+        "volume": 0.00144031
+      },
+      {
+        "created_at": "2026-09-13T22:53:58.504183206Z",
+        "id": "PAPER-00017",
+        "pair": "BTCUSD",
+        "price": 77912.7,
+        "reserved_amount": 0.00045596,
+        "reserved_asset": "BTC",
+        "side": "sell",
+        "type": "limit",
+        "volume": 0.00045596
       }
     ]
   },
@@ -674,6 +745,28 @@
       "equity": 999.452792,
       "pnl": -0.547208,
       "label": "mark"
+    },
+    {
+      "t": "2026-09-13T22:50:19.316473656Z",
+      "equity": 999.299894,
+      "pnl": -0.700106
+    },
+    {
+      "t": "2026-09-13T22:53:56.848Z",
+      "equity": null,
+      "pnl": null,
+      "label": "mark"
+    },
+    {
+      "t": "2026-09-13T22:53:58.374008322Z",
+      "equity": 998.985092,
+      "pnl": -1.014908
+    },
+    {
+      "t": "2026-09-13T22:54:28.075Z",
+      "equity": 998.854241,
+      "pnl": -1.145759,
+      "label": "mark"
     }
   ],
   "learnings": [
@@ -681,7 +774,7 @@
     "Workspace fee 50 bps RT equiv rate field=0.005. No live keys.",
     "Frozen v3 sealed; this lane uses explore strategy_ids.",
     "Historical F01–F07 remain separate probes — do not declare edge from CLI smoke fills.",
-    "Attributed fills: log=3 journal=0 tape=0 unattributed=0 of 3. FIFO completed=0 dirty_skips=0 (shared-book closed lots; no invented entries). Completed rows = sell vs oldest buy; attributed to exit strategy."
+    "Attributed fills: log=5 journal=0 tape=0 unattributed=0 of 5. FIFO completed=0 dirty_skips=0 (shared-book closed lots; no invented entries). Completed rows = sell vs oldest buy; attributed to exit strategy."
   ],
   "disclaimer": "PAPER ONLY — simulated fills vs live Kraken prices / historical probes. Not real money. Not financial advice. Do not declare edge from first-run tables."
 }
