@@ -6,33 +6,48 @@
   "mode": "paper",
   "live": true,
   "workspace": "desk-explore-f01",
-  "updated_at": "2026-09-13T21:05:01.074Z",
-  "updated_at_pt": "2026-09-13 2:05 PM PT",
+  "updated_at": "2026-09-13T21:08:48.861Z",
+  "updated_at_pt": "2026-09-13 2:08 PM PT",
   "metrics": {
-    "equity": 996.2166145649757,
+    "equity": 996.0256603009506,
     "starting_balance": 1000.0,
     "currency": "USD",
-    "unrealized_pnl": -3.7833854350245,
-    "unrealized_pnl_pct": -0.37833854350245,
-    "total_trades": 11,
-    "open_orders": 10,
+    "unrealized_pnl": -3.9743396990495,
+    "unrealized_pnl_pct": -0.39743396990495,
+    "total_trades": 12,
+    "open_orders": 12,
     "fee_rate": 0.005,
     "slippage_rate": 0.0,
     "valuation_complete": true
   },
   "balances": {
-    "BTC": 0.00633913,
+    "BTC": 0.00724488,
     "ETH": 0.03971371,
     "FIL": 35.31786075,
     "HYPE": 0.4442752,
-    "USD": 301.7129962297255,
+    "USD": 231.3632863983505,
     "ZEC": 0.03182889
   },
   "marks": {
-    "BTCUSD": 77298.9,
-    "ETHUSD": 2511.46
+    "BTCUSD": 77287.3,
+    "ETHUSD": 2512.29
   },
   "trades": [
+    {
+      "cost": 69.999711275,
+      "fee": 0.349998556375,
+      "id": "PAPER-00049",
+      "order_id": "PAPER-00048",
+      "pair": "BTCUSD",
+      "price": 77283.7,
+      "side": "buy",
+      "status": "filled",
+      "time": "2026-09-13T21:06:45.432847772Z",
+      "volume": 0.00090575,
+      "strategy": "mom_add",
+      "strategy_id": "cli-paper-mom-add-v3",
+      "time_pt": "2026-09-13 2:06 PM PT"
+    },
     {
       "cost": 70.000178897,
       "fee": 0.350000894485,
@@ -211,19 +226,19 @@
         "scratches": 0,
         "sum_pnl": 0,
         "fees": 0,
-        "fills_fees": 2.100003,
-        "fills": 6,
-        "buys": 6,
+        "fills_fees": 2.450002,
+        "fills": 7,
+        "buys": 7,
         "sells": 0,
-        "notional": 420.000697,
+        "notional": 490.000408,
         "pairs": [
           "BTCUSD"
         ],
         "first_pt": "2026-09-13 1:36 PM PT",
-        "last_pt": "2026-09-13 2:03 PM PT",
+        "last_pt": "2026-09-13 2:06 PM PT",
         "open_lots_remaining": {
-          "count": 6,
-          "vol": 0.00543347
+          "count": 7,
+          "vol": 0.00633922
         },
         "fifo_note": "FIFO vs shared book. A completed row is a closed lot (sell vs oldest buy). Not an isolated strategy account."
       },
@@ -322,7 +337,7 @@
   "completed_trades": [],
   "fifo_dirty_skips": 0,
   "attribution": {
-    "log": 11,
+    "log": 12,
     "journal": 0,
     "tape": 0,
     "unattributed": 0
@@ -406,17 +421,6 @@
       "volume": 0.00045272
     },
     {
-      "created_at": "2026-09-13T21:01:09.222536017Z",
-      "id": "PAPER-00041",
-      "pair": "BTCUSD",
-      "price": 76924.9,
-      "reserved_amount": 110.20472717475,
-      "reserved_asset": "USD",
-      "side": "buy",
-      "type": "limit",
-      "volume": 0.0014255
-    },
-    {
       "created_at": "2026-09-13T21:03:28.436727180Z",
       "id": "PAPER-00042",
       "pair": "ETHUSD",
@@ -437,6 +441,39 @@
       "side": "sell",
       "type": "limit",
       "volume": 0.00045275
+    },
+    {
+      "created_at": "2026-09-13T21:05:11.565401182Z",
+      "id": "PAPER-00046",
+      "pair": "BTCUSD",
+      "price": 76912.4,
+      "reserved_amount": 110.11957097406,
+      "reserved_asset": "USD",
+      "side": "buy",
+      "type": "limit",
+      "volume": 0.00142463
+    },
+    {
+      "created_at": "2026-09-13T21:06:44.979296443Z",
+      "id": "PAPER-00047",
+      "pair": "BTCUSD",
+      "price": 78442.9,
+      "reserved_amount": 0.00101266,
+      "reserved_asset": "BTC",
+      "side": "sell",
+      "type": "limit",
+      "volume": 0.00101266
+    },
+    {
+      "created_at": "2026-09-13T21:06:45.638301204Z",
+      "id": "PAPER-00050",
+      "pair": "BTCUSD",
+      "price": 78442.9,
+      "reserved_amount": 0.00045287,
+      "reserved_asset": "BTC",
+      "side": "sell",
+      "type": "limit",
+      "volume": 0.00045287
     }
   ],
   "equity_series": [
@@ -887,30 +924,41 @@
       "equity": 996.216615,
       "pnl": -3.783385,
       "label": "mark"
+    },
+    {
+      "t": "2026-09-13T21:06:45.432847772Z",
+      "equity": 996.611714,
+      "pnl": -3.388286
+    },
+    {
+      "t": "2026-09-13T21:08:48.861Z",
+      "equity": 996.02566,
+      "pnl": -3.97434,
+      "label": "mark"
     }
   ],
   "fee_stress": null,
   "raw": {
     "status": {
-      "current_value": 996.2166145649757,
+      "current_value": 996.0256603009506,
       "fee_rate": 0.005,
       "mode": "paper",
-      "open_orders": 10,
+      "open_orders": 12,
       "slippage_rate": 0.0,
       "starting_balance": 1000.0,
       "starting_currency": "USD",
-      "total_trades": 11,
-      "unrealized_pnl": -3.7833854350245,
-      "unrealized_pnl_pct": -0.37833854350245,
+      "total_trades": 12,
+      "unrealized_pnl": -3.9743396990495,
+      "unrealized_pnl_pct": -0.39743396990495,
       "valuation_complete": true,
       "workspace": "desk-explore-f01"
     },
     "balance": {
       "balances": {
         "BTC": {
-          "available": "0.00225035",
-          "reserved": "0.00408878",
-          "total": "0.00633913"
+          "available": "0.00169057",
+          "reserved": "0.00555431",
+          "total": "0.00724488"
         },
         "ETH": {
           "available": "0.01985686",
@@ -928,9 +976,9 @@
           "total": "0.4442752"
         },
         "USD": {
-          "available": "191.5082690549755000",
-          "reserved": "110.20472717475",
-          "total": "301.7129962297255000"
+          "available": "121.2437154242905000",
+          "reserved": "110.119570974060",
+          "total": "231.3632863983505000"
         },
         "ZEC": {
           "available": "0.01591445",
@@ -942,9 +990,9 @@
       "workspace": "desk-explore-f01"
     },
     "history_meta": {
-      "filled_count": 11,
-      "cancelled_count": 13,
-      "equity_history_points": 67
+      "filled_count": 12,
+      "cancelled_count": 14,
+      "equity_history_points": 68
     }
   },
   "learnings": [
@@ -952,7 +1000,7 @@
     "Workspace fee 50 bps RT equiv rate field=0.005. No live keys.",
     "Frozen v3 sealed; this lane uses explore strategy_ids.",
     "Historical F01–F07 remain separate probes — do not declare edge from CLI smoke fills.",
-    "Attributed fills: log=11 journal=0 tape=0 unattributed=0 of 11. FIFO completed=0 dirty_skips=0 (shared-book closed lots; no invented entries). Completed rows = sell vs oldest buy; attributed to exit strategy."
+    "Attributed fills: log=12 journal=0 tape=0 unattributed=0 of 12. FIFO completed=0 dirty_skips=0 (shared-book closed lots; no invented entries). Completed rows = sell vs oldest buy; attributed to exit strategy."
   ],
   "scoreboard_headline": "Active Kraken CLI paper workspace desk-explore-f01",
   "artifacts": [],
