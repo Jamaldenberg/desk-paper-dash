@@ -1,33 +1,350 @@
 {
-  "updated_at": "2026-09-13T18:57:11.226Z",
-  "updated_at_pt": "2026-09-13 11:57 AM PT",
+  "updated_at": "2026-09-13T19:07:13.342Z",
+  "updated_at_pt": "2026-09-13 12:07 PM PT",
   "mode": "paper",
   "workspace": "desk-explore-f01",
   "strategy_note": "cli-paper-see-what-happens-v0 · Meik: trade/learn/improve/journal",
-  "equity": null,
+  "equity": 998.7144545481942,
   "starting_balance": 1000.0,
   "currency": "USD",
-  "unrealized_pnl": null,
-  "unrealized_pnl_pct": null,
-  "total_trades": null,
-  "open_orders": null,
-  "fee_rate": null,
-  "balances": {},
-  "marks": {
-    "BTCUSD": 77326.0,
-    "ETHUSD": 2508.63
+  "unrealized_pnl": -1.285545451805786,
+  "unrealized_pnl_pct": -0.1285545451805786,
+  "total_trades": 9,
+  "open_orders": 9,
+  "fee_rate": 0.005,
+  "balances": {
+    "FIL": 35.56910569,
+    "HYPE": 0.4459735,
+    "LAPTOP": 122.89325843,
+    "LTC": 0.63567018,
+    "PUMP": 9719.5223549,
+    "SUI": 48.36926479,
+    "UNI": 5.52242103,
+    "USD": 683.1600026977442,
+    "XRP": 25.78021994,
+    "ZEC": 0.03157135
   },
-  "trades": [],
-  "strategy_tables": [],
+  "marks": {
+    "BTCUSD": 77375.0,
+    "ETHUSD": 2513.86
+  },
+  "trades": [
+    {
+      "cost": 35.012289326707,
+      "fee": 0.175061446633535,
+      "id": "PAPER-00026",
+      "order_id": "PAPER-00025",
+      "pair": "LAPTOPUSD",
+      "price": 0.2849,
+      "side": "buy",
+      "status": "filled",
+      "time": "2026-09-13T19:06:28.336069826Z",
+      "volume": 122.89325843,
+      "strategy": "pair_scan_alt",
+      "strategy_id": "cli-paper-pair-scan-alt-v1",
+      "time_pt": "2026-09-13 12:06 PM PT"
+    },
+    {
+      "cost": 35.0291585670596,
+      "fee": 0.175145792835298,
+      "id": "PAPER-00023",
+      "order_id": "PAPER-00022",
+      "pair": "PUMPUSD",
+      "price": 0.003604,
+      "side": "buy",
+      "status": "filled",
+      "time": "2026-09-13T19:06:27.596684874Z",
+      "volume": 9719.5223549,
+      "strategy": "pair_scan_alt",
+      "strategy_id": "cli-paper-pair-scan-alt-v1",
+      "time_pt": "2026-09-13 12:06 PM PT"
+    },
+    {
+      "cost": 35.043074887968,
+      "fee": 0.17521537443984,
+      "id": "PAPER-00020",
+      "order_id": "PAPER-00019",
+      "pair": "UNIUSD",
+      "price": 6.3456,
+      "side": "buy",
+      "status": "filled",
+      "time": "2026-09-13T19:06:26.800336577Z",
+      "volume": 5.52242103,
+      "strategy": "mom_5m",
+      "strategy_id": "cli-paper-mom-5m-v0",
+      "time_pt": "2026-09-13 12:06 PM PT"
+    },
+    {
+      "cost": 34.97097844317,
+      "fee": 0.17485489221585002,
+      "id": "PAPER-00017",
+      "order_id": "PAPER-00016",
+      "pair": "SUIUSD",
+      "price": 0.723,
+      "side": "buy",
+      "status": "filled",
+      "time": "2026-09-13T19:04:04.086068748Z",
+      "volume": 48.36926479,
+      "strategy": "pair_scan_alt",
+      "strategy_id": "cli-paper-pair-scan-alt-v1",
+      "time_pt": "2026-09-13 12:04 PM PT"
+    },
+    {
+      "cost": 34.971584395,
+      "fee": 0.174857921975,
+      "id": "PAPER-00014",
+      "order_id": "PAPER-00013",
+      "pair": "ZECUSD",
+      "price": 1107.7,
+      "side": "buy",
+      "status": "filled",
+      "time": "2026-09-13T19:04:03.435401122Z",
+      "volume": 0.03157135,
+      "strategy": "pair_scan_alt",
+      "strategy_id": "cli-paper-pair-scan-alt-v1",
+      "time_pt": "2026-09-13 12:04 PM PT"
+    },
+    {
+      "cost": 35.01783922,
+      "fee": 0.1750891961,
+      "id": "PAPER-00011",
+      "order_id": "PAPER-00010",
+      "pair": "HYPEUSD",
+      "price": 78.52,
+      "side": "buy",
+      "status": "filled",
+      "time": "2026-09-13T19:04:02.778625792Z",
+      "volume": 0.4459735,
+      "strategy": "pair_scan_alt",
+      "strategy_id": "cli-paper-pair-scan-alt-v1",
+      "time_pt": "2026-09-13 12:04 PM PT"
+    },
+    {
+      "cost": 35.0041248323326,
+      "fee": 0.175020624161663,
+      "id": "PAPER-00008",
+      "order_id": "PAPER-00007",
+      "pair": "XRPUSD",
+      "price": 1.35779,
+      "side": "buy",
+      "status": "filled",
+      "time": "2026-09-13T19:01:54.752183336Z",
+      "volume": 25.78021994,
+      "strategy": "pair_scan_alt",
+      "strategy_id": "cli-paper-pair-scan-alt-v1",
+      "time_pt": "2026-09-13 12:01 PM PT"
+    },
+    {
+      "cost": 34.930076391,
+      "fee": 0.174650381955,
+      "id": "PAPER-00005",
+      "order_id": "PAPER-00004",
+      "pair": "LTCUSD",
+      "price": 54.95,
+      "side": "buy",
+      "status": "filled",
+      "time": "2026-09-13T19:01:54.190321696Z",
+      "volume": 0.63567018,
+      "strategy": "pair_scan_alt",
+      "strategy_id": "cli-paper-pair-scan-alt-v1",
+      "time_pt": "2026-09-13 12:01 PM PT"
+    },
+    {
+      "cost": 35.28455284448,
+      "fee": 0.1764227642224,
+      "id": "PAPER-00002",
+      "order_id": "PAPER-00001",
+      "pair": "FILUSD",
+      "price": 0.992,
+      "side": "buy",
+      "status": "filled",
+      "time": "2026-09-13T19:01:53.872684108Z",
+      "volume": 35.56910569,
+      "strategy": "pair_scan_alt",
+      "strategy_id": "cli-paper-pair-scan-alt-v1",
+      "time_pt": "2026-09-13 12:01 PM PT"
+    }
+  ],
+  "strategy_tables": [
+    {
+      "strategy": "pair_scan_alt",
+      "strategy_id": "cli-paper-pair-scan-alt-v1",
+      "definition": "",
+      "metrics": {
+        "completed": 0,
+        "wins": 0,
+        "losses": 0,
+        "scratches": 0,
+        "sum_pnl": 0,
+        "fees": 0,
+        "fills_fees": 1.401103,
+        "fills": 8,
+        "buys": 8,
+        "sells": 0,
+        "notional": 280.220604,
+        "pairs": [
+          "FILUSD",
+          "HYPEUSD",
+          "LAPTOPUSD",
+          "LTCUSD",
+          "PUMPUSD",
+          "SUIUSD",
+          "XRPUSD",
+          "ZECUSD"
+        ],
+        "first_pt": "2026-09-13 12:01 PM PT",
+        "last_pt": "2026-09-13 12:06 PM PT",
+        "open_lots_remaining": {
+          "count": 8,
+          "vol": 9953.24741878
+        },
+        "fifo_note": "FIFO vs shared book. A completed row is a closed lot (sell vs oldest buy). Not an isolated strategy account."
+      },
+      "completed": []
+    },
+    {
+      "strategy": "mom_5m",
+      "strategy_id": "cli-paper-mom-5m-v0",
+      "definition": "",
+      "metrics": {
+        "completed": 0,
+        "wins": 0,
+        "losses": 0,
+        "scratches": 0,
+        "sum_pnl": 0,
+        "fees": 0,
+        "fills_fees": 0.175215,
+        "fills": 1,
+        "buys": 1,
+        "sells": 0,
+        "notional": 35.043075,
+        "pairs": [
+          "UNIUSD"
+        ],
+        "first_pt": "2026-09-13 12:06 PM PT",
+        "last_pt": "2026-09-13 12:06 PM PT",
+        "open_lots_remaining": {
+          "count": 1,
+          "vol": 5.52242103
+        },
+        "fifo_note": "FIFO vs shared book. A completed row is a closed lot (sell vs oldest buy). Not an isolated strategy account."
+      },
+      "completed": []
+    }
+  ],
   "completed_trades": [],
   "fifo_dirty_skips": 0,
   "attribution": {
-    "log": 0,
+    "log": 9,
     "journal": 0,
     "tape": 0,
     "unattributed": 0
   },
-  "open_orders_detail": {},
+  "open_orders_detail": {
+    "count": 9,
+    "mode": "paper",
+    "open_orders": [
+      {
+        "created_at": "2026-09-13T19:01:53.930634737Z",
+        "id": "PAPER-00003",
+        "pair": "FILUSD",
+        "price": 1.00171,
+        "reserved_amount": 17.78455285,
+        "reserved_asset": "FIL",
+        "side": "sell",
+        "type": "limit",
+        "volume": 17.78455285
+      },
+      {
+        "created_at": "2026-09-13T19:01:54.304331868Z",
+        "id": "PAPER-00006",
+        "pair": "LTCUSD",
+        "price": 56.051,
+        "reserved_amount": 0.31783509,
+        "reserved_asset": "LTC",
+        "side": "sell",
+        "type": "limit",
+        "volume": 0.31783509
+      },
+      {
+        "created_at": "2026-09-13T19:01:54.866537992Z",
+        "id": "PAPER-00009",
+        "pair": "XRPUSD",
+        "price": 1.3821,
+        "reserved_amount": 12.89010997,
+        "reserved_asset": "XRP",
+        "side": "sell",
+        "type": "limit",
+        "volume": 12.89010997
+      },
+      {
+        "created_at": "2026-09-13T19:04:02.981309033Z",
+        "id": "PAPER-00012",
+        "pair": "HYPEUSD",
+        "price": 79.657,
+        "reserved_amount": 0.22298675,
+        "reserved_asset": "HYPE",
+        "side": "sell",
+        "type": "limit",
+        "volume": 0.22298675
+      },
+      {
+        "created_at": "2026-09-13T19:04:03.647433555Z",
+        "id": "PAPER-00015",
+        "pair": "ZECUSD",
+        "price": 1125.2,
+        "reserved_amount": 0.01578567,
+        "reserved_asset": "ZEC",
+        "side": "sell",
+        "type": "limit",
+        "volume": 0.01578567
+      },
+      {
+        "created_at": "2026-09-13T19:04:04.302367455Z",
+        "id": "PAPER-00018",
+        "pair": "SUIUSD",
+        "price": 0.73445,
+        "reserved_amount": 24.1846324,
+        "reserved_asset": "SUI",
+        "side": "sell",
+        "type": "limit",
+        "volume": 24.1846324
+      },
+      {
+        "created_at": "2026-09-13T19:06:27.011445696Z",
+        "id": "PAPER-00021",
+        "pair": "UNIUSD",
+        "price": 6.4329,
+        "reserved_amount": 2.76121052,
+        "reserved_asset": "UNI",
+        "side": "sell",
+        "type": "limit",
+        "volume": 2.76121052
+      },
+      {
+        "created_at": "2026-09-13T19:06:27.804107217Z",
+        "id": "PAPER-00024",
+        "pair": "PUMPUSD",
+        "price": 0.00365501,
+        "reserved_amount": 4859.76117745,
+        "reserved_asset": "PUMP",
+        "side": "sell",
+        "type": "limit",
+        "volume": 4859.76117745
+      },
+      {
+        "created_at": "2026-09-13T19:06:28.569936109Z",
+        "id": "PAPER-00027",
+        "pair": "LAPTOPUSD",
+        "price": 0.28907,
+        "reserved_amount": 61.44662922,
+        "reserved_asset": "LAPTOP",
+        "side": "sell",
+        "type": "limit",
+        "volume": 61.44662922
+      }
+    ]
+  },
   "equity_series": [
     {
       "t": "2026-09-11T03:51:31.740Z",
@@ -298,14 +615,31 @@
       "equity": null,
       "pnl": null,
       "label": "mark"
+    },
+    {
+      "t": "2026-09-13T19:01:52.872Z",
+      "equity": 1000.0,
+      "pnl": 0.0,
+      "label": "start"
+    },
+    {
+      "t": "2026-09-13T19:06:26.800336577Z",
+      "equity": 999.824785,
+      "pnl": -0.175215
+    },
+    {
+      "t": "2026-09-13T19:07:13.342Z",
+      "equity": 998.714455,
+      "pnl": -1.285545,
+      "label": "mark"
     }
   ],
   "learnings": [
     "Paper phase: money N/A — actively trade, log fails, improve.",
-    "Workspace fee 50 bps RT equiv rate field=None. No live keys.",
+    "Workspace fee 50 bps RT equiv rate field=0.005. No live keys.",
     "Frozen v3 sealed; this lane uses explore strategy_ids.",
     "Historical F01–F07 remain separate probes — do not declare edge from CLI smoke fills.",
-    "Attributed fills: log=0 journal=0 tape=0 unattributed=0 of 0. FIFO completed=0 dirty_skips=0 (shared-book closed lots; no invented entries). Completed rows = sell vs oldest buy; attributed to exit strategy."
+    "Attributed fills: log=9 journal=0 tape=0 unattributed=0 of 9. FIFO completed=0 dirty_skips=0 (shared-book closed lots; no invented entries). Completed rows = sell vs oldest buy; attributed to exit strategy."
   ],
   "disclaimer": "PAPER ONLY — simulated fills vs live Kraken prices / historical probes. Not real money. Not financial advice. Do not declare edge from first-run tables."
 }
