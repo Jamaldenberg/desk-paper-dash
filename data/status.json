@@ -1,34 +1,49 @@
 {
-  "updated_at": "2026-09-14T04:00:44.855Z",
-  "updated_at_pt": "2026-09-13 9:00 PM PT",
+  "updated_at": "2026-09-14T04:04:59.563Z",
+  "updated_at_pt": "2026-09-13 9:04 PM PT",
   "mode": "paper",
   "workspace": "desk-explore-f01",
   "strategy_note": "cli-paper-see-what-happens-v0 · Meik: trade/learn/improve/journal",
-  "equity": 994.6886357958766,
+  "equity": 993.3981726932137,
   "starting_balance": 1000.0,
   "currency": "USD",
-  "unrealized_pnl": -5.31136420412339,
-  "unrealized_pnl_pct": -0.531136420412339,
-  "total_trades": 12,
+  "unrealized_pnl": -6.60182730678639,
+  "unrealized_pnl_pct": -0.6601827306786391,
+  "total_trades": 13,
   "open_orders": 7,
   "fee_rate": 0.005,
   "balances": {
-    "BTC": 0.0081206,
+    "BTC": 0.00902349,
     "FIL": 34.61918892,
     "HYPE": 0.43887147,
     "NEAR": 14.69106783,
-    "USD": 261.21908623959064
+    "USD": 190.86910811643062
   },
   "marks": {
-    "FILUSD": 0.967,
+    "FILUSD": 0.951,
     "HYPEUSD": 80.02,
-    "NEARUSD": 2.3799,
-    "ETHUSD": 2512.76,
-    "XETHZUSD": 2512.76,
-    "BTCUSD": 77577.5,
-    "XXBTZUSD": 77577.5
+    "NEARUSD": 2.3846,
+    "ETHUSD": 2510.99,
+    "XETHZUSD": 2510.99,
+    "BTCUSD": 77514.8,
+    "XXBTZUSD": 77514.8
   },
   "trades": [
+    {
+      "cost": 69.999978232,
+      "fee": 0.34999989116,
+      "id": "PAPER-00055",
+      "order_id": "PAPER-00054",
+      "pair": "BTCUSD",
+      "price": 77528.8,
+      "side": "buy",
+      "status": "filled",
+      "time": "2026-09-14T04:03:29.022638307Z",
+      "volume": 0.00090289,
+      "strategy": "mom_add",
+      "strategy_id": "cli-paper-mom-add-v3",
+      "time_pt": "2026-09-13 9:03 PM PT"
+    },
     {
       "cost": 69.999640322,
       "fee": 0.34999820161,
@@ -217,31 +232,45 @@
       "definition": "Momentum add. If the last 15m candle is a higher high, market-buy a ~10% clip (BTC preferred, else ETH) and rest a half take-profit.",
       "metrics": {
         "completed": 0,
-        "open": 7,
+        "open": 8,
         "wins": 0,
         "losses": 0,
         "scratches": 0,
         "sum_pnl": 0,
-        "open_unrealized_pnl": -2.420385,
+        "open_unrealized_pnl": -3.179073,
         "fees": 0,
-        "fills_fees": 2.449963,
-        "fills": 7,
-        "buys": 7,
+        "fills_fees": 2.799963,
+        "fills": 8,
+        "buys": 8,
         "sells": 0,
-        "notional": 489.99258,
+        "notional": 559.992558,
         "pairs": [
           "BTCUSD"
         ],
         "first_pt": "2026-09-13 8:25 PM PT",
-        "last_pt": "2026-09-13 8:58 PM PT",
+        "last_pt": "2026-09-13 9:03 PM PT",
         "open_lots_remaining": {
-          "count": 7,
-          "vol": 0.00631655
+          "count": 8,
+          "vol": 0.00721944
         },
         "fifo_note": "FIFO vs shared book. A completed row is a closed lot (sell vs oldest buy). Open rows are leftover lots on the current book (mark-to-market, not closed P&L). Not an isolated strategy account."
       },
       "completed": [],
       "open": [
+        {
+          "pair": "BTCUSD",
+          "amount": 0.00090289,
+          "entry": 77528.8,
+          "entry_pt": "2026-09-13 9:03 PM PT",
+          "entry_time": "2026-09-14T04:03:29.022638307Z",
+          "fees": 0.34999989,
+          "entry_strategy": "mom_add",
+          "entry_id": "PAPER-00055",
+          "status": "open",
+          "mark": 77514.8,
+          "unrealized_pnl": -0.36264035,
+          "unrealized_pnl_pct": -0.518058
+        },
         {
           "pair": "BTCUSD",
           "amount": 0.00090322,
@@ -252,9 +281,9 @@
           "entry_strategy": "mom_add",
           "entry_id": "PAPER-00050",
           "status": "open",
-          "mark": 77577.5,
-          "unrealized_pnl": -0.28008897,
-          "unrealized_pnl_pct": -0.400129
+          "mark": 77514.8,
+          "unrealized_pnl": -0.33672087,
+          "unrealized_pnl_pct": -0.481032
         },
         {
           "pair": "BTCUSD",
@@ -266,9 +295,9 @@
           "entry_strategy": "mom_add",
           "entry_id": "PAPER-00045",
           "status": "open",
-          "mark": 77577.5,
-          "unrealized_pnl": -0.29699457,
-          "unrealized_pnl_pct": -0.424276
+          "mark": 77514.8,
+          "unrealized_pnl": -0.3536133,
+          "unrealized_pnl_pct": -0.50516
         },
         {
           "pair": "BTCUSD",
@@ -280,9 +309,9 @@
           "entry_strategy": "mom_add",
           "entry_id": "PAPER-00040",
           "status": "open",
-          "mark": 77577.5,
-          "unrealized_pnl": -0.28009208,
-          "unrealized_pnl_pct": -0.400129
+          "mark": 77514.8,
+          "unrealized_pnl": -0.3367246,
+          "unrealized_pnl_pct": -0.481032
         },
         {
           "pair": "BTCUSD",
@@ -294,9 +323,9 @@
           "entry_strategy": "mom_add",
           "entry_id": "PAPER-00035",
           "status": "open",
-          "mark": 77577.5,
-          "unrealized_pnl": -0.28732223,
-          "unrealized_pnl_pct": -0.410461
+          "mark": 77514.8,
+          "unrealized_pnl": -0.34394848,
+          "unrealized_pnl_pct": -0.491356
         },
         {
           "pair": "BTCUSD",
@@ -308,9 +337,9 @@
           "entry_strategy": "mom_add",
           "entry_id": "PAPER-00030",
           "status": "open",
-          "mark": 77577.5,
-          "unrealized_pnl": -0.29311493,
-          "unrealized_pnl_pct": -0.418725
+          "mark": 77514.8,
+          "unrealized_pnl": -0.34973805,
+          "unrealized_pnl_pct": -0.499613
         },
         {
           "pair": "BTCUSD",
@@ -322,9 +351,9 @@
           "entry_strategy": "mom_add",
           "entry_id": "PAPER-00016",
           "status": "open",
-          "mark": 77577.5,
-          "unrealized_pnl": -0.50658305,
-          "unrealized_pnl_pct": -0.72379
+          "mark": 77514.8,
+          "unrealized_pnl": -0.56302434,
+          "unrealized_pnl_pct": -0.804431
         },
         {
           "pair": "BTCUSD",
@@ -336,9 +365,9 @@
           "entry_strategy": "mom_add",
           "entry_id": "PAPER-00012",
           "status": "open",
-          "mark": 77577.5,
-          "unrealized_pnl": -0.47618928,
-          "unrealized_pnl_pct": -0.680268
+          "mark": 77514.8,
+          "unrealized_pnl": -0.53266317,
+          "unrealized_pnl_pct": -0.760945
         }
       ]
     },
@@ -353,7 +382,7 @@
         "losses": 0,
         "scratches": 0,
         "sum_pnl": 0.208002,
-        "open_unrealized_pnl": -2.077365,
+        "open_unrealized_pnl": -2.562224,
         "fees": 0.176925,
         "fills_fees": 0.525552,
         "fills": 3,
@@ -404,9 +433,9 @@
           "entry_strategy": "pair_scan_alt",
           "entry_id": "PAPER-00009",
           "status": "open",
-          "mark": 2.3799,
-          "unrealized_pnl": -0.24420962,
-          "unrealized_pnl_pct": -0.697098
+          "mark": 2.3846,
+          "unrealized_pnl": -0.1751616,
+          "unrealized_pnl_pct": -0.5
         },
         {
           "pair": "HYPEUSD",
@@ -432,9 +461,9 @@
           "entry_strategy": "pair_scan_alt",
           "entry_id": "PAPER-00003",
           "status": "open",
-          "mark": 0.967,
-          "unrealized_pnl": -1.76782888,
-          "unrealized_pnl_pct": -5.040967
+          "mark": 0.951,
+          "unrealized_pnl": -2.3217359,
+          "unrealized_pnl_pct": -6.620434
         }
       ]
     },
@@ -449,7 +478,7 @@
         "losses": 0,
         "scratches": 0,
         "sum_pnl": 0,
-        "open_unrealized_pnl": -0.350373,
+        "open_unrealized_pnl": -0.40695,
         "fees": 0,
         "fills_fees": 0.350012,
         "fills": 1,
@@ -479,9 +508,9 @@
           "entry_strategy": "defensive_ll",
           "entry_id": "PAPER-00025",
           "status": "open",
-          "mark": 77577.5,
-          "unrealized_pnl": -0.35037303,
-          "unrealized_pnl_pct": -0.500516
+          "mark": 77514.8,
+          "unrealized_pnl": -0.40695037,
+          "unrealized_pnl_pct": -0.581338
         }
       ]
     },
@@ -496,7 +525,7 @@
         "losses": 0,
         "scratches": 0,
         "sum_pnl": 0,
-        "open_unrealized_pnl": -0.398422,
+        "open_unrealized_pnl": -0.454958,
         "fees": 0,
         "fills_fees": 0.35,
         "fills": 1,
@@ -526,9 +555,9 @@
           "entry_strategy": "mom_5m",
           "entry_id": "PAPER-00020",
           "status": "open",
-          "mark": 77577.5,
-          "unrealized_pnl": -0.39842156,
-          "unrealized_pnl_pct": -0.569173
+          "mark": 77514.8,
+          "unrealized_pnl": -0.45495815,
+          "unrealized_pnl_pct": -0.64994
         }
       ]
     },
@@ -720,6 +749,20 @@
   "open_lots": [
     {
       "pair": "BTCUSD",
+      "amount": 0.00090289,
+      "entry": 77528.8,
+      "entry_pt": "2026-09-13 9:03 PM PT",
+      "entry_time": "2026-09-14T04:03:29.022638307Z",
+      "fees": 0.34999989,
+      "entry_strategy": "mom_add",
+      "entry_id": "PAPER-00055",
+      "status": "open",
+      "mark": 77514.8,
+      "unrealized_pnl": -0.36264035,
+      "unrealized_pnl_pct": -0.518058
+    },
+    {
+      "pair": "BTCUSD",
       "amount": 0.00090322,
       "entry": 77500.1,
       "entry_pt": "2026-09-13 8:58 PM PT",
@@ -728,9 +771,9 @@
       "entry_strategy": "mom_add",
       "entry_id": "PAPER-00050",
       "status": "open",
-      "mark": 77577.5,
-      "unrealized_pnl": -0.28008897,
-      "unrealized_pnl_pct": -0.400129
+      "mark": 77514.8,
+      "unrealized_pnl": -0.33672087,
+      "unrealized_pnl_pct": -0.481032
     },
     {
       "pair": "BTCUSD",
@@ -742,9 +785,9 @@
       "entry_strategy": "mom_add",
       "entry_id": "PAPER-00045",
       "status": "open",
-      "mark": 77577.5,
-      "unrealized_pnl": -0.29699457,
-      "unrealized_pnl_pct": -0.424276
+      "mark": 77514.8,
+      "unrealized_pnl": -0.3536133,
+      "unrealized_pnl_pct": -0.50516
     },
     {
       "pair": "BTCUSD",
@@ -756,9 +799,9 @@
       "entry_strategy": "mom_add",
       "entry_id": "PAPER-00040",
       "status": "open",
-      "mark": 77577.5,
-      "unrealized_pnl": -0.28009208,
-      "unrealized_pnl_pct": -0.400129
+      "mark": 77514.8,
+      "unrealized_pnl": -0.3367246,
+      "unrealized_pnl_pct": -0.481032
     },
     {
       "pair": "BTCUSD",
@@ -770,9 +813,9 @@
       "entry_strategy": "mom_add",
       "entry_id": "PAPER-00035",
       "status": "open",
-      "mark": 77577.5,
-      "unrealized_pnl": -0.28732223,
-      "unrealized_pnl_pct": -0.410461
+      "mark": 77514.8,
+      "unrealized_pnl": -0.34394848,
+      "unrealized_pnl_pct": -0.491356
     },
     {
       "pair": "BTCUSD",
@@ -784,9 +827,9 @@
       "entry_strategy": "mom_add",
       "entry_id": "PAPER-00030",
       "status": "open",
-      "mark": 77577.5,
-      "unrealized_pnl": -0.29311493,
-      "unrealized_pnl_pct": -0.418725
+      "mark": 77514.8,
+      "unrealized_pnl": -0.34973805,
+      "unrealized_pnl_pct": -0.499613
     },
     {
       "pair": "BTCUSD",
@@ -798,9 +841,9 @@
       "entry_strategy": "defensive_ll",
       "entry_id": "PAPER-00025",
       "status": "open",
-      "mark": 77577.5,
-      "unrealized_pnl": -0.35037303,
-      "unrealized_pnl_pct": -0.500516
+      "mark": 77514.8,
+      "unrealized_pnl": -0.40695037,
+      "unrealized_pnl_pct": -0.581338
     },
     {
       "pair": "BTCUSD",
@@ -812,9 +855,9 @@
       "entry_strategy": "mom_5m",
       "entry_id": "PAPER-00020",
       "status": "open",
-      "mark": 77577.5,
-      "unrealized_pnl": -0.39842156,
-      "unrealized_pnl_pct": -0.569173
+      "mark": 77514.8,
+      "unrealized_pnl": -0.45495815,
+      "unrealized_pnl_pct": -0.64994
     },
     {
       "pair": "BTCUSD",
@@ -826,9 +869,9 @@
       "entry_strategy": "mom_add",
       "entry_id": "PAPER-00016",
       "status": "open",
-      "mark": 77577.5,
-      "unrealized_pnl": -0.50658305,
-      "unrealized_pnl_pct": -0.72379
+      "mark": 77514.8,
+      "unrealized_pnl": -0.56302434,
+      "unrealized_pnl_pct": -0.804431
     },
     {
       "pair": "BTCUSD",
@@ -840,9 +883,9 @@
       "entry_strategy": "mom_add",
       "entry_id": "PAPER-00012",
       "status": "open",
-      "mark": 77577.5,
-      "unrealized_pnl": -0.47618928,
-      "unrealized_pnl_pct": -0.680268
+      "mark": 77514.8,
+      "unrealized_pnl": -0.53266317,
+      "unrealized_pnl_pct": -0.760945
     },
     {
       "pair": "NEARUSD",
@@ -854,9 +897,9 @@
       "entry_strategy": "pair_scan_alt",
       "entry_id": "PAPER-00009",
       "status": "open",
-      "mark": 2.3799,
-      "unrealized_pnl": -0.24420962,
-      "unrealized_pnl_pct": -0.697098
+      "mark": 2.3846,
+      "unrealized_pnl": -0.1751616,
+      "unrealized_pnl_pct": -0.5
     },
     {
       "pair": "HYPEUSD",
@@ -882,14 +925,14 @@
       "entry_strategy": "pair_scan_alt",
       "entry_id": "PAPER-00003",
       "status": "open",
-      "mark": 0.967,
-      "unrealized_pnl": -1.76782888,
-      "unrealized_pnl_pct": -5.040967
+      "mark": 0.951,
+      "unrealized_pnl": -2.3217359,
+      "unrealized_pnl_pct": -6.620434
     }
   ],
   "fifo_dirty_skips": 0,
   "attribution": {
-    "log": 12,
+    "log": 13,
     "journal": 0,
     "tape": 0,
     "unattributed": 0
@@ -943,37 +986,37 @@
         "volume": 0.00045085
       },
       {
-        "created_at": "2026-09-14T03:56:27.761247547Z",
-        "id": "PAPER-00047",
+        "created_at": "2026-09-14T04:01:01.135378952Z",
+        "id": "PAPER-00052",
         "pair": "BTCUSD",
-        "price": 77131.7,
-        "reserved_amount": 109.95992337942,
+        "price": 77178.2,
+        "reserved_amount": 109.94632335159,
         "reserved_asset": "USD",
         "side": "buy",
         "type": "limit",
-        "volume": 0.00141852
+        "volume": 0.00141749
       },
       {
-        "created_at": "2026-09-14T03:58:43.998465616Z",
-        "id": "PAPER-00048",
+        "created_at": "2026-09-14T04:03:28.558538683Z",
+        "id": "PAPER-00053",
         "pair": "BTCUSD",
-        "price": 79205.1,
-        "reserved_amount": 0.00304494,
+        "price": 79234.3,
+        "reserved_amount": 0.00345139,
         "reserved_asset": "BTC",
         "side": "sell",
         "type": "limit",
-        "volume": 0.00304494
+        "volume": 0.00345139
       },
       {
-        "created_at": "2026-09-14T03:58:44.669530245Z",
-        "id": "PAPER-00051",
+        "created_at": "2026-09-14T04:03:29.231135945Z",
+        "id": "PAPER-00056",
         "pair": "BTCUSD",
-        "price": 79205.1,
-        "reserved_amount": 0.00045161,
+        "price": 79234.3,
+        "reserved_amount": 0.00045145,
         "reserved_asset": "BTC",
         "side": "sell",
         "type": "limit",
-        "volume": 0.00045161
+        "volume": 0.00045145
       }
     ]
   },
@@ -1820,6 +1863,17 @@
       "equity": 994.688636,
       "pnl": -5.311364,
       "label": "mark"
+    },
+    {
+      "t": "2026-09-14T04:03:29.022638307Z",
+      "equity": 996.085347,
+      "pnl": -3.914653
+    },
+    {
+      "t": "2026-09-14T04:04:59.563Z",
+      "equity": 993.398173,
+      "pnl": -6.601827,
+      "label": "mark"
     }
   ],
   "learnings": [
@@ -1827,7 +1881,7 @@
     "Workspace fee 50 bps RT equiv rate field=0.005. No live keys.",
     "Frozen v3 sealed; this lane uses explore strategy_ids.",
     "Historical F01–F07 remain separate probes — do not declare edge from CLI smoke fills.",
-    "Attributed fills: log=12 journal=0 tape=0 unattributed=0 of 12. FIFO completed=4 open=12 dirty_skips=0 (shared-book closed lots persist across resets; open = current book MTM). Completed rows = sell vs oldest buy; attributed to exit strategy."
+    "Attributed fills: log=13 journal=0 tape=0 unattributed=0 of 13. FIFO completed=4 open=13 dirty_skips=0 (shared-book closed lots persist across resets; open = current book MTM). Completed rows = sell vs oldest buy; attributed to exit strategy."
   ],
   "disclaimer": "PAPER ONLY — simulated fills vs live Kraken prices / historical probes. Not real money. Not financial advice. Do not declare edge from first-run tables."
 }
