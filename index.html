@@ -407,6 +407,13 @@
     if (Math.abs(x) >= 1000) return x.toLocaleString(undefined, { maximumFractionDigits: digs ?? 2 });
     return x.toLocaleString(undefined, { maximumFractionDigits: digs ?? 3 });
   }
+  function fmtCad(n) {
+    if (n === null || n === undefined || Number.isNaN(Number(n))) return '—';
+    const x = Number(n);
+    const abs = Math.abs(x);
+    const digs = abs >= 100 ? 2 : (abs >= 1 ? 2 : 2);
+    return 'C$' + x.toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: digs });
+  }
   function fmtPct(n) {
     if (n === null || n === undefined || Number.isNaN(Number(n))) return '—';
     return fmtNum(n, 2) + '%';
@@ -854,7 +861,7 @@
   function strategyTablesHtml(tables) {
     if (!tables || !tables.length) return '';
     let html = '<div class="detail-section strat-section"><h3>Strategies</h3>';
-    html += '<p class="strat-note">FIFO vs shared book. Completed = closed lot (sell vs oldest buy), attributed to the exit strategy. Open = leftover lots on the current book with mark-to-market. MTM is not closed P&amp;L. No fabricated win%.</p>';
+    html += '<p class="strat-note">FIFO vs shared book. Amount is CAD notional (coin × entry USD × Kraken USDCAD last at export). Coin size is the small line under it. Completed = closed lot. Open MTM is not closed P&amp;L. No fabricated win%.</p>';
     for (const st of tables) {
       const m = st.metrics || {};
       const nDone = m.completed || 0;
@@ -896,17 +903,20 @@
       if (openRows.length) {
         html += '<h5 class="strat-sub">Open lots (current book)</h5>';
         html += '<div class="scroll-x"><table><thead><tr>' +
-          '<th>Opened (PT)</th><th>Pair</th><th>Amount</th><th>Entry</th><th>Mark</th><th>MTM</th><th>MTM %</th><th>Fees</th>' +
+          '<th>Opened (PT)</th><th>Pair</th><th>Amount CAD</th><th>Entry</th><th>Mark</th><th>MTM</th><th>MTM %</th><th>Fees</th>' +
           '</tr></thead><tbody>';
         for (const t of openRows) {
           const openLabel = t.entry_pt || fmtTimePT(t.entry_time) || '';
           const mtm = t.unrealized_pnl;
           const mtmTxt = mtm == null ? '—' : ((mtm >= 0 ? '+' : '') + fmtNum(mtm, 2));
           const pctTxt = t.unrealized_pnl_pct == null ? '—' : ((t.unrealized_pnl_pct >= 0 ? '+' : '') + fmtNum(t.unrealized_pnl_pct, 2) + '%');
+          const amtCell = (t.amount_cad != null)
+            ? (esc(fmtCad(t.amount_cad)) + '<div class="muted">' + esc(fmtNum(t.amount, 6)) + ' coin</div>')
+            : esc(fmtNum(t.amount, 6));
           html += '<tr>' +
             '<td class="mono">' + esc(openLabel) + '</td>' +
             '<td>' + esc(t.pair || '') + '</td>' +
-            '<td>' + esc(fmtNum(t.amount, 6)) + '</td>' +
+            '<td>' + amtCell + '</td>' +
             '<td>' + esc(fmtNum(t.entry, 2)) + '</td>' +
             '<td>' + esc(fmtNum(t.mark, 2)) + '</td>' +
             '<td class="' + pnlClass(mtm) + '">' + esc(mtmTxt) + '</td>' +
@@ -921,7 +931,7 @@
       if (rows.length) {
         html += '<h5 class="strat-sub">Completed (FIFO closed lots)</h5>';
         html += '<div class="scroll-x"><table><thead><tr>' +
-          '<th>Exit (PT)</th><th>Pair</th><th>Amount</th><th>Entry</th><th>Exit $</th><th>P&amp;L</th><th>P&amp;L %</th><th>Fees</th>' +
+          '<th>Exit (PT)</th><th>Pair</th><th>Amount CAD</th><th>Entry</th><th>Exit $</th><th>P&amp;L</th><th>P&amp;L %</th><th>Fees</th>' +
           '</tr></thead><tbody>';
         for (const t of rows) {
           const exitLabel = t.exit_pt || fmtTimePT(t.exit_time) || '';
@@ -932,10 +942,13 @@
           if (t.entry_strategy && t.exit_strategy && t.entry_strategy !== t.exit_strategy) {
             pairCell += '<div class="muted">entry: ' + esc(t.entry_strategy) + '</div>';
           }
+          const amtCell = (t.amount_cad != null)
+            ? (esc(fmtCad(t.amount_cad)) + '<div class="muted">' + esc(fmtNum(t.amount, 6)) + ' coin</div>')
+            : esc(fmtNum(t.amount, 6));
           html += '<tr>' +
             '<td class="mono">' + esc(exitLabel) + '</td>' +
             '<td>' + pairCell + '</td>' +
-            '<td>' + esc(fmtNum(t.amount, 6)) + '</td>' +
+            '<td>' + amtCell + '</td>' +
             '<td>' + esc(fmtNum(t.entry, 2)) + '</td>' +
             '<td>' + esc(fmtNum(t.exit, 2)) + '</td>' +
             '<td class="' + pnlClass(pnl) + '">' + esc(pnlTxt) + '</td>' +
