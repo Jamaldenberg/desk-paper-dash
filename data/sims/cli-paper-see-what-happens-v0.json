@@ -6,16 +6,16 @@
   "mode": "paper",
   "live": true,
   "workspace": "desk-explore-f01",
-  "updated_at": "2026-09-14T15:05:02.013Z",
-  "updated_at_pt": "2026-09-14 8:05 AM PT",
+  "updated_at": "2026-09-14T15:15:05.841Z",
+  "updated_at_pt": "2026-09-14 8:15 AM PT",
   "metrics": {
-    "equity": 975.0987295346341,
+    "equity": 977.223344329071,
     "starting_balance": 1000.0,
     "currency": "USD",
-    "unrealized_pnl": -24.901270465365872,
-    "unrealized_pnl_pct": -2.4901270465365872,
+    "unrealized_pnl": -22.776655670929113,
+    "unrealized_pnl_pct": -2.277665567092911,
     "total_trades": 81,
-    "open_orders": 12,
+    "open_orders": 11,
     "fee_rate": 0.005,
     "slippage_rate": 0.0,
     "valuation_complete": true
@@ -5595,17 +5595,6 @@
       "side": "sell",
       "type": "limit",
       "volume": 0.5755
-    },
-    {
-      "created_at": "2026-09-14T15:04:19.219524087Z",
-      "id": "PAPER-00434",
-      "pair": "ETHUSD",
-      "price": 2558.07,
-      "reserved_amount": 0.02486919,
-      "reserved_asset": "ETH",
-      "side": "sell",
-      "type": "limit",
-      "volume": 0.02486919
     }
   ],
   "equity_series": [
@@ -7340,21 +7329,27 @@
       "equity": 975.09873,
       "pnl": -24.90127,
       "label": "mark"
+    },
+    {
+      "t": "2026-09-14T15:15:05.841Z",
+      "equity": 977.223344,
+      "pnl": -22.776656,
+      "label": "mark"
     }
   ],
   "fee_stress": null,
   "raw": {
     "status": {
-      "current_value": 975.0987295346341,
+      "current_value": 977.223344329071,
       "fee_rate": 0.005,
       "mode": "paper",
-      "open_orders": 12,
+      "open_orders": 11,
       "slippage_rate": 0.0,
       "starting_balance": 1000.0,
       "starting_currency": "USD",
       "total_trades": 81,
-      "unrealized_pnl": -24.901270465365872,
-      "unrealized_pnl_pct": -2.4901270465365872,
+      "unrealized_pnl": -22.776655670929113,
+      "unrealized_pnl_pct": -2.277665567092911,
       "valuation_complete": true,
       "workspace": "desk-explore-f01"
     },
@@ -7371,8 +7366,8 @@
           "total": "0.00085652"
         },
         "ETH": {
-          "available": "0.00000000",
-          "reserved": "0.02486919",
+          "available": "0.02486919",
+          "reserved": "0.00000000",
           "total": "0.02486919"
         },
         "EURC": {
@@ -7466,8 +7461,8 @@
     },
     "history_meta": {
       "filled_count": 81,
-      "cancelled_count": 260,
-      "equity_history_points": 236
+      "cancelled_count": 261,
+      "equity_history_points": 237
     }
   },
   "learnings": [
