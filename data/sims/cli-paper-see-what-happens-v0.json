@@ -6,16 +6,16 @@
   "mode": "paper",
   "live": true,
   "workspace": "desk-explore-f01",
-  "updated_at": "2026-09-14T23:37:53.739Z",
-  "updated_at_pt": "2026-09-14 4:37 PM PT",
+  "updated_at": "2026-09-14T23:49:01.883Z",
+  "updated_at_pt": "2026-09-14 4:49 PM PT",
   "metrics": {
-    "equity": 957.3534129367774,
+    "equity": 957.2618438113993,
     "starting_balance": 1000.0,
     "currency": "USD",
-    "unrealized_pnl": -42.64658706322254,
-    "unrealized_pnl_pct": -4.264658706322255,
-    "total_trades": 173,
-    "open_orders": 7,
+    "unrealized_pnl": -42.738156188600705,
+    "unrealized_pnl_pct": -4.273815618860071,
+    "total_trades": 174,
+    "open_orders": 8,
     "fee_rate": 0.005,
     "slippage_rate": 0.0,
     "valuation_complete": true
@@ -24,7 +24,7 @@
     "AAVE": 0.34146713,
     "ADA": 614.82795183,
     "ARB": 252.52525253,
-    "BTC": 0.00225652,
+    "BTC": 0.00135652,
     "CAP": 179.5572894,
     "ENA": 146.57534247,
     "ETH": 0.00720006,
@@ -41,7 +41,7 @@
     "SUI": 41.73415247,
     "TAO": 0.20268794,
     "UNI": 4.32777804,
-    "USD": 4.645348134079813,
+    "USD": 74.73022283407981,
     "USELESS": 135.06212858,
     "VVV": 0.87449641,
     "XDG": 564.6755612,
@@ -49,43 +49,58 @@
     "ZEC": 0.00978143
   },
   "marks": {
-    "AAVEUSD": 128.32,
-    "ADAUSD": 0.208714,
-    "ARBUSD": 0.1331,
-    "CAPUSD": 0.063548,
-    "ENAUSD": 0.1428,
+    "AAVEUSD": 128.25,
+    "ADAUSD": 0.208753,
+    "ARBUSD": 0.1335,
+    "CAPUSD": 0.063413,
+    "ENAUSD": 0.1432,
     "EURCUSD": 1.15577,
     "FILUSD": 0.939,
-    "HYPEUSD": 80.1,
-    "LAPTOPUSD": 0.2107,
-    "LINKUSD": 11.51767,
-    "NEARUSD": 2.4704,
-    "PAXGUSD": 4294.64,
-    "PUMPUSD": 0.003689,
-    "SOLUSD": 102.63,
-    "SUIUSD": 0.7216,
-    "TAOUSD": 232.8614,
-    "UNIUSD": 6.5588,
-    "USELESSUSD": 0.19513,
-    "VVVUSD": 22.59,
-    "XDGUSD": 0.0836747,
-    "ETHUSD": 2515.59,
-    "XETHZUSD": 2515.59,
-    "XLTCZUSD": 53.19,
-    "BTCUSD": 78259.9,
-    "XXBTZUSD": 78259.9,
-    "XXRPZUSD": 1.42073,
-    "XZECZUSD": 1166.49,
-    "USDCAD": 1.3902,
-    "ZUSDZCAD": 1.3902
+    "HYPEUSD": 80.27,
+    "LAPTOPUSD": 0.2077,
+    "LINKUSD": 11.51637,
+    "NEARUSD": 2.4637,
+    "PAXGUSD": 4293.85,
+    "PUMPUSD": 0.003691,
+    "SOLUSD": 102.51,
+    "SUIUSD": 0.7223,
+    "TAOUSD": 232.6922,
+    "UNIUSD": 6.5508,
+    "USELESSUSD": 0.19695,
+    "VVVUSD": 22.717,
+    "XDGUSD": 0.0836494,
+    "ETHUSD": 2516.26,
+    "XETHZUSD": 2516.26,
+    "XLTCZUSD": 53.14,
+    "BTCUSD": 78259.6,
+    "XXBTZUSD": 78259.6,
+    "XXRPZUSD": 1.42139,
+    "XZECZUSD": 1165.0,
+    "USDCAD": 1.39058,
+    "ZUSDZCAD": 1.39058
   },
-  "usd_cad": 1.3902,
+  "usd_cad": 1.39058,
   "fx": {
     "pair": "USDCAD",
     "source": "kraken last",
-    "usd_cad": 1.3902
+    "usd_cad": 1.39058
   },
   "trades": [
+    {
+      "cost": 70.43706,
+      "fee": 0.3521853,
+      "id": "PAPER-00686",
+      "order_id": "PAPER-00685",
+      "pair": "BTCUSD",
+      "price": 78263.4,
+      "side": "sell",
+      "status": "filled",
+      "time": "2026-09-14T23:48:34.696056094Z",
+      "volume": 0.0009,
+      "strategy": "ta_atr_trail",
+      "strategy_id": "cli-paper-ta-atr-trail-v1",
+      "time_pt": "2026-09-14 4:48 PM PT"
+    },
     {
       "cost": 70.90696872,
       "fee": 0.3545348436,
@@ -2694,11 +2709,11 @@
         "losses": 0,
         "scratches": 0,
         "sum_pnl": 3.297114,
-        "sum_pnl_cad": 4.5837,
-        "open_unrealized_pnl": -7.266101,
-        "open_unrealized_pnl_cad": -10.1013,
-        "open_amount_cad": 961.0136,
-        "usd_cad": 1.3902,
+        "sum_pnl_cad": 4.5849,
+        "open_unrealized_pnl": -6.948632,
+        "open_unrealized_pnl_cad": -9.6626,
+        "open_amount_cad": 961.2762,
+        "usd_cad": 1.39058,
         "fees": 3.072759,
         "fills_fees": 6.407201,
         "fills": 34,
@@ -2756,10 +2771,10 @@
           "exit_id": "PAPER-00489",
           "split": true,
           "notional_usd": 47.504743,
-          "amount_cad": 66.0411,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.667,
-          "pnl_cad": 0.6467
+          "amount_cad": 66.0591,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.6672,
+          "pnl_cad": 0.6469
         },
         {
           "pair": "TAOUSD",
@@ -2779,10 +2794,10 @@
           "exit_id": "PAPER-00488",
           "split": true,
           "notional_usd": 47.477157,
-          "amount_cad": 66.0027,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.6675,
-          "pnl_cad": 0.8182
+          "amount_cad": 66.0208,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.6676,
+          "pnl_cad": 0.8184
         },
         {
           "pair": "CAPUSD",
@@ -2802,9 +2817,9 @@
           "exit_id": "PAPER-00476",
           "split": true,
           "notional_usd": 10.336574,
-          "amount_cad": 14.3699,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.1449,
+          "amount_cad": 14.3738,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.145,
           "pnl_cad": 0.1047
         },
         {
@@ -2825,10 +2840,10 @@
           "exit_id": "PAPER-00473",
           "split": true,
           "notional_usd": 27.494374,
-          "amount_cad": 38.2227,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.3865,
-          "pnl_cad": 0.4625
+          "amount_cad": 38.2331,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.3866,
+          "pnl_cad": 0.4626
         },
         {
           "pair": "LINKUSD",
@@ -2848,10 +2863,10 @@
           "exit_id": "PAPER-00470",
           "split": true,
           "notional_usd": 11.018505,
-          "amount_cad": 15.3179,
-          "usd_cad": 1.3902,
+          "amount_cad": 15.3221,
+          "usd_cad": 1.39058,
           "fees_cad": 0.1545,
-          "pnl_cad": 0.111
+          "pnl_cad": 0.1111
         },
         {
           "pair": "HYPEUSD",
@@ -2871,10 +2886,10 @@
           "exit_id": "PAPER-00466",
           "split": true,
           "notional_usd": 24.0,
-          "amount_cad": 33.3648,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.3373,
-          "pnl_cad": 0.3969
+          "amount_cad": 33.3739,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.3374,
+          "pnl_cad": 0.397
         },
         {
           "pair": "SUIUSD",
@@ -2894,10 +2909,10 @@
           "exit_id": "PAPER-00452",
           "split": true,
           "notional_usd": 29.894173,
-          "amount_cad": 41.5589,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.4201,
-          "pnl_cad": 0.4884
+          "amount_cad": 41.5702,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.4202,
+          "pnl_cad": 0.4886
         },
         {
           "pair": "XRPUSD",
@@ -2917,8 +2932,8 @@
           "exit_id": "PAPER-00449",
           "split": true,
           "notional_usd": 16.927327,
-          "amount_cad": 23.5324,
-          "usd_cad": 1.3902,
+          "amount_cad": 23.5388,
+          "usd_cad": 1.39058,
           "fees_cad": 0.2376,
           "pnl_cad": 0.2093
         },
@@ -2940,10 +2955,10 @@
           "exit_id": "PAPER-00157",
           "split": true,
           "notional_usd": 27.494598,
-          "amount_cad": 38.223,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.3865,
-          "pnl_cad": 0.4622
+          "amount_cad": 38.2334,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.3866,
+          "pnl_cad": 0.4623
         },
         {
           "pair": "FILUSD",
@@ -2963,10 +2978,10 @@
           "exit_id": "PAPER-00124",
           "split": true,
           "notional_usd": 22.44333,
-          "amount_cad": 31.2007,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.3153,
-          "pnl_cad": 0.3379
+          "amount_cad": 31.2092,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.3154,
+          "pnl_cad": 0.338
         },
         {
           "pair": "NEARUSD",
@@ -2986,10 +3001,10 @@
           "exit_id": "PAPER-00121",
           "split": true,
           "notional_usd": 10.995392,
-          "amount_cad": 15.2858,
-          "usd_cad": 1.3902,
+          "amount_cad": 15.29,
+          "usd_cad": 1.39058,
           "fees_cad": 0.1546,
-          "pnl_cad": 0.1881
+          "pnl_cad": 0.1882
         },
         {
           "pair": "LAPTOPUSD",
@@ -3009,8 +3024,8 @@
           "exit_id": "PAPER-00011",
           "split": true,
           "notional_usd": 11.00481,
-          "amount_cad": 15.2989,
-          "usd_cad": 1.3902,
+          "amount_cad": 15.3031,
+          "usd_cad": 1.39058,
           "fees_cad": 0.1541,
           "pnl_cad": 0.0686
         },
@@ -3032,8 +3047,8 @@
           "exit_id": "PAPER-00052",
           "split": true,
           "notional_usd": 17.5,
-          "amount_cad": 24.3285,
-          "usd_cad": 1.3902,
+          "amount_cad": 24.3351,
+          "usd_cad": 1.39058,
           "fees_cad": 0.246,
           "pnl_cad": 0.2892
         }
@@ -3049,14 +3064,14 @@
           "entry_strategy": "pair_scan_alt",
           "entry_id": "PAPER-00557",
           "status": "open",
-          "mark": 0.003689,
-          "unrealized_pnl": -0.07162196,
-          "unrealized_pnl_pct": -0.364278,
+          "mark": 0.003691,
+          "unrealized_pnl": -0.06094804,
+          "unrealized_pnl_pct": -0.309989,
           "notional_usd": 19.661348,
-          "amount_cad": 27.3332,
-          "usd_cad": 1.3902,
+          "amount_cad": 27.3407,
+          "usd_cad": 1.39058,
           "fees_cad": 0.1367,
-          "unrealized_pnl_cad": -0.0996
+          "unrealized_pnl_cad": -0.0848
         },
         {
           "pair": "ARBUSD",
@@ -3068,14 +3083,14 @@
           "entry_strategy": "pair_scan_alt",
           "entry_id": "PAPER-00527",
           "status": "open",
-          "mark": 0.1331,
-          "unrealized_pnl": -1.3354798,
-          "unrealized_pnl_pct": -3.840596,
+          "mark": 0.1335,
+          "unrealized_pnl": -1.2344697,
+          "unrealized_pnl_pct": -3.550109,
           "notional_usd": 34.772727,
-          "amount_cad": 48.341,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.2417,
-          "unrealized_pnl_cad": -1.8566
+          "amount_cad": 48.3543,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.2418,
+          "unrealized_pnl_cad": -1.7166
         },
         {
           "pair": "AAVEUSD",
@@ -3087,14 +3102,14 @@
           "entry_strategy": "pair_scan_alt",
           "entry_id": "PAPER-00515",
           "status": "open",
-          "mark": 128.32,
-          "unrealized_pnl": -1.22801824,
-          "unrealized_pnl_pct": -2.739829,
+          "mark": 128.25,
+          "unrealized_pnl": -1.25192094,
+          "unrealized_pnl_pct": -2.793159,
           "notional_usd": 44.820975,
-          "amount_cad": 62.3101,
-          "usd_cad": 1.3902,
+          "amount_cad": 62.3272,
+          "usd_cad": 1.39058,
           "fees_cad": 0.3116,
-          "unrealized_pnl_cad": -1.7072
+          "unrealized_pnl_cad": -1.7409
         },
         {
           "pair": "PAXGUSD",
@@ -3106,14 +3121,14 @@
           "entry_strategy": "pair_scan_alt",
           "entry_id": "PAPER-00512",
           "status": "open",
-          "mark": 4294.64,
-          "unrealized_pnl": -0.26349615,
-          "unrealized_pnl_pct": -0.752699,
+          "mark": 4293.85,
+          "unrealized_pnl": -0.26991939,
+          "unrealized_pnl_pct": -0.771047,
           "notional_usd": 35.006848,
-          "amount_cad": 48.6665,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.2433,
-          "unrealized_pnl_cad": -0.3663
+          "amount_cad": 48.6798,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.2434,
+          "unrealized_pnl_cad": -0.3753
         },
         {
           "pair": "ENAUSD",
@@ -3125,14 +3140,14 @@
           "entry_strategy": "pair_scan_alt",
           "entry_id": "PAPER-00478",
           "status": "open",
-          "mark": 0.1428,
-          "unrealized_pnl": -0.60550274,
-          "unrealized_pnl_pct": -2.825581,
+          "mark": 0.1432,
+          "unrealized_pnl": -0.54687261,
+          "unrealized_pnl_pct": -2.551984,
           "notional_usd": 21.429315,
-          "amount_cad": 29.791,
-          "usd_cad": 1.3902,
+          "amount_cad": 29.7992,
+          "usd_cad": 1.39058,
           "fees_cad": 0.149,
-          "unrealized_pnl_cad": -0.8418
+          "unrealized_pnl_cad": -0.7605
         },
         {
           "pair": "CAPUSD",
@@ -3144,14 +3159,14 @@
           "entry_strategy": "pair_scan_alt",
           "entry_id": "PAPER-00468",
           "status": "open",
-          "mark": 0.063548,
-          "unrealized_pnl": 1.02224928,
-          "unrealized_pnl_pct": 9.889633,
+          "mark": 0.063413,
+          "unrealized_pnl": 0.99800904,
+          "unrealized_pnl_pct": 9.655124,
           "notional_usd": 10.336574,
-          "amount_cad": 14.3699,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.0718,
-          "unrealized_pnl_cad": 1.4211
+          "amount_cad": 14.3738,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.0719,
+          "unrealized_pnl_cad": 1.3878
         },
         {
           "pair": "EURCUSD",
@@ -3167,10 +3182,10 @@
           "unrealized_pnl": -0.19744111,
           "unrealized_pnl_pct": -0.336205,
           "notional_usd": 58.726437,
-          "amount_cad": 81.6415,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.4082,
-          "unrealized_pnl_cad": -0.2745
+          "amount_cad": 81.6638,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.4083,
+          "unrealized_pnl_cad": -0.2746
         },
         {
           "pair": "XDGUSD",
@@ -3182,14 +3197,14 @@
           "entry_strategy": "pair_scan_alt",
           "entry_id": "PAPER-00347",
           "status": "open",
-          "mark": 0.0836747,
-          "unrealized_pnl": -0.49320881,
-          "unrealized_pnl_pct": -1.038231,
+          "mark": 0.0836494,
+          "unrealized_pnl": -0.50749511,
+          "unrealized_pnl_pct": -1.068304,
           "notional_usd": 47.504743,
-          "amount_cad": 66.0411,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.3302,
-          "unrealized_pnl_cad": -0.6857
+          "amount_cad": 66.0591,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.3303,
+          "unrealized_pnl_cad": -0.7057
         },
         {
           "pair": "ADAUSD",
@@ -3201,14 +3216,14 @@
           "entry_strategy": "pair_scan_alt",
           "entry_id": "PAPER-00265",
           "status": "open",
-          "mark": 0.208714,
-          "unrealized_pnl": -1.63025935,
-          "unrealized_pnl_pct": -1.260767,
+          "mark": 0.208753,
+          "unrealized_pnl": -1.60628106,
+          "unrealized_pnl_pct": -1.242224,
           "notional_usd": 129.306926,
-          "amount_cad": 179.7625,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.8988,
-          "unrealized_pnl_cad": -2.2664
+          "amount_cad": 179.8116,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.8991,
+          "unrealized_pnl_cad": -2.2337
         },
         {
           "pair": "VVVUSD",
@@ -3220,14 +3235,14 @@
           "entry_strategy": "pair_scan_alt",
           "entry_id": "PAPER-00162",
           "status": "open",
-          "mark": 22.59,
-          "unrealized_pnl": -0.31058177,
-          "unrealized_pnl_pct": -1.555582,
+          "mark": 22.717,
+          "unrealized_pnl": -0.19952073,
+          "unrealized_pnl_pct": -0.999321,
           "notional_usd": 19.965628,
-          "amount_cad": 27.7562,
-          "usd_cad": 1.3902,
+          "amount_cad": 27.7638,
+          "usd_cad": 1.39058,
           "fees_cad": 0.1388,
-          "unrealized_pnl_cad": -0.4318
+          "unrealized_pnl_cad": -0.2774
         },
         {
           "pair": "XRPUSD",
@@ -3243,8 +3258,8 @@
           "unrealized_pnl": null,
           "unrealized_pnl_pct": null,
           "notional_usd": 16.927327,
-          "amount_cad": 23.5324,
-          "usd_cad": 1.3902,
+          "amount_cad": 23.5388,
+          "usd_cad": 1.39058,
           "fees_cad": 0.1177
         },
         {
@@ -3257,14 +3272,14 @@
           "entry_strategy": "pair_scan_alt",
           "entry_id": "PAPER-00119",
           "status": "open",
-          "mark": 11.51767,
-          "unrealized_pnl": 0.01810634,
-          "unrealized_pnl_pct": 0.164327,
+          "mark": 11.51637,
+          "unrealized_pnl": 0.01685442,
+          "unrealized_pnl_pct": 0.152965,
           "notional_usd": 11.018505,
-          "amount_cad": 15.3179,
-          "usd_cad": 1.3902,
+          "amount_cad": 15.3221,
+          "usd_cad": 1.39058,
           "fees_cad": 0.0766,
-          "unrealized_pnl_cad": 0.0252
+          "unrealized_pnl_cad": 0.0234
         },
         {
           "pair": "USELESSUSD",
@@ -3276,14 +3291,14 @@
           "entry_strategy": "pair_scan_alt",
           "entry_id": "PAPER-00094",
           "status": "open",
-          "mark": 0.19513,
-          "unrealized_pnl": -1.27739736,
-          "unrealized_pnl_pct": -4.645994,
+          "mark": 0.19695,
+          "unrealized_pnl": -1.03158428,
+          "unrealized_pnl_pct": -3.751953,
           "notional_usd": 27.494598,
-          "amount_cad": 38.223,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.1911,
-          "unrealized_pnl_cad": -1.7758
+          "amount_cad": 38.2334,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.1912,
+          "unrealized_pnl_cad": -1.4345
         },
         {
           "pair": "UNIUSD",
@@ -3295,14 +3310,14 @@
           "entry_strategy": "pair_scan_alt",
           "entry_id": "PAPER-00091",
           "status": "open",
-          "mark": 6.5588,
-          "unrealized_pnl": 0.75318485,
-          "unrealized_pnl_pct": 2.739414,
+          "mark": 6.5508,
+          "unrealized_pnl": 0.71856263,
+          "unrealized_pnl_pct": 2.61349,
           "notional_usd": 27.494374,
-          "amount_cad": 38.2227,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.1911,
-          "unrealized_pnl_cad": 1.0471
+          "amount_cad": 38.2331,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.1912,
+          "unrealized_pnl_cad": 0.9992
         },
         {
           "pair": "NEARUSD",
@@ -3314,14 +3329,14 @@
           "entry_strategy": "pair_scan_alt",
           "entry_id": "PAPER-00088",
           "status": "open",
-          "mark": 2.4704,
-          "unrealized_pnl": 0.33253194,
-          "unrealized_pnl_pct": 3.024284,
+          "mark": 2.4637,
+          "unrealized_pnl": 0.30166025,
+          "unrealized_pnl_pct": 2.743515,
           "notional_usd": 10.995392,
-          "amount_cad": 15.2858,
-          "usd_cad": 1.3902,
+          "amount_cad": 15.29,
+          "usd_cad": 1.39058,
           "fees_cad": 0.0764,
-          "unrealized_pnl_cad": 0.4623
+          "unrealized_pnl_cad": 0.4195
         },
         {
           "pair": "TAOUSD",
@@ -3333,14 +3348,14 @@
           "entry_strategy": "pair_scan_alt",
           "entry_id": "PAPER-00085",
           "status": "open",
-          "mark": 232.8614,
-          "unrealized_pnl": -0.51634519,
-          "unrealized_pnl_pct": -1.087566,
+          "mark": 232.6922,
+          "unrealized_pnl": -0.55063999,
+          "unrealized_pnl_pct": -1.1598,
           "notional_usd": 47.477157,
-          "amount_cad": 66.0027,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.33,
-          "unrealized_pnl_cad": -0.7178
+          "amount_cad": 66.0208,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.3301,
+          "unrealized_pnl_cad": -0.7657
         },
         {
           "pair": "FILUSD",
@@ -3356,10 +3371,10 @@
           "unrealized_pnl": -0.64880354,
           "unrealized_pnl_pct": -2.890852,
           "notional_usd": 22.44333,
-          "amount_cad": 31.2007,
-          "usd_cad": 1.3902,
+          "amount_cad": 31.2092,
+          "usd_cad": 1.39058,
           "fees_cad": 0.156,
-          "unrealized_pnl_cad": -0.902
+          "unrealized_pnl_cad": -0.9022
         },
         {
           "pair": "HYPEUSD",
@@ -3371,14 +3386,14 @@
           "entry_strategy": "pair_scan_alt",
           "entry_id": "PAPER-00079",
           "status": "open",
-          "mark": 80.1,
-          "unrealized_pnl": 0.03985925,
-          "unrealized_pnl_pct": 0.16608,
+          "mark": 80.27,
+          "unrealized_pnl": 0.09113485,
+          "unrealized_pnl_pct": 0.379729,
           "notional_usd": 24.0,
-          "amount_cad": 33.3648,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.1668,
-          "unrealized_pnl_cad": 0.0554
+          "amount_cad": 33.3739,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.1669,
+          "unrealized_pnl_cad": 0.1267
         },
         {
           "pair": "SUIUSD",
@@ -3390,14 +3405,14 @@
           "entry_strategy": "pair_scan_alt",
           "entry_id": "PAPER-00076",
           "status": "open",
-          "mark": 0.7216,
-          "unrealized_pnl": 0.07172014,
-          "unrealized_pnl_pct": 0.239913,
+          "mark": 0.7223,
+          "unrealized_pnl": 0.10093404,
+          "unrealized_pnl_pct": 0.337638,
           "notional_usd": 29.894173,
-          "amount_cad": 41.5589,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.2078,
-          "unrealized_pnl_cad": 0.0997
+          "amount_cad": 41.5702,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.2079,
+          "unrealized_pnl_cad": 0.1404
         },
         {
           "pair": "LTCUSD",
@@ -3413,9 +3428,9 @@
           "unrealized_pnl": null,
           "unrealized_pnl_pct": null,
           "notional_usd": 30.0,
-          "amount_cad": 41.706,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.2085
+          "amount_cad": 41.7174,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.2086
         },
         {
           "pair": "LAPTOPUSD",
@@ -3427,14 +3442,14 @@
           "entry_strategy": "pair_scan_alt",
           "entry_id": "PAPER-00006",
           "status": "open",
-          "mark": 0.2107,
-          "unrealized_pnl": -0.92559685,
-          "unrealized_pnl_pct": -8.410839,
+          "mark": 0.2077,
+          "unrealized_pnl": -1.06989069,
+          "unrealized_pnl_pct": -9.722028,
           "notional_usd": 11.00481,
-          "amount_cad": 15.2989,
-          "usd_cad": 1.3902,
+          "amount_cad": 15.3031,
+          "usd_cad": 1.39058,
           "fees_cad": 0.0765,
-          "unrealized_pnl_cad": -1.2868
+          "unrealized_pnl_cad": -1.4878
         },
         {
           "pair": "ZECUSD",
@@ -3450,9 +3465,9 @@
           "unrealized_pnl": null,
           "unrealized_pnl_pct": null,
           "notional_usd": 10.996088,
-          "amount_cad": 15.2868,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.0764
+          "amount_cad": 15.2909,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.0765
         }
       ]
     },
@@ -3467,11 +3482,11 @@
         "losses": 0,
         "scratches": 0,
         "sum_pnl": 0.767188,
-        "sum_pnl_cad": 1.0665,
-        "open_unrealized_pnl": 0.1914,
-        "open_unrealized_pnl_cad": 0.2661,
-        "open_amount_cad": 97.7773,
-        "usd_cad": 1.3902,
+        "sum_pnl_cad": 1.0668,
+        "open_unrealized_pnl": 0.108528,
+        "open_unrealized_pnl_cad": 0.1509,
+        "open_amount_cad": 97.8039,
+        "usd_cad": 1.39058,
         "fees": 0.471288,
         "fills_fees": 0.822955,
         "fills": 3,
@@ -3508,10 +3523,10 @@
           "exit_id": "PAPER-00537",
           "split": true,
           "notional_usd": 46.509608,
-          "amount_cad": 64.6577,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.6552,
-          "pnl_cad": 1.0665
+          "amount_cad": 64.6753,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.6554,
+          "pnl_cad": 1.0668
         }
       ],
       "open": [
@@ -3525,14 +3540,14 @@
           "entry_strategy": "pair_rotate_sol",
           "entry_id": "PAPER-00287",
           "status": "open",
-          "mark": 102.63,
-          "unrealized_pnl": 0.1266528,
-          "unrealized_pnl_pct": 0.196625,
+          "mark": 102.51,
+          "unrealized_pnl": 0.0508128,
+          "unrealized_pnl_pct": 0.078885,
           "notional_usd": 64.41344,
-          "amount_cad": 89.5476,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.4477,
-          "unrealized_pnl_cad": 0.1761
+          "amount_cad": 89.572,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.4479,
+          "unrealized_pnl_cad": 0.0707
         },
         {
           "pair": "SOLUSD",
@@ -3544,14 +3559,14 @@
           "entry_strategy": "pair_rotate_sol",
           "entry_id": "PAPER-00104",
           "status": "open",
-          "mark": 102.63,
-          "unrealized_pnl": 0.06474714,
-          "unrealized_pnl_pct": 1.093744,
+          "mark": 102.51,
+          "unrealized_pnl": 0.05771514,
+          "unrealized_pnl_pct": 0.974955,
           "notional_usd": 5.919772,
-          "amount_cad": 8.2297,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.0411,
-          "unrealized_pnl_cad": 0.09
+          "amount_cad": 8.2319,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.0412,
+          "unrealized_pnl_cad": 0.0803
         }
       ]
     },
@@ -3567,10 +3582,10 @@
         "scratches": 0,
         "sum_pnl": 0,
         "sum_pnl_cad": null,
-        "open_unrealized_pnl": -0.547192,
-        "open_unrealized_pnl_cad": -0.7607,
-        "open_amount_cad": 123.8652,
-        "usd_cad": 1.3902,
+        "open_unrealized_pnl": -0.54264,
+        "open_unrealized_pnl_cad": -0.7546,
+        "open_amount_cad": 123.899,
+        "usd_cad": 1.39058,
         "fees": 0,
         "fills_fees": 6.313599,
         "fills": 23,
@@ -3601,14 +3616,14 @@
           "entry_strategy": "relative_btc_eth",
           "entry_id": "PAPER-00680",
           "status": "open",
-          "mark": 78259.9,
-          "unrealized_pnl": -0.37681654,
-          "unrealized_pnl_pct": -0.531424,
+          "mark": 78259.6,
+          "unrealized_pnl": -0.37708826,
+          "unrealized_pnl_pct": -0.531807,
           "notional_usd": 70.906969,
-          "amount_cad": 98.5749,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.4929,
-          "unrealized_pnl_cad": -0.5239
+          "amount_cad": 98.6018,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.493,
+          "unrealized_pnl_cad": -0.5244
         },
         {
           "pair": "ETHUSD",
@@ -3620,14 +3635,14 @@
           "entry_strategy": "relative_btc_eth",
           "entry_id": "PAPER-00650",
           "status": "open",
-          "mark": 2515.59,
-          "unrealized_pnl": -0.17037574,
-          "unrealized_pnl_pct": -0.936552,
+          "mark": 2516.26,
+          "unrealized_pnl": -0.1655517,
+          "unrealized_pnl_pct": -0.910034,
           "notional_usd": 18.191816,
-          "amount_cad": 25.2903,
-          "usd_cad": 1.3902,
+          "amount_cad": 25.2972,
+          "usd_cad": 1.39058,
           "fees_cad": 0.1265,
-          "unrealized_pnl_cad": -0.2369
+          "unrealized_pnl_cad": -0.2302
         }
       ]
     },
@@ -3643,10 +3658,10 @@
         "scratches": 0,
         "sum_pnl": 0,
         "sum_pnl_cad": null,
-        "open_unrealized_pnl": -0.624631,
-        "open_unrealized_pnl_cad": -0.8684,
-        "open_amount_cad": 124.2852,
-        "usd_cad": 1.3902,
+        "open_unrealized_pnl": -0.131612,
+        "open_unrealized_pnl_cad": -0.183,
+        "open_amount_cad": 26.1802,
+        "usd_cad": 1.39058,
         "fees": 0,
         "fills_fees": 4.445303,
         "fills": 9,
@@ -3660,7 +3675,7 @@
         "last_pt": "2026-09-14 4:26 PM PT",
         "open_lots_remaining": {
           "count": 1,
-          "vol": 0.00114009
+          "vol": 0.00024009
         },
         "fifo_note": "FIFO vs shared book. A completed row is a closed lot (sell vs oldest buy). Open rows are leftover lots on the current book (mark-to-market, not closed P&L). Not an isolated strategy account."
       },
@@ -3668,22 +3683,22 @@
       "open": [
         {
           "pair": "BTCUSD",
-          "amount": 0.00114009,
+          "amount": 0.00024009,
           "entry": 78415.7,
           "entry_pt": "2026-09-14 4:26 PM PT",
           "entry_time": "2026-09-14T23:26:49.212146003Z",
-          "fees": 0.44700478,
+          "fees": 0.09413413,
           "entry_strategy": "mom_add",
           "entry_id": "PAPER-00670",
           "status": "open",
-          "mark": 78259.9,
-          "unrealized_pnl": -0.6246308,
-          "unrealized_pnl_pct": -0.698685,
-          "notional_usd": 89.400955,
-          "amount_cad": 124.2852,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.6214,
-          "unrealized_pnl_cad": -0.8684
+          "mark": 78259.6,
+          "unrealized_pnl": -0.13161218,
+          "unrealized_pnl_pct": -0.699067,
+          "notional_usd": 18.826825,
+          "amount_cad": 26.1802,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.1309,
+          "unrealized_pnl_cad": -0.183
         }
       ]
     },
@@ -3699,10 +3714,10 @@
         "scratches": 0,
         "sum_pnl": 0,
         "sum_pnl_cad": null,
-        "open_unrealized_pnl": -0.09607,
-        "open_unrealized_pnl_cad": -0.1336,
-        "open_amount_cad": 22.9391,
-        "usd_cad": 1.3902,
+        "open_unrealized_pnl": -0.096133,
+        "open_unrealized_pnl_cad": -0.1337,
+        "open_amount_cad": 22.9454,
+        "usd_cad": 1.39058,
         "fees": 0,
         "fills_fees": 0.660001,
         "fills": 8,
@@ -3732,14 +3747,14 @@
           "entry_strategy": "range_fade",
           "entry_id": "PAPER-00676",
           "status": "open",
-          "mark": 78259.9,
-          "unrealized_pnl": -0.09607005,
-          "unrealized_pnl_pct": -0.582222,
+          "mark": 78259.6,
+          "unrealized_pnl": -0.09613325,
+          "unrealized_pnl_pct": -0.582605,
           "notional_usd": 16.50058,
-          "amount_cad": 22.9391,
-          "usd_cad": 1.3902,
+          "amount_cad": 22.9454,
+          "usd_cad": 1.39058,
           "fees_cad": 0.1147,
-          "unrealized_pnl_cad": -0.1336
+          "unrealized_pnl_cad": -0.1337
         }
       ]
     },
@@ -3748,33 +3763,56 @@
       "strategy_id": "cli-paper-ta-atr-trail-v1",
       "definition": "Trails a stop under the high using ATR. Sells if price comes back through that stop.",
       "metrics": {
-        "completed": 119,
+        "completed": 120,
         "open": 0,
         "wins": 1,
-        "losses": 118,
+        "losses": 119,
         "scratches": 0,
-        "sum_pnl": -35.353362,
-        "sum_pnl_cad": -49.1484,
+        "sum_pnl": -36.195488,
+        "sum_pnl_cad": -50.332,
         "open_unrealized_pnl": null,
         "open_unrealized_pnl_cad": null,
         "open_amount_cad": null,
-        "usd_cad": 1.3902,
-        "fees": 34.602236,
-        "fills_fees": 17.29924,
-        "fills": 69,
+        "usd_cad": 1.39058,
+        "fees": 35.307292,
+        "fills_fees": 17.651426,
+        "fills": 70,
         "buys": 0,
-        "sells": 69,
-        "notional": 3459.848051,
+        "sells": 70,
+        "notional": 3530.285111,
         "pairs": [
           "BTCUSD",
           "ETHUSD"
         ],
         "first_pt": "2026-09-14 3:28 AM PT",
-        "last_pt": "2026-09-14 4:33 PM PT",
+        "last_pt": "2026-09-14 4:48 PM PT",
         "open_lots_remaining": null,
         "fifo_note": "FIFO vs shared book. A completed row is a closed lot (sell vs oldest buy). Open rows are leftover lots on the current book (mark-to-market, not closed P&L). Not an isolated strategy account."
       },
       "completed": [
+        {
+          "pair": "BTCUSD",
+          "amount": 0.0009,
+          "entry": 78415.7,
+          "exit": 78263.4,
+          "entry_pt": "2026-09-14 4:26 PM PT",
+          "exit_pt": "2026-09-14 4:48 PM PT",
+          "entry_time": "2026-09-14T23:26:49.212146003Z",
+          "exit_time": "2026-09-14T23:48:34.696056094Z",
+          "fees": 0.70505595,
+          "pnl": -0.84212595,
+          "pnl_pct": -1.19325,
+          "entry_strategy": "mom_add",
+          "exit_strategy": "ta_atr_trail",
+          "entry_id": "PAPER-00670",
+          "exit_id": "PAPER-00686",
+          "split": true,
+          "notional_usd": 70.57413,
+          "amount_cad": 98.139,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.9804,
+          "pnl_cad": -1.171
+        },
         {
           "pair": "BTCUSD",
           "amount": 0.00019161,
@@ -3793,9 +3831,9 @@
           "exit_id": "PAPER-00678",
           "split": true,
           "notional_usd": 15.025232,
-          "amount_cad": 20.8881,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.2087,
+          "amount_cad": 20.8938,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.2088,
           "pnl_cad": -0.2437
         },
         {
@@ -3816,10 +3854,10 @@
           "exit_id": "PAPER-00674",
           "split": true,
           "notional_usd": 59.71437,
-          "amount_cad": 83.0149,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.8299,
-          "pnl_cad": -0.8767
+          "amount_cad": 83.0376,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.8301,
+          "pnl_cad": -0.877
         },
         {
           "pair": "BTCUSD",
@@ -3839,10 +3877,10 @@
           "exit_id": "PAPER-00674",
           "split": true,
           "notional_usd": 10.823719,
-          "amount_cad": 15.0471,
-          "usd_cad": 1.3902,
+          "amount_cad": 15.0512,
+          "usd_cad": 1.39058,
           "fees_cad": 0.1504,
-          "pnl_cad": -0.1679
+          "pnl_cad": -0.168
         },
         {
           "pair": "BTCUSD",
@@ -3862,10 +3900,10 @@
           "exit_id": "PAPER-00668",
           "split": true,
           "notional_usd": 43.253753,
-          "amount_cad": 60.1314,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.6012,
-          "pnl_cad": -0.6172
+          "amount_cad": 60.1478,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.6014,
+          "pnl_cad": -0.6173
         },
         {
           "pair": "BTCUSD",
@@ -3885,10 +3923,10 @@
           "exit_id": "PAPER-00668",
           "split": true,
           "notional_usd": 16.499821,
-          "amount_cad": 22.9381,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.2294,
-          "pnl_cad": -0.218
+          "amount_cad": 22.9443,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.2295,
+          "pnl_cad": -0.2181
         },
         {
           "pair": "BTCUSD",
@@ -3908,9 +3946,9 @@
           "exit_id": "PAPER-00668",
           "split": true,
           "notional_usd": 10.81719,
-          "amount_cad": 15.0381,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.1504,
+          "amount_cad": 15.0422,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.1505,
           "pnl_cad": -0.1414
         },
         {
@@ -3931,10 +3969,10 @@
           "exit_id": "PAPER-00661",
           "split": true,
           "notional_usd": 63.1655,
-          "amount_cad": 87.8127,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.8777,
-          "pnl_cad": -0.966
+          "amount_cad": 87.8367,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.8779,
+          "pnl_cad": -0.9662
         },
         {
           "pair": "BTCUSD",
@@ -3954,10 +3992,10 @@
           "exit_id": "PAPER-00659",
           "split": true,
           "notional_usd": 13.25564,
-          "amount_cad": 18.428,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.1842,
-          "pnl_cad": -0.1916
+          "amount_cad": 18.433,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.1843,
+          "pnl_cad": -0.1917
         },
         {
           "pair": "BTCUSD",
@@ -3977,10 +4015,10 @@
           "exit_id": "PAPER-00659",
           "split": true,
           "notional_usd": 57.332302,
-          "amount_cad": 79.7034,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.7967,
-          "pnl_cad": -0.8577
+          "amount_cad": 79.7252,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.7969,
+          "pnl_cad": -0.8579
         },
         {
           "pair": "ETHUSD",
@@ -4000,8 +4038,8 @@
           "exit_id": "PAPER-00654",
           "split": true,
           "notional_usd": 15.008199,
-          "amount_cad": 20.8644,
-          "usd_cad": 1.3902,
+          "amount_cad": 20.8701,
+          "usd_cad": 1.39058,
           "fees_cad": 0.2086,
           "pnl_cad": -0.2238
         },
@@ -4023,10 +4061,10 @@
           "exit_id": "PAPER-00652",
           "split": true,
           "notional_usd": 63.812593,
-          "amount_cad": 88.7123,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.8818,
-          "pnl_cad": -1.9512
+          "amount_cad": 88.7365,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.882,
+          "pnl_cad": -1.9518
         },
         {
           "pair": "ETHUSD",
@@ -4047,7 +4085,7 @@
           "split": true,
           "notional_usd": 0.058997,
           "amount_cad": 0.082,
-          "usd_cad": 1.3902,
+          "usd_cad": 1.39058,
           "fees_cad": 0.0008,
           "pnl_cad": -0.0009
         },
@@ -4069,10 +4107,10 @@
           "exit_id": "PAPER-00648",
           "split": true,
           "notional_usd": 67.352385,
-          "amount_cad": 93.6333,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.9363,
-          "pnl_cad": -0.9354
+          "amount_cad": 93.6589,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.9366,
+          "pnl_cad": -0.9356
         },
         {
           "pair": "BTCUSD",
@@ -4092,8 +4130,8 @@
           "exit_id": "PAPER-00648",
           "split": true,
           "notional_usd": 3.244519,
-          "amount_cad": 4.5105,
-          "usd_cad": 1.3902,
+          "amount_cad": 4.5118,
+          "usd_cad": 1.39058,
           "fees_cad": 0.0451,
           "pnl_cad": -0.0431
         },
@@ -4115,10 +4153,10 @@
           "exit_id": "PAPER-00644",
           "split": true,
           "notional_usd": 67.43799,
-          "amount_cad": 93.7523,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.9367,
-          "pnl_cad": -1.0973
+          "amount_cad": 93.7779,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.937,
+          "pnl_cad": -1.0976
         },
         {
           "pair": "BTCUSD",
@@ -4138,8 +4176,8 @@
           "exit_id": "PAPER-00644",
           "split": true,
           "notional_usd": 3.245955,
-          "amount_cad": 4.5125,
-          "usd_cad": 1.3902,
+          "amount_cad": 4.5138,
+          "usd_cad": 1.39058,
           "fees_cad": 0.0451,
           "pnl_cad": -0.0471
         },
@@ -4161,10 +4199,10 @@
           "exit_id": "PAPER-00639",
           "split": true,
           "notional_usd": 41.378085,
-          "amount_cad": 57.5238,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.5749,
-          "pnl_cad": -0.6349
+          "amount_cad": 57.5395,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.5751,
+          "pnl_cad": -0.6351
         },
         {
           "pair": "BTCUSD",
@@ -4184,10 +4222,10 @@
           "exit_id": "PAPER-00639",
           "split": true,
           "notional_usd": 29.330837,
-          "amount_cad": 40.7757,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.4076,
-          "pnl_cad": -0.4296
+          "amount_cad": 40.7869,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.4078,
+          "pnl_cad": -0.4297
         },
         {
           "pair": "BTCUSD",
@@ -4207,9 +4245,9 @@
           "exit_id": "PAPER-00634",
           "split": true,
           "notional_usd": 15.298299,
-          "amount_cad": 21.2677,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.2127,
+          "amount_cad": 21.2735,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.2128,
           "pnl_cad": -0.2016
         },
         {
@@ -4230,10 +4268,10 @@
           "exit_id": "PAPER-00634",
           "split": true,
           "notional_usd": 55.414384,
-          "amount_cad": 77.0371,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.7703,
-          "pnl_cad": -0.7854
+          "amount_cad": 77.0581,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.7705,
+          "pnl_cad": -0.7856
         },
         {
           "pair": "BTCUSD",
@@ -4253,10 +4291,10 @@
           "exit_id": "PAPER-00623",
           "split": true,
           "notional_usd": 69.508313,
-          "amount_cad": 96.6305,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.9662,
-          "pnl_cad": -0.9965
+          "amount_cad": 96.6569,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.9664,
+          "pnl_cad": -0.9968
         },
         {
           "pair": "BTCUSD",
@@ -4276,8 +4314,8 @@
           "exit_id": "PAPER-00623",
           "split": true,
           "notional_usd": 1.201437,
-          "amount_cad": 1.6702,
-          "usd_cad": 1.3902,
+          "amount_cad": 1.6707,
+          "usd_cad": 1.39058,
           "fees_cad": 0.0167,
           "pnl_cad": -0.0163
         },
@@ -4299,10 +4337,10 @@
           "exit_id": "PAPER-00619",
           "split": true,
           "notional_usd": 67.32702,
-          "amount_cad": 93.598,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.935,
-          "pnl_cad": -1.1265
+          "amount_cad": 93.6236,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.9353,
+          "pnl_cad": -1.1268
         },
         {
           "pair": "BTCUSD",
@@ -4322,8 +4360,8 @@
           "exit_id": "PAPER-00619",
           "split": true,
           "notional_usd": 3.541019,
-          "amount_cad": 4.9227,
-          "usd_cad": 1.3902,
+          "amount_cad": 4.9241,
+          "usd_cad": 1.39058,
           "fees_cad": 0.0492,
           "pnl_cad": -0.0478
         },
@@ -4345,10 +4383,10 @@
           "exit_id": "PAPER-00614",
           "split": true,
           "notional_usd": 63.151183,
-          "amount_cad": 87.7928,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.8772,
-          "pnl_cad": -1.0136
+          "amount_cad": 87.8168,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.8775,
+          "pnl_cad": -1.0138
         },
         {
           "pair": "BTCUSD",
@@ -4368,8 +4406,8 @@
           "exit_id": "PAPER-00614",
           "split": true,
           "notional_usd": 7.731822,
-          "amount_cad": 10.7488,
-          "usd_cad": 1.3902,
+          "amount_cad": 10.7517,
+          "usd_cad": 1.39058,
           "fees_cad": 0.1074,
           "pnl_cad": -0.123
         },
@@ -4391,10 +4429,10 @@
           "exit_id": "PAPER-00609",
           "split": true,
           "notional_usd": 57.187058,
-          "amount_cad": 79.5014,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.7963,
-          "pnl_cad": -0.533
+          "amount_cad": 79.5232,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.7965,
+          "pnl_cad": -0.5331
         },
         {
           "pair": "ETHUSD",
@@ -4414,8 +4452,8 @@
           "exit_id": "PAPER-00609",
           "split": true,
           "notional_usd": 6.462058,
-          "amount_cad": 8.9836,
-          "usd_cad": 1.3902,
+          "amount_cad": 8.986,
+          "usd_cad": 1.39058,
           "fees_cad": 0.0898,
           "pnl_cad": -0.0951
         },
@@ -4437,10 +4475,10 @@
           "exit_id": "PAPER-00607",
           "split": true,
           "notional_usd": 7.990979,
-          "amount_cad": 11.1091,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.1111,
-          "pnl_cad": -0.1046
+          "amount_cad": 11.1121,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.1112,
+          "pnl_cad": -0.1047
         },
         {
           "pair": "BTCUSD",
@@ -4460,8 +4498,8 @@
           "exit_id": "PAPER-00607",
           "split": true,
           "notional_usd": 6.997021,
-          "amount_cad": 9.7273,
-          "usd_cad": 1.3902,
+          "amount_cad": 9.7299,
+          "usd_cad": 1.39058,
           "fees_cad": 0.0973,
           "pnl_cad": -0.0916
         },
@@ -4483,10 +4521,10 @@
           "exit_id": "PAPER-00603",
           "split": true,
           "notional_usd": 7.023947,
-          "amount_cad": 9.7647,
-          "usd_cad": 1.3902,
+          "amount_cad": 9.7674,
+          "usd_cad": 1.39058,
           "fees_cad": 0.0977,
-          "pnl_cad": -0.086
+          "pnl_cad": -0.0861
         },
         {
           "pair": "BTCUSD",
@@ -4506,10 +4544,10 @@
           "exit_id": "PAPER-00603",
           "split": true,
           "notional_usd": 63.858527,
-          "amount_cad": 88.7761,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.8882,
-          "pnl_cad": -0.8003
+          "amount_cad": 88.8004,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.8884,
+          "pnl_cad": -0.8005
         },
         {
           "pair": "BTCUSD",
@@ -4529,10 +4567,10 @@
           "exit_id": "PAPER-00598",
           "split": true,
           "notional_usd": 61.404602,
-          "amount_cad": 85.3647,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.8535,
-          "pnl_cad": -0.8749
+          "amount_cad": 85.388,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.8538,
+          "pnl_cad": -0.8751
         },
         {
           "pair": "BTCUSD",
@@ -4552,8 +4590,8 @@
           "exit_id": "PAPER-00598",
           "split": true,
           "notional_usd": 9.477604,
-          "amount_cad": 13.1758,
-          "usd_cad": 1.3902,
+          "amount_cad": 13.1794,
+          "usd_cad": 1.39058,
           "fees_cad": 0.1318,
           "pnl_cad": -0.1323
         },
@@ -4575,10 +4613,10 @@
           "exit_id": "PAPER-00594",
           "split": true,
           "notional_usd": 44.360798,
-          "amount_cad": 61.6704,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.6165,
-          "pnl_cad": -0.6542
+          "amount_cad": 61.6872,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.6167,
+          "pnl_cad": -0.6543
         },
         {
           "pair": "BTCUSD",
@@ -4598,10 +4636,10 @@
           "exit_id": "PAPER-00594",
           "split": true,
           "notional_usd": 26.546913,
-          "amount_cad": 36.9055,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.369,
-          "pnl_cad": -0.372
+          "amount_cad": 36.9156,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.3691,
+          "pnl_cad": -0.3721
         },
         {
           "pair": "BTCUSD",
@@ -4621,9 +4659,9 @@
           "exit_id": "PAPER-00590",
           "split": true,
           "notional_usd": 15.012569,
-          "amount_cad": 20.8705,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.2086,
+          "amount_cad": 20.8762,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.2087,
           "pnl_cad": -0.2241
         },
         {
@@ -4644,10 +4682,10 @@
           "exit_id": "PAPER-00584",
           "split": true,
           "notional_usd": 15.992943,
-          "amount_cad": 22.2334,
-          "usd_cad": 1.3902,
+          "amount_cad": 22.2395,
+          "usd_cad": 1.39058,
           "fees_cad": 0.2223,
-          "pnl_cad": -0.2355
+          "pnl_cad": -0.2356
         },
         {
           "pair": "BTCUSD",
@@ -4667,10 +4705,10 @@
           "exit_id": "PAPER-00584",
           "split": true,
           "notional_usd": 16.499745,
-          "amount_cad": 22.9379,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.2293,
-          "pnl_cad": -0.2397
+          "amount_cad": 22.9442,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.2294,
+          "pnl_cad": -0.2398
         },
         {
           "pair": "BTCUSD",
@@ -4690,10 +4728,10 @@
           "exit_id": "PAPER-00584",
           "split": true,
           "notional_usd": 38.434887,
-          "amount_cad": 53.4322,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.5342,
-          "pnl_cad": -0.5527
+          "amount_cad": 53.4468,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.5344,
+          "pnl_cad": -0.5528
         },
         {
           "pair": "BTCUSD",
@@ -4713,10 +4751,10 @@
           "exit_id": "PAPER-00577",
           "split": true,
           "notional_usd": 70.93962,
-          "amount_cad": 98.6203,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.9861,
-          "pnl_cad": -1.0005
+          "amount_cad": 98.6472,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.9864,
+          "pnl_cad": -1.0008
         },
         {
           "pair": "BTCUSD",
@@ -4736,8 +4774,8 @@
           "exit_id": "PAPER-00575",
           "split": true,
           "notional_usd": 3.9137,
-          "amount_cad": 5.4408,
-          "usd_cad": 1.3902,
+          "amount_cad": 5.4423,
+          "usd_cad": 1.39058,
           "fees_cad": 0.0544,
           "pnl_cad": -0.0536
         },
@@ -4759,10 +4797,10 @@
           "exit_id": "PAPER-00575",
           "split": true,
           "notional_usd": 11.087074,
-          "amount_cad": 15.4133,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.1541,
-          "pnl_cad": -0.1541
+          "amount_cad": 15.4175,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.1542,
+          "pnl_cad": -0.1542
         },
         {
           "pair": "ETHUSD",
@@ -4782,10 +4820,10 @@
           "exit_id": "PAPER-00570",
           "split": true,
           "notional_usd": 49.20199,
-          "amount_cad": 68.4006,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.6834,
-          "pnl_cad": -0.8035
+          "amount_cad": 68.4193,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.6836,
+          "pnl_cad": -0.8037
         },
         {
           "pair": "ETHUSD",
@@ -4805,8 +4843,8 @@
           "exit_id": "PAPER-00570",
           "split": true,
           "notional_usd": 14.558316,
-          "amount_cad": 20.239,
-          "usd_cad": 1.3902,
+          "amount_cad": 20.2445,
+          "usd_cad": 1.39058,
           "fees_cad": 0.2025,
           "pnl_cad": -0.1819
         },
@@ -4828,10 +4866,10 @@
           "exit_id": "PAPER-00568",
           "split": true,
           "notional_usd": 58.435284,
-          "amount_cad": 81.2367,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.8118,
-          "pnl_cad": -0.9318
+          "amount_cad": 81.2589,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.812,
+          "pnl_cad": -0.932
         },
         {
           "pair": "BTCUSD",
@@ -4851,8 +4889,8 @@
           "exit_id": "PAPER-00568",
           "split": true,
           "notional_usd": 12.585941,
-          "amount_cad": 17.497,
-          "usd_cad": 1.3902,
+          "amount_cad": 17.5018,
+          "usd_cad": 1.39058,
           "fees_cad": 0.175,
           "pnl_cad": -0.1732
         },
@@ -4874,8 +4912,8 @@
           "exit_id": "PAPER-00564",
           "split": true,
           "notional_usd": 15.022833,
-          "amount_cad": 20.8847,
-          "usd_cad": 1.3902,
+          "amount_cad": 20.8905,
+          "usd_cad": 1.39058,
           "fees_cad": 0.2087,
           "pnl_cad": -0.2443
         },
@@ -4897,10 +4935,10 @@
           "exit_id": "PAPER-00560",
           "split": true,
           "notional_usd": 45.916853,
-          "amount_cad": 63.8336,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.6377,
-          "pnl_cad": -0.7581
+          "amount_cad": 63.8511,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.6379,
+          "pnl_cad": -0.7583
         },
         {
           "pair": "BTCUSD",
@@ -4920,10 +4958,10 @@
           "exit_id": "PAPER-00560",
           "split": true,
           "notional_usd": 25.138302,
-          "amount_cad": 34.9473,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.3492,
-          "pnl_cad": -0.4044
+          "amount_cad": 34.9568,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.3493,
+          "pnl_cad": -0.4046
         },
         {
           "pair": "BTCUSD",
@@ -4943,9 +4981,9 @@
           "exit_id": "PAPER-00555",
           "split": true,
           "notional_usd": 15.017155,
-          "amount_cad": 20.8768,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.2086,
+          "amount_cad": 20.8826,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.2087,
           "pnl_cad": -0.2326
         },
         {
@@ -4966,10 +5004,10 @@
           "exit_id": "PAPER-00550",
           "split": true,
           "notional_usd": 26.650574,
-          "amount_cad": 37.0496,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.3703,
-          "pnl_cad": -0.4097
+          "amount_cad": 37.0598,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.3704,
+          "pnl_cad": -0.4098
         },
         {
           "pair": "BTCUSD",
@@ -4989,9 +5027,9 @@
           "exit_id": "PAPER-00550",
           "split": true,
           "notional_usd": 16.498994,
-          "amount_cad": 22.9369,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.2294,
+          "amount_cad": 22.9432,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.2295,
           "pnl_cad": -0.2242
         },
         {
@@ -5012,10 +5050,10 @@
           "exit_id": "PAPER-00550",
           "split": true,
           "notional_usd": 27.918217,
-          "amount_cad": 38.8119,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.388,
-          "pnl_cad": -0.4057
+          "amount_cad": 38.8225,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.3881,
+          "pnl_cad": -0.4058
         },
         {
           "pair": "ETHUSD",
@@ -5035,8 +5073,8 @@
           "exit_id": "PAPER-00548",
           "split": true,
           "notional_usd": 14.966405,
-          "amount_cad": 20.8063,
-          "usd_cad": 1.3902,
+          "amount_cad": 20.812,
+          "usd_cad": 1.39058,
           "fees_cad": 0.2083,
           "pnl_cad": -0.1671
         },
@@ -5058,10 +5096,10 @@
           "exit_id": "PAPER-00546",
           "split": true,
           "notional_usd": 15.016822,
-          "amount_cad": 20.8764,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.2086,
-          "pnl_cad": -0.2368
+          "amount_cad": 20.8821,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.2087,
+          "pnl_cad": -0.2369
         },
         {
           "pair": "ETHUSD",
@@ -5081,10 +5119,10 @@
           "exit_id": "PAPER-00539",
           "split": true,
           "notional_usd": 37.421804,
-          "amount_cad": 52.0238,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.5254,
-          "pnl_cad": 0.5114
+          "amount_cad": 52.038,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.5256,
+          "pnl_cad": 0.5115
         },
         {
           "pair": "ETHUSD",
@@ -5104,9 +5142,9 @@
           "exit_id": "PAPER-00539",
           "split": true,
           "notional_usd": 25.720609,
-          "amount_cad": 35.7568,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.358,
+          "amount_cad": 35.7666,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.3581,
           "pnl_cad": -0.2759
         },
         {
@@ -5127,10 +5165,10 @@
           "exit_id": "PAPER-00532",
           "split": true,
           "notional_usd": 13.76106,
-          "amount_cad": 19.1306,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.1906,
-          "pnl_cad": -0.3244
+          "amount_cad": 19.1359,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.1907,
+          "pnl_cad": -0.3245
         },
         {
           "pair": "BTCUSD",
@@ -5150,10 +5188,10 @@
           "exit_id": "PAPER-00532",
           "split": true,
           "notional_usd": 57.418982,
-          "amount_cad": 79.8239,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.7976,
-          "pnl_cad": -0.9275
+          "amount_cad": 79.8457,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.7978,
+          "pnl_cad": -0.9278
         },
         {
           "pair": "BTCUSD",
@@ -5173,10 +5211,10 @@
           "exit_id": "PAPER-00525",
           "split": true,
           "notional_usd": 71.49015,
-          "amount_cad": 99.3856,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.9906,
-          "pnl_cad": -1.6324
+          "amount_cad": 99.4128,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.9909,
+          "pnl_cad": -1.6328
         },
         {
           "pair": "BTCUSD",
@@ -5196,10 +5234,10 @@
           "exit_id": "PAPER-00520",
           "split": true,
           "notional_usd": 56.273312,
-          "amount_cad": 78.2312,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.7822,
-          "pnl_cad": -0.8104
+          "amount_cad": 78.2525,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.7824,
+          "pnl_cad": -0.8106
         },
         {
           "pair": "BTCUSD",
@@ -5219,10 +5257,10 @@
           "exit_id": "PAPER-00520",
           "split": true,
           "notional_usd": 14.904108,
-          "amount_cad": 20.7197,
-          "usd_cad": 1.3902,
+          "amount_cad": 20.7254,
+          "usd_cad": 1.39058,
           "fees_cad": 0.2066,
-          "pnl_cad": -0.3285
+          "pnl_cad": -0.3286
         },
         {
           "pair": "BTCUSD",
@@ -5243,7 +5281,7 @@
           "split": true,
           "notional_usd": 0.16306,
           "amount_cad": 0.2267,
-          "usd_cad": 1.3902,
+          "usd_cad": 1.39058,
           "fees_cad": 0.0023,
           "pnl_cad": -0.0026
         },
@@ -5265,9 +5303,9 @@
           "exit_id": "PAPER-00518",
           "split": true,
           "notional_usd": 14.821738,
-          "amount_cad": 20.6052,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.2061,
+          "amount_cad": 20.6108,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.2062,
           "pnl_cad": -0.1935
         },
         {
@@ -5288,10 +5326,10 @@
           "exit_id": "PAPER-00508",
           "split": true,
           "notional_usd": 43.36085,
-          "amount_cad": 60.2803,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.6036,
-          "pnl_cad": -0.4418
+          "amount_cad": 60.2967,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.6038,
+          "pnl_cad": -0.4419
         },
         {
           "pair": "BTCUSD",
@@ -5311,10 +5349,10 @@
           "exit_id": "PAPER-00508",
           "split": true,
           "notional_usd": 27.727345,
-          "amount_cad": 38.5466,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.3853,
-          "pnl_cad": -0.4166
+          "amount_cad": 38.5571,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.3854,
+          "pnl_cad": -0.4167
         },
         {
           "pair": "BTCUSD",
@@ -5334,10 +5372,10 @@
           "exit_id": "PAPER-00417",
           "split": true,
           "notional_usd": 41.967587,
-          "amount_cad": 58.3433,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.5844,
-          "pnl_cad": -0.3846
+          "amount_cad": 58.3593,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.5846,
+          "pnl_cad": -0.3847
         },
         {
           "pair": "BTCUSD",
@@ -5357,10 +5395,10 @@
           "exit_id": "PAPER-00417",
           "split": true,
           "notional_usd": 28.093125,
-          "amount_cad": 39.0551,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.3907,
-          "pnl_cad": -0.3519
+          "amount_cad": 39.0657,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.3909,
+          "pnl_cad": -0.352
         },
         {
           "pair": "BTCUSD",
@@ -5380,9 +5418,9 @@
           "exit_id": "PAPER-00412",
           "split": true,
           "notional_usd": 13.333395,
-          "amount_cad": 18.5361,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.1857,
+          "amount_cad": 18.5412,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.1858,
           "pnl_cad": -0.1106
         },
         {
@@ -5403,10 +5441,10 @@
           "exit_id": "PAPER-00412",
           "split": true,
           "notional_usd": 44.134427,
-          "amount_cad": 61.3557,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.6147,
-          "pnl_cad": -0.3923
+          "amount_cad": 61.3725,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.6148,
+          "pnl_cad": -0.3924
         },
         {
           "pair": "BTCUSD",
@@ -5426,10 +5464,10 @@
           "exit_id": "PAPER-00412",
           "split": true,
           "notional_usd": 12.335036,
-          "amount_cad": 17.1482,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.1715,
-          "pnl_cad": -0.1643
+          "amount_cad": 17.1529,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.1716,
+          "pnl_cad": -0.1644
         },
         {
           "pair": "BTCUSD",
@@ -5449,8 +5487,8 @@
           "exit_id": "PAPER-00405",
           "split": true,
           "notional_usd": 13.106576,
-          "amount_cad": 18.2208,
-          "usd_cad": 1.3902,
+          "amount_cad": 18.2257,
+          "usd_cad": 1.39058,
           "fees_cad": 0.1823,
           "pnl_cad": -0.1725
         },
@@ -5472,10 +5510,10 @@
           "exit_id": "PAPER-00405",
           "split": true,
           "notional_usd": 56.664021,
-          "amount_cad": 78.7743,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.7889,
-          "pnl_cad": -0.5584
+          "amount_cad": 78.7959,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.7891,
+          "pnl_cad": -0.5586
         },
         {
           "pair": "BTCUSD",
@@ -5495,10 +5533,10 @@
           "exit_id": "PAPER-00396",
           "split": true,
           "notional_usd": 41.097548,
-          "amount_cad": 57.1338,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.5703,
-          "pnl_cad": -0.778
+          "amount_cad": 57.1494,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.5705,
+          "pnl_cad": -0.7783
         },
         {
           "pair": "BTCUSD",
@@ -5518,10 +5556,10 @@
           "exit_id": "PAPER-00396",
           "split": true,
           "notional_usd": 27.00864,
-          "amount_cad": 37.5474,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.3747,
-          "pnl_cad": -0.5327
+          "amount_cad": 37.5577,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.3748,
+          "pnl_cad": -0.5328
         },
         {
           "pair": "BTCUSD",
@@ -5541,8 +5579,8 @@
           "exit_id": "PAPER-00396",
           "split": true,
           "notional_usd": 1.90377,
-          "amount_cad": 2.6466,
-          "usd_cad": 1.3902,
+          "amount_cad": 2.6473,
+          "usd_cad": 1.39058,
           "fees_cad": 0.0264,
           "pnl_cad": -0.0326
         },
@@ -5564,10 +5602,10 @@
           "exit_id": "PAPER-00373",
           "split": true,
           "notional_usd": 29.289708,
-          "amount_cad": 40.7186,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.4074,
-          "pnl_cad": -0.3672
+          "amount_cad": 40.7297,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.4075,
+          "pnl_cad": -0.3673
         },
         {
           "pair": "BTCUSD",
@@ -5587,10 +5625,10 @@
           "exit_id": "PAPER-00373",
           "split": true,
           "notional_usd": 40.680678,
-          "amount_cad": 56.5543,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.5656,
-          "pnl_cad": -0.5611
+          "amount_cad": 56.5697,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.5657,
+          "pnl_cad": -0.5613
         },
         {
           "pair": "ETHUSD",
@@ -5610,9 +5648,9 @@
           "exit_id": "PAPER-00367",
           "split": true,
           "notional_usd": 15.000186,
-          "amount_cad": 20.8533,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.2085,
+          "amount_cad": 20.859,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.2086,
           "pnl_cad": -0.206
         },
         {
@@ -5633,8 +5671,8 @@
           "exit_id": "PAPER-00365",
           "split": true,
           "notional_usd": 0.826715,
-          "amount_cad": 1.1493,
-          "usd_cad": 1.3902,
+          "amount_cad": 1.1496,
+          "usd_cad": 1.39058,
           "fees_cad": 0.0115,
           "pnl_cad": -0.0117
         },
@@ -5656,10 +5694,10 @@
           "exit_id": "PAPER-00365",
           "split": true,
           "notional_usd": 69.107518,
-          "amount_cad": 96.0733,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.9611,
-          "pnl_cad": -0.8921
+          "amount_cad": 96.0995,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.9613,
+          "pnl_cad": -0.8923
         },
         {
           "pair": "ETHUSD",
@@ -5679,10 +5717,10 @@
           "exit_id": "PAPER-00359",
           "split": true,
           "notional_usd": 41.562617,
-          "amount_cad": 57.7803,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.5772,
-          "pnl_cad": -0.7027
+          "amount_cad": 57.7961,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.5773,
+          "pnl_cad": -0.7029
         },
         {
           "pair": "ETHUSD",
@@ -5702,9 +5740,9 @@
           "exit_id": "PAPER-00359",
           "split": true,
           "notional_usd": 21.212053,
-          "amount_cad": 29.489,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.2948,
+          "amount_cad": 29.4971,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.2949,
           "pnl_cad": -0.3044
         },
         {
@@ -5725,10 +5763,10 @@
           "exit_id": "PAPER-00355",
           "split": true,
           "notional_usd": 5.244226,
-          "amount_cad": 7.2905,
-          "usd_cad": 1.3902,
+          "amount_cad": 7.2925,
+          "usd_cad": 1.39058,
           "fees_cad": 0.0728,
-          "pnl_cad": -0.0937
+          "pnl_cad": -0.0938
         },
         {
           "pair": "ETHUSD",
@@ -5748,10 +5786,10 @@
           "exit_id": "PAPER-00355",
           "split": true,
           "notional_usd": 57.575111,
-          "amount_cad": 80.0409,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.7997,
-          "pnl_cad": -0.9481
+          "amount_cad": 80.0628,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.7999,
+          "pnl_cad": -0.9484
         },
         {
           "pair": "ETHUSD",
@@ -5771,10 +5809,10 @@
           "exit_id": "PAPER-00352",
           "split": true,
           "notional_usd": 15.034004,
-          "amount_cad": 20.9003,
-          "usd_cad": 1.3902,
+          "amount_cad": 20.906,
+          "usd_cad": 1.39058,
           "fees_cad": 0.2088,
-          "pnl_cad": -0.2565
+          "pnl_cad": -0.2566
         },
         {
           "pair": "BTCUSD",
@@ -5794,10 +5832,10 @@
           "exit_id": "PAPER-00350",
           "split": true,
           "notional_usd": 33.738177,
-          "amount_cad": 46.9028,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.4686,
-          "pnl_cad": -0.5604
+          "amount_cad": 46.9156,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.4687,
+          "pnl_cad": -0.5606
         },
         {
           "pair": "BTCUSD",
@@ -5817,10 +5855,10 @@
           "exit_id": "PAPER-00350",
           "split": true,
           "notional_usd": 36.302367,
-          "amount_cad": 50.4676,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.5045,
-          "pnl_cad": -0.5348
+          "amount_cad": 50.4813,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.5047,
+          "pnl_cad": -0.535
         },
         {
           "pair": "ETHUSD",
@@ -5840,10 +5878,10 @@
           "exit_id": "PAPER-00345",
           "split": true,
           "notional_usd": 15.027968,
-          "amount_cad": 20.8919,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.2087,
-          "pnl_cad": -0.2446
+          "amount_cad": 20.8976,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.2088,
+          "pnl_cad": -0.2447
         },
         {
           "pair": "BTCUSD",
@@ -5863,9 +5901,9 @@
           "exit_id": "PAPER-00343",
           "split": true,
           "notional_usd": 14.584819,
-          "amount_cad": 20.2758,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.2027,
+          "amount_cad": 20.2814,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.2028,
           "pnl_cad": -0.2102
         },
         {
@@ -5886,10 +5924,10 @@
           "exit_id": "PAPER-00343",
           "split": true,
           "notional_usd": 55.490976,
-          "amount_cad": 77.1436,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.7709,
-          "pnl_cad": -0.8739
+          "amount_cad": 77.1646,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.7711,
+          "pnl_cad": -0.8742
         },
         {
           "pair": "ETHUSD",
@@ -5909,10 +5947,10 @@
           "exit_id": "PAPER-00333",
           "split": true,
           "notional_usd": 62.878,
-          "amount_cad": 87.413,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.874,
-          "pnl_cad": -0.8938
+          "amount_cad": 87.4369,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.8743,
+          "pnl_cad": -0.8941
         },
         {
           "pair": "BTCUSD",
@@ -5932,8 +5970,8 @@
           "exit_id": "PAPER-00331",
           "split": true,
           "notional_usd": 20.501052,
-          "amount_cad": 28.5006,
-          "usd_cad": 1.3902,
+          "amount_cad": 28.5084,
+          "usd_cad": 1.39058,
           "fees_cad": 0.2853,
           "pnl_cad": -0.2331
         },
@@ -5955,10 +5993,10 @@
           "exit_id": "PAPER-00331",
           "split": true,
           "notional_usd": 49.503269,
-          "amount_cad": 68.8194,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.6885,
-          "pnl_cad": -0.6221
+          "amount_cad": 68.8383,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.6887,
+          "pnl_cad": -0.6223
         },
         {
           "pair": "ETHUSD",
@@ -5978,8 +6016,8 @@
           "exit_id": "PAPER-00319",
           "split": true,
           "notional_usd": 13.551887,
-          "amount_cad": 18.8398,
-          "usd_cad": 1.3902,
+          "amount_cad": 18.845,
+          "usd_cad": 1.39058,
           "fees_cad": 0.1884,
           "pnl_cad": -0.1952
         },
@@ -6001,8 +6039,8 @@
           "exit_id": "PAPER-00319",
           "split": true,
           "notional_usd": 1.458166,
-          "amount_cad": 2.0271,
-          "usd_cad": 1.3902,
+          "amount_cad": 2.0277,
+          "usd_cad": 1.39058,
           "fees_cad": 0.0203,
           "pnl_cad": -0.0238
         },
@@ -6024,10 +6062,10 @@
           "exit_id": "PAPER-00317",
           "split": true,
           "notional_usd": 69.9615,
-          "amount_cad": 97.2605,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.9726,
-          "pnl_cad": -0.9731
+          "amount_cad": 97.2871,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.9729,
+          "pnl_cad": -0.9734
         },
         {
           "pair": "ETHUSD",
@@ -6047,10 +6085,10 @@
           "exit_id": "PAPER-00314",
           "split": true,
           "notional_usd": 14.997734,
-          "amount_cad": 20.8498,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.2085,
-          "pnl_cad": -0.2051
+          "amount_cad": 20.8555,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.2086,
+          "pnl_cad": -0.2052
         },
         {
           "pair": "BTCUSD",
@@ -6070,10 +6108,10 @@
           "exit_id": "PAPER-00312",
           "split": true,
           "notional_usd": 51.1543,
-          "amount_cad": 71.1147,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.7117,
-          "pnl_cad": -0.5919
+          "amount_cad": 71.1341,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.7119,
+          "pnl_cad": -0.5921
         },
         {
           "pair": "BTCUSD",
@@ -6093,10 +6131,10 @@
           "exit_id": "PAPER-00312",
           "split": true,
           "notional_usd": 10.141949,
-          "amount_cad": 14.0993,
-          "usd_cad": 1.3902,
+          "amount_cad": 14.1032,
+          "usd_cad": 1.39058,
           "fees_cad": 0.1408,
-          "pnl_cad": -0.1867
+          "pnl_cad": -0.1868
         },
         {
           "pair": "BTCUSD",
@@ -6116,8 +6154,8 @@
           "exit_id": "PAPER-00312",
           "split": true,
           "notional_usd": 8.6418,
-          "amount_cad": 12.0138,
-          "usd_cad": 1.3902,
+          "amount_cad": 12.0171,
+          "usd_cad": 1.39058,
           "fees_cad": 0.1202,
           "pnl_cad": -0.1144
         },
@@ -6139,9 +6177,9 @@
           "exit_id": "PAPER-00306",
           "split": true,
           "notional_usd": 15.017048,
-          "amount_cad": 20.8767,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.2086,
+          "amount_cad": 20.8824,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.2087,
           "pnl_cad": -0.2366
         },
         {
@@ -6162,10 +6200,10 @@
           "exit_id": "PAPER-00303",
           "split": true,
           "notional_usd": 15.005746,
-          "amount_cad": 20.861,
-          "usd_cad": 1.3902,
+          "amount_cad": 20.8667,
+          "usd_cad": 1.39058,
           "fees_cad": 0.2086,
-          "pnl_cad": -0.2204
+          "pnl_cad": -0.2205
         },
         {
           "pair": "ETHUSD",
@@ -6185,9 +6223,9 @@
           "exit_id": "PAPER-00300",
           "split": true,
           "notional_usd": 14.999693,
-          "amount_cad": 20.8526,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.2085,
+          "amount_cad": 20.8583,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.2086,
           "pnl_cad": -0.2103
         },
         {
@@ -6208,10 +6246,10 @@
           "exit_id": "PAPER-00298",
           "split": true,
           "notional_usd": 14.994996,
-          "amount_cad": 20.846,
-          "usd_cad": 1.3902,
+          "amount_cad": 20.8517,
+          "usd_cad": 1.39058,
           "fees_cad": 0.2085,
-          "pnl_cad": -0.2081
+          "pnl_cad": -0.2082
         },
         {
           "pair": "ETHUSD",
@@ -6231,9 +6269,9 @@
           "exit_id": "PAPER-00295",
           "split": true,
           "notional_usd": 4.105627,
-          "amount_cad": 5.7076,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.057,
+          "amount_cad": 5.7092,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.0571,
           "pnl_cad": -0.063
         },
         {
@@ -6254,8 +6292,8 @@
           "exit_id": "PAPER-00295",
           "split": true,
           "notional_usd": 10.893268,
-          "amount_cad": 15.1438,
-          "usd_cad": 1.3902,
+          "amount_cad": 15.148,
+          "usd_cad": 1.39058,
           "fees_cad": 0.1515,
           "pnl_cad": -0.1464
         },
@@ -6277,9 +6315,9 @@
           "exit_id": "PAPER-00292",
           "split": true,
           "notional_usd": 15.004703,
-          "amount_cad": 20.8595,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.2085,
+          "amount_cad": 20.8652,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.2086,
           "pnl_cad": -0.2192
         },
         {
@@ -6300,8 +6338,8 @@
           "exit_id": "PAPER-00289",
           "split": true,
           "notional_usd": 15.00161,
-          "amount_cad": 20.8552,
-          "usd_cad": 1.3902,
+          "amount_cad": 20.8609,
+          "usd_cad": 1.39058,
           "fees_cad": 0.2085,
           "pnl_cad": -0.2237
         },
@@ -6323,8 +6361,8 @@
           "exit_id": "PAPER-00284",
           "split": true,
           "notional_usd": 7.110088,
-          "amount_cad": 9.8844,
-          "usd_cad": 1.3902,
+          "amount_cad": 9.8871,
+          "usd_cad": 1.39058,
           "fees_cad": 0.0989,
           "pnl_cad": -0.0887
         },
@@ -6346,10 +6384,10 @@
           "exit_id": "PAPER-00284",
           "split": true,
           "notional_usd": 55.761103,
-          "amount_cad": 77.5191,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.7753,
-          "pnl_cad": -0.7476
+          "amount_cad": 77.5403,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.7755,
+          "pnl_cad": -0.7478
         },
         {
           "pair": "ETHUSD",
@@ -6369,9 +6407,9 @@
           "exit_id": "PAPER-00276",
           "split": true,
           "notional_usd": 14.984206,
-          "amount_cad": 20.831,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.2084,
+          "amount_cad": 20.8367,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.2085,
           "pnl_cad": -0.1868
         },
         {
@@ -6392,10 +6430,10 @@
           "exit_id": "PAPER-00270",
           "split": true,
           "notional_usd": 14.989635,
-          "amount_cad": 20.8386,
-          "usd_cad": 1.3902,
+          "amount_cad": 20.8443,
+          "usd_cad": 1.39058,
           "fees_cad": 0.2085,
-          "pnl_cad": -0.1954
+          "pnl_cad": -0.1955
         },
         {
           "pair": "BTCUSD",
@@ -6415,10 +6453,10 @@
           "exit_id": "PAPER-00268",
           "split": true,
           "notional_usd": 13.295163,
-          "amount_cad": 18.4829,
-          "usd_cad": 1.3902,
+          "amount_cad": 18.488,
+          "usd_cad": 1.39058,
           "fees_cad": 0.1853,
-          "pnl_cad": -0.0979
+          "pnl_cad": -0.098
         },
         {
           "pair": "BTCUSD",
@@ -6438,9 +6476,9 @@
           "exit_id": "PAPER-00268",
           "split": true,
           "notional_usd": 10.695812,
-          "amount_cad": 14.8693,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.1487,
+          "amount_cad": 14.8734,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.1488,
           "pnl_cad": -0.1378
         },
         {
@@ -6461,10 +6499,10 @@
           "exit_id": "PAPER-00268",
           "split": true,
           "notional_usd": 45.89795,
-          "amount_cad": 63.8073,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.6392,
-          "pnl_cad": -0.421
+          "amount_cad": 63.8248,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.6393,
+          "pnl_cad": -0.4211
         },
         {
           "pair": "ETHUSD",
@@ -6484,10 +6522,10 @@
           "exit_id": "PAPER-00263",
           "split": true,
           "notional_usd": 62.8335,
-          "amount_cad": 87.3511,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.8739,
-          "pnl_cad": -0.7988
+          "amount_cad": 87.375,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.8741,
+          "pnl_cad": -0.799
         },
         {
           "pair": "BTCUSD",
@@ -6507,10 +6545,10 @@
           "exit_id": "PAPER-00261",
           "split": true,
           "notional_usd": 69.78681,
-          "amount_cad": 97.0176,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.9726,
-          "pnl_cad": -0.4883
+          "amount_cad": 97.0441,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.9729,
+          "pnl_cad": -0.4884
         }
       ],
       "open": []
@@ -6526,11 +6564,11 @@
         "losses": 5,
         "scratches": 0,
         "sum_pnl": -0.786973,
-        "sum_pnl_cad": -1.0941,
+        "sum_pnl_cad": -1.0943,
         "open_unrealized_pnl": null,
         "open_unrealized_pnl_cad": null,
         "open_amount_cad": null,
-        "usd_cad": 1.3902,
+        "usd_cad": 1.39058,
         "fees": 1.417711,
         "fills_fees": 1.906126,
         "fills": 5,
@@ -6564,9 +6602,9 @@
           "exit_id": "PAPER-00484",
           "split": true,
           "notional_usd": 28.31213,
-          "amount_cad": 39.3595,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.3944,
+          "amount_cad": 39.3703,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.3945,
           "pnl_cad": -0.2272
         },
         {
@@ -6587,9 +6625,9 @@
           "exit_id": "PAPER-00484",
           "split": true,
           "notional_usd": 14.924413,
-          "amount_cad": 20.7479,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.2079,
+          "amount_cad": 20.7536,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.208,
           "pnl_cad": -0.1146
         },
         {
@@ -6610,10 +6648,10 @@
           "exit_id": "PAPER-00484",
           "split": true,
           "notional_usd": 27.6307,
-          "amount_cad": 38.4122,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.3844,
-          "pnl_cad": -0.3284
+          "amount_cad": 38.4227,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.3845,
+          "pnl_cad": -0.3285
         },
         {
           "pair": "BTCUSD",
@@ -6633,10 +6671,10 @@
           "exit_id": "PAPER-00461",
           "split": true,
           "notional_usd": 67.168298,
-          "amount_cad": 93.3774,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.9365,
-          "pnl_cad": -0.3895
+          "amount_cad": 93.4029,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.9368,
+          "pnl_cad": -0.3896
         },
         {
           "pair": "BTCUSD",
@@ -6656,8 +6694,8 @@
           "exit_id": "PAPER-00461",
           "split": true,
           "notional_usd": 3.420141,
-          "amount_cad": 4.7547,
-          "usd_cad": 1.3902,
+          "amount_cad": 4.756,
+          "usd_cad": 1.39058,
           "fees_cad": 0.0476,
           "pnl_cad": -0.0344
         }
@@ -6675,11 +6713,11 @@
         "losses": 1,
         "scratches": 0,
         "sum_pnl": -0.810714,
-        "sum_pnl_cad": -1.127,
+        "sum_pnl_cad": -1.1274,
         "open_unrealized_pnl": null,
         "open_unrealized_pnl_cad": null,
         "open_amount_cad": null,
-        "usd_cad": 1.3902,
+        "usd_cad": 1.39058,
         "fees": 1.146431,
         "fills_fees": 4.626416,
         "fills": 10,
@@ -6713,10 +6751,10 @@
           "exit_id": "PAPER-00063",
           "split": true,
           "notional_usd": 96.92175,
-          "amount_cad": 134.7406,
-          "usd_cad": 1.3902,
-          "fees_cad": 1.3474,
-          "pnl_cad": -1.3415
+          "amount_cad": 134.7774,
+          "usd_cad": 1.39058,
+          "fees_cad": 1.3478,
+          "pnl_cad": -1.3419
         },
         {
           "pair": "FILUSD",
@@ -6736,9 +6774,9 @@
           "exit_id": "PAPER-00063",
           "split": true,
           "notional_usd": 17.553462,
-          "amount_cad": 24.4028,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.2463,
+          "amount_cad": 24.4095,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.2464,
           "pnl_cad": 0.2145
         }
       ],
@@ -6755,11 +6793,11 @@
         "losses": 2,
         "scratches": 0,
         "sum_pnl": -0.835396,
-        "sum_pnl_cad": -1.1613,
+        "sum_pnl_cad": -1.1617,
         "open_unrealized_pnl": null,
         "open_unrealized_pnl_cad": null,
         "open_amount_cad": null,
-        "usd_cad": 1.3902,
+        "usd_cad": 1.39058,
         "fees": 0.969896,
         "fills_fees": 0.485284,
         "fills": 1,
@@ -6793,10 +6831,10 @@
           "exit_id": "PAPER-00208",
           "split": true,
           "notional_usd": 83.078223,
-          "amount_cad": 115.4953,
-          "usd_cad": 1.3902,
-          "fees_cad": 1.1558,
-          "pnl_cad": -0.9947
+          "amount_cad": 115.5269,
+          "usd_cad": 1.39058,
+          "fees_cad": 1.1561,
+          "pnl_cad": -0.995
         },
         {
           "pair": "BTCUSD",
@@ -6816,10 +6854,10 @@
           "exit_id": "PAPER-00208",
           "split": true,
           "notional_usd": 13.844152,
-          "amount_cad": 19.2461,
-          "usd_cad": 1.3902,
+          "amount_cad": 19.2514,
+          "usd_cad": 1.39058,
           "fees_cad": 0.1926,
-          "pnl_cad": -0.1666
+          "pnl_cad": -0.1667
         }
       ],
       "open": []
@@ -6835,11 +6873,11 @@
         "losses": 2,
         "scratches": 0,
         "sum_pnl": -0.335467,
-        "sum_pnl_cad": -0.4663,
+        "sum_pnl_cad": -0.4665,
         "open_unrealized_pnl": null,
         "open_unrealized_pnl_cad": null,
         "open_amount_cad": null,
-        "usd_cad": 1.3902,
+        "usd_cad": 1.39058,
         "fees": 0.670012,
         "fills_fees": 0.335842,
         "fills": 1,
@@ -6873,10 +6911,10 @@
           "exit_id": "PAPER-00442",
           "split": true,
           "notional_usd": 53.419503,
-          "amount_cad": 74.2638,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.7448,
-          "pnl_cad": -0.305
+          "amount_cad": 74.2841,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.745,
+          "pnl_cad": -0.3051
         },
         {
           "pair": "BTCUSD",
@@ -6896,10 +6934,10 @@
           "exit_id": "PAPER-00442",
           "split": true,
           "notional_usd": 13.414422,
-          "amount_cad": 18.6487,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.1866,
-          "pnl_cad": -0.1613
+          "amount_cad": 18.6538,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.1867,
+          "pnl_cad": -0.1614
         }
       ],
       "open": []
@@ -6915,11 +6953,11 @@
         "losses": 2,
         "scratches": 0,
         "sum_pnl": -0.271613,
-        "sum_pnl_cad": -0.3776,
+        "sum_pnl_cad": -0.3777,
         "open_unrealized_pnl": null,
         "open_unrealized_pnl_cad": null,
         "open_amount_cad": null,
-        "usd_cad": 1.3902,
+        "usd_cad": 1.39058,
         "fees": 0.350529,
         "fills_fees": 0.0,
         "fills": 0,
@@ -6951,8 +6989,8 @@
           "exit_id": "PAPER-00070",
           "split": true,
           "notional_usd": 17.509153,
-          "amount_cad": 24.3412,
-          "usd_cad": 1.3902,
+          "amount_cad": 24.3479,
+          "usd_cad": 1.39058,
           "fees_cad": 0.2436,
           "pnl_cad": -0.21
         },
@@ -6974,10 +7012,10 @@
           "exit_id": "PAPER-00068",
           "split": true,
           "notional_usd": 17.504275,
-          "amount_cad": 24.3344,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.2437,
-          "pnl_cad": -0.1676
+          "amount_cad": 24.3411,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.2438,
+          "pnl_cad": -0.1677
         }
       ],
       "open": []
@@ -6993,11 +7031,11 @@
         "losses": 0,
         "scratches": 0,
         "sum_pnl": 0.350237,
-        "sum_pnl_cad": 0.4869,
+        "sum_pnl_cad": 0.487,
         "open_unrealized_pnl": null,
         "open_unrealized_pnl_cad": null,
         "open_amount_cad": null,
-        "usd_cad": 1.3902,
+        "usd_cad": 1.39058,
         "fees": 0.252493,
         "fills_fees": 0.127753,
         "fills": 1,
@@ -7031,10 +7069,10 @@
           "exit_id": "PAPER-00510",
           "split": true,
           "notional_usd": 24.947886,
-          "amount_cad": 34.6826,
-          "usd_cad": 1.3902,
-          "fees_cad": 0.351,
-          "pnl_cad": 0.4869
+          "amount_cad": 34.692,
+          "usd_cad": 1.39058,
+          "fees_cad": 0.3511,
+          "pnl_cad": 0.487
         }
       ],
       "open": []
@@ -7050,11 +7088,11 @@
         "losses": 0,
         "scratches": 0,
         "sum_pnl": 0.108861,
-        "sum_pnl_cad": 0.1513,
+        "sum_pnl_cad": 0.1514,
         "open_unrealized_pnl": null,
         "open_unrealized_pnl_cad": null,
         "open_amount_cad": null,
-        "usd_cad": 1.3902,
+        "usd_cad": 1.39058,
         "fees": 0.11106,
         "fills_fees": 0.05608,
         "fills": 1,
@@ -7088,10 +7126,10 @@
           "exit_id": "PAPER-00243",
           "split": true,
           "notional_usd": 10.996088,
-          "amount_cad": 15.2868,
-          "usd_cad": 1.3902,
+          "amount_cad": 15.2909,
+          "usd_cad": 1.39058,
           "fees_cad": 0.1544,
-          "pnl_cad": 0.1513
+          "pnl_cad": 0.1514
         }
       ],
       "open": []
@@ -7111,7 +7149,7 @@
         "open_unrealized_pnl": null,
         "open_unrealized_pnl_cad": null,
         "open_amount_cad": null,
-        "usd_cad": 1.3902,
+        "usd_cad": 1.39058,
         "fees": 0,
         "fills_fees": 1.981408,
         "fills": 4,
@@ -7145,7 +7183,7 @@
         "open_unrealized_pnl": null,
         "open_unrealized_pnl_cad": null,
         "open_amount_cad": null,
-        "usd_cad": 1.3902,
+        "usd_cad": 1.39058,
         "fees": 0,
         "fills_fees": 1.339772,
         "fills": 3,
@@ -7179,7 +7217,7 @@
         "open_unrealized_pnl": null,
         "open_unrealized_pnl_cad": null,
         "open_amount_cad": null,
-        "usd_cad": 1.3902,
+        "usd_cad": 1.39058,
         "fees": 0,
         "fills_fees": 0.335841,
         "fills": 1,
@@ -7201,6 +7239,29 @@
   "completed_trades": [
     {
       "pair": "BTCUSD",
+      "amount": 0.0009,
+      "entry": 78415.7,
+      "exit": 78263.4,
+      "entry_pt": "2026-09-14 4:26 PM PT",
+      "exit_pt": "2026-09-14 4:48 PM PT",
+      "entry_time": "2026-09-14T23:26:49.212146003Z",
+      "exit_time": "2026-09-14T23:48:34.696056094Z",
+      "fees": 0.70505595,
+      "pnl": -0.84212595,
+      "pnl_pct": -1.19325,
+      "entry_strategy": "mom_add",
+      "exit_strategy": "ta_atr_trail",
+      "entry_id": "PAPER-00670",
+      "exit_id": "PAPER-00686",
+      "split": true,
+      "notional_usd": 70.57413,
+      "amount_cad": 98.139,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.9804,
+      "pnl_cad": -1.171
+    },
+    {
+      "pair": "BTCUSD",
       "amount": 0.00019161,
       "entry": 78415.7,
       "exit": 78284.4,
@@ -7217,9 +7278,9 @@
       "exit_id": "PAPER-00678",
       "split": true,
       "notional_usd": 15.025232,
-      "amount_cad": 20.8881,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.2087,
+      "amount_cad": 20.8938,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.2088,
       "pnl_cad": -0.2437
     },
     {
@@ -7240,10 +7301,10 @@
       "exit_id": "PAPER-00674",
       "split": true,
       "notional_usd": 59.71437,
-      "amount_cad": 83.0149,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.8299,
-      "pnl_cad": -0.8767
+      "amount_cad": 83.0376,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.8301,
+      "pnl_cad": -0.877
     },
     {
       "pair": "BTCUSD",
@@ -7263,10 +7324,10 @@
       "exit_id": "PAPER-00674",
       "split": true,
       "notional_usd": 10.823719,
-      "amount_cad": 15.0471,
-      "usd_cad": 1.3902,
+      "amount_cad": 15.0512,
+      "usd_cad": 1.39058,
       "fees_cad": 0.1504,
-      "pnl_cad": -0.1679
+      "pnl_cad": -0.168
     },
     {
       "pair": "BTCUSD",
@@ -7286,10 +7347,10 @@
       "exit_id": "PAPER-00668",
       "split": true,
       "notional_usd": 43.253753,
-      "amount_cad": 60.1314,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.6012,
-      "pnl_cad": -0.6172
+      "amount_cad": 60.1478,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.6014,
+      "pnl_cad": -0.6173
     },
     {
       "pair": "BTCUSD",
@@ -7309,10 +7370,10 @@
       "exit_id": "PAPER-00668",
       "split": true,
       "notional_usd": 16.499821,
-      "amount_cad": 22.9381,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.2294,
-      "pnl_cad": -0.218
+      "amount_cad": 22.9443,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.2295,
+      "pnl_cad": -0.2181
     },
     {
       "pair": "BTCUSD",
@@ -7332,9 +7393,9 @@
       "exit_id": "PAPER-00668",
       "split": true,
       "notional_usd": 10.81719,
-      "amount_cad": 15.0381,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.1504,
+      "amount_cad": 15.0422,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.1505,
       "pnl_cad": -0.1414
     },
     {
@@ -7355,10 +7416,10 @@
       "exit_id": "PAPER-00661",
       "split": true,
       "notional_usd": 63.1655,
-      "amount_cad": 87.8127,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.8777,
-      "pnl_cad": -0.966
+      "amount_cad": 87.8367,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.8779,
+      "pnl_cad": -0.9662
     },
     {
       "pair": "BTCUSD",
@@ -7378,10 +7439,10 @@
       "exit_id": "PAPER-00659",
       "split": true,
       "notional_usd": 13.25564,
-      "amount_cad": 18.428,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.1842,
-      "pnl_cad": -0.1916
+      "amount_cad": 18.433,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.1843,
+      "pnl_cad": -0.1917
     },
     {
       "pair": "BTCUSD",
@@ -7401,10 +7462,10 @@
       "exit_id": "PAPER-00659",
       "split": true,
       "notional_usd": 57.332302,
-      "amount_cad": 79.7034,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.7967,
-      "pnl_cad": -0.8577
+      "amount_cad": 79.7252,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.7969,
+      "pnl_cad": -0.8579
     },
     {
       "pair": "ETHUSD",
@@ -7424,8 +7485,8 @@
       "exit_id": "PAPER-00654",
       "split": true,
       "notional_usd": 15.008199,
-      "amount_cad": 20.8644,
-      "usd_cad": 1.3902,
+      "amount_cad": 20.8701,
+      "usd_cad": 1.39058,
       "fees_cad": 0.2086,
       "pnl_cad": -0.2238
     },
@@ -7447,10 +7508,10 @@
       "exit_id": "PAPER-00652",
       "split": true,
       "notional_usd": 63.812593,
-      "amount_cad": 88.7123,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.8818,
-      "pnl_cad": -1.9512
+      "amount_cad": 88.7365,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.882,
+      "pnl_cad": -1.9518
     },
     {
       "pair": "ETHUSD",
@@ -7471,7 +7532,7 @@
       "split": true,
       "notional_usd": 0.058997,
       "amount_cad": 0.082,
-      "usd_cad": 1.3902,
+      "usd_cad": 1.39058,
       "fees_cad": 0.0008,
       "pnl_cad": -0.0009
     },
@@ -7493,10 +7554,10 @@
       "exit_id": "PAPER-00648",
       "split": true,
       "notional_usd": 67.352385,
-      "amount_cad": 93.6333,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.9363,
-      "pnl_cad": -0.9354
+      "amount_cad": 93.6589,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.9366,
+      "pnl_cad": -0.9356
     },
     {
       "pair": "BTCUSD",
@@ -7516,8 +7577,8 @@
       "exit_id": "PAPER-00648",
       "split": true,
       "notional_usd": 3.244519,
-      "amount_cad": 4.5105,
-      "usd_cad": 1.3902,
+      "amount_cad": 4.5118,
+      "usd_cad": 1.39058,
       "fees_cad": 0.0451,
       "pnl_cad": -0.0431
     },
@@ -7539,10 +7600,10 @@
       "exit_id": "PAPER-00644",
       "split": true,
       "notional_usd": 67.43799,
-      "amount_cad": 93.7523,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.9367,
-      "pnl_cad": -1.0973
+      "amount_cad": 93.7779,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.937,
+      "pnl_cad": -1.0976
     },
     {
       "pair": "BTCUSD",
@@ -7562,8 +7623,8 @@
       "exit_id": "PAPER-00644",
       "split": true,
       "notional_usd": 3.245955,
-      "amount_cad": 4.5125,
-      "usd_cad": 1.3902,
+      "amount_cad": 4.5138,
+      "usd_cad": 1.39058,
       "fees_cad": 0.0451,
       "pnl_cad": -0.0471
     },
@@ -7585,10 +7646,10 @@
       "exit_id": "PAPER-00639",
       "split": true,
       "notional_usd": 41.378085,
-      "amount_cad": 57.5238,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.5749,
-      "pnl_cad": -0.6349
+      "amount_cad": 57.5395,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.5751,
+      "pnl_cad": -0.6351
     },
     {
       "pair": "BTCUSD",
@@ -7608,10 +7669,10 @@
       "exit_id": "PAPER-00639",
       "split": true,
       "notional_usd": 29.330837,
-      "amount_cad": 40.7757,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.4076,
-      "pnl_cad": -0.4296
+      "amount_cad": 40.7869,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.4078,
+      "pnl_cad": -0.4297
     },
     {
       "pair": "BTCUSD",
@@ -7631,9 +7692,9 @@
       "exit_id": "PAPER-00634",
       "split": true,
       "notional_usd": 15.298299,
-      "amount_cad": 21.2677,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.2127,
+      "amount_cad": 21.2735,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.2128,
       "pnl_cad": -0.2016
     },
     {
@@ -7654,10 +7715,10 @@
       "exit_id": "PAPER-00634",
       "split": true,
       "notional_usd": 55.414384,
-      "amount_cad": 77.0371,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.7703,
-      "pnl_cad": -0.7854
+      "amount_cad": 77.0581,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.7705,
+      "pnl_cad": -0.7856
     },
     {
       "pair": "BTCUSD",
@@ -7677,10 +7738,10 @@
       "exit_id": "PAPER-00623",
       "split": true,
       "notional_usd": 69.508313,
-      "amount_cad": 96.6305,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.9662,
-      "pnl_cad": -0.9965
+      "amount_cad": 96.6569,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.9664,
+      "pnl_cad": -0.9968
     },
     {
       "pair": "BTCUSD",
@@ -7700,8 +7761,8 @@
       "exit_id": "PAPER-00623",
       "split": true,
       "notional_usd": 1.201437,
-      "amount_cad": 1.6702,
-      "usd_cad": 1.3902,
+      "amount_cad": 1.6707,
+      "usd_cad": 1.39058,
       "fees_cad": 0.0167,
       "pnl_cad": -0.0163
     },
@@ -7723,10 +7784,10 @@
       "exit_id": "PAPER-00619",
       "split": true,
       "notional_usd": 67.32702,
-      "amount_cad": 93.598,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.935,
-      "pnl_cad": -1.1265
+      "amount_cad": 93.6236,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.9353,
+      "pnl_cad": -1.1268
     },
     {
       "pair": "BTCUSD",
@@ -7746,8 +7807,8 @@
       "exit_id": "PAPER-00619",
       "split": true,
       "notional_usd": 3.541019,
-      "amount_cad": 4.9227,
-      "usd_cad": 1.3902,
+      "amount_cad": 4.9241,
+      "usd_cad": 1.39058,
       "fees_cad": 0.0492,
       "pnl_cad": -0.0478
     },
@@ -7769,10 +7830,10 @@
       "exit_id": "PAPER-00614",
       "split": true,
       "notional_usd": 63.151183,
-      "amount_cad": 87.7928,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.8772,
-      "pnl_cad": -1.0136
+      "amount_cad": 87.8168,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.8775,
+      "pnl_cad": -1.0138
     },
     {
       "pair": "BTCUSD",
@@ -7792,8 +7853,8 @@
       "exit_id": "PAPER-00614",
       "split": true,
       "notional_usd": 7.731822,
-      "amount_cad": 10.7488,
-      "usd_cad": 1.3902,
+      "amount_cad": 10.7517,
+      "usd_cad": 1.39058,
       "fees_cad": 0.1074,
       "pnl_cad": -0.123
     },
@@ -7815,10 +7876,10 @@
       "exit_id": "PAPER-00609",
       "split": true,
       "notional_usd": 57.187058,
-      "amount_cad": 79.5014,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.7963,
-      "pnl_cad": -0.533
+      "amount_cad": 79.5232,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.7965,
+      "pnl_cad": -0.5331
     },
     {
       "pair": "ETHUSD",
@@ -7838,8 +7899,8 @@
       "exit_id": "PAPER-00609",
       "split": true,
       "notional_usd": 6.462058,
-      "amount_cad": 8.9836,
-      "usd_cad": 1.3902,
+      "amount_cad": 8.986,
+      "usd_cad": 1.39058,
       "fees_cad": 0.0898,
       "pnl_cad": -0.0951
     },
@@ -7861,10 +7922,10 @@
       "exit_id": "PAPER-00607",
       "split": true,
       "notional_usd": 7.990979,
-      "amount_cad": 11.1091,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.1111,
-      "pnl_cad": -0.1046
+      "amount_cad": 11.1121,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.1112,
+      "pnl_cad": -0.1047
     },
     {
       "pair": "BTCUSD",
@@ -7884,8 +7945,8 @@
       "exit_id": "PAPER-00607",
       "split": true,
       "notional_usd": 6.997021,
-      "amount_cad": 9.7273,
-      "usd_cad": 1.3902,
+      "amount_cad": 9.7299,
+      "usd_cad": 1.39058,
       "fees_cad": 0.0973,
       "pnl_cad": -0.0916
     },
@@ -7907,10 +7968,10 @@
       "exit_id": "PAPER-00603",
       "split": true,
       "notional_usd": 7.023947,
-      "amount_cad": 9.7647,
-      "usd_cad": 1.3902,
+      "amount_cad": 9.7674,
+      "usd_cad": 1.39058,
       "fees_cad": 0.0977,
-      "pnl_cad": -0.086
+      "pnl_cad": -0.0861
     },
     {
       "pair": "BTCUSD",
@@ -7930,10 +7991,10 @@
       "exit_id": "PAPER-00603",
       "split": true,
       "notional_usd": 63.858527,
-      "amount_cad": 88.7761,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.8882,
-      "pnl_cad": -0.8003
+      "amount_cad": 88.8004,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.8884,
+      "pnl_cad": -0.8005
     },
     {
       "pair": "BTCUSD",
@@ -7953,10 +8014,10 @@
       "exit_id": "PAPER-00598",
       "split": true,
       "notional_usd": 61.404602,
-      "amount_cad": 85.3647,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.8535,
-      "pnl_cad": -0.8749
+      "amount_cad": 85.388,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.8538,
+      "pnl_cad": -0.8751
     },
     {
       "pair": "BTCUSD",
@@ -7976,8 +8037,8 @@
       "exit_id": "PAPER-00598",
       "split": true,
       "notional_usd": 9.477604,
-      "amount_cad": 13.1758,
-      "usd_cad": 1.3902,
+      "amount_cad": 13.1794,
+      "usd_cad": 1.39058,
       "fees_cad": 0.1318,
       "pnl_cad": -0.1323
     },
@@ -7999,10 +8060,10 @@
       "exit_id": "PAPER-00594",
       "split": true,
       "notional_usd": 44.360798,
-      "amount_cad": 61.6704,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.6165,
-      "pnl_cad": -0.6542
+      "amount_cad": 61.6872,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.6167,
+      "pnl_cad": -0.6543
     },
     {
       "pair": "BTCUSD",
@@ -8022,10 +8083,10 @@
       "exit_id": "PAPER-00594",
       "split": true,
       "notional_usd": 26.546913,
-      "amount_cad": 36.9055,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.369,
-      "pnl_cad": -0.372
+      "amount_cad": 36.9156,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.3691,
+      "pnl_cad": -0.3721
     },
     {
       "pair": "BTCUSD",
@@ -8045,9 +8106,9 @@
       "exit_id": "PAPER-00590",
       "split": true,
       "notional_usd": 15.012569,
-      "amount_cad": 20.8705,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.2086,
+      "amount_cad": 20.8762,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.2087,
       "pnl_cad": -0.2241
     },
     {
@@ -8068,10 +8129,10 @@
       "exit_id": "PAPER-00584",
       "split": true,
       "notional_usd": 15.992943,
-      "amount_cad": 22.2334,
-      "usd_cad": 1.3902,
+      "amount_cad": 22.2395,
+      "usd_cad": 1.39058,
       "fees_cad": 0.2223,
-      "pnl_cad": -0.2355
+      "pnl_cad": -0.2356
     },
     {
       "pair": "BTCUSD",
@@ -8091,10 +8152,10 @@
       "exit_id": "PAPER-00584",
       "split": true,
       "notional_usd": 16.499745,
-      "amount_cad": 22.9379,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.2293,
-      "pnl_cad": -0.2397
+      "amount_cad": 22.9442,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.2294,
+      "pnl_cad": -0.2398
     },
     {
       "pair": "BTCUSD",
@@ -8114,10 +8175,10 @@
       "exit_id": "PAPER-00584",
       "split": true,
       "notional_usd": 38.434887,
-      "amount_cad": 53.4322,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.5342,
-      "pnl_cad": -0.5527
+      "amount_cad": 53.4468,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.5344,
+      "pnl_cad": -0.5528
     },
     {
       "pair": "BTCUSD",
@@ -8137,10 +8198,10 @@
       "exit_id": "PAPER-00577",
       "split": true,
       "notional_usd": 70.93962,
-      "amount_cad": 98.6203,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.9861,
-      "pnl_cad": -1.0005
+      "amount_cad": 98.6472,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.9864,
+      "pnl_cad": -1.0008
     },
     {
       "pair": "BTCUSD",
@@ -8160,8 +8221,8 @@
       "exit_id": "PAPER-00575",
       "split": true,
       "notional_usd": 3.9137,
-      "amount_cad": 5.4408,
-      "usd_cad": 1.3902,
+      "amount_cad": 5.4423,
+      "usd_cad": 1.39058,
       "fees_cad": 0.0544,
       "pnl_cad": -0.0536
     },
@@ -8183,10 +8244,10 @@
       "exit_id": "PAPER-00575",
       "split": true,
       "notional_usd": 11.087074,
-      "amount_cad": 15.4133,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.1541,
-      "pnl_cad": -0.1541
+      "amount_cad": 15.4175,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.1542,
+      "pnl_cad": -0.1542
     },
     {
       "pair": "ETHUSD",
@@ -8206,10 +8267,10 @@
       "exit_id": "PAPER-00570",
       "split": true,
       "notional_usd": 49.20199,
-      "amount_cad": 68.4006,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.6834,
-      "pnl_cad": -0.8035
+      "amount_cad": 68.4193,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.6836,
+      "pnl_cad": -0.8037
     },
     {
       "pair": "ETHUSD",
@@ -8229,8 +8290,8 @@
       "exit_id": "PAPER-00570",
       "split": true,
       "notional_usd": 14.558316,
-      "amount_cad": 20.239,
-      "usd_cad": 1.3902,
+      "amount_cad": 20.2445,
+      "usd_cad": 1.39058,
       "fees_cad": 0.2025,
       "pnl_cad": -0.1819
     },
@@ -8252,10 +8313,10 @@
       "exit_id": "PAPER-00568",
       "split": true,
       "notional_usd": 58.435284,
-      "amount_cad": 81.2367,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.8118,
-      "pnl_cad": -0.9318
+      "amount_cad": 81.2589,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.812,
+      "pnl_cad": -0.932
     },
     {
       "pair": "BTCUSD",
@@ -8275,8 +8336,8 @@
       "exit_id": "PAPER-00568",
       "split": true,
       "notional_usd": 12.585941,
-      "amount_cad": 17.497,
-      "usd_cad": 1.3902,
+      "amount_cad": 17.5018,
+      "usd_cad": 1.39058,
       "fees_cad": 0.175,
       "pnl_cad": -0.1732
     },
@@ -8298,8 +8359,8 @@
       "exit_id": "PAPER-00564",
       "split": true,
       "notional_usd": 15.022833,
-      "amount_cad": 20.8847,
-      "usd_cad": 1.3902,
+      "amount_cad": 20.8905,
+      "usd_cad": 1.39058,
       "fees_cad": 0.2087,
       "pnl_cad": -0.2443
     },
@@ -8321,10 +8382,10 @@
       "exit_id": "PAPER-00560",
       "split": true,
       "notional_usd": 45.916853,
-      "amount_cad": 63.8336,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.6377,
-      "pnl_cad": -0.7581
+      "amount_cad": 63.8511,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.6379,
+      "pnl_cad": -0.7583
     },
     {
       "pair": "BTCUSD",
@@ -8344,10 +8405,10 @@
       "exit_id": "PAPER-00560",
       "split": true,
       "notional_usd": 25.138302,
-      "amount_cad": 34.9473,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.3492,
-      "pnl_cad": -0.4044
+      "amount_cad": 34.9568,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.3493,
+      "pnl_cad": -0.4046
     },
     {
       "pair": "BTCUSD",
@@ -8367,9 +8428,9 @@
       "exit_id": "PAPER-00555",
       "split": true,
       "notional_usd": 15.017155,
-      "amount_cad": 20.8768,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.2086,
+      "amount_cad": 20.8826,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.2087,
       "pnl_cad": -0.2326
     },
     {
@@ -8390,10 +8451,10 @@
       "exit_id": "PAPER-00550",
       "split": true,
       "notional_usd": 26.650574,
-      "amount_cad": 37.0496,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.3703,
-      "pnl_cad": -0.4097
+      "amount_cad": 37.0598,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.3704,
+      "pnl_cad": -0.4098
     },
     {
       "pair": "BTCUSD",
@@ -8413,9 +8474,9 @@
       "exit_id": "PAPER-00550",
       "split": true,
       "notional_usd": 16.498994,
-      "amount_cad": 22.9369,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.2294,
+      "amount_cad": 22.9432,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.2295,
       "pnl_cad": -0.2242
     },
     {
@@ -8436,10 +8497,10 @@
       "exit_id": "PAPER-00550",
       "split": true,
       "notional_usd": 27.918217,
-      "amount_cad": 38.8119,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.388,
-      "pnl_cad": -0.4057
+      "amount_cad": 38.8225,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.3881,
+      "pnl_cad": -0.4058
     },
     {
       "pair": "ETHUSD",
@@ -8459,8 +8520,8 @@
       "exit_id": "PAPER-00548",
       "split": true,
       "notional_usd": 14.966405,
-      "amount_cad": 20.8063,
-      "usd_cad": 1.3902,
+      "amount_cad": 20.812,
+      "usd_cad": 1.39058,
       "fees_cad": 0.2083,
       "pnl_cad": -0.1671
     },
@@ -8482,10 +8543,10 @@
       "exit_id": "PAPER-00546",
       "split": true,
       "notional_usd": 15.016822,
-      "amount_cad": 20.8764,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.2086,
-      "pnl_cad": -0.2368
+      "amount_cad": 20.8821,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.2087,
+      "pnl_cad": -0.2369
     },
     {
       "pair": "ETHUSD",
@@ -8505,10 +8566,10 @@
       "exit_id": "PAPER-00539",
       "split": true,
       "notional_usd": 37.421804,
-      "amount_cad": 52.0238,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.5254,
-      "pnl_cad": 0.5114
+      "amount_cad": 52.038,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.5256,
+      "pnl_cad": 0.5115
     },
     {
       "pair": "ETHUSD",
@@ -8528,9 +8589,9 @@
       "exit_id": "PAPER-00539",
       "split": true,
       "notional_usd": 25.720609,
-      "amount_cad": 35.7568,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.358,
+      "amount_cad": 35.7666,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.3581,
       "pnl_cad": -0.2759
     },
     {
@@ -8551,10 +8612,10 @@
       "exit_id": "PAPER-00537",
       "split": true,
       "notional_usd": 46.509608,
-      "amount_cad": 64.6577,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.6552,
-      "pnl_cad": 1.0665
+      "amount_cad": 64.6753,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.6554,
+      "pnl_cad": 1.0668
     },
     {
       "pair": "BTCUSD",
@@ -8574,10 +8635,10 @@
       "exit_id": "PAPER-00532",
       "split": true,
       "notional_usd": 13.76106,
-      "amount_cad": 19.1306,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.1906,
-      "pnl_cad": -0.3244
+      "amount_cad": 19.1359,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.1907,
+      "pnl_cad": -0.3245
     },
     {
       "pair": "BTCUSD",
@@ -8597,10 +8658,10 @@
       "exit_id": "PAPER-00532",
       "split": true,
       "notional_usd": 57.418982,
-      "amount_cad": 79.8239,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.7976,
-      "pnl_cad": -0.9275
+      "amount_cad": 79.8457,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.7978,
+      "pnl_cad": -0.9278
     },
     {
       "pair": "BTCUSD",
@@ -8620,10 +8681,10 @@
       "exit_id": "PAPER-00525",
       "split": true,
       "notional_usd": 71.49015,
-      "amount_cad": 99.3856,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.9906,
-      "pnl_cad": -1.6324
+      "amount_cad": 99.4128,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.9909,
+      "pnl_cad": -1.6328
     },
     {
       "pair": "BTCUSD",
@@ -8643,10 +8704,10 @@
       "exit_id": "PAPER-00520",
       "split": true,
       "notional_usd": 56.273312,
-      "amount_cad": 78.2312,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.7822,
-      "pnl_cad": -0.8104
+      "amount_cad": 78.2525,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.7824,
+      "pnl_cad": -0.8106
     },
     {
       "pair": "BTCUSD",
@@ -8666,10 +8727,10 @@
       "exit_id": "PAPER-00520",
       "split": true,
       "notional_usd": 14.904108,
-      "amount_cad": 20.7197,
-      "usd_cad": 1.3902,
+      "amount_cad": 20.7254,
+      "usd_cad": 1.39058,
       "fees_cad": 0.2066,
-      "pnl_cad": -0.3285
+      "pnl_cad": -0.3286
     },
     {
       "pair": "BTCUSD",
@@ -8690,7 +8751,7 @@
       "split": true,
       "notional_usd": 0.16306,
       "amount_cad": 0.2267,
-      "usd_cad": 1.3902,
+      "usd_cad": 1.39058,
       "fees_cad": 0.0023,
       "pnl_cad": -0.0026
     },
@@ -8712,9 +8773,9 @@
       "exit_id": "PAPER-00518",
       "split": true,
       "notional_usd": 14.821738,
-      "amount_cad": 20.6052,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.2061,
+      "amount_cad": 20.6108,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.2062,
       "pnl_cad": -0.1935
     },
     {
@@ -8735,10 +8796,10 @@
       "exit_id": "PAPER-00510",
       "split": true,
       "notional_usd": 24.947886,
-      "amount_cad": 34.6826,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.351,
-      "pnl_cad": 0.4869
+      "amount_cad": 34.692,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.3511,
+      "pnl_cad": 0.487
     },
     {
       "pair": "BTCUSD",
@@ -8758,10 +8819,10 @@
       "exit_id": "PAPER-00508",
       "split": true,
       "notional_usd": 43.36085,
-      "amount_cad": 60.2803,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.6036,
-      "pnl_cad": -0.4418
+      "amount_cad": 60.2967,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.6038,
+      "pnl_cad": -0.4419
     },
     {
       "pair": "BTCUSD",
@@ -8781,10 +8842,10 @@
       "exit_id": "PAPER-00508",
       "split": true,
       "notional_usd": 27.727345,
-      "amount_cad": 38.5466,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.3853,
-      "pnl_cad": -0.4166
+      "amount_cad": 38.5571,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.3854,
+      "pnl_cad": -0.4167
     },
     {
       "pair": "XDGUSD",
@@ -8804,10 +8865,10 @@
       "exit_id": "PAPER-00489",
       "split": true,
       "notional_usd": 47.504743,
-      "amount_cad": 66.0411,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.667,
-      "pnl_cad": 0.6467
+      "amount_cad": 66.0591,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.6672,
+      "pnl_cad": 0.6469
     },
     {
       "pair": "TAOUSD",
@@ -8827,10 +8888,10 @@
       "exit_id": "PAPER-00488",
       "split": true,
       "notional_usd": 47.477157,
-      "amount_cad": 66.0027,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.6675,
-      "pnl_cad": 0.8182
+      "amount_cad": 66.0208,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.6676,
+      "pnl_cad": 0.8184
     },
     {
       "pair": "BTCUSD",
@@ -8850,9 +8911,9 @@
       "exit_id": "PAPER-00484",
       "split": true,
       "notional_usd": 28.31213,
-      "amount_cad": 39.3595,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.3944,
+      "amount_cad": 39.3703,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.3945,
       "pnl_cad": -0.2272
     },
     {
@@ -8873,9 +8934,9 @@
       "exit_id": "PAPER-00484",
       "split": true,
       "notional_usd": 14.924413,
-      "amount_cad": 20.7479,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.2079,
+      "amount_cad": 20.7536,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.208,
       "pnl_cad": -0.1146
     },
     {
@@ -8896,10 +8957,10 @@
       "exit_id": "PAPER-00484",
       "split": true,
       "notional_usd": 27.6307,
-      "amount_cad": 38.4122,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.3844,
-      "pnl_cad": -0.3284
+      "amount_cad": 38.4227,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.3845,
+      "pnl_cad": -0.3285
     },
     {
       "pair": "CAPUSD",
@@ -8919,9 +8980,9 @@
       "exit_id": "PAPER-00476",
       "split": true,
       "notional_usd": 10.336574,
-      "amount_cad": 14.3699,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.1449,
+      "amount_cad": 14.3738,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.145,
       "pnl_cad": 0.1047
     },
     {
@@ -8942,10 +9003,10 @@
       "exit_id": "PAPER-00473",
       "split": true,
       "notional_usd": 27.494374,
-      "amount_cad": 38.2227,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.3865,
-      "pnl_cad": 0.4625
+      "amount_cad": 38.2331,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.3866,
+      "pnl_cad": 0.4626
     },
     {
       "pair": "LINKUSD",
@@ -8965,10 +9026,10 @@
       "exit_id": "PAPER-00470",
       "split": true,
       "notional_usd": 11.018505,
-      "amount_cad": 15.3179,
-      "usd_cad": 1.3902,
+      "amount_cad": 15.3221,
+      "usd_cad": 1.39058,
       "fees_cad": 0.1545,
-      "pnl_cad": 0.111
+      "pnl_cad": 0.1111
     },
     {
       "pair": "HYPEUSD",
@@ -8988,10 +9049,10 @@
       "exit_id": "PAPER-00466",
       "split": true,
       "notional_usd": 24.0,
-      "amount_cad": 33.3648,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.3373,
-      "pnl_cad": 0.3969
+      "amount_cad": 33.3739,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.3374,
+      "pnl_cad": 0.397
     },
     {
       "pair": "BTCUSD",
@@ -9011,10 +9072,10 @@
       "exit_id": "PAPER-00461",
       "split": true,
       "notional_usd": 67.168298,
-      "amount_cad": 93.3774,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.9365,
-      "pnl_cad": -0.3895
+      "amount_cad": 93.4029,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.9368,
+      "pnl_cad": -0.3896
     },
     {
       "pair": "BTCUSD",
@@ -9034,8 +9095,8 @@
       "exit_id": "PAPER-00461",
       "split": true,
       "notional_usd": 3.420141,
-      "amount_cad": 4.7547,
-      "usd_cad": 1.3902,
+      "amount_cad": 4.756,
+      "usd_cad": 1.39058,
       "fees_cad": 0.0476,
       "pnl_cad": -0.0344
     },
@@ -9057,10 +9118,10 @@
       "exit_id": "PAPER-00452",
       "split": true,
       "notional_usd": 29.894173,
-      "amount_cad": 41.5589,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.4201,
-      "pnl_cad": 0.4884
+      "amount_cad": 41.5702,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.4202,
+      "pnl_cad": 0.4886
     },
     {
       "pair": "XRPUSD",
@@ -9080,8 +9141,8 @@
       "exit_id": "PAPER-00449",
       "split": true,
       "notional_usd": 16.927327,
-      "amount_cad": 23.5324,
-      "usd_cad": 1.3902,
+      "amount_cad": 23.5388,
+      "usd_cad": 1.39058,
       "fees_cad": 0.2376,
       "pnl_cad": 0.2093
     },
@@ -9103,10 +9164,10 @@
       "exit_id": "PAPER-00442",
       "split": true,
       "notional_usd": 53.419503,
-      "amount_cad": 74.2638,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.7448,
-      "pnl_cad": -0.305
+      "amount_cad": 74.2841,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.745,
+      "pnl_cad": -0.3051
     },
     {
       "pair": "BTCUSD",
@@ -9126,10 +9187,10 @@
       "exit_id": "PAPER-00442",
       "split": true,
       "notional_usd": 13.414422,
-      "amount_cad": 18.6487,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.1866,
-      "pnl_cad": -0.1613
+      "amount_cad": 18.6538,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.1867,
+      "pnl_cad": -0.1614
     },
     {
       "pair": "BTCUSD",
@@ -9149,10 +9210,10 @@
       "exit_id": "PAPER-00417",
       "split": true,
       "notional_usd": 41.967587,
-      "amount_cad": 58.3433,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.5844,
-      "pnl_cad": -0.3846
+      "amount_cad": 58.3593,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.5846,
+      "pnl_cad": -0.3847
     },
     {
       "pair": "BTCUSD",
@@ -9172,10 +9233,10 @@
       "exit_id": "PAPER-00417",
       "split": true,
       "notional_usd": 28.093125,
-      "amount_cad": 39.0551,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.3907,
-      "pnl_cad": -0.3519
+      "amount_cad": 39.0657,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.3909,
+      "pnl_cad": -0.352
     },
     {
       "pair": "BTCUSD",
@@ -9195,9 +9256,9 @@
       "exit_id": "PAPER-00412",
       "split": true,
       "notional_usd": 13.333395,
-      "amount_cad": 18.5361,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.1857,
+      "amount_cad": 18.5412,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.1858,
       "pnl_cad": -0.1106
     },
     {
@@ -9218,10 +9279,10 @@
       "exit_id": "PAPER-00412",
       "split": true,
       "notional_usd": 44.134427,
-      "amount_cad": 61.3557,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.6147,
-      "pnl_cad": -0.3923
+      "amount_cad": 61.3725,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.6148,
+      "pnl_cad": -0.3924
     },
     {
       "pair": "BTCUSD",
@@ -9241,10 +9302,10 @@
       "exit_id": "PAPER-00412",
       "split": true,
       "notional_usd": 12.335036,
-      "amount_cad": 17.1482,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.1715,
-      "pnl_cad": -0.1643
+      "amount_cad": 17.1529,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.1716,
+      "pnl_cad": -0.1644
     },
     {
       "pair": "BTCUSD",
@@ -9264,8 +9325,8 @@
       "exit_id": "PAPER-00405",
       "split": true,
       "notional_usd": 13.106576,
-      "amount_cad": 18.2208,
-      "usd_cad": 1.3902,
+      "amount_cad": 18.2257,
+      "usd_cad": 1.39058,
       "fees_cad": 0.1823,
       "pnl_cad": -0.1725
     },
@@ -9287,10 +9348,10 @@
       "exit_id": "PAPER-00405",
       "split": true,
       "notional_usd": 56.664021,
-      "amount_cad": 78.7743,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.7889,
-      "pnl_cad": -0.5584
+      "amount_cad": 78.7959,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.7891,
+      "pnl_cad": -0.5586
     },
     {
       "pair": "BTCUSD",
@@ -9310,10 +9371,10 @@
       "exit_id": "PAPER-00396",
       "split": true,
       "notional_usd": 41.097548,
-      "amount_cad": 57.1338,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.5703,
-      "pnl_cad": -0.778
+      "amount_cad": 57.1494,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.5705,
+      "pnl_cad": -0.7783
     },
     {
       "pair": "BTCUSD",
@@ -9333,10 +9394,10 @@
       "exit_id": "PAPER-00396",
       "split": true,
       "notional_usd": 27.00864,
-      "amount_cad": 37.5474,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.3747,
-      "pnl_cad": -0.5327
+      "amount_cad": 37.5577,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.3748,
+      "pnl_cad": -0.5328
     },
     {
       "pair": "BTCUSD",
@@ -9356,8 +9417,8 @@
       "exit_id": "PAPER-00396",
       "split": true,
       "notional_usd": 1.90377,
-      "amount_cad": 2.6466,
-      "usd_cad": 1.3902,
+      "amount_cad": 2.6473,
+      "usd_cad": 1.39058,
       "fees_cad": 0.0264,
       "pnl_cad": -0.0326
     },
@@ -9379,10 +9440,10 @@
       "exit_id": "PAPER-00373",
       "split": true,
       "notional_usd": 29.289708,
-      "amount_cad": 40.7186,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.4074,
-      "pnl_cad": -0.3672
+      "amount_cad": 40.7297,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.4075,
+      "pnl_cad": -0.3673
     },
     {
       "pair": "BTCUSD",
@@ -9402,10 +9463,10 @@
       "exit_id": "PAPER-00373",
       "split": true,
       "notional_usd": 40.680678,
-      "amount_cad": 56.5543,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.5656,
-      "pnl_cad": -0.5611
+      "amount_cad": 56.5697,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.5657,
+      "pnl_cad": -0.5613
     },
     {
       "pair": "ETHUSD",
@@ -9425,9 +9486,9 @@
       "exit_id": "PAPER-00367",
       "split": true,
       "notional_usd": 15.000186,
-      "amount_cad": 20.8533,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.2085,
+      "amount_cad": 20.859,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.2086,
       "pnl_cad": -0.206
     },
     {
@@ -9448,8 +9509,8 @@
       "exit_id": "PAPER-00365",
       "split": true,
       "notional_usd": 0.826715,
-      "amount_cad": 1.1493,
-      "usd_cad": 1.3902,
+      "amount_cad": 1.1496,
+      "usd_cad": 1.39058,
       "fees_cad": 0.0115,
       "pnl_cad": -0.0117
     },
@@ -9471,10 +9532,10 @@
       "exit_id": "PAPER-00365",
       "split": true,
       "notional_usd": 69.107518,
-      "amount_cad": 96.0733,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.9611,
-      "pnl_cad": -0.8921
+      "amount_cad": 96.0995,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.9613,
+      "pnl_cad": -0.8923
     },
     {
       "pair": "ETHUSD",
@@ -9494,10 +9555,10 @@
       "exit_id": "PAPER-00359",
       "split": true,
       "notional_usd": 41.562617,
-      "amount_cad": 57.7803,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.5772,
-      "pnl_cad": -0.7027
+      "amount_cad": 57.7961,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.5773,
+      "pnl_cad": -0.7029
     },
     {
       "pair": "ETHUSD",
@@ -9517,9 +9578,9 @@
       "exit_id": "PAPER-00359",
       "split": true,
       "notional_usd": 21.212053,
-      "amount_cad": 29.489,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.2948,
+      "amount_cad": 29.4971,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.2949,
       "pnl_cad": -0.3044
     },
     {
@@ -9540,10 +9601,10 @@
       "exit_id": "PAPER-00355",
       "split": true,
       "notional_usd": 5.244226,
-      "amount_cad": 7.2905,
-      "usd_cad": 1.3902,
+      "amount_cad": 7.2925,
+      "usd_cad": 1.39058,
       "fees_cad": 0.0728,
-      "pnl_cad": -0.0937
+      "pnl_cad": -0.0938
     },
     {
       "pair": "ETHUSD",
@@ -9563,10 +9624,10 @@
       "exit_id": "PAPER-00355",
       "split": true,
       "notional_usd": 57.575111,
-      "amount_cad": 80.0409,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.7997,
-      "pnl_cad": -0.9481
+      "amount_cad": 80.0628,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.7999,
+      "pnl_cad": -0.9484
     },
     {
       "pair": "ETHUSD",
@@ -9586,10 +9647,10 @@
       "exit_id": "PAPER-00352",
       "split": true,
       "notional_usd": 15.034004,
-      "amount_cad": 20.9003,
-      "usd_cad": 1.3902,
+      "amount_cad": 20.906,
+      "usd_cad": 1.39058,
       "fees_cad": 0.2088,
-      "pnl_cad": -0.2565
+      "pnl_cad": -0.2566
     },
     {
       "pair": "BTCUSD",
@@ -9609,10 +9670,10 @@
       "exit_id": "PAPER-00350",
       "split": true,
       "notional_usd": 33.738177,
-      "amount_cad": 46.9028,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.4686,
-      "pnl_cad": -0.5604
+      "amount_cad": 46.9156,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.4687,
+      "pnl_cad": -0.5606
     },
     {
       "pair": "BTCUSD",
@@ -9632,10 +9693,10 @@
       "exit_id": "PAPER-00350",
       "split": true,
       "notional_usd": 36.302367,
-      "amount_cad": 50.4676,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.5045,
-      "pnl_cad": -0.5348
+      "amount_cad": 50.4813,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.5047,
+      "pnl_cad": -0.535
     },
     {
       "pair": "ETHUSD",
@@ -9655,10 +9716,10 @@
       "exit_id": "PAPER-00345",
       "split": true,
       "notional_usd": 15.027968,
-      "amount_cad": 20.8919,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.2087,
-      "pnl_cad": -0.2446
+      "amount_cad": 20.8976,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.2088,
+      "pnl_cad": -0.2447
     },
     {
       "pair": "BTCUSD",
@@ -9678,9 +9739,9 @@
       "exit_id": "PAPER-00343",
       "split": true,
       "notional_usd": 14.584819,
-      "amount_cad": 20.2758,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.2027,
+      "amount_cad": 20.2814,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.2028,
       "pnl_cad": -0.2102
     },
     {
@@ -9701,10 +9762,10 @@
       "exit_id": "PAPER-00343",
       "split": true,
       "notional_usd": 55.490976,
-      "amount_cad": 77.1436,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.7709,
-      "pnl_cad": -0.8739
+      "amount_cad": 77.1646,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.7711,
+      "pnl_cad": -0.8742
     },
     {
       "pair": "ETHUSD",
@@ -9724,10 +9785,10 @@
       "exit_id": "PAPER-00333",
       "split": true,
       "notional_usd": 62.878,
-      "amount_cad": 87.413,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.874,
-      "pnl_cad": -0.8938
+      "amount_cad": 87.4369,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.8743,
+      "pnl_cad": -0.8941
     },
     {
       "pair": "BTCUSD",
@@ -9747,8 +9808,8 @@
       "exit_id": "PAPER-00331",
       "split": true,
       "notional_usd": 20.501052,
-      "amount_cad": 28.5006,
-      "usd_cad": 1.3902,
+      "amount_cad": 28.5084,
+      "usd_cad": 1.39058,
       "fees_cad": 0.2853,
       "pnl_cad": -0.2331
     },
@@ -9770,10 +9831,10 @@
       "exit_id": "PAPER-00331",
       "split": true,
       "notional_usd": 49.503269,
-      "amount_cad": 68.8194,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.6885,
-      "pnl_cad": -0.6221
+      "amount_cad": 68.8383,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.6887,
+      "pnl_cad": -0.6223
     },
     {
       "pair": "ETHUSD",
@@ -9793,8 +9854,8 @@
       "exit_id": "PAPER-00319",
       "split": true,
       "notional_usd": 13.551887,
-      "amount_cad": 18.8398,
-      "usd_cad": 1.3902,
+      "amount_cad": 18.845,
+      "usd_cad": 1.39058,
       "fees_cad": 0.1884,
       "pnl_cad": -0.1952
     },
@@ -9816,8 +9877,8 @@
       "exit_id": "PAPER-00319",
       "split": true,
       "notional_usd": 1.458166,
-      "amount_cad": 2.0271,
-      "usd_cad": 1.3902,
+      "amount_cad": 2.0277,
+      "usd_cad": 1.39058,
       "fees_cad": 0.0203,
       "pnl_cad": -0.0238
     },
@@ -9839,10 +9900,10 @@
       "exit_id": "PAPER-00317",
       "split": true,
       "notional_usd": 69.9615,
-      "amount_cad": 97.2605,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.9726,
-      "pnl_cad": -0.9731
+      "amount_cad": 97.2871,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.9729,
+      "pnl_cad": -0.9734
     },
     {
       "pair": "ETHUSD",
@@ -9862,10 +9923,10 @@
       "exit_id": "PAPER-00314",
       "split": true,
       "notional_usd": 14.997734,
-      "amount_cad": 20.8498,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.2085,
-      "pnl_cad": -0.2051
+      "amount_cad": 20.8555,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.2086,
+      "pnl_cad": -0.2052
     },
     {
       "pair": "BTCUSD",
@@ -9885,10 +9946,10 @@
       "exit_id": "PAPER-00312",
       "split": true,
       "notional_usd": 51.1543,
-      "amount_cad": 71.1147,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.7117,
-      "pnl_cad": -0.5919
+      "amount_cad": 71.1341,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.7119,
+      "pnl_cad": -0.5921
     },
     {
       "pair": "BTCUSD",
@@ -9908,10 +9969,10 @@
       "exit_id": "PAPER-00312",
       "split": true,
       "notional_usd": 10.141949,
-      "amount_cad": 14.0993,
-      "usd_cad": 1.3902,
+      "amount_cad": 14.1032,
+      "usd_cad": 1.39058,
       "fees_cad": 0.1408,
-      "pnl_cad": -0.1867
+      "pnl_cad": -0.1868
     },
     {
       "pair": "BTCUSD",
@@ -9931,8 +9992,8 @@
       "exit_id": "PAPER-00312",
       "split": true,
       "notional_usd": 8.6418,
-      "amount_cad": 12.0138,
-      "usd_cad": 1.3902,
+      "amount_cad": 12.0171,
+      "usd_cad": 1.39058,
       "fees_cad": 0.1202,
       "pnl_cad": -0.1144
     },
@@ -9954,9 +10015,9 @@
       "exit_id": "PAPER-00306",
       "split": true,
       "notional_usd": 15.017048,
-      "amount_cad": 20.8767,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.2086,
+      "amount_cad": 20.8824,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.2087,
       "pnl_cad": -0.2366
     },
     {
@@ -9977,10 +10038,10 @@
       "exit_id": "PAPER-00303",
       "split": true,
       "notional_usd": 15.005746,
-      "amount_cad": 20.861,
-      "usd_cad": 1.3902,
+      "amount_cad": 20.8667,
+      "usd_cad": 1.39058,
       "fees_cad": 0.2086,
-      "pnl_cad": -0.2204
+      "pnl_cad": -0.2205
     },
     {
       "pair": "ETHUSD",
@@ -10000,9 +10061,9 @@
       "exit_id": "PAPER-00300",
       "split": true,
       "notional_usd": 14.999693,
-      "amount_cad": 20.8526,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.2085,
+      "amount_cad": 20.8583,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.2086,
       "pnl_cad": -0.2103
     },
     {
@@ -10023,10 +10084,10 @@
       "exit_id": "PAPER-00298",
       "split": true,
       "notional_usd": 14.994996,
-      "amount_cad": 20.846,
-      "usd_cad": 1.3902,
+      "amount_cad": 20.8517,
+      "usd_cad": 1.39058,
       "fees_cad": 0.2085,
-      "pnl_cad": -0.2081
+      "pnl_cad": -0.2082
     },
     {
       "pair": "ETHUSD",
@@ -10046,9 +10107,9 @@
       "exit_id": "PAPER-00295",
       "split": true,
       "notional_usd": 4.105627,
-      "amount_cad": 5.7076,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.057,
+      "amount_cad": 5.7092,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.0571,
       "pnl_cad": -0.063
     },
     {
@@ -10069,8 +10130,8 @@
       "exit_id": "PAPER-00295",
       "split": true,
       "notional_usd": 10.893268,
-      "amount_cad": 15.1438,
-      "usd_cad": 1.3902,
+      "amount_cad": 15.148,
+      "usd_cad": 1.39058,
       "fees_cad": 0.1515,
       "pnl_cad": -0.1464
     },
@@ -10092,9 +10153,9 @@
       "exit_id": "PAPER-00292",
       "split": true,
       "notional_usd": 15.004703,
-      "amount_cad": 20.8595,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.2085,
+      "amount_cad": 20.8652,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.2086,
       "pnl_cad": -0.2192
     },
     {
@@ -10115,8 +10176,8 @@
       "exit_id": "PAPER-00289",
       "split": true,
       "notional_usd": 15.00161,
-      "amount_cad": 20.8552,
-      "usd_cad": 1.3902,
+      "amount_cad": 20.8609,
+      "usd_cad": 1.39058,
       "fees_cad": 0.2085,
       "pnl_cad": -0.2237
     },
@@ -10138,8 +10199,8 @@
       "exit_id": "PAPER-00284",
       "split": true,
       "notional_usd": 7.110088,
-      "amount_cad": 9.8844,
-      "usd_cad": 1.3902,
+      "amount_cad": 9.8871,
+      "usd_cad": 1.39058,
       "fees_cad": 0.0989,
       "pnl_cad": -0.0887
     },
@@ -10161,10 +10222,10 @@
       "exit_id": "PAPER-00284",
       "split": true,
       "notional_usd": 55.761103,
-      "amount_cad": 77.5191,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.7753,
-      "pnl_cad": -0.7476
+      "amount_cad": 77.5403,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.7755,
+      "pnl_cad": -0.7478
     },
     {
       "pair": "ETHUSD",
@@ -10184,9 +10245,9 @@
       "exit_id": "PAPER-00276",
       "split": true,
       "notional_usd": 14.984206,
-      "amount_cad": 20.831,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.2084,
+      "amount_cad": 20.8367,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.2085,
       "pnl_cad": -0.1868
     },
     {
@@ -10207,10 +10268,10 @@
       "exit_id": "PAPER-00270",
       "split": true,
       "notional_usd": 14.989635,
-      "amount_cad": 20.8386,
-      "usd_cad": 1.3902,
+      "amount_cad": 20.8443,
+      "usd_cad": 1.39058,
       "fees_cad": 0.2085,
-      "pnl_cad": -0.1954
+      "pnl_cad": -0.1955
     },
     {
       "pair": "BTCUSD",
@@ -10230,10 +10291,10 @@
       "exit_id": "PAPER-00268",
       "split": true,
       "notional_usd": 13.295163,
-      "amount_cad": 18.4829,
-      "usd_cad": 1.3902,
+      "amount_cad": 18.488,
+      "usd_cad": 1.39058,
       "fees_cad": 0.1853,
-      "pnl_cad": -0.0979
+      "pnl_cad": -0.098
     },
     {
       "pair": "BTCUSD",
@@ -10253,9 +10314,9 @@
       "exit_id": "PAPER-00268",
       "split": true,
       "notional_usd": 10.695812,
-      "amount_cad": 14.8693,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.1487,
+      "amount_cad": 14.8734,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.1488,
       "pnl_cad": -0.1378
     },
     {
@@ -10276,10 +10337,10 @@
       "exit_id": "PAPER-00268",
       "split": true,
       "notional_usd": 45.89795,
-      "amount_cad": 63.8073,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.6392,
-      "pnl_cad": -0.421
+      "amount_cad": 63.8248,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.6393,
+      "pnl_cad": -0.4211
     },
     {
       "pair": "ETHUSD",
@@ -10299,10 +10360,10 @@
       "exit_id": "PAPER-00263",
       "split": true,
       "notional_usd": 62.8335,
-      "amount_cad": 87.3511,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.8739,
-      "pnl_cad": -0.7988
+      "amount_cad": 87.375,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.8741,
+      "pnl_cad": -0.799
     },
     {
       "pair": "BTCUSD",
@@ -10322,10 +10383,10 @@
       "exit_id": "PAPER-00261",
       "split": true,
       "notional_usd": 69.78681,
-      "amount_cad": 97.0176,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.9726,
-      "pnl_cad": -0.4883
+      "amount_cad": 97.0441,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.9729,
+      "pnl_cad": -0.4884
     },
     {
       "pair": "ZECUSD",
@@ -10345,10 +10406,10 @@
       "exit_id": "PAPER-00243",
       "split": true,
       "notional_usd": 10.996088,
-      "amount_cad": 15.2868,
-      "usd_cad": 1.3902,
+      "amount_cad": 15.2909,
+      "usd_cad": 1.39058,
       "fees_cad": 0.1544,
-      "pnl_cad": 0.1513
+      "pnl_cad": 0.1514
     },
     {
       "pair": "BTCUSD",
@@ -10368,10 +10429,10 @@
       "exit_id": "PAPER-00208",
       "split": true,
       "notional_usd": 83.078223,
-      "amount_cad": 115.4953,
-      "usd_cad": 1.3902,
-      "fees_cad": 1.1558,
-      "pnl_cad": -0.9947
+      "amount_cad": 115.5269,
+      "usd_cad": 1.39058,
+      "fees_cad": 1.1561,
+      "pnl_cad": -0.995
     },
     {
       "pair": "BTCUSD",
@@ -10391,10 +10452,10 @@
       "exit_id": "PAPER-00208",
       "split": true,
       "notional_usd": 13.844152,
-      "amount_cad": 19.2461,
-      "usd_cad": 1.3902,
+      "amount_cad": 19.2514,
+      "usd_cad": 1.39058,
       "fees_cad": 0.1926,
-      "pnl_cad": -0.1666
+      "pnl_cad": -0.1667
     },
     {
       "pair": "USELESSUSD",
@@ -10414,10 +10475,10 @@
       "exit_id": "PAPER-00157",
       "split": true,
       "notional_usd": 27.494598,
-      "amount_cad": 38.223,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.3865,
-      "pnl_cad": 0.4622
+      "amount_cad": 38.2334,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.3866,
+      "pnl_cad": 0.4623
     },
     {
       "pair": "FILUSD",
@@ -10437,10 +10498,10 @@
       "exit_id": "PAPER-00124",
       "split": true,
       "notional_usd": 22.44333,
-      "amount_cad": 31.2007,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.3153,
-      "pnl_cad": 0.3379
+      "amount_cad": 31.2092,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.3154,
+      "pnl_cad": 0.338
     },
     {
       "pair": "NEARUSD",
@@ -10460,10 +10521,10 @@
       "exit_id": "PAPER-00121",
       "split": true,
       "notional_usd": 10.995392,
-      "amount_cad": 15.2858,
-      "usd_cad": 1.3902,
+      "amount_cad": 15.29,
+      "usd_cad": 1.39058,
       "fees_cad": 0.1546,
-      "pnl_cad": 0.1881
+      "pnl_cad": 0.1882
     },
     {
       "pair": "BTCUSD",
@@ -10483,10 +10544,10 @@
       "exit_id": "PAPER-00063",
       "split": true,
       "notional_usd": 96.92175,
-      "amount_cad": 134.7406,
-      "usd_cad": 1.3902,
-      "fees_cad": 1.3474,
-      "pnl_cad": -1.3415
+      "amount_cad": 134.7774,
+      "usd_cad": 1.39058,
+      "fees_cad": 1.3478,
+      "pnl_cad": -1.3419
     },
     {
       "pair": "LAPTOPUSD",
@@ -10506,8 +10567,8 @@
       "exit_id": "PAPER-00011",
       "split": true,
       "notional_usd": 11.00481,
-      "amount_cad": 15.2989,
-      "usd_cad": 1.3902,
+      "amount_cad": 15.3031,
+      "usd_cad": 1.39058,
       "fees_cad": 0.1541,
       "pnl_cad": 0.0686
     },
@@ -10529,9 +10590,9 @@
       "exit_id": "PAPER-00063",
       "split": true,
       "notional_usd": 17.553462,
-      "amount_cad": 24.4028,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.2463,
+      "amount_cad": 24.4095,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.2464,
       "pnl_cad": 0.2145
     },
     {
@@ -10552,8 +10613,8 @@
       "exit_id": "PAPER-00052",
       "split": true,
       "notional_usd": 17.5,
-      "amount_cad": 24.3285,
-      "usd_cad": 1.3902,
+      "amount_cad": 24.3351,
+      "usd_cad": 1.39058,
       "fees_cad": 0.246,
       "pnl_cad": 0.2892
     },
@@ -10575,8 +10636,8 @@
       "exit_id": "PAPER-00070",
       "split": true,
       "notional_usd": 17.509153,
-      "amount_cad": 24.3412,
-      "usd_cad": 1.3902,
+      "amount_cad": 24.3479,
+      "usd_cad": 1.39058,
       "fees_cad": 0.2436,
       "pnl_cad": -0.21
     },
@@ -10598,10 +10659,10 @@
       "exit_id": "PAPER-00068",
       "split": true,
       "notional_usd": 17.504275,
-      "amount_cad": 24.3344,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.2437,
-      "pnl_cad": -0.1676
+      "amount_cad": 24.3411,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.2438,
+      "pnl_cad": -0.1677
     }
   ],
   "open_lots": [
@@ -10615,14 +10676,14 @@
       "entry_strategy": "relative_btc_eth",
       "entry_id": "PAPER-00680",
       "status": "open",
-      "mark": 78259.9,
-      "unrealized_pnl": -0.37681654,
-      "unrealized_pnl_pct": -0.531424,
+      "mark": 78259.6,
+      "unrealized_pnl": -0.37708826,
+      "unrealized_pnl_pct": -0.531807,
       "notional_usd": 70.906969,
-      "amount_cad": 98.5749,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.4929,
-      "unrealized_pnl_cad": -0.5239
+      "amount_cad": 98.6018,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.493,
+      "unrealized_pnl_cad": -0.5244
     },
     {
       "pair": "BTCUSD",
@@ -10634,33 +10695,33 @@
       "entry_strategy": "range_fade",
       "entry_id": "PAPER-00676",
       "status": "open",
-      "mark": 78259.9,
-      "unrealized_pnl": -0.09607005,
-      "unrealized_pnl_pct": -0.582222,
+      "mark": 78259.6,
+      "unrealized_pnl": -0.09613325,
+      "unrealized_pnl_pct": -0.582605,
       "notional_usd": 16.50058,
-      "amount_cad": 22.9391,
-      "usd_cad": 1.3902,
+      "amount_cad": 22.9454,
+      "usd_cad": 1.39058,
       "fees_cad": 0.1147,
-      "unrealized_pnl_cad": -0.1336
+      "unrealized_pnl_cad": -0.1337
     },
     {
       "pair": "BTCUSD",
-      "amount": 0.00114009,
+      "amount": 0.00024009,
       "entry": 78415.7,
       "entry_pt": "2026-09-14 4:26 PM PT",
       "entry_time": "2026-09-14T23:26:49.212146003Z",
-      "fees": 0.44700478,
+      "fees": 0.09413413,
       "entry_strategy": "mom_add",
       "entry_id": "PAPER-00670",
       "status": "open",
-      "mark": 78259.9,
-      "unrealized_pnl": -0.6246308,
-      "unrealized_pnl_pct": -0.698685,
-      "notional_usd": 89.400955,
-      "amount_cad": 124.2852,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.6214,
-      "unrealized_pnl_cad": -0.8684
+      "mark": 78259.6,
+      "unrealized_pnl": -0.13161218,
+      "unrealized_pnl_pct": -0.699067,
+      "notional_usd": 18.826825,
+      "amount_cad": 26.1802,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.1309,
+      "unrealized_pnl_cad": -0.183
     },
     {
       "pair": "ETHUSD",
@@ -10672,14 +10733,14 @@
       "entry_strategy": "relative_btc_eth",
       "entry_id": "PAPER-00650",
       "status": "open",
-      "mark": 2515.59,
-      "unrealized_pnl": -0.17037574,
-      "unrealized_pnl_pct": -0.936552,
+      "mark": 2516.26,
+      "unrealized_pnl": -0.1655517,
+      "unrealized_pnl_pct": -0.910034,
       "notional_usd": 18.191816,
-      "amount_cad": 25.2903,
-      "usd_cad": 1.3902,
+      "amount_cad": 25.2972,
+      "usd_cad": 1.39058,
       "fees_cad": 0.1265,
-      "unrealized_pnl_cad": -0.2369
+      "unrealized_pnl_cad": -0.2302
     },
     {
       "pair": "PUMPUSD",
@@ -10691,14 +10752,14 @@
       "entry_strategy": "pair_scan_alt",
       "entry_id": "PAPER-00557",
       "status": "open",
-      "mark": 0.003689,
-      "unrealized_pnl": -0.07162196,
-      "unrealized_pnl_pct": -0.364278,
+      "mark": 0.003691,
+      "unrealized_pnl": -0.06094804,
+      "unrealized_pnl_pct": -0.309989,
       "notional_usd": 19.661348,
-      "amount_cad": 27.3332,
-      "usd_cad": 1.3902,
+      "amount_cad": 27.3407,
+      "usd_cad": 1.39058,
       "fees_cad": 0.1367,
-      "unrealized_pnl_cad": -0.0996
+      "unrealized_pnl_cad": -0.0848
     },
     {
       "pair": "ARBUSD",
@@ -10710,14 +10771,14 @@
       "entry_strategy": "pair_scan_alt",
       "entry_id": "PAPER-00527",
       "status": "open",
-      "mark": 0.1331,
-      "unrealized_pnl": -1.3354798,
-      "unrealized_pnl_pct": -3.840596,
+      "mark": 0.1335,
+      "unrealized_pnl": -1.2344697,
+      "unrealized_pnl_pct": -3.550109,
       "notional_usd": 34.772727,
-      "amount_cad": 48.341,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.2417,
-      "unrealized_pnl_cad": -1.8566
+      "amount_cad": 48.3543,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.2418,
+      "unrealized_pnl_cad": -1.7166
     },
     {
       "pair": "AAVEUSD",
@@ -10729,14 +10790,14 @@
       "entry_strategy": "pair_scan_alt",
       "entry_id": "PAPER-00515",
       "status": "open",
-      "mark": 128.32,
-      "unrealized_pnl": -1.22801824,
-      "unrealized_pnl_pct": -2.739829,
+      "mark": 128.25,
+      "unrealized_pnl": -1.25192094,
+      "unrealized_pnl_pct": -2.793159,
       "notional_usd": 44.820975,
-      "amount_cad": 62.3101,
-      "usd_cad": 1.3902,
+      "amount_cad": 62.3272,
+      "usd_cad": 1.39058,
       "fees_cad": 0.3116,
-      "unrealized_pnl_cad": -1.7072
+      "unrealized_pnl_cad": -1.7409
     },
     {
       "pair": "PAXGUSD",
@@ -10748,14 +10809,14 @@
       "entry_strategy": "pair_scan_alt",
       "entry_id": "PAPER-00512",
       "status": "open",
-      "mark": 4294.64,
-      "unrealized_pnl": -0.26349615,
-      "unrealized_pnl_pct": -0.752699,
+      "mark": 4293.85,
+      "unrealized_pnl": -0.26991939,
+      "unrealized_pnl_pct": -0.771047,
       "notional_usd": 35.006848,
-      "amount_cad": 48.6665,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.2433,
-      "unrealized_pnl_cad": -0.3663
+      "amount_cad": 48.6798,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.2434,
+      "unrealized_pnl_cad": -0.3753
     },
     {
       "pair": "ENAUSD",
@@ -10767,14 +10828,14 @@
       "entry_strategy": "pair_scan_alt",
       "entry_id": "PAPER-00478",
       "status": "open",
-      "mark": 0.1428,
-      "unrealized_pnl": -0.60550274,
-      "unrealized_pnl_pct": -2.825581,
+      "mark": 0.1432,
+      "unrealized_pnl": -0.54687261,
+      "unrealized_pnl_pct": -2.551984,
       "notional_usd": 21.429315,
-      "amount_cad": 29.791,
-      "usd_cad": 1.3902,
+      "amount_cad": 29.7992,
+      "usd_cad": 1.39058,
       "fees_cad": 0.149,
-      "unrealized_pnl_cad": -0.8418
+      "unrealized_pnl_cad": -0.7605
     },
     {
       "pair": "CAPUSD",
@@ -10786,14 +10847,14 @@
       "entry_strategy": "pair_scan_alt",
       "entry_id": "PAPER-00468",
       "status": "open",
-      "mark": 0.063548,
-      "unrealized_pnl": 1.02224928,
-      "unrealized_pnl_pct": 9.889633,
+      "mark": 0.063413,
+      "unrealized_pnl": 0.99800904,
+      "unrealized_pnl_pct": 9.655124,
       "notional_usd": 10.336574,
-      "amount_cad": 14.3699,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.0718,
-      "unrealized_pnl_cad": 1.4211
+      "amount_cad": 14.3738,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.0719,
+      "unrealized_pnl_cad": 1.3878
     },
     {
       "pair": "EURCUSD",
@@ -10809,10 +10870,10 @@
       "unrealized_pnl": -0.19744111,
       "unrealized_pnl_pct": -0.336205,
       "notional_usd": 58.726437,
-      "amount_cad": 81.6415,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.4082,
-      "unrealized_pnl_cad": -0.2745
+      "amount_cad": 81.6638,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.4083,
+      "unrealized_pnl_cad": -0.2746
     },
     {
       "pair": "XDGUSD",
@@ -10824,14 +10885,14 @@
       "entry_strategy": "pair_scan_alt",
       "entry_id": "PAPER-00347",
       "status": "open",
-      "mark": 0.0836747,
-      "unrealized_pnl": -0.49320881,
-      "unrealized_pnl_pct": -1.038231,
+      "mark": 0.0836494,
+      "unrealized_pnl": -0.50749511,
+      "unrealized_pnl_pct": -1.068304,
       "notional_usd": 47.504743,
-      "amount_cad": 66.0411,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.3302,
-      "unrealized_pnl_cad": -0.6857
+      "amount_cad": 66.0591,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.3303,
+      "unrealized_pnl_cad": -0.7057
     },
     {
       "pair": "SOLUSD",
@@ -10843,14 +10904,14 @@
       "entry_strategy": "pair_rotate_sol",
       "entry_id": "PAPER-00287",
       "status": "open",
-      "mark": 102.63,
-      "unrealized_pnl": 0.1266528,
-      "unrealized_pnl_pct": 0.196625,
+      "mark": 102.51,
+      "unrealized_pnl": 0.0508128,
+      "unrealized_pnl_pct": 0.078885,
       "notional_usd": 64.41344,
-      "amount_cad": 89.5476,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.4477,
-      "unrealized_pnl_cad": 0.1761
+      "amount_cad": 89.572,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.4479,
+      "unrealized_pnl_cad": 0.0707
     },
     {
       "pair": "ADAUSD",
@@ -10862,14 +10923,14 @@
       "entry_strategy": "pair_scan_alt",
       "entry_id": "PAPER-00265",
       "status": "open",
-      "mark": 0.208714,
-      "unrealized_pnl": -1.63025935,
-      "unrealized_pnl_pct": -1.260767,
+      "mark": 0.208753,
+      "unrealized_pnl": -1.60628106,
+      "unrealized_pnl_pct": -1.242224,
       "notional_usd": 129.306926,
-      "amount_cad": 179.7625,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.8988,
-      "unrealized_pnl_cad": -2.2664
+      "amount_cad": 179.8116,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.8991,
+      "unrealized_pnl_cad": -2.2337
     },
     {
       "pair": "VVVUSD",
@@ -10881,14 +10942,14 @@
       "entry_strategy": "pair_scan_alt",
       "entry_id": "PAPER-00162",
       "status": "open",
-      "mark": 22.59,
-      "unrealized_pnl": -0.31058177,
-      "unrealized_pnl_pct": -1.555582,
+      "mark": 22.717,
+      "unrealized_pnl": -0.19952073,
+      "unrealized_pnl_pct": -0.999321,
       "notional_usd": 19.965628,
-      "amount_cad": 27.7562,
-      "usd_cad": 1.3902,
+      "amount_cad": 27.7638,
+      "usd_cad": 1.39058,
       "fees_cad": 0.1388,
-      "unrealized_pnl_cad": -0.4318
+      "unrealized_pnl_cad": -0.2774
     },
     {
       "pair": "XRPUSD",
@@ -10904,8 +10965,8 @@
       "unrealized_pnl": null,
       "unrealized_pnl_pct": null,
       "notional_usd": 16.927327,
-      "amount_cad": 23.5324,
-      "usd_cad": 1.3902,
+      "amount_cad": 23.5388,
+      "usd_cad": 1.39058,
       "fees_cad": 0.1177
     },
     {
@@ -10918,14 +10979,14 @@
       "entry_strategy": "pair_scan_alt",
       "entry_id": "PAPER-00119",
       "status": "open",
-      "mark": 11.51767,
-      "unrealized_pnl": 0.01810634,
-      "unrealized_pnl_pct": 0.164327,
+      "mark": 11.51637,
+      "unrealized_pnl": 0.01685442,
+      "unrealized_pnl_pct": 0.152965,
       "notional_usd": 11.018505,
-      "amount_cad": 15.3179,
-      "usd_cad": 1.3902,
+      "amount_cad": 15.3221,
+      "usd_cad": 1.39058,
       "fees_cad": 0.0766,
-      "unrealized_pnl_cad": 0.0252
+      "unrealized_pnl_cad": 0.0234
     },
     {
       "pair": "SOLUSD",
@@ -10937,14 +10998,14 @@
       "entry_strategy": "pair_rotate_sol",
       "entry_id": "PAPER-00104",
       "status": "open",
-      "mark": 102.63,
-      "unrealized_pnl": 0.06474714,
-      "unrealized_pnl_pct": 1.093744,
+      "mark": 102.51,
+      "unrealized_pnl": 0.05771514,
+      "unrealized_pnl_pct": 0.974955,
       "notional_usd": 5.919772,
-      "amount_cad": 8.2297,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.0411,
-      "unrealized_pnl_cad": 0.09
+      "amount_cad": 8.2319,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.0412,
+      "unrealized_pnl_cad": 0.0803
     },
     {
       "pair": "USELESSUSD",
@@ -10956,14 +11017,14 @@
       "entry_strategy": "pair_scan_alt",
       "entry_id": "PAPER-00094",
       "status": "open",
-      "mark": 0.19513,
-      "unrealized_pnl": -1.27739736,
-      "unrealized_pnl_pct": -4.645994,
+      "mark": 0.19695,
+      "unrealized_pnl": -1.03158428,
+      "unrealized_pnl_pct": -3.751953,
       "notional_usd": 27.494598,
-      "amount_cad": 38.223,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.1911,
-      "unrealized_pnl_cad": -1.7758
+      "amount_cad": 38.2334,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.1912,
+      "unrealized_pnl_cad": -1.4345
     },
     {
       "pair": "UNIUSD",
@@ -10975,14 +11036,14 @@
       "entry_strategy": "pair_scan_alt",
       "entry_id": "PAPER-00091",
       "status": "open",
-      "mark": 6.5588,
-      "unrealized_pnl": 0.75318485,
-      "unrealized_pnl_pct": 2.739414,
+      "mark": 6.5508,
+      "unrealized_pnl": 0.71856263,
+      "unrealized_pnl_pct": 2.61349,
       "notional_usd": 27.494374,
-      "amount_cad": 38.2227,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.1911,
-      "unrealized_pnl_cad": 1.0471
+      "amount_cad": 38.2331,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.1912,
+      "unrealized_pnl_cad": 0.9992
     },
     {
       "pair": "NEARUSD",
@@ -10994,14 +11055,14 @@
       "entry_strategy": "pair_scan_alt",
       "entry_id": "PAPER-00088",
       "status": "open",
-      "mark": 2.4704,
-      "unrealized_pnl": 0.33253194,
-      "unrealized_pnl_pct": 3.024284,
+      "mark": 2.4637,
+      "unrealized_pnl": 0.30166025,
+      "unrealized_pnl_pct": 2.743515,
       "notional_usd": 10.995392,
-      "amount_cad": 15.2858,
-      "usd_cad": 1.3902,
+      "amount_cad": 15.29,
+      "usd_cad": 1.39058,
       "fees_cad": 0.0764,
-      "unrealized_pnl_cad": 0.4623
+      "unrealized_pnl_cad": 0.4195
     },
     {
       "pair": "TAOUSD",
@@ -11013,14 +11074,14 @@
       "entry_strategy": "pair_scan_alt",
       "entry_id": "PAPER-00085",
       "status": "open",
-      "mark": 232.8614,
-      "unrealized_pnl": -0.51634519,
-      "unrealized_pnl_pct": -1.087566,
+      "mark": 232.6922,
+      "unrealized_pnl": -0.55063999,
+      "unrealized_pnl_pct": -1.1598,
       "notional_usd": 47.477157,
-      "amount_cad": 66.0027,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.33,
-      "unrealized_pnl_cad": -0.7178
+      "amount_cad": 66.0208,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.3301,
+      "unrealized_pnl_cad": -0.7657
     },
     {
       "pair": "FILUSD",
@@ -11036,10 +11097,10 @@
       "unrealized_pnl": -0.64880354,
       "unrealized_pnl_pct": -2.890852,
       "notional_usd": 22.44333,
-      "amount_cad": 31.2007,
-      "usd_cad": 1.3902,
+      "amount_cad": 31.2092,
+      "usd_cad": 1.39058,
       "fees_cad": 0.156,
-      "unrealized_pnl_cad": -0.902
+      "unrealized_pnl_cad": -0.9022
     },
     {
       "pair": "HYPEUSD",
@@ -11051,14 +11112,14 @@
       "entry_strategy": "pair_scan_alt",
       "entry_id": "PAPER-00079",
       "status": "open",
-      "mark": 80.1,
-      "unrealized_pnl": 0.03985925,
-      "unrealized_pnl_pct": 0.16608,
+      "mark": 80.27,
+      "unrealized_pnl": 0.09113485,
+      "unrealized_pnl_pct": 0.379729,
       "notional_usd": 24.0,
-      "amount_cad": 33.3648,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.1668,
-      "unrealized_pnl_cad": 0.0554
+      "amount_cad": 33.3739,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.1669,
+      "unrealized_pnl_cad": 0.1267
     },
     {
       "pair": "SUIUSD",
@@ -11070,14 +11131,14 @@
       "entry_strategy": "pair_scan_alt",
       "entry_id": "PAPER-00076",
       "status": "open",
-      "mark": 0.7216,
-      "unrealized_pnl": 0.07172014,
-      "unrealized_pnl_pct": 0.239913,
+      "mark": 0.7223,
+      "unrealized_pnl": 0.10093404,
+      "unrealized_pnl_pct": 0.337638,
       "notional_usd": 29.894173,
-      "amount_cad": 41.5589,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.2078,
-      "unrealized_pnl_cad": 0.0997
+      "amount_cad": 41.5702,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.2079,
+      "unrealized_pnl_cad": 0.1404
     },
     {
       "pair": "LTCUSD",
@@ -11093,9 +11154,9 @@
       "unrealized_pnl": null,
       "unrealized_pnl_pct": null,
       "notional_usd": 30.0,
-      "amount_cad": 41.706,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.2085
+      "amount_cad": 41.7174,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.2086
     },
     {
       "pair": "LAPTOPUSD",
@@ -11107,14 +11168,14 @@
       "entry_strategy": "pair_scan_alt",
       "entry_id": "PAPER-00006",
       "status": "open",
-      "mark": 0.2107,
-      "unrealized_pnl": -0.92559685,
-      "unrealized_pnl_pct": -8.410839,
+      "mark": 0.2077,
+      "unrealized_pnl": -1.06989069,
+      "unrealized_pnl_pct": -9.722028,
       "notional_usd": 11.00481,
-      "amount_cad": 15.2989,
-      "usd_cad": 1.3902,
+      "amount_cad": 15.3031,
+      "usd_cad": 1.39058,
       "fees_cad": 0.0765,
-      "unrealized_pnl_cad": -1.2868
+      "unrealized_pnl_cad": -1.4878
     },
     {
       "pair": "ZECUSD",
@@ -11130,14 +11191,14 @@
       "unrealized_pnl": null,
       "unrealized_pnl_pct": null,
       "notional_usd": 10.996088,
-      "amount_cad": 15.2868,
-      "usd_cad": 1.3902,
-      "fees_cad": 0.0764
+      "amount_cad": 15.2909,
+      "usd_cad": 1.39058,
+      "fees_cad": 0.0765
     }
   ],
   "fifo_dirty_skips": 0,
   "attribution": {
-    "log": 168,
+    "log": 169,
     "journal": 0,
     "tape": 0,
     "unattributed": 5
@@ -11219,6 +11280,17 @@
       "side": "sell",
       "type": "limit",
       "volume": 2668.47826087
+    },
+    {
+      "created_at": "2026-09-14T23:45:35.950361525Z",
+      "id": "PAPER-00684",
+      "pair": "BTCUSD",
+      "price": 78728.1,
+      "reserved_amount": 0.00101543,
+      "reserved_asset": "BTC",
+      "side": "sell",
+      "type": "limit",
+      "volume": 0.00101543
     }
   ],
   "equity_series": [
@@ -13761,21 +13833,32 @@
       "equity": 957.353413,
       "pnl": -42.646587,
       "label": "mark"
+    },
+    {
+      "t": "2026-09-14T23:48:34.696056094Z",
+      "equity": 963.24904,
+      "pnl": -36.75096
+    },
+    {
+      "t": "2026-09-14T23:49:01.883Z",
+      "equity": 957.261844,
+      "pnl": -42.738156,
+      "label": "mark"
     }
   ],
   "fee_stress": null,
   "raw": {
     "status": {
-      "current_value": 957.3534129367774,
+      "current_value": 957.2618438113993,
       "fee_rate": 0.005,
       "mode": "paper",
-      "open_orders": 7,
+      "open_orders": 8,
       "slippage_rate": 0.0,
       "starting_balance": 1000.0,
       "starting_currency": "USD",
-      "total_trades": 173,
-      "unrealized_pnl": -42.64658706322254,
-      "unrealized_pnl_pct": -4.264658706322255,
+      "total_trades": 174,
+      "unrealized_pnl": -42.738156188600705,
+      "unrealized_pnl_pct": -4.273815618860071,
       "valuation_complete": true,
       "workspace": "desk-explore-f01"
     },
@@ -13797,9 +13880,9 @@
           "total": "252.52525253"
         },
         "BTC": {
-          "available": "0.00225652",
-          "reserved": "0.00000000",
-          "total": "0.00225652"
+          "available": "0.00034109",
+          "reserved": "0.00101543",
+          "total": "0.00135652"
         },
         "CAP": {
           "available": "179.5572894",
@@ -13882,9 +13965,9 @@
           "total": "4.32777804"
         },
         "USD": {
-          "available": "4.645348134079813100000",
+          "available": "74.730222834079813100000",
           "reserved": "0.000000000000",
-          "total": "4.645348134079813100000"
+          "total": "74.730222834079813100000"
         },
         "USELESS": {
           "available": "135.06212858",
@@ -13916,9 +13999,9 @@
       "workspace": "desk-explore-f01"
     },
     "history_meta": {
-      "filled_count": 173,
-      "cancelled_count": 327,
-      "equity_history_points": 304
+      "filled_count": 174,
+      "cancelled_count": 330,
+      "equity_history_points": 305
     }
   },
   "learnings": [
@@ -13926,7 +14009,7 @@
     "Workspace fee 50 bps RT equiv rate field=0.005. No live keys.",
     "Frozen v3 sealed; this lane uses explore strategy_ids.",
     "Historical F01–F07 remain separate probes — do not declare edge from CLI smoke fills.",
-    "Attributed fills: log=168 journal=0 tape=0 unattributed=5 of 173. FIFO completed=148 open=28 dirty_skips=0 (shared-book closed lots persist across resets; open = current book MTM). Completed rows = sell vs oldest buy; attributed to exit strategy."
+    "Attributed fills: log=169 journal=0 tape=0 unattributed=5 of 174. FIFO completed=149 open=28 dirty_skips=0 (shared-book closed lots persist across resets; open = current book MTM). Completed rows = sell vs oldest buy; attributed to exit strategy."
   ],
   "scoreboard_headline": "Active Kraken CLI paper workspace desk-explore-f01",
   "artifacts": [],
