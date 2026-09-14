@@ -6,14 +6,14 @@
   "mode": "paper",
   "live": true,
   "workspace": "desk-explore-f01",
-  "updated_at": "2026-09-14T02:40:22.132Z",
-  "updated_at_pt": "2026-09-13 7:40 PM PT",
+  "updated_at": "2026-09-14T02:41:53.266Z",
+  "updated_at_pt": "2026-09-13 7:41 PM PT",
   "metrics": {
-    "equity": 998.709465031775,
+    "equity": 998.674518673775,
     "starting_balance": 1000.0,
     "currency": "USD",
-    "unrealized_pnl": -1.290534968225,
-    "unrealized_pnl_pct": -0.1290534968225,
+    "unrealized_pnl": -1.325481326225,
+    "unrealized_pnl_pct": -0.1325481326225,
     "total_trades": 3,
     "open_orders": 3,
     "fee_rate": 0.005,
@@ -25,8 +25,8 @@
     "USD": 788.950317333775
   },
   "marks": {
-    "BTCUSD": 77437.3,
-    "ETHUSD": 2500.78
+    "BTCUSD": 77417.1,
+    "ETHUSD": 2500.52
   },
   "trades": [
     {
@@ -127,17 +127,6 @@
       "volume": 0.00045158
     },
     {
-      "created_at": "2026-09-14T02:37:36.856285597Z",
-      "id": "PAPER-00008",
-      "pair": "BTCUSD",
-      "price": 77089.1,
-      "reserved_amount": 110.45545951935,
-      "reserved_asset": "USD",
-      "side": "buy",
-      "type": "limit",
-      "volume": 0.0014257
-    },
-    {
       "created_at": "2026-09-14T02:39:27.131236530Z",
       "id": "PAPER-00011",
       "pair": "BTCUSD",
@@ -147,6 +136,17 @@
       "side": "sell",
       "type": "limit",
       "volume": 0.000452
+    },
+    {
+      "created_at": "2026-09-14T02:41:36.909342362Z",
+      "id": "PAPER-00012",
+      "pair": "BTCUSD",
+      "price": 77015.3,
+      "reserved_amount": 110.39925301701,
+      "reserved_asset": "USD",
+      "side": "buy",
+      "type": "limit",
+      "volume": 0.00142634
     }
   ],
   "equity_series": [
@@ -872,12 +872,18 @@
       "equity": 998.709465,
       "pnl": -1.290535,
       "label": "mark"
+    },
+    {
+      "t": "2026-09-14T02:41:53.266Z",
+      "equity": 998.674519,
+      "pnl": -1.325481,
+      "label": "mark"
     }
   ],
   "fee_stress": null,
   "raw": {
     "status": {
-      "current_value": 998.709465031775,
+      "current_value": 998.674518673775,
       "fee_rate": 0.005,
       "mode": "paper",
       "open_orders": 3,
@@ -885,8 +891,8 @@
       "starting_balance": 1000.0,
       "starting_currency": "USD",
       "total_trades": 3,
-      "unrealized_pnl": -1.290534968225,
-      "unrealized_pnl_pct": -0.1290534968225,
+      "unrealized_pnl": -1.325481326225,
+      "unrealized_pnl_pct": -0.1325481326225,
       "valuation_complete": true,
       "workspace": "desk-explore-f01"
     },
@@ -898,8 +904,8 @@
           "total": "0.00270902"
         },
         "USD": {
-          "available": "678.4948578144250000",
-          "reserved": "110.45545951935",
+          "available": "678.5510643167650000",
+          "reserved": "110.399253017010",
           "total": "788.9503173337750000"
         }
       },
@@ -908,8 +914,8 @@
     },
     "history_meta": {
       "filled_count": 3,
-      "cancelled_count": 2,
-      "equity_history_points": 117
+      "cancelled_count": 3,
+      "equity_history_points": 118
     }
   },
   "learnings": [
