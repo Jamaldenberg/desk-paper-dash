@@ -1,29 +1,59 @@
 {
-  "updated_at": "2026-09-14T02:02:29.437Z",
-  "updated_at_pt": "2026-09-13 7:02 PM PT",
+  "updated_at": "2026-09-14T02:10:13.246Z",
+  "updated_at_pt": "2026-09-13 7:10 PM PT",
   "mode": "paper",
   "workspace": "desk-explore-f01",
   "strategy_note": "cli-paper-see-what-happens-v0 · Meik: trade/learn/improve/journal",
-  "equity": 998.4347005594665,
+  "equity": 999.5149718859165,
   "starting_balance": 1000.0,
   "currency": "USD",
-  "unrealized_pnl": -1.5652994405335,
-  "unrealized_pnl_pct": -0.15652994405335,
-  "total_trades": 10,
+  "unrealized_pnl": -0.4850281140835,
+  "unrealized_pnl_pct": -0.04850281140835,
+  "total_trades": 12,
   "open_orders": 6,
   "fee_rate": 0.005,
   "balances": {
-    "BTC": 0.00637622,
+    "BTC": 0.00819233,
     "FIL": 35.64154786,
     "HYPE": 0.45126354,
     "LTC": 0.6498329,
-    "USD": 401.9368647374065
+    "USD": 261.2337835179565
   },
   "marks": {
-    "BTCUSD": 77017.1,
-    "ETHUSD": 2490.54
+    "BTCUSD": 77202.6,
+    "ETHUSD": 2498.45
   },
   "trades": [
+    {
+      "cost": 70.00336224,
+      "fee": 0.3500168112,
+      "id": "PAPER-00050",
+      "order_id": "PAPER-00049",
+      "pair": "BTCUSD",
+      "price": 77164.2,
+      "side": "buy",
+      "status": "filled",
+      "time": "2026-09-14T02:08:50.958240388Z",
+      "volume": 0.0009072,
+      "strategy": "mom_add",
+      "strategy_id": "cli-paper-mom-add-v3",
+      "time_pt": "2026-09-13 7:08 PM PT"
+    },
+    {
+      "cost": 69.99970365,
+      "fee": 0.34999851825,
+      "id": "PAPER-00045",
+      "order_id": "PAPER-00044",
+      "pair": "BTCUSD",
+      "price": 77015.0,
+      "side": "buy",
+      "status": "filled",
+      "time": "2026-09-14T02:04:21.913944573Z",
+      "volume": 0.00090891,
+      "strategy": "mom_add",
+      "strategy_id": "cli-paper-mom-add-v3",
+      "time_pt": "2026-09-13 7:04 PM PT"
+    },
     {
       "cost": 70.000498288,
       "fee": 0.35000249144,
@@ -187,19 +217,19 @@
         "scratches": 0,
         "sum_pnl": 0,
         "fees": 0,
-        "fills_fees": 1.75,
-        "fills": 5,
-        "buys": 5,
+        "fills_fees": 2.450015,
+        "fills": 7,
+        "buys": 7,
         "sells": 0,
-        "notional": 349.999919,
+        "notional": 490.002985,
         "pairs": [
           "BTCUSD"
         ],
         "first_pt": "2026-09-13 6:36 PM PT",
-        "last_pt": "2026-09-13 7:00 PM PT",
+        "last_pt": "2026-09-13 7:08 PM PT",
         "open_lots_remaining": {
-          "count": 5,
-          "vol": 0.00455379
+          "count": 7,
+          "vol": 0.0063699
         },
         "fifo_note": "FIFO vs shared book. A completed row is a closed lot (sell vs oldest buy). Not an isolated strategy account."
       },
@@ -298,7 +328,7 @@
   "completed_trades": [],
   "fifo_dirty_skips": 0,
   "attribution": {
-    "log": 10,
+    "log": 12,
     "journal": 0,
     "tape": 0,
     "unattributed": 0
@@ -341,37 +371,37 @@
         "volume": 0.22563177
       },
       {
-        "created_at": "2026-09-14T02:00:35.429040008Z",
-        "id": "PAPER-00038",
+        "created_at": "2026-09-14T02:06:21.580500256Z",
+        "id": "PAPER-00047",
         "pair": "BTCUSD",
-        "price": 78760.6,
-        "reserved_amount": 0.00246056,
-        "reserved_asset": "BTC",
-        "side": "sell",
-        "type": "limit",
-        "volume": 0.00246056
-      },
-      {
-        "created_at": "2026-09-14T02:00:36.044964118Z",
-        "id": "PAPER-00041",
-        "pair": "BTCUSD",
-        "price": 78760.6,
-        "reserved_amount": 0.00045416,
-        "reserved_asset": "BTC",
-        "side": "sell",
-        "type": "limit",
-        "volume": 0.00045416
-      },
-      {
-        "created_at": "2026-09-14T02:02:12.377752282Z",
-        "id": "PAPER-00042",
-        "pair": "BTCUSD",
-        "price": 76662.1,
-        "reserved_amount": 110.39682779724,
+        "price": 76636.8,
+        "reserved_amount": 110.37502847088,
         "reserved_asset": "USD",
         "side": "buy",
         "type": "limit",
-        "volume": 0.00143288
+        "volume": 0.00143307
+      },
+      {
+        "created_at": "2026-09-14T02:08:50.457267321Z",
+        "id": "PAPER-00048",
+        "pair": "BTCUSD",
+        "price": 78857.6,
+        "reserved_amount": 0.00327831,
+        "reserved_asset": "BTC",
+        "side": "sell",
+        "type": "limit",
+        "volume": 0.00327831
+      },
+      {
+        "created_at": "2026-09-14T02:08:51.175715014Z",
+        "id": "PAPER-00051",
+        "pair": "BTCUSD",
+        "price": 78857.6,
+        "reserved_amount": 0.0004536,
+        "reserved_asset": "BTC",
+        "side": "sell",
+        "type": "limit",
+        "volume": 0.0004536
       }
     ]
   },
@@ -1088,6 +1118,22 @@
       "equity": 998.434701,
       "pnl": -1.565299,
       "label": "mark"
+    },
+    {
+      "t": "2026-09-14T02:04:21.913944573Z",
+      "equity": 998.261777,
+      "pnl": -1.738223
+    },
+    {
+      "t": "2026-09-14T02:08:50.958240388Z",
+      "equity": 998.998701,
+      "pnl": -1.001299
+    },
+    {
+      "t": "2026-09-14T02:10:13.246Z",
+      "equity": 999.514972,
+      "pnl": -0.485028,
+      "label": "mark"
     }
   ],
   "learnings": [
@@ -1095,7 +1141,7 @@
     "Workspace fee 50 bps RT equiv rate field=0.005. No live keys.",
     "Frozen v3 sealed; this lane uses explore strategy_ids.",
     "Historical F01–F07 remain separate probes — do not declare edge from CLI smoke fills.",
-    "Attributed fills: log=10 journal=0 tape=0 unattributed=0 of 10. FIFO completed=0 dirty_skips=0 (shared-book closed lots; no invented entries). Completed rows = sell vs oldest buy; attributed to exit strategy."
+    "Attributed fills: log=12 journal=0 tape=0 unattributed=0 of 12. FIFO completed=0 dirty_skips=0 (shared-book closed lots; no invented entries). Completed rows = sell vs oldest buy; attributed to exit strategy."
   ],
   "disclaimer": "PAPER ONLY — simulated fills vs live Kraken prices / historical probes. Not real money. Not financial advice. Do not declare edge from first-run tables."
 }
