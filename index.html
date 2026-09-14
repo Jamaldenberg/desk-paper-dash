@@ -281,6 +281,7 @@
       font-size: .72rem;
       margin: .35rem 0 .15rem;
     }
+    .strat-sub { font-size: .82rem; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); margin: 1rem 0 .4rem; }
     .topnav {
       display: flex; flex-wrap: wrap; gap: .45rem;
       margin-top: .75rem;
@@ -836,7 +837,11 @@
     tape_trim_ladder: "Rests a BTC sell about 1.2% above spot. Early tape probe.",
     scaleout: "Rests a take-profit a bit above the last buy (overlap scale-out).",
     scaleout_ab: "Lab knob: tries a wider vs tighter take-profit distance. Not a standalone edge.",
-    random_ab_knob: "Lab knob: randomly tweaks one setting (like pullback depth) to compare variants."
+    random_ab_knob: "Lab knob: randomly tweaks one setting (like pullback depth) to compare variants.",
+    pair_scan_alt: "Scans liquid Kraken USD alts and buys a small clip when a setup prints. Liquidity gate still applies.",
+    defensive_ll: "Buys a small clip after a lower-low flush, as a defensive add rather than a chase.",
+    mom_5m: "Momentum add on a 5-minute higher high — faster cousin of mom_add.",
+    alt_dust: "Tiny leftover alt clips from the liquid-universe scan. Not a standalone edge."
   };
 
   function strategyDef(st) {
@@ -849,27 +854,34 @@
   function strategyTablesHtml(tables) {
     if (!tables || !tables.length) return '';
     let html = '<div class="detail-section strat-section"><h3>Strategies</h3>';
-    html += '<p class="strat-note">FIFO vs shared book. A completed row is a closed lot (sell vs oldest buy), attributed to the exit strategy. Not an isolated strategy account. No fabricated win% from open inventory.</p>';
+    html += '<p class="strat-note">FIFO vs shared book. Completed = closed lot (sell vs oldest buy), attributed to the exit strategy. Open = leftover lots on the current book with mark-to-market. MTM is not closed P&amp;L. No fabricated win%.</p>';
     for (const st of tables) {
       const m = st.metrics || {};
       const nDone = m.completed || 0;
+      const nOpen = m.open || ((st.open || []).length) || 0;
       const sumPnl = m.sum_pnl;
       const sumPnlTxt = sumPnl == null ? '—' :
         ((sumPnl >= 0 ? '+' : '') + fmtNum(sumPnl, 2));
+      const openMtm = m.open_unrealized_pnl;
+      const openMtmTxt = openMtm == null ? '—' :
+        ((openMtm >= 0 ? '+' : '') + fmtNum(openMtm, 2));
       const wl = (m.wins != null || m.losses != null)
         ? ('<span class="pill">' + esc(fmtNum(m.wins, 0)) + 'W / ' + esc(fmtNum(m.losses, 0)) + 'L</span>')
         : '';
       const def = strategyDef(st);
-      html += '<details class="strat-block">' +
+      const hasRows = nDone > 0 || nOpen > 0;
+      html += '<details class="strat-block"' + (hasRows ? ' open' : '') + '>' +
         '<summary>' +
           '<div class="strat-head">' +
             '<h4>' + esc(st.strategy || 'unattributed') + '</h4>' +
             (def ? '<p class="strat-def">' + esc(def) + '</p>' : '') +
           '</div>' +
           '<div class="strat-pills">' +
+            '<span class="pill">' + esc(fmtNum(nOpen, 0)) + ' open</span>' +
             '<span class="pill">' + esc(fmtNum(nDone, 0)) + ' completed</span>' +
             wl +
-            '<span class="pill ' + pnlClass(sumPnl) + '">P&amp;L ' + esc(sumPnlTxt) + '</span>' +
+            '<span class="pill ' + pnlClass(openMtm) + '">open MTM ' + esc(openMtmTxt) + '</span>' +
+            '<span class="pill ' + pnlClass(sumPnl) + '">closed P&amp;L ' + esc(sumPnlTxt) + '</span>' +
           '</div>' +
         '</summary>' +
         '<div class="strat-body">' +
@@ -879,39 +891,69 @@
           '<span class="pill">' + esc(fmtNum(m.fills, 0)) + ' fills</span>' +
           '<span class="pill">' + esc(fmtNum(m.buys, 0)) + ' buy / ' + esc(fmtNum(m.sells, 0)) + ' sell</span>' +
         '</div>';
+
+      const openRows = st.open || [];
+      if (openRows.length) {
+        html += '<h5 class="strat-sub">Open lots (current book)</h5>';
+        html += '<div class="scroll-x"><table><thead><tr>' +
+          '<th>Opened (PT)</th><th>Pair</th><th>Amount</th><th>Entry</th><th>Mark</th><th>MTM</th><th>MTM %</th><th>Fees</th>' +
+          '</tr></thead><tbody>';
+        for (const t of openRows) {
+          const openLabel = t.entry_pt || fmtTimePT(t.entry_time) || '';
+          const mtm = t.unrealized_pnl;
+          const mtmTxt = mtm == null ? '—' : ((mtm >= 0 ? '+' : '') + fmtNum(mtm, 2));
+          const pctTxt = t.unrealized_pnl_pct == null ? '—' : ((t.unrealized_pnl_pct >= 0 ? '+' : '') + fmtNum(t.unrealized_pnl_pct, 2) + '%');
+          html += '<tr>' +
+            '<td class="mono">' + esc(openLabel) + '</td>' +
+            '<td>' + esc(t.pair || '') + '</td>' +
+            '<td>' + esc(fmtNum(t.amount, 6)) + '</td>' +
+            '<td>' + esc(fmtNum(t.entry, 2)) + '</td>' +
+            '<td>' + esc(fmtNum(t.mark, 2)) + '</td>' +
+            '<td class="' + pnlClass(mtm) + '">' + esc(mtmTxt) + '</td>' +
+            '<td class="' + pnlClass(t.unrealized_pnl_pct) + '">' + esc(pctTxt) + '</td>' +
+            '<td>' + esc(fmtNum(t.fees, 4)) + '</td>' +
+          '</tr>';
+        }
+        html += '</tbody></table></div>';
+      }
+
       const rows = st.completed || [];
-      if (!rows.length) {
+      if (rows.length) {
+        html += '<h5 class="strat-sub">Completed (FIFO closed lots)</h5>';
+        html += '<div class="scroll-x"><table><thead><tr>' +
+          '<th>Exit (PT)</th><th>Pair</th><th>Amount</th><th>Entry</th><th>Exit $</th><th>P&amp;L</th><th>P&amp;L %</th><th>Fees</th>' +
+          '</tr></thead><tbody>';
+        for (const t of rows) {
+          const exitLabel = t.exit_pt || fmtTimePT(t.exit_time) || '';
+          const pnl = t.pnl;
+          const pnlTxt = pnl == null ? '—' : ((pnl >= 0 ? '+' : '') + fmtNum(pnl, 2));
+          const pctTxt = t.pnl_pct == null ? '—' : ((t.pnl_pct >= 0 ? '+' : '') + fmtNum(t.pnl_pct, 2) + '%');
+          let pairCell = esc(t.pair || '');
+          if (t.entry_strategy && t.exit_strategy && t.entry_strategy !== t.exit_strategy) {
+            pairCell += '<div class="muted">entry: ' + esc(t.entry_strategy) + '</div>';
+          }
+          html += '<tr>' +
+            '<td class="mono">' + esc(exitLabel) + '</td>' +
+            '<td>' + pairCell + '</td>' +
+            '<td>' + esc(fmtNum(t.amount, 6)) + '</td>' +
+            '<td>' + esc(fmtNum(t.entry, 2)) + '</td>' +
+            '<td>' + esc(fmtNum(t.exit, 2)) + '</td>' +
+            '<td class="' + pnlClass(pnl) + '">' + esc(pnlTxt) + '</td>' +
+            '<td class="' + pnlClass(t.pnl_pct) + '">' + esc(pctTxt) + '</td>' +
+            '<td>' + esc(fmtNum(t.fees, 4)) + '</td>' +
+          '</tr>';
+        }
+        html += '</tbody></table></div>';
+      }
+
+      if (!openRows.length && !rows.length) {
         if ((m.fills || 0) > 0) {
-          html += '<p class="empty">No completed trades yet (open inventory / no matching sell).</p></div></details>';
+          html += '<p class="empty">Fills exist, but no leftover lots and no closed FIFO yet.</p>';
         } else {
-          html += '<p class="empty">No trades.</p></div></details>';
+          html += '<p class="empty">No trades.</p>';
         }
-        continue;
       }
-      html += '<div class="scroll-x"><table><thead><tr>' +
-        '<th>Exit (PT)</th><th>Pair</th><th>Amount</th><th>Entry</th><th>Exit $</th><th>P&amp;L</th><th>P&amp;L %</th><th>Fees</th>' +
-        '</tr></thead><tbody>';
-      for (const t of rows) {
-        const exitLabel = t.exit_pt || fmtTimePT(t.exit_time) || '';
-        const pnl = t.pnl;
-        const pnlTxt = pnl == null ? '—' : ((pnl >= 0 ? '+' : '') + fmtNum(pnl, 2));
-        const pctTxt = t.pnl_pct == null ? '—' : ((t.pnl_pct >= 0 ? '+' : '') + fmtNum(t.pnl_pct, 2) + '%');
-        let pairCell = esc(t.pair || '');
-        if (t.entry_strategy && t.exit_strategy && t.entry_strategy !== t.exit_strategy) {
-          pairCell += '<div class="muted">entry: ' + esc(t.entry_strategy) + '</div>';
-        }
-        html += '<tr>' +
-          '<td class="mono">' + esc(exitLabel) + '</td>' +
-          '<td>' + pairCell + '</td>' +
-          '<td>' + esc(fmtNum(t.amount, 6)) + '</td>' +
-          '<td>' + esc(fmtNum(t.entry, 2)) + '</td>' +
-          '<td>' + esc(fmtNum(t.exit, 2)) + '</td>' +
-          '<td class="' + pnlClass(pnl) + '">' + esc(pnlTxt) + '</td>' +
-          '<td class="' + pnlClass(t.pnl_pct) + '">' + esc(pctTxt) + '</td>' +
-          '<td>' + esc(fmtNum(t.fees, 4)) + '</td>' +
-        '</tr>';
-      }
-      html += '</tbody></table></div></div></details>';
+      html += '</div></details>';
     }
     html += '</div>';
     return html;
@@ -927,7 +969,7 @@
 
   async function renderTables() {
     titleEl.textContent = 'Strategy tables';
-    subEl.textContent = 'Completed FIFO lots · tap a strategy to expand';
+    subEl.textContent = 'Open lots + completed FIFO · auto-opens when there is a book';
     setNav('tables');
     let status = null;
     try { status = await fetchJson('data/status.json'); } catch (e) { status = null; }
@@ -935,7 +977,8 @@
     updatedPill.textContent = 'Updated ' + ((status && (status.updated_at_pt || status.updated_at)) || idx.updated_at_pt || idx.updated_at || '—');
     const tables = (status && status.strategy_tables) || [];
     const nDone = tables.reduce((a, st) => a + ((st.metrics || {}).completed || 0), 0);
-    countPill.textContent = fmtNum(nDone, 0) + ' completed';
+    const nOpen = tables.reduce((a, st) => a + ((st.metrics || {}).open || ((st.open || []).length) || 0), 0);
+    countPill.textContent = fmtNum(nOpen, 0) + ' open · ' + fmtNum(nDone, 0) + ' completed';
     const body = strategyTablesHtml(tables) || '<p class="empty">No strategy tables yet.</p>';
     tablesEl.innerHTML =
       '<div class="tables-toolbar">' +
