@@ -760,11 +760,16 @@
 
     const chartEl = document.getElementById('home-equity-chart');
     if (chartEl) {
-      const series = (status && status.equity_series) || [];
+      // Meik 2026-09-17: chart mark/start only — unlabeled fill-step MTM is noise
+      const _rawSeries = (status && status.equity_series) || [];
+      const _hasMark = _rawSeries.some((p) => p && (p.label === 'mark' || p.label === 'start'));
+      const series = _hasMark
+        ? _rawSeries.filter((p) => p && p.equity != null && (p.label === 'mark' || p.label === 'start'))
+        : _rawSeries.filter((p) => p && p.equity != null);
       renderSvgChart(chartEl, series, {
         prefer: 'equity',
         yLabel: 'Equity $',
-        note: 'fills + marks · PT',
+        note: 'mark equity · PT',
         empty: 'no series yet — waiting for CLI paper fills',
       });
     }
@@ -1180,10 +1185,15 @@
     const perfEl = document.getElementById('detail-perf-chart');
     if (perfEl) {
       if (d.equity_series && d.equity_series.length >= 2) {
-        renderSvgChart(perfEl, d.equity_series, {
+        const _es = d.equity_series;
+        const _liveMark = d.live && _es.some((p) => p && (p.label === 'mark' || p.label === 'start'));
+        const _plot = _liveMark
+          ? _es.filter((p) => p && p.equity != null && (p.label === 'mark' || p.label === 'start'))
+          : _es.filter((p) => p && p.equity != null);
+        renderSvgChart(perfEl, _plot, {
           prefer: 'equity',
           yLabel: d.live ? 'Equity $' : 'Equity @50bps',
-          note: d.series_note || (d.live ? 'fills + marks · PT' : 'fee stress replay · PT'),
+          note: d.series_note || (d.live ? 'mark equity · PT' : 'fee stress replay · PT'),
           empty: d.series_note || 'no series yet',
         });
       } else if (d.metric_series && d.metric_series.length >= 2) {
