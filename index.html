@@ -354,6 +354,90 @@
     .muted { color: var(--muted); font-size: .72rem; }
     .signed-pos { color: var(--pos, #3dd68c); }
     .signed-neg { color: var(--neg, #f07178); }
+
+    .trades-tabs {
+      position: sticky;
+      top: 2.35rem; /* under PAPER banner */
+      z-index: 40;
+      display: flex;
+      gap: .35rem;
+      padding: .45rem 0 .35rem;
+      margin: 0 0 .5rem;
+      background: linear-gradient(180deg, var(--bg) 70%, transparent);
+    }
+    .trades-tabs button {
+      flex: 1 1 0;
+      border: 1px solid var(--border);
+      background: var(--bg2);
+      color: var(--text);
+      border-radius: 999px;
+      padding: .55rem .7rem;
+      font-size: .85rem;
+      font-weight: 700;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .trades-tabs button.active {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: #1a2a42;
+    }
+    .trades-tabs .tab-count {
+      font-weight: 600;
+      color: var(--muted);
+      font-size: .75rem;
+      margin-left: .25rem;
+    }
+    .trades-panel { display: none; }
+    .trades-panel.active { display: block; }
+    .trade-book table { font-size: .82rem; }
+    .trade-book th, .trade-book td { padding: .45rem .4rem; vertical-align: top; }
+    .trade-book .pair-main { font-weight: 700; }
+    .trade-book .strat-subline {
+      color: var(--muted);
+      font-size: .68rem;
+      font-weight: 500;
+      margin-top: .12rem;
+      letter-spacing: .01em;
+    }
+    .trade-book .amt-main { font-variant-numeric: tabular-nums; }
+    .trade-book .amt-sub {
+      color: var(--muted);
+      font-size: .68rem;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      margin-top: .1rem;
+    }
+    .trade-book .dt {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .72rem;
+      white-space: nowrap;
+      color: var(--muted);
+    }
+    .trade-book .pnl-cell {
+      font-variant-numeric: tabular-nums;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .trade-book .pnl-pct {
+      display: block;
+      font-size: .68rem;
+      font-weight: 600;
+      opacity: .9;
+      margin-top: .08rem;
+    }
+    .trade-note {
+      color: var(--muted);
+      font-size: .78rem;
+      margin: 0 0 .65rem;
+    }
+    .strat-accordion-wrap { margin-top: 1.25rem; }
+    @media (max-width: 520px) {
+      .trade-book th:nth-child(n+5),
+      .trade-book td:nth-child(n+5) { /* keep 4 cols on phone for open; closed has 5 — handled via data-cols */ }
+      .trade-book.cols-open th:nth-child(5),
+      .trade-book.cols-open td:nth-child(5) { display: none; } /* unused */
+      .trade-book .dt { font-size: .68rem; }
+    }
     .hidden { display: none !important; }
   </style>
 </head>
@@ -369,6 +453,7 @@
     </div>
     <nav class="topnav" aria-label="Dashboard">
       <a href="./" id="nav-home">Overview</a>
+      <a href="./index.html?page=trades" id="nav-trades">Trades</a>
       <a href="./tables.html" id="nav-tables">Tables</a>
     </nav>
   </header>
@@ -389,6 +474,7 @@
   const detailEl = document.getElementById('detail-view');
   const errorEl = document.getElementById('error-view');
   const navHome = document.getElementById('nav-home');
+  const navTrades = document.getElementById('nav-trades');
   const navTables = document.getElementById('nav-tables');
   const updatedPill = document.getElementById('updated-pill');
   const countPill = document.getElementById('count-pill');
@@ -634,18 +720,25 @@
     const q = new URLSearchParams(location.search);
     if (q.get('sim')) return 'sim';
     const page = (q.get('page') || '').toLowerCase();
-    if (page === 'tables' || page === 'trades') return 'tables';
+    if (page === 'trades') return 'trades';
+    if (page === 'tables') return 'tables';
     const h = (location.hash || '').replace(/^#\/?/, '').toLowerCase();
-    if (h === 'tables' || h === 'trades') return 'tables';
+    if (h === 'trades') return 'trades';
+    if (h === 'tables') return 'tables';
     if (routeSimId()) return 'sim';
     return 'home';
   }
   function setNav(page) {
     navHome.classList.toggle('active', page === 'home');
+    if (navTrades) navTrades.classList.toggle('active', page === 'trades');
     navTables.classList.toggle('active', page === 'tables');
   }
   function goHome() {
     history.pushState({}, '', './');
+    render();
+  }
+  function goTrades() {
+    history.pushState({}, '', '?page=trades');
     render();
   }
   function goTables() {
@@ -780,17 +873,19 @@
       const v = (st.metrics || {}).sum_pnl;
       return a + (v == null ? 0 : Number(v));
     }, 0);
+    const nOpenLots = ((status && status.open_lots) || []).length;
+    const nClosedLots = ((status && status.completed_trades) || []).length;
     const cta =
-      '<a class="tables-cta" href="./tables.html" id="home-tables-cta">' +
-        '<span>Strategy tables</span>' +
-        '<span class="muted">' + esc(fmtNum(nDone, 0)) + ' completed · P&amp;L ' +
+      '<a class="tables-cta" href="./index.html?page=trades" id="home-trades-cta">' +
+        '<span>Trades</span>' +
+        '<span class="muted">' + esc(fmtNum(nOpenLots, 0)) + ' open · ' + esc(fmtNum(nClosedLots, 0)) + ' closed · P&amp;L ' +
           esc((sumPnl >= 0 ? '+' : '') + fmtNum(sumPnl, 2)) + ' →</span>' +
       '</a>';
     const heroEl = homeEl.querySelector('.hero');
     if (heroEl) heroEl.insertAdjacentHTML('beforeend', cta);
     else homeEl.insertAdjacentHTML('afterbegin', cta);
-    const ctaEl = document.getElementById('home-tables-cta');
-    if (ctaEl) ctaEl.addEventListener('click', e => { e.preventDefault(); goTables(); });
+    const ctaEl = document.getElementById('home-trades-cta');
+    if (ctaEl) ctaEl.addEventListener('click', e => { e.preventDefault(); goTrades(); });
 
     homeEl.querySelectorAll('[data-sim]').forEach(el => {
       const open = () => goSim(el.getAttribute('data-sim'));
@@ -861,6 +956,145 @@
     if (fromData) return fromData;
     const key = (st && st.strategy) ? String(st.strategy) : "unattributed";
     return STRATEGY_DEFS[key] || "";
+  }
+
+
+  function compactPt(label) {
+    if (!label) return '';
+    const s = String(label).replace(/\s*PT\s*$/i, '').trim();
+    // "2026-09-18 2:48 PM" → "9/18 2:48p"
+    const m = s.match(/^(\d{4})-(\d{2})-(\d{2})\s+(\d{1,2}):(\d{2})\s*(AM|PM)$/i);
+    if (!m) return s;
+    const mon = String(Number(m[2]));
+    const day = String(Number(m[3]));
+    const ap = m[6].toLowerCase().charAt(0);
+    return mon + '/' + day + ' ' + m[4] + ':' + m[5] + ap;
+  }
+
+  function fmtSigned(n, digs) {
+    if (n == null || n === '' || Number.isNaN(Number(n))) return '—';
+    const v = Number(n);
+    return (v >= 0 ? '+' : '') + fmtNum(v, digs);
+  }
+
+  function amountCell(t) {
+    const coin = t.amount;
+    const notional = t.notional_usd != null ? t.notional_usd : (t.amount != null && t.entry != null ? Number(t.amount) * Number(t.entry) : null);
+    const main = notional != null
+      ? ('$' + fmtNum(notional, 2))
+      : (coin != null ? fmtNum(coin, 6) : '—');
+    const sub = (coin != null && notional != null)
+      ? (fmtNum(coin, 6) + ' coin')
+      : '';
+    return '<div class="amt-main">' + esc(main) + '</div>' +
+      (sub ? '<div class="amt-sub">' + esc(sub) + '</div>' : '');
+  }
+
+  function pairCell(t, stratKey) {
+    const strat = t[stratKey] || t.entry_strategy || t.exit_strategy || '';
+    return '<div class="pair-main">' + esc(t.pair || '') + '</div>' +
+      (strat ? '<div class="strat-subline">' + esc(strat) + '</div>' : '');
+  }
+
+  function pnlCell(usd, pct) {
+    return '<div class="pnl-cell ' + pnlClass(usd) + '">' + esc(fmtSigned(usd, 2)) +
+      '<span class="pnl-pct ' + pnlClass(pct) + '">' + esc(pct == null ? '—' : (fmtSigned(pct, 2) + '%')) + '</span></div>';
+  }
+
+  function sortNewest(rows, timeKeys) {
+    const copy = (rows || []).slice();
+    copy.sort((a, b) => {
+      for (const k of timeKeys) {
+        const ta = parseTs(a[k]) || 0;
+        const tb = parseTs(b[k]) || 0;
+        if (ta !== tb) return tb - ta;
+      }
+      return 0;
+    });
+    return copy;
+  }
+
+  function flatOpenTable(lots) {
+    const rows = sortNewest(lots, ['entry_time', 'entry_pt']);
+    if (!rows.length) return '<p class="empty">No open lots.</p>';
+    let html = '<div class="scroll-x trade-book cols-open"><table><thead><tr>' +
+      '<th>Pair</th><th>Amount</th><th>Entry</th><th>uP&amp;L</th>' +
+      '</tr></thead><tbody>';
+    for (const t of rows) {
+      html += '<tr>' +
+        '<td>' + pairCell(t, 'entry_strategy') + '</td>' +
+        '<td>' + amountCell(t) + '</td>' +
+        '<td class="dt" title="' + esc(t.entry_pt || '') + '">' + esc(compactPt(t.entry_pt) || fmtTimePT(t.entry_time) || '—') + '</td>' +
+        '<td>' + pnlCell(t.unrealized_pnl, t.unrealized_pnl_pct) + '</td>' +
+      '</tr>';
+    }
+    html += '</tbody></table></div>';
+    return html;
+  }
+
+  function flatClosedTable(trades) {
+    const rows = sortNewest(trades, ['exit_time', 'exit_pt', 'entry_time']);
+    if (!rows.length) return '<p class="empty">No closed trades.</p>';
+    let html = '<div class="scroll-x trade-book cols-closed"><table><thead><tr>' +
+      '<th>Pair</th><th>Amount</th><th>Entry</th><th>Exit</th><th>P&amp;L</th>' +
+      '</tr></thead><tbody>';
+    for (const t of rows) {
+      const strat = t.exit_strategy && t.entry_strategy && t.exit_strategy !== t.entry_strategy
+        ? (t.entry_strategy + ' → ' + t.exit_strategy)
+        : (t.exit_strategy || t.entry_strategy || '');
+      const pairHtml = '<div class="pair-main">' + esc(t.pair || '') + '</div>' +
+        (strat ? '<div class="strat-subline">' + esc(strat) + '</div>' : '');
+      html += '<tr>' +
+        '<td>' + pairHtml + '</td>' +
+        '<td>' + amountCell(t) + '</td>' +
+        '<td class="dt" title="' + esc(t.entry_pt || '') + '">' + esc(compactPt(t.entry_pt) || fmtTimePT(t.entry_time) || '—') + '</td>' +
+        '<td class="dt" title="' + esc(t.exit_pt || '') + '">' + esc(compactPt(t.exit_pt) || fmtTimePT(t.exit_time) || '—') + '</td>' +
+        '<td>' + pnlCell(t.pnl, t.pnl_pct) + '</td>' +
+      '</tr>';
+    }
+    html += '</tbody></table></div>';
+    return html;
+  }
+
+  function wireTradesTabs(root) {
+    const tabs = root.querySelectorAll('[data-trades-tab]');
+    const panels = {
+      open: root.querySelector('#trades-open-panel'),
+      closed: root.querySelector('#trades-closed-panel')
+    };
+    tabs.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const which = btn.getAttribute('data-trades-tab');
+        tabs.forEach(b => b.classList.toggle('active', b === btn));
+        Object.keys(panels).forEach(k => {
+          if (panels[k]) panels[k].classList.toggle('active', k === which);
+        });
+        try { sessionStorage.setItem('desk-trades-tab', which); } catch (e) {}
+      });
+    });
+  }
+
+  function tradesBookHtml(status, opts) {
+    const open = (status && status.open_lots) || [];
+    const closed = (status && status.completed_trades) || [];
+    let pref = 'open';
+    try { pref = sessionStorage.getItem('desk-trades-tab') || 'open'; } catch (e) {}
+    if (pref !== 'open' && pref !== 'closed') pref = 'open';
+    if (opts && opts.preferClosed && !open.length && closed.length) pref = 'closed';
+    return '' +
+      '<div class="trades-tabs" role="tablist" aria-label="Trade book">' +
+        '<button type="button" role="tab" data-trades-tab="open" class="' + (pref === 'open' ? 'active' : '') + '">' +
+          'Open<span class="tab-count">' + esc(fmtNum(open.length, 0)) + '</span></button>' +
+        '<button type="button" role="tab" data-trades-tab="closed" class="' + (pref === 'closed' ? 'active' : '') + '">' +
+          'Closed<span class="tab-count">' + esc(fmtNum(closed.length, 0)) + '</span></button>' +
+      '</div>' +
+      '<p class="trade-note">Flat book · newest first · amount = USD notional (coin × entry) · strategy muted under pair</p>' +
+      '<div id="trades-open-panel" class="trades-panel' + (pref === 'open' ? ' active' : '') + '" role="tabpanel">' +
+        flatOpenTable(open) +
+      '</div>' +
+      '<div id="trades-closed-panel" class="trades-panel' + (pref === 'closed' ? ' active' : '') + '" role="tabpanel">' +
+        flatClosedTable(closed) +
+      '</div>';
   }
 
   function strategyTablesHtml(tables) {
@@ -985,25 +1219,48 @@
     if (col) col.addEventListener('click', () => all().forEach(d => { d.open = false; }));
   }
 
-  async function renderTables() {
-    titleEl.textContent = 'Strategy tables';
-    subEl.textContent = 'Open lots + completed FIFO · auto-opens when there is a book';
-    setNav('tables');
-    let status = null;
-    try { status = await fetchJson('data/status.json'); } catch (e) { status = null; }
+  async function loadStatus() {
+    try { return await fetchJson('data/status.json'); } catch (e) { return null; }
+  }
+
+  async function renderTrades() {
+    titleEl.textContent = 'Trades';
+    subEl.textContent = 'Open + closed flat book · phone-first scan';
+    setNav('trades');
+    const status = await loadStatus();
     const idx = indexCache || {};
     updatedPill.textContent = 'Updated ' + ((status && (status.updated_at_pt || status.updated_at)) || idx.updated_at_pt || idx.updated_at || '—');
+    const nOpen = ((status && status.open_lots) || []).length;
+    const nClosed = ((status && status.completed_trades) || []).length;
+    countPill.textContent = fmtNum(nOpen, 0) + ' open · ' + fmtNum(nClosed, 0) + ' closed';
+    tablesEl.innerHTML = tradesBookHtml(status);
+    wireTradesTabs(tablesEl);
+  }
+
+  async function renderTables() {
+    titleEl.textContent = 'Strategy tables';
+    subEl.textContent = 'Flat book first · then FIFO by strategy';
+    setNav('tables');
+    const status = await loadStatus();
+    const idx = indexCache || {};
+    updatedPill.textContent = 'Updated ' + ((status && (status.updated_at_pt || status.updated_at)) || idx.updated_at_pt || idx.updated_at || '—');
+    const nOpen = ((status && status.open_lots) || []).length;
+    const nClosed = ((status && status.completed_trades) || []).length;
+    countPill.textContent = fmtNum(nOpen, 0) + ' open · ' + fmtNum(nClosed, 0) + ' closed';
     const tables = (status && status.strategy_tables) || [];
-    const nDone = tables.reduce((a, st) => a + ((st.metrics || {}).completed || 0), 0);
-    const nOpen = tables.reduce((a, st) => a + ((st.metrics || {}).open || ((st.open || []).length) || 0), 0);
-    countPill.textContent = fmtNum(nOpen, 0) + ' open · ' + fmtNum(nDone, 0) + ' completed';
     const body = strategyTablesHtml(tables) || '<p class="empty">No strategy tables yet.</p>';
     tablesEl.innerHTML =
-      '<div class="tables-toolbar">' +
-        '<button type="button" id="tables-expand">Expand all</button>' +
-        '<button type="button" id="tables-collapse">Collapse all</button>' +
-      '</div>' + body;
+      tradesBookHtml(status) +
+      '<div class="strat-accordion-wrap">' +
+        '<div class="tables-toolbar">' +
+          '<button type="button" id="tables-expand">Expand strategies</button>' +
+          '<button type="button" id="tables-collapse">Collapse strategies</button>' +
+        '</div>' + body +
+      '</div>';
+    wireTradesTabs(tablesEl);
     wireTableToggles(tablesEl);
+    // Default strategy accordion collapsed on Tables so flat book leads
+    tablesEl.querySelectorAll('details.strat-block').forEach(d => { d.open = false; });
   }
 
   function tradesTable(trades, live) {
@@ -1224,11 +1481,12 @@
         detailEl.classList.remove('hidden');
         const d = await loadDetail(simId, force);
         renderDetail(d);
-      } else if (page === 'tables') {
+      } else if (page === 'trades' || page === 'tables') {
         detailEl.classList.add('hidden');
         homeEl.classList.add('hidden');
         tablesEl.classList.remove('hidden');
-        await renderTables();
+        if (page === 'trades') await renderTrades();
+        else await renderTables();
       } else {
         detailEl.classList.add('hidden');
         tablesEl.classList.add('hidden');
@@ -1257,6 +1515,7 @@
   }
 
   navHome.addEventListener('click', e => { e.preventDefault(); goHome(); });
+  if (navTrades) navTrades.addEventListener('click', e => { e.preventDefault(); goTrades(); });
   navTables.addEventListener('click', e => { e.preventDefault(); goTables(); });
 
   render({ force: true });
