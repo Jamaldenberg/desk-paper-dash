@@ -5,85 +5,39 @@
   "strategy_id": "lab-f06-long-only-topk-rs-v0",
   "mode": "PROBE",
   "live": false,
-  "updated_at": "2026-09-19T00:51:16.420Z",
-  "updated_at_pt": "2026-09-18 5:51 PM PT",
+  "updated_at": "2026-09-19T01:18:31.792Z",
+  "updated_at_pt": "2026-09-18 6:18 PM PT",
   "scoreboard_headline": "card]]",
   "preregister": "[[Desk/Research/Explore/preregister-2026-09-10-f06-long-only-rs-shadow",
   "metrics": {
-    "generated_pt": "2026-09-10 12:20 PT",
+    "generated_pt": null,
     "strategy_id": "lab-f06-long-only-topk-rs-v0",
-    "lookback": 20,
-    "top_k": 1,
-    "ranks": [
-      {
-        "symbol": "ETH/USD",
-        "rs_ret": 0.33197547343398504,
-        "asof": "2026-09-03 00:00:00+00:00",
-        "fill_allowed": false,
-        "mode": "shadow_rank"
-      },
-      {
-        "symbol": "BTC/USD",
-        "rs_ret": 0.29407311037886497,
-        "asof": "2026-09-03 00:00:00+00:00",
-        "fill_allowed": true,
-        "mode": "shadow_rank"
-      }
-    ],
-    "compare_note": "With only BTC/ETH free cache, RS top-K and F03 TSMOM ranks coincide on lookback. Divergence requires liquid multi-asset OHLC panel after Meik RED — still shadow until then.",
-    "blocked_non_btc_eth_fills": true
+    "lookback": null,
+    "top_k": null,
+    "ranks": null,
+    "compare_note": null,
+    "blocked_non_btc_eth_fills": null
   },
   "fee_stress": null,
-  "trades": [
-    {
-      "symbol": "ETH/USD",
-      "rs_ret": 0.33197547343398504,
-      "asof": "2026-09-03 00:00:00+00:00",
-      "fill_allowed": "False",
-      "mode": "shadow_rank"
-    },
-    {
-      "symbol": "BTC/USD",
-      "rs_ret": 0.29407311037886497,
-      "asof": "2026-09-03 00:00:00+00:00",
-      "fill_allowed": "True",
-      "mode": "shadow_rank"
-    }
-  ],
-  "trades_total": 2,
+  "trades": [],
+  "trades_total": 0,
   "equity_series": null,
   "metric_series": null,
   "series_note": "no series yet — ranks-only probe (fills blocked)",
-  "ranks": [
-    {
-      "symbol": "ETH/USD",
-      "rs_ret": 0.33197547343398504,
-      "asof": "2026-09-03 00:00:00+00:00",
-      "fill_allowed": false,
-      "mode": "shadow_rank"
-    },
-    {
-      "symbol": "BTC/USD",
-      "rs_ret": 0.29407311037886497,
-      "asof": "2026-09-03 00:00:00+00:00",
-      "fill_allowed": true,
-      "mode": "shadow_rank"
-    }
-  ],
-  "md_excerpt": "# F06 long-only RS shadow — `long-only-rs-topk-shadow`\n\nGenerated: 2026-09-10 12:20 PT\nLookback=20d · top-K=1 (demo limited by cache)\n\n## RS ranks (cached)\n\n| symbol | rs_ret | fill_allowed |\n| --- | --- | --- |\n| ETH/USD | 0.3320 | False |\n| BTC/USD | 0.2941 | True |\n\n## vs F03\n\nWith only BTC/ETH free cache, RS top-K and F03 TSMOM ranks coincide on lookback. Divergence requires liquid multi-asset OHLC panel after Meik RED — still shadow until then.\n\n## Fee note\n\nWeekly rebalance intended. Fee stress @ 50/100 after multi-asset panel + RED.\n\n## Next owner action\n\n- **Universe Scout + Quant:** extend panel with free public OHLC for top liquid names; keep shadow.\n- **Commander:** horse-race F03 vs F06 at Day 11–20; do not run both as live paper fills.\n\n*Shadow only. No short leg. No edge declaration.*\n",
+  "ranks": null,
+  "md_excerpt": null,
   "extras_keys": [],
   "learnings": [
     "Scoreboard: card]]",
-    "Scoreboard next: `…/lab_f06_long_only_topk_rs.md`",
-    "**Universe Scout + Quant:** extend panel with free public OHLC for top liquid names; keep shadow.",
-    "**Commander:** horse-race F03 vs F06 at Day 11–20; do not run both as live paper fills."
+    "Scoreboard next: `…/lab_f06_long_only_topk_rs.md`"
   ],
   "artifacts": [
-    "/workspace/paper-desk/explore/out/f06_rs_shadow.json",
-    "/workspace/paper-desk/explore/out/f06_rs_shadow.md",
     "/workspace/paper-desk/explore/out/f06_rs_ranks.csv"
   ],
   "parse_gaps": [
+    "missing_json:f06_rs_shadow.json",
+    "missing_md:f06_rs_shadow.md",
+    "missing:f06_rs_ranks.csv",
     "no_equity_series:ranks_only"
   ],
   "disclaimer": "PAPER ONLY — simulated fills vs live Kraken prices / historical probes. Not real money. Not financial advice. Do not declare edge from first-run tables."

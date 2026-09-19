@@ -5,174 +5,40 @@
   "strategy_id": "liquid-tsmom-filter-v1-shadow",
   "mode": "shadow / scan",
   "live": false,
-  "updated_at": "2026-09-19T00:51:16.420Z",
-  "updated_at_pt": "2026-09-18 5:51 PM PT",
+  "updated_at": "2026-09-19T01:18:31.792Z",
+  "updated_at_pt": "2026-09-18 6:18 PM PT",
   "scoreboard_headline": "**shadow live** — liquid n=91; fills blocked non-BTC/ETH",
   "preregister": "[[Desk/Research/Explore/preregister-2026-09-10-f03-liquid-tsmom-shadow|DPR-20260910-03]]",
   "metrics": {
-    "generated_pt": "2026-09-10 12:20 PT",
+    "generated_pt": null,
     "strategy_id": "liquid-tsmom-filter-v1-shadow",
-    "n_liquid": 89,
-    "top_k": 10,
-    "lookback": 20,
-    "blocked_non_btc_eth_fills": true,
-    "ranks": [
-      {
-        "symbol": "ETH/USD",
-        "lookback_d": 20,
-        "tsmom_ret": 0.33197547343398504,
-        "asof": "2026-09-03 00:00:00+00:00",
-        "fill_allowed": false,
-        "mode": "shadow_rank"
-      },
-      {
-        "symbol": "BTC/USD",
-        "lookback_d": 20,
-        "tsmom_ret": 0.29407311037886497,
-        "asof": "2026-09-03 00:00:00+00:00",
-        "fill_allowed": true,
-        "mode": "shadow_rank"
-      }
-    ],
-    "top_liquid_preview": [
-      {
-        "symbol": "BTC/USD",
-        "base": "BTC",
-        "quote": "USD",
-        "quote_volume_24h": 464185738.48,
-        "last": 77127.94,
-        "spread_bps": null
-      },
-      {
-        "symbol": "BTC/USDC",
-        "base": "BTC",
-        "quote": "USDC",
-        "quote_volume_24h": 464185738.48,
-        "last": 77127.94,
-        "spread_bps": null
-      },
-      {
-        "symbol": "ETH/USD",
-        "base": "ETH",
-        "quote": "USD",
-        "quote_volume_24h": 279562742.71,
-        "last": 2463.85,
-        "spread_bps": null
-      },
-      {
-        "symbol": "ETH/USDC",
-        "base": "ETH",
-        "quote": "USDC",
-        "quote_volume_24h": 279562742.71,
-        "last": 2463.85,
-        "spread_bps": null
-      },
-      {
-        "symbol": "ZEC/USD",
-        "base": "ZEC",
-        "quote": "USD",
-        "quote_volume_24h": 161665978.54,
-        "last": 1129.95,
-        "spread_bps": null
-      },
-      {
-        "symbol": "ZEC/USDC",
-        "base": "ZEC",
-        "quote": "USDC",
-        "quote_volume_24h": 161665978.54,
-        "last": 1129.95,
-        "spread_bps": null
-      },
-      {
-        "symbol": "XRP/USD",
-        "base": "XRP",
-        "quote": "USD",
-        "quote_volume_24h": 122402002.58,
-        "last": 1.35336,
-        "spread_bps": null
-      },
-      {
-        "symbol": "XRP/USDC",
-        "base": "XRP",
-        "quote": "USDC",
-        "quote_volume_24h": 122402002.58,
-        "last": 1.35336,
-        "spread_bps": null
-      },
-      {
-        "symbol": "SOL/USD",
-        "base": "SOL",
-        "quote": "USD",
-        "quote_volume_24h": 94445080.26,
-        "last": 99.79,
-        "spread_bps": null
-      },
-      {
-        "symbol": "SOL/USDC",
-        "base": "SOL",
-        "quote": "USDC",
-        "quote_volume_24h": 94445080.26,
-        "last": 99.79,
-        "spread_bps": null
-      }
-    ]
+    "n_liquid": null,
+    "top_k": null,
+    "lookback": null,
+    "blocked_non_btc_eth_fills": null,
+    "ranks": null,
+    "top_liquid_preview": []
   },
   "fee_stress": null,
-  "trades": [
-    {
-      "symbol": "ETH/USD",
-      "lookback_d": 20,
-      "tsmom_ret": 0.33197547343398504,
-      "asof": "2026-09-03 00:00:00+00:00",
-      "fill_allowed": "False",
-      "mode": "shadow_rank"
-    },
-    {
-      "symbol": "BTC/USD",
-      "lookback_d": 20,
-      "tsmom_ret": 0.29407311037886497,
-      "asof": "2026-09-03 00:00:00+00:00",
-      "fill_allowed": "True",
-      "mode": "shadow_rank"
-    }
-  ],
-  "trades_total": 2,
+  "trades": [],
+  "trades_total": 0,
   "equity_series": null,
   "metric_series": null,
   "series_note": "no series yet — ranks-only probe (fills blocked)",
-  "ranks": [
-    {
-      "symbol": "ETH/USD",
-      "lookback_d": 20,
-      "tsmom_ret": 0.33197547343398504,
-      "asof": "2026-09-03 00:00:00+00:00",
-      "fill_allowed": false,
-      "mode": "shadow_rank"
-    },
-    {
-      "symbol": "BTC/USD",
-      "lookback_d": 20,
-      "tsmom_ret": 0.29407311037886497,
-      "asof": "2026-09-03 00:00:00+00:00",
-      "fill_allowed": true,
-      "mode": "shadow_rank"
-    }
-  ],
-  "md_excerpt": "# F03 liquid TSMOM shadow — `liquid-tsmom-filter-v1-shadow`\n\nGenerated: 2026-09-10 12:20 PT\nUniverse snapshot: `/workspace/ops-brain/Desk/Research/universe/universe-2026-09-10-explore-v0.md`\nLiquid names after filter: **89**\n\n**Mode:** shadow ranks only. No non-BTC/ETH fills (CONSTRAINTS).\n\n## Fee note\n\nWeekly rebalance intended; fee stress deferred until whitelist RED + full OHLC panel.\nDo not claim edge from BTC/ETH-only rank demo.\n\n## Next owner action\n\n- **Universe Scout:** refresh weekly; bump `universe_id` date.\n- **Quant:** horse-race ranks vs F06 when panel ready.\n- **Commander:** ask Meik RED before any multi-asset paper fills.\n\n*Paper/shadow only.*\n",
+  "ranks": null,
+  "md_excerpt": null,
   "extras_keys": [],
   "learnings": [
     "Scoreboard: **shadow live** — liquid n=91; fills blocked non-BTC/ETH",
-    "Scoreboard next: **Scout:** weekly refresh `universe_id`. **Commander:** Meik RED before any alt paper fills",
-    "**Universe Scout:** refresh weekly; bump `universe_id` date.",
-    "**Quant:** horse-race ranks vs F06 when panel ready.",
-    "**Commander:** ask Meik RED before any multi-asset paper fills."
+    "Scoreboard next: **Scout:** weekly refresh `universe_id`. **Commander:** Meik RED before any alt paper fills"
   ],
   "artifacts": [
-    "/workspace/paper-desk/explore/out/f03_universe_shadow.json",
-    "/workspace/paper-desk/explore/out/f03_universe_shadow.md",
     "/workspace/paper-desk/explore/out/f03_shadow_ranks.csv"
   ],
   "parse_gaps": [
+    "missing_json:f03_universe_shadow.json",
+    "missing_md:f03_universe_shadow.md",
+    "missing:f03_shadow_ranks.csv",
     "no_equity_series:ranks_only"
   ],
   "disclaimer": "PAPER ONLY — simulated fills vs live Kraken prices / historical probes. Not real money. Not financial advice. Do not declare edge from first-run tables."
