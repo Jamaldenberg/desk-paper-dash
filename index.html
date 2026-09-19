@@ -823,11 +823,21 @@
             '<span class="pill live">LIVE PAPER</span>' +
             '<span class="pill mono">' + esc(ws) + '</span>' +
           '</div>' +
-          '<div class="equity-sub">CLI paper equity</div>' +
+          '<div class="equity-sub">CLI paper equity' +
+            (status && status.equity_adjustment ? ' (XTZ-as-T corrected)' : '') +
+            '</div>' +
           '<div class="equity-big ' + pnlClass(upnl) + '">$' + esc(fmtNum(eq, 2)) + '</div>' +
           '<div class="equity-sub ' + pnlClass(upnl) + '">' +
             esc(fmtNum(upnl, 2)) + ' (' + esc(fmtPct(upnlPct)) + ') vs $' + esc(fmtNum(status && status.starting_balance, 0) || '5000') + ' start' +
           '</div>' +
+          (status && status.equity_cli != null && status.equity_adjustment
+            ? '<div class="equity-sub">equity_cli raw $' + esc(fmtNum(status.equity_cli, 2)) +
+              ' · adj $' + esc(fmtNum(status.equity_adjustment, 2)) + '</div>'
+            : '') +
+          (status && status.valuation_note
+            ? '<div class="equity-sub" style="margin-top:.35rem;max-width:36rem;line-height:1.35">' +
+              esc(status.valuation_note) + '</div>'
+            : '') +
           '<div id="home-equity-chart"></div>' +
         '</section>';
     }
@@ -1319,12 +1329,17 @@
       metricsBlock =
         '<div class="stats">' +
           stat('Equity', fmtNum(m.equity, 2), pnlClass(m.unrealized_pnl)) +
+          (m.equity_cli != null ? stat('equity_cli', fmtNum(m.equity_cli, 2)) : '') +
+          (m.equity_adjustment ? stat('XTZ adj', fmtNum(m.equity_adjustment, 2)) : '') +
           stat('uPnL', fmtNum(m.unrealized_pnl, 2) + ' (' + fmtPct(m.unrealized_pnl_pct) + ')', pnlClass(m.unrealized_pnl)) +
           stat('Start', fmtNum(m.starting_balance, 2)) +
           stat('Trades', fmtNum(m.total_trades, 0)) +
           stat('Open orders', fmtNum(m.open_orders, 0)) +
           stat('Fee rate', fmtNum((m.fee_rate || 0) * 100, 2) + '%') +
-        '</div>';
+        '</div>' +
+        (m.valuation_note
+          ? '<p class="headline" style="margin-top:.5rem">' + esc(m.valuation_note) + '</p>'
+          : '');
       if (d.balances) {
         metricsBlock += '<div class="stats" style="margin-top:.6rem">' +
           Object.entries(d.balances).map(([k,v]) => stat(k, fmtNum(v, 6))).join('') +
