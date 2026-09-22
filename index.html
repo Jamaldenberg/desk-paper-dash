@@ -922,15 +922,19 @@
     }
     let html = '<div class="latest-trades">' +
       '<h3>Latest trades</h3>' +
-      '<p class="lt-note">Closed newest first · fee-honest FIFO P&amp;L · open shows mark / unrealized</p>' +
+      '<p class="lt-note">Closed newest first · times in PT · fee-honest FIFO P&amp;L · open shows mark / unrealized</p>' +
       '<div class="scroll-x"><table class="lt-table"><thead><tr>' +
-      '<th>Pair</th><th>Entry</th><th>Exit</th><th>Amount</th><th>P&amp;L</th>' +
+      '<th>Pair</th><th>Entered</th><th>Entry</th><th>Exited</th><th>Exit</th><th>Amount</th><th>P&amp;L</th>' +
       '</tr></thead><tbody>';
     for (const row of rows) {
       const t = row.t;
       const kind = row.kind;
       const ep = entryPx(t);
       const xp = exitPx(t);
+      const entered = compactPt(t.entry_pt) || fmtTimePT(t.entry_time) || '—';
+      const exited = kind === 'open'
+        ? '—'
+        : (compactPt(t.exit_pt) || fmtTimePT(t.exit_time) || '—');
       const pill = kind === 'open'
         ? '<span class="lt-pill open">open</span>'
         : '<span class="lt-pill closed">closed</span>';
@@ -943,7 +947,9 @@
       const pnlPct = kind === 'open' ? t.unrealized_pnl_pct : t.pnl_pct;
       html += '<tr>' +
         '<td>' + pairHtml + '</td>' +
+        '<td class="dt" title="' + esc(t.entry_pt || t.entry_time || '') + '">' + esc(entered) + '</td>' +
         '<td class="px">' + esc(ep == null ? '—' : fmtNum(ep, ep >= 100 ? 2 : 4)) + '</td>' +
+        '<td class="dt" title="' + esc(t.exit_pt || t.exit_time || '') + '">' + esc(exited) + '</td>' +
         '<td class="px">' + esc(xp == null ? '—' : fmtNum(xp, xp >= 100 ? 2 : 4)) + '</td>' +
         '<td>' + amountCell(t) + '</td>' +
         '<td>' + pnlCell(pnlUsd, pnlPct) + '</td>' +
