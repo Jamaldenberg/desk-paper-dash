@@ -430,6 +430,76 @@
       font-size: .78rem;
       margin: 0 0 .65rem;
     }
+    .headline-stats {
+      display: flex; flex-wrap: wrap; gap: .5rem;
+      margin: .75rem 0 .25rem;
+    }
+    .headline-stats .stat { min-width: 6.2rem; flex: 1 1 5.5rem; }
+    .latest-trades {
+      margin-top: .85rem;
+      padding-top: .65rem;
+      border-top: 1px solid var(--border);
+    }
+    .latest-trades h3 {
+      margin: 0 0 .45rem;
+      font-size: .95rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+    .latest-trades .lt-note {
+      color: var(--muted);
+      font-size: .75rem;
+      margin: 0 0 .55rem;
+    }
+    .lt-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .78rem;
+      font-variant-numeric: tabular-nums;
+    }
+    .lt-table th, .lt-table td {
+      text-align: left;
+      padding: .4rem .3rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .lt-table th {
+      color: var(--muted);
+      font-weight: 600;
+      font-size: .68rem;
+      text-transform: uppercase;
+    }
+    .lt-table .px { white-space: nowrap; }
+    .lt-pill {
+      display: inline-block;
+      font-size: .62rem;
+      font-weight: 700;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+      border-radius: 999px;
+      padding: .08rem .4rem;
+      margin-left: .35rem;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      vertical-align: middle;
+    }
+    .lt-pill.open { border-color: #3a5a8a; color: var(--accent); }
+    .lt-pill.closed { border-color: #2f6b4f; color: var(--pos); }
+    .lab-link {
+      display: block;
+      text-align: center;
+      margin: 1.25rem 0 .5rem;
+      color: var(--muted);
+      font-size: .78rem;
+    }
+    .lab-link a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
+    .lab-link a:hover { color: var(--accent); }
+    @media (max-width: 420px) {
+      .lt-table th:nth-child(2),
+      .lt-table td:nth-child(2) { /* keep Entry */ }
+      .lt-table .pair-main { font-size: .82rem; }
+    }
     .strat-accordion-wrap { margin-top: 1.25rem; }
     @media (max-width: 520px) {
       .trade-book th:nth-child(n+5),
@@ -464,7 +534,7 @@
     <div id="error-view" class="hidden"></div>
   </main>
   <footer>
-    Data from <span class="mono">/data/simulations.json</span> + per-sim JSON. Relative paths for Vercel static deploy.
+    Paper book from <span class="mono">status.json</span>. Lab probes (F01–F07) buried under Lab.
   </footer>
 <script>
 (function () {
@@ -722,9 +792,11 @@
     const page = (q.get('page') || '').toLowerCase();
     if (page === 'trades') return 'trades';
     if (page === 'tables') return 'tables';
+    if (page === 'lab') return 'lab';
     const h = (location.hash || '').replace(/^#\/?/, '').toLowerCase();
     if (h === 'trades') return 'trades';
     if (h === 'tables') return 'tables';
+    if (h === 'lab') return 'lab';
     if (routeSimId()) return 'sim';
     return 'home';
   }
@@ -743,6 +815,10 @@
   }
   function goTables() {
     history.pushState({}, '', '?page=tables');
+    render();
+  }
+  function goLab() {
+    history.pushState({}, '', '?page=lab');
     render();
   }
   function goSim(id) {
@@ -795,60 +871,176 @@
     return '<div class="stat"><span class="k">' + esc(k) + '</span><span class="v ' + (cls||'') + '">' + esc(v) + '</span></div>';
   }
 
+  // Public chart must never warp before the $5k capital reset (2026-09-17 3:32 PM PT).
+  const CHART_RESET_TS = '2026-09-17T22:32:00.000Z';
+
+  function chartSeriesFromStatus(status) {
+    const _rawSeries = (status && status.equity_series) || [];
+    const _hasMark = _rawSeries.some((p) => p && (p.label === 'mark' || p.label === 'start'));
+    let series = _hasMark
+      ? _rawSeries.filter((p) => p && p.equity != null && (p.label === 'mark' || p.label === 'start'))
+      : _rawSeries.filter((p) => p && p.equity != null);
+    series = series.filter((p) => {
+      const t = p && p.t ? String(p.t) : '';
+      return !t || t >= CHART_RESET_TS;
+    });
+    if (!series.some((p) => p && p.label === 'start')) {
+      series = [{ t: CHART_RESET_TS, equity: 5000, pnl: 0, label: 'start' }].concat(series);
+    }
+    return series;
+  }
+
+  function entryPx(t) {
+    if (!t) return null;
+    const v = t.entry_px != null ? t.entry_px : t.entry;
+    return v == null ? null : Number(v);
+  }
+  function exitPx(t) {
+    if (!t) return null;
+    if (t.exit_px != null) return Number(t.exit_px);
+    if (t.exit != null) return Number(t.exit);
+    if (t.mark != null) return Number(t.mark);
+    return null;
+  }
+
+  function latestTradesHtml(status, limit) {
+    const lim = limit || 20;
+    const closed = sortNewest((status && status.completed_trades) || [], ['exit_time', 'exit_pt', 'entry_time']);
+    const open = sortNewest((status && status.open_lots) || [], ['entry_time', 'entry_pt']);
+    // Prefer closed newest-first; then a few open lots so the feed is never empty.
+    const rows = [];
+    for (const t of closed.slice(0, lim)) {
+      rows.push({ kind: 'closed', t });
+    }
+    if (rows.length < Math.min(8, lim)) {
+      for (const t of open.slice(0, lim - rows.length)) {
+        rows.push({ kind: 'open', t });
+      }
+    }
+    if (!rows.length) {
+      return '<div class="latest-trades"><h3>Latest trades</h3><p class="empty">No trades yet.</p></div>';
+    }
+    let html = '<div class="latest-trades">' +
+      '<h3>Latest trades</h3>' +
+      '<p class="lt-note">Closed newest first · fee-honest FIFO P&amp;L · open shows mark / unrealized</p>' +
+      '<div class="scroll-x"><table class="lt-table"><thead><tr>' +
+      '<th>Pair</th><th>Entry</th><th>Exit</th><th>Amount</th><th>P&amp;L</th>' +
+      '</tr></thead><tbody>';
+    for (const row of rows) {
+      const t = row.t;
+      const kind = row.kind;
+      const ep = entryPx(t);
+      const xp = exitPx(t);
+      const pill = kind === 'open'
+        ? '<span class="lt-pill open">open</span>'
+        : '<span class="lt-pill closed">closed</span>';
+      const strat = kind === 'open'
+        ? (t.entry_strategy || '')
+        : (t.exit_strategy || t.entry_strategy || '');
+      const pairHtml = '<div class="pair-main">' + esc(t.pair || '') + pill + '</div>' +
+        (strat ? '<div class="strat-subline">' + esc(strat) + '</div>' : '');
+      const pnlUsd = kind === 'open' ? t.unrealized_pnl : t.pnl;
+      const pnlPct = kind === 'open' ? t.unrealized_pnl_pct : t.pnl_pct;
+      html += '<tr>' +
+        '<td>' + pairHtml + '</td>' +
+        '<td class="px">' + esc(ep == null ? '—' : fmtNum(ep, ep >= 100 ? 2 : 4)) + '</td>' +
+        '<td class="px">' + esc(xp == null ? '—' : fmtNum(xp, xp >= 100 ? 2 : 4)) + '</td>' +
+        '<td>' + amountCell(t) + '</td>' +
+        '<td>' + pnlCell(pnlUsd, pnlPct) + '</td>' +
+      '</tr>';
+    }
+    html += '</tbody></table></div>' +
+      '<p class="lt-note" style="margin-top:.55rem"><a href="./index.html?page=trades">Full trade book →</a></p>' +
+      '</div>';
+    return html;
+  }
+
   async function renderHome(idx) {
-    titleEl.textContent = 'Desk Paper Sims';
-    subEl.textContent = 'Tap a card for that simulation only · paper/shadow probes';
+    titleEl.textContent = 'Desk Paper';
+    subEl.textContent = 'Live paper book · overview';
     setNav('home');
     updatedPill.textContent = 'Updated ' + (idx.updated_at_pt || idx.updated_at || '—');
-    const sims = idx.simulations || [];
-    countPill.textContent = sims.length + ' sims';
-    if (!sims.length) {
-      homeEl.innerHTML = '<p class="empty">No simulations in index.</p>';
-      return;
-    }
 
     let status = null;
     try { status = await fetchJson('data/status.json'); } catch (e) { status = null; }
 
-    const live = sims.find(s => s.live) || null;
-    let hero = '';
-    if (status || live) {
-      const eq = status ? status.equity : (live.summary || {}).equity;
-      const upnl = status ? status.unrealized_pnl : (live.summary || {}).unrealized_pnl;
-      const upnlPct = status ? status.unrealized_pnl_pct : (live.summary || {}).unrealized_pnl_pct;
-      const ws = (status && status.workspace) || 'desk-explore-f01';
-      hero =
-        '<section class="hero" id="home-hero">' +
-          '<div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.35rem">' +
-            '<span class="pill live">LIVE PAPER</span>' +
-            '<span class="pill mono">' + esc(ws) + '</span>' +
+    const live = ((idx.simulations || []).find(s => s.live)) || null;
+    const eq = status ? status.equity : (live && live.summary || {}).equity;
+    const upnl = status ? status.unrealized_pnl : (live && live.summary || {}).unrealized_pnl;
+    const upnlPct = status ? status.unrealized_pnl_pct : (live && live.summary || {}).unrealized_pnl_pct;
+    const fills = status ? status.total_trades : (live && live.summary || {}).total_trades;
+    const nOpenLots = ((status && status.open_lots) || []).length;
+    const nClosedLots = ((status && status.completed_trades) || []).length;
+    const startBal = (status && status.starting_balance) != null ? status.starting_balance : 5000;
+    const ws = (status && status.workspace) || 'desk-explore-f01';
+
+    countPill.textContent = esc(fmtNum(nOpenLots, 0)) + ' open · ' + esc(fmtNum(nClosedLots, 0)) + ' closed';
+
+    let hero =
+      '<section class="hero" id="home-hero">' +
+        '<div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.35rem">' +
+          '<span class="pill live">LIVE PAPER</span>' +
+          '<span class="pill mono">' + esc(ws) + '</span>' +
+        '</div>' +
+        '<div class="equity-sub">Paper equity' +
+          (status && status.equity_adjustment ? ' (XTZ-as-T corrected)' : '') +
           '</div>' +
-          '<div class="equity-sub">CLI paper equity' +
-            (status && status.equity_adjustment ? ' (XTZ-as-T corrected)' : '') +
-            '</div>' +
-          '<div class="equity-big ' + pnlClass(upnl) + '">$' + esc(fmtNum(eq, 2)) + '</div>' +
-          '<div class="equity-sub ' + pnlClass(upnl) + '">' +
-            esc(fmtNum(upnl, 2)) + ' (' + esc(fmtPct(upnlPct)) + ') vs $' + esc(fmtNum(status && status.starting_balance, 0) || '5000') + ' start' +
-          '</div>' +
-          (status && status.equity_cli != null && status.equity_adjustment
-            ? '<div class="equity-sub">equity_cli raw $' + esc(fmtNum(status.equity_cli, 2)) +
-              ' · adj $' + esc(fmtNum(status.equity_adjustment, 2)) + '</div>'
-            : '') +
-          (status && status.valuation_note
-            ? '<div class="equity-sub" style="margin-top:.35rem;max-width:36rem;line-height:1.35">' +
-              esc(status.valuation_note) + '</div>'
-            : '') +
-          '<div id="home-equity-chart"></div>' +
-        '</section>';
+        '<div class="equity-big ' + pnlClass(upnl) + '">$' + esc(fmtNum(eq, 2)) + '</div>' +
+        '<div class="equity-sub ' + pnlClass(upnl) + '">' +
+          esc(fmtNum(upnl, 2)) + ' (' + esc(fmtPct(upnlPct)) + ') vs $' + esc(fmtNum(startBal, 0)) + ' start' +
+        '</div>' +
+        '<div class="headline-stats">' +
+          stat('Equity', '$' + fmtNum(eq, 2), pnlClass(upnl)) +
+          stat('Fills', fmtNum(fills, 0)) +
+          stat('Open lots', fmtNum(nOpenLots, 0)) +
+          stat('Closed', fmtNum(nClosedLots, 0)) +
+        '</div>' +
+        '<div id="home-equity-chart"></div>' +
+        '<div id="home-latest-trades"></div>' +
+      '</section>';
+
+    hero += '<p class="lab-link">Old lab probes (F01–F07) moved to <a href="./index.html?page=lab" id="home-lab-link">Lab</a></p>';
+
+    homeEl.innerHTML = hero;
+
+    const chartEl = document.getElementById('home-equity-chart');
+    if (chartEl) {
+      const series = chartSeriesFromStatus(status);
+      renderSvgChart(chartEl, series, {
+        prefer: 'equity',
+        yLabel: 'Equity $',
+        note: 'mark equity · from $5k reset · PT',
+        empty: 'no series yet — waiting for CLI paper marks',
+      });
     }
 
-    homeEl.innerHTML = hero + '<div class="grid" style="margin-top:1rem">' + sims.map(sim => {
-      const livePill = sim.live ? '<span class="pill live">LIVE PAPER</span> ' : '';
-      const cls = sim.live ? 'card span2' : 'card';
+    const ltEl = document.getElementById('home-latest-trades');
+    if (ltEl) ltEl.innerHTML = latestTradesHtml(status, 20);
+
+    const labLink = document.getElementById('home-lab-link');
+    if (labLink) labLink.addEventListener('click', e => { e.preventDefault(); goLab(); });
+  }
+
+  async function renderLab(idx) {
+    titleEl.textContent = 'Lab probes';
+    subEl.textContent = 'Historical F01–F07 shadow/lab cards · not the live paper book';
+    setNav('home');
+    updatedPill.textContent = 'Updated ' + (idx.updated_at_pt || idx.updated_at || '—');
+    const sims = (idx.simulations || []).filter(s => !s.live);
+    countPill.textContent = sims.length + ' probes';
+    if (!sims.length) {
+      homeEl.innerHTML = '<p class="empty">No lab probes in index.</p>' +
+        '<button type="button" class="back" id="lab-back">← Overview</button>';
+      const b = document.getElementById('lab-back');
+      if (b) b.addEventListener('click', goHome);
+      return;
+    }
+    let html = '<button type="button" class="back" id="lab-back">← Overview</button>';
+    html += '<p class="trade-note">These are old explore/shadow probe cards. Live paper book is on Overview / Trades.</p>';
+    html += '<div class="grid">' + sims.map(sim => {
       return (
-        '<article class="' + cls + '" role="button" tabindex="0" data-sim="' + esc(sim.id) + '">' +
+        '<article class="card" role="button" tabindex="0" data-sim="' + esc(sim.id) + '">' +
           '<div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.35rem">' +
-            livePill +
             '<span class="pill mode">' + esc(sim.mode || '') + '</span>' +
             '<span class="pill">' + esc(sim.family || '') + '</span>' +
             (sim.has_equity_series ? '<span class="pill">chart</span>' : '') +
@@ -860,43 +1052,9 @@
         '</article>'
       );
     }).join('') + '</div>';
-
-    const chartEl = document.getElementById('home-equity-chart');
-    if (chartEl) {
-      // Meik 2026-09-17: chart mark/start only — unlabeled fill-step MTM is noise
-      const _rawSeries = (status && status.equity_series) || [];
-      const _hasMark = _rawSeries.some((p) => p && (p.label === 'mark' || p.label === 'start'));
-      const series = _hasMark
-        ? _rawSeries.filter((p) => p && p.equity != null && (p.label === 'mark' || p.label === 'start'))
-        : _rawSeries.filter((p) => p && p.equity != null);
-      renderSvgChart(chartEl, series, {
-        prefer: 'equity',
-        yLabel: 'Equity $',
-        note: 'mark equity · PT',
-        empty: 'no series yet — waiting for CLI paper fills',
-      });
-    }
-
-    const tables = (status && status.strategy_tables) || [];
-    const nDone = tables.reduce((a, st) => a + ((st.metrics || {}).completed || 0), 0);
-    const sumPnl = tables.reduce((a, st) => {
-      const v = (st.metrics || {}).sum_pnl;
-      return a + (v == null ? 0 : Number(v));
-    }, 0);
-    const nOpenLots = ((status && status.open_lots) || []).length;
-    const nClosedLots = ((status && status.completed_trades) || []).length;
-    const cta =
-      '<a class="tables-cta" href="./index.html?page=trades" id="home-trades-cta">' +
-        '<span>Trades</span>' +
-        '<span class="muted">' + esc(fmtNum(nOpenLots, 0)) + ' open · ' + esc(fmtNum(nClosedLots, 0)) + ' closed · P&amp;L ' +
-          esc((sumPnl >= 0 ? '+' : '') + fmtNum(sumPnl, 2)) + ' →</span>' +
-      '</a>';
-    const heroEl = homeEl.querySelector('.hero');
-    if (heroEl) heroEl.insertAdjacentHTML('beforeend', cta);
-    else homeEl.insertAdjacentHTML('afterbegin', cta);
-    const ctaEl = document.getElementById('home-trades-cta');
-    if (ctaEl) ctaEl.addEventListener('click', e => { e.preventDefault(); goTrades(); });
-
+    homeEl.innerHTML = html;
+    const b = document.getElementById('lab-back');
+    if (b) b.addEventListener('click', goHome);
     homeEl.querySelectorAll('[data-sim]').forEach(el => {
       const open = () => goSim(el.getAttribute('data-sim'));
       el.addEventListener('click', open);
@@ -1502,6 +1660,11 @@
         tablesEl.classList.remove('hidden');
         if (page === 'trades') await renderTrades();
         else await renderTables();
+      } else if (page === 'lab') {
+        detailEl.classList.add('hidden');
+        tablesEl.classList.add('hidden');
+        homeEl.classList.remove('hidden');
+        await renderLab(idx);
       } else {
         detailEl.classList.add('hidden');
         tablesEl.classList.add('hidden');
