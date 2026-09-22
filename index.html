@@ -961,6 +961,31 @@
     return html;
   }
 
+
+  function breakerTelemetryHtml(status) {
+    const bt = (status && status.breaker_telemetry) || null;
+    if (!bt) {
+      return '<p class="equity-sub mono" style="margin:.35rem 0 0;opacity:.75">Breaker telemetry: waiting for WO-01 loop export</p>';
+    }
+    const last = bt.last || {};
+    const br = last.breakers || {};
+    const evals = bt.evaluations != null ? bt.evaluations : '—';
+    const trips = bt.trips != null ? bt.trips : '—';
+    const npos = last.n_positions != null ? last.n_positions : '—';
+    const lots = last.open_lots != null ? last.open_lots : '—';
+    const exp = last.exposure_frac != null ? (Number(last.exposure_frac) * 100).toFixed(2) + '%' : '—';
+    const dpnl = last.day_pnl_frac != null ? (Number(last.day_pnl_frac) * 100).toFixed(2) + '%' : '—';
+    const line =
+      'Breakers · evals ' + evals + ' / trips ' + trips +
+      ' · npos ' + npos + ' · open_lots ' + lots +
+      ' · exp ' + exp + ' · dayPnL ' + dpnl +
+      ' · daily=' + (br.daily_loss || '—') +
+      ' exposure=' + (br.max_exposure || '—') +
+      ' maxpos=' + (br.max_positions || '—') +
+      (bt.since ? ' · since ' + bt.since : '');
+    return '<p class="equity-sub mono" style="margin:.35rem 0 0;opacity:.85">' + esc(line) + '</p>';
+  }
+
   async function renderHome(idx) {
     titleEl.textContent = 'Desk Paper';
     subEl.textContent = 'Live paper book · overview';
@@ -1001,6 +1026,7 @@
           stat('Open lots', fmtNum(nOpenLots, 0)) +
           stat('Closed', fmtNum(nClosedLots, 0)) +
         '</div>' +
+        breakerTelemetryHtml(status) +
         '<div id="home-equity-chart"></div>' +
         '<div id="home-latest-trades"></div>' +
       '</section>';
