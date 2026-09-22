@@ -222,6 +222,51 @@
       margin: .15rem 0;
     }
     .hero .equity-sub { color: var(--muted); font-size: .85rem; }
+    .pnl-bridge {
+      margin-top: .85rem;
+      padding-top: .75rem;
+      border-top: 1px dashed var(--border);
+    }
+    .pnl-bridge h3 {
+      margin: 0 0 .45rem;
+      font-size: .92rem;
+      font-weight: 650;
+    }
+    .pnl-bridge .bridge-note {
+      color: var(--muted);
+      font-size: .72rem;
+      margin: 0 0 .5rem;
+      line-height: 1.35;
+    }
+    .pnl-bridge table {
+      width: 100%;
+      border-collapse: collapse;
+      font-variant-numeric: tabular-nums;
+      font-size: .82rem;
+    }
+    .pnl-bridge th, .pnl-bridge td {
+      text-align: left;
+      padding: .22rem .15rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .pnl-bridge th { color: var(--muted); font-weight: 550; font-size: .72rem; }
+    .pnl-bridge td.amt { text-align: right; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .pnl-bridge td.cum { text-align: right; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: var(--muted); }
+    .pnl-bridge tr.total td { font-weight: 700; border-bottom: none; padding-top: .4rem; }
+    .pnl-bridge .src-pill {
+      display: inline-block;
+      font-size: .65rem;
+      padding: .05rem .35rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      margin-left: .25rem;
+      vertical-align: middle;
+    }
+    .pnl-bridge .src-pill.stamped { border-color: #c4a35a; color: #c4a35a; }
+    .pnl-bridge .recon-ok { color: var(--up, #3d9a6a); font-size: .72rem; }
+    .pnl-bridge .recon-bad { color: var(--down, #c44); font-size: .72rem; }
+    .equity-bridge-wrap { margin-top: .15rem; }
     .chart-wrap {
       margin-top: .75rem;
       width: 100%;
@@ -986,6 +1031,70 @@
     return '<p class="equity-sub mono" style="margin:.35rem 0 0;opacity:.85">' + esc(line) + '</p>';
   }
 
+
+  function pnlBridgeHtml(bridge, markEquity) {
+    if (!bridge || typeof bridge !== 'object') {
+      return '<div class="pnl-bridge"><h3>P&amp;L bridge</h3>' +
+        '<p class="bridge-note">Waiting for pnl_bridge in status export (WO-05).</p></div>';
+    }
+    const labels = {
+      start_5000: 'Start ($5,000 reset)',
+      tusd_missell: 'TUSD mis-sell',
+      keepalive_fees: 'Keepalive fees',
+      disposition_realized: 'Disposition realized',
+      other_realized: 'Other realized',
+      mark_unrealized: 'Mark unrealized (residual)',
+      xtz_revaluation: 'XTZ revaluation',
+      mark_equity: 'Mark equity'
+    };
+    const order = bridge.waterfall || [
+      'start_5000','tusd_missell','keepalive_fees','disposition_realized',
+      'other_realized','mark_unrealized','xtz_revaluation','mark_equity'
+    ];
+    const sources = bridge.sources || {};
+    const stamped = (bridge.flags_backfilled) || {};
+    let cum = 0;
+    let rows = '';
+    order.forEach((k) => {
+      const raw = bridge[k];
+      if (raw == null) return;
+      const v = Number(raw);
+      const isEnd = (k === 'mark_equity');
+      if (!isEnd) cum += v;
+      const src = sources[k] || '';
+      const isStamped = !!(stamped[k]) || (typeof src === 'string' && src.indexOf('stamped') >= 0);
+      const srcLabel = isStamped ? 'stamped' : (src.indexOf('live') >= 0 || src.indexOf('residual') >= 0 || src.indexOf('constant') >= 0 ? 'live' : '');
+      const srcHtml = srcLabel
+        ? '<span class="src-pill' + (isStamped ? ' stamped' : '') + '">' + esc(srcLabel) + '</span>'
+        : '';
+      const amtTxt = isEnd
+        ? ('$' + fmtNum(v, 2))
+        : ((v >= 0 ? '+' : '') + '$' + fmtNum(v, 2));
+      const cumTxt = isEnd ? ('$' + fmtNum(v, 2)) : ('$' + fmtNum(cum, 2));
+      rows += '<tr' + (isEnd ? ' class="total"' : '') + '>' +
+        '<td>' + esc(labels[k] || k) + srcHtml + '</td>' +
+        '<td class="amt ' + (isEnd ? pnlClass(v - (bridge.start_5000 || 5000)) : pnlClass(v)) + '">' + esc(amtTxt) + '</td>' +
+        '<td class="cum">' + esc(cumTxt) + '</td>' +
+        '</tr>';
+    });
+    const gap = Number(bridge.recon_gap);
+    const ok = bridge.recon_ok !== false && Math.abs(gap) < 0.01;
+    const eqShow = markEquity != null ? markEquity : bridge.mark_equity;
+    const note = 'Reset ' + esc(bridge.reset_at_pt || '2026-09-17 3:32 PM PT') +
+      ' · components must sum to mark · stamped = WO-04 flags_backfilled';
+    return '<div class="pnl-bridge" id="home-pnl-bridge">' +
+      '<h3>P&amp;L bridge</h3>' +
+      '<p class="bridge-note">' + note + '</p>' +
+      '<table><thead><tr><th>Step</th><th style="text-align:right">Δ</th><th style="text-align:right">Cum</th></tr></thead><tbody>' +
+      rows +
+      '</tbody></table>' +
+      '<p class="' + (ok ? 'recon-ok' : 'recon-bad') + ' mono" style="margin:.45rem 0 0">' +
+        (ok ? '✓ recon to cent' : ('✗ recon gap $' + esc(fmtNum(gap, 4)))) +
+        ' · mark $' + esc(fmtNum(eqShow, 2)) +
+      '</p>' +
+      '</div>';
+  }
+
   async function renderHome(idx) {
     titleEl.textContent = 'Desk Paper';
     subEl.textContent = 'Live paper book · overview';
@@ -1027,6 +1136,9 @@
           stat('Closed', fmtNum(nClosedLots, 0)) +
         '</div>' +
         breakerTelemetryHtml(status) +
+        '<div class="equity-bridge-wrap">' +
+          pnlBridgeHtml(status && status.pnl_bridge, eq) +
+        '</div>' +
         '<div id="home-equity-chart"></div>' +
         '<div id="home-latest-trades"></div>' +
       '</section>';
